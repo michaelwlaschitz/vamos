@@ -6,6 +6,7 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
 
+
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
@@ -23,17 +24,20 @@ const initMapbox = () => {
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
-    new mapboxgl.Marker()
-      .setLngLat([ marker.lng, marker.lat ])
-      .addTo(map);
+      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+      new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup) // add this
+        .addTo(map);
     });
 
     fitMapToMarkers(map, markers);
 
     $('#exampleModal').on('show.bs.modal', function () {
-    map.resize()
-    console.log("test");
-   })
+      map.resize()
+      console.log("test");
+
+    });
   }
 };
 
