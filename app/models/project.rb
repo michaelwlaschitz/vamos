@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-  has_one :ngo
+  belongs_to :ngo
   has_many :bookings
   has_many_attached :photos
 
@@ -9,5 +9,4 @@ class Project < ApplicationRecord
   validates :description, presence: true
   validates :capacity, presence: true
   validates :category, presence: true
-
 end
