@@ -139,6 +139,7 @@ puts "Users created"
 
 puts "Seeding NGOs"
 
+
 ngo1 = Ngo.new(name: "Care", phone: "+165099292", description: "Supporting our root causes with all our energy and effort", user: user1)
 file21 = File.open("app/assets/images/logos/ngo1.png")
 user11.photo.attach(io: file21, filename: 'ngo1.png', content_type: 'image/png')
@@ -174,10 +175,12 @@ file27 = File.open("app/assets/images/logos/ngo7.jpg")
 user11.photo.attach(io: file27, filename: 'ngoè.jpg', content_type: 'image/jpg')
 ngo7.save!
 
+
 ngo8 = Ngo.new(name: "Cultural Center MiMusica", phone: "+188099298", description: "Supporting our root causes with all our energy and effort", user: user8)
 file28 = URI.open(Faker::Company.logo)
 ngo8.logo.attach(io: file28, filename: 'logo8.jpg', content_type: 'image/jpg')
 ngo8.save!
+
 
 ngo9 = Ngo.new(name: "Amnesty International", phone: "+199099299", description: "Supporting our root causes with all our energy and effort", user: user9)
 file29 = File.open("app/assets/images/logos/ngo9.jpg")
@@ -188,6 +191,7 @@ ngo10 = Ngo.new(name: "Médecins sans frontières", phone: "+199099200", descrip
 file30 = File.open("app/assets/images/logos/ngo10.png")
 user11.photo.attach(io: file30, filename: 'ngo10.png', content_type: 'image/png')
 ngo10.save!
+
 
 puts "NGOs done"
 puts "Seeding projects"

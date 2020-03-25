@@ -12,6 +12,9 @@
 @import "components/index";
 @import "pages/index";
 
+// Social Media Sharing
+@import "social-share-button";
+
 
 body {
   background-color: white;
@@ -19,7 +22,6 @@ body {
   font-size: 16px;
   color: $black-gray;
 }
-
 
 p {
   font-size: 16px;
@@ -42,7 +44,7 @@ h3 {
 }
 
 .paragraph-no-margin {
-  margin-bottom: 6px;
+  margin: 0;
 }
 
 .h2-less-margin {
