@@ -1,5 +1,5 @@
 <div class = "content-container">
-  <p class="opportunities-counter"> We found 50 oportunities near you</p>
+  <p class="opportunities-counter"> We found <%= @projects.count(:all) %> oportunities near you</p>
   <div class="filters d-flex justify-content-left">
     <div class="filter py-1 px-3">Location</div>
     <div class="filter py-1 px-3">Interest</div>
@@ -7,22 +7,24 @@
   </div>
   <div class="card-container my-3">
 
+    <% @projects.each do |project| %>
     <div class="project-card my-4">
-      <div class="project-image" style="background-image: url(<%= image_path 'teacher.jpg' %>)">
+      <div class="project-image" style="background-image: url('<%= cl_image_path project.photos.first.key %>')">
         <div class="interest-icon border rounded-circle">
           <i class="fas fa-leaf"></i>
         </div>
       </div>
-      <h5 class="project-title">Teach English to inmigrant children </h5>
-      <p class="project-ong">Red Cross</p>
+      <h5 class="project-title"><%= project.title %></h5>
+      <p class="project-ong"><%= project.ngo.name if project.ngo %></p>
       <div class="project-elements d-flex justify-content-left">
-        <div class="element"><i class="far fa-clock"></i> 5 h</div>
-        <div class="element"><i class="fas fa-user-friends"></i> 10</div>
+        <div class="element"><i class="far fa-clock"></i><%= project.hours_per_week %></div>
+        <div class="element"><i class="fas fa-user-friends"></i><%= project.capacity%></div>
         <div class="element"><i class="fas fa-map-marker-alt"></i> 0.5km</div>
       </div>
+      <% end %>
     </div>
 <!-- DELETE FROM HERE -->
-    <div class="project-card my-4">
+<!--     <div class="project-card my-4">
       <div class="project-image" style="background-image: url(<%= image_path 'teacher.jpg' %>)">
         <div class="interest-icon border rounded-circle">
           <i class="fas fa-leaf"></i>
@@ -35,7 +37,7 @@
         <div class="element"><i class="fas fa-user-friends"></i> 10</div>
         <div class="element"><i class="fas fa-map-marker-alt"></i> 0.5km</div>
       </div>
-    </div>
+    </div> -->
 <!-- TILL HERE (IT'S A ROW FOR TESTING) -->
   </div>
 </div>
@@ -43,26 +45,25 @@
 
 
 <!-- Button trigger modal -->
-<div><i class="fas fa-map-marker-alt open-map-modal" data-toggle="modal" data-target="#exampleModal"></i>
-</div>
-
-<!-- Modal -->
-<div class="custom-map-modal">
-  <div class="position-relative">
-   <div style="top: 25px; left: 25px; z-index: 2000" class="position-absolute close-map-modal">
-      <i class="fa-times fa-2x"></i>
-    </div>
-    <div
-      id="map"
-      style="width: 100vw;
-      height: 100vh;
-      overflow: visible;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-
+  <div><i class="fas fa-map-marker-alt open-map-modal" data-toggle="modal" data-target="#exampleModal"></i>
   </div>
-</div>
+
+  <!-- Modal -->
+  <div class="custom-map-modal">
+    <div class="position-relative">
+      <div style="top: 25px; left: 25px; z-index: 2000" class="position-absolute close-map-modal">
+        <i class="fa-times fa-2x"></i>
+      </div>
+      <div
+        id="map"
+        style="width: 100vw;
+        height: 100vh;
+        overflow: visible;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </div>
 
 
 
