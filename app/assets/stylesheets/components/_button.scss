@@ -4,17 +4,24 @@
 
 .button-apply-show {
   background-color: #F28A28;
-  width: 100%;
   padding: 10px 16px 10px 1px;
   border-radius: 5px;
-  position: fixed;
-  bottom: 5px;
-  color:white;
+  color: white;
   font-size: 22px;
   text-align: center;
   margin-top: 6px;
+  width: 100%;
 }
 
 .button-apply-show:hover {
   color: white;
+}
+
+.background-button {
+  background-color: white;
+  width: calc(100% - 10px);
+  position: fixed;
+  bottom: 0px;
+  left: 5px;
+  padding-bottom: 5px;
 }
