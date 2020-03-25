@@ -39,3 +39,30 @@
 <!-- TILL HERE (IT'S A ROW FOR TESTING) -->
   </div>
 </div>
+
+
+
+<!-- Button trigger modal -->
+<div><i class="fas fa-map-marker-alt open-map-modal" data-toggle="modal" data-target="#exampleModal"></i>
+</div>
+
+<!-- Modal -->
+<div class="custom-map-modal">
+  <div class="position-relative">
+   <div style="top: 25px; left: 25px; z-index: 2000" class="position-absolute close-map-modal">
+      <i class="fa-times fa-2x"></i>
+    </div>
+    <div
+      id="map"
+      style="width: 100vw;
+      height: 100vh;
+      overflow: visible;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+  </div>
+</div>
+
+
+
