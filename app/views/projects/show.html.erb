@@ -1,0 +1,56 @@
+
+<% @project.photos.each do |photo|%>
+<div>
+<%= cl_image_tag photo.key, class: "project-image-show"%>
+</div>
+<% end %>
+
+<div class="row mt-2">
+  <div class="col-6 tab-border-bottom text-center vcenter">
+  <p class="paragraph-no-margin">Project</p>
+  </div>
+  <div class="col-6 text-center vcenter">
+  <p class="paragraph-no-margin">NGO</p>
+  </div>
+</div>
+
+<div class="content-container">
+
+<h2 class="h2-less-margin"><%= @project.title %></h2>
+<p><%= @project.ngo.name %></p>
+
+<div class="d-flex border-bottom">
+  <div class="element mr-2"><i class="fas fa-user-friends"></i>
+  </div>
+
+  <div class="mr-2">
+    <p><%= @project.capacity %> </p>
+  </div>
+
+  <div class="element mr-2"><i class="far fa-clock"></i>
+  </div>
+
+  <div class="mr-2">
+    <p><%= @project.hours_per_week%> hours/week </p>
+  </div>
+
+  <div class="element mr-2"><i class="fas fa-map-marker-alt"></i>
+  </div>
+
+  <div class="mr-2">
+    <p>5km from you</p>
+  </div>
+</div>
+
+<div class="mt-2">
+<p> <%= @project.description %> </p>
+</div>
+
+</div>
+
+
+
+
+
+
+
