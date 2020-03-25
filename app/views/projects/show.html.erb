@@ -5,13 +5,15 @@
 </div>
 <% end %>
 
+<div class="content-container mt-0">
 <div class="row mt-2">
   <div class="col-6 tab-border-bottom text-center vcenter">
-  <p class="paragraph-no-margin">Project</p>
+  <p class="mb-1">Project</p>
   </div>
   <div class="col-6 text-center vcenter">
-  <p class="paragraph-no-margin">NGO</p>
+  <p class="mb-1">NGO</p>
   </div>
+</div>
 </div>
 
 <div class="content-container">
@@ -62,6 +64,16 @@
 <div class="content-container">
   <div>
   <%= image_tag("map.png", class: "image-map-show") %>
+  </div>
+
+  <div class="background-button">
+  <div class="button-apply-show">
+  <p class="paragraph-no-margin">APPLY WITH YOUR TEAM</p>
+  </div>
+  </div>
+
+  <div class="content-container">
+  <h2>Reviews for <%= @project.ngo.name %> projects</h2>
   </div>
 
   <div class="reviews d-flex my-5 align-items-center">
