@@ -14,11 +14,109 @@
   </div>
 </div>
 
-<div class="container mt-2">
+<div class="content-container">
 
-<h2> <%= @project.title %> </h2>
-<h3> <%= @project.ngo.name %></h3>
-<p><%= @project.capacity %> </p>
+  <h2 class="h2-less-margin"><%= @project.title %></h2>
+  <p><%= @project.ngo.name %></p>
 
-<p> <%= @project.description %> </p>
+  <div class="d-flex border-bottom">
+    <div class="element mr-2"><i class="fas fa-user-friends"></i>
+    </div>
+
+    <div class="mr-3">
+      <p><%= @project.capacity %> </p>
+    </div>
+
+    <div class="element mr-2"><i class="far fa-clock"></i>
+    </div>
+
+    <div class="mr-3">
+      <p><%= @project.hours_per_week%> hours/week </p>
+    </div>
+
+    <div class="element mr-2"><i class="fas fa-map-marker-alt"></i>
+    </div>
+
+    <div class="mr-3">
+      <p>5km from you</p>
+    </div>
+  </div>
+
+  <div class="mt-2">
+    <p><%= @project.description %> </p>
+  </div>
+
 </div>
+
+<div class="content-container">
+  <div>
+  <%= image_tag("map.png", class: "image-map-show") %>
+  </div>
+
+  <div class="button-apply-show">
+  <p class="paragraph-no-margin">APPLY WITH YOUR TEAM</p>
+  </div>
+
+  <div class="reviews d-flex my-5 align-items-center">
+    <div class="mr-2">
+    <%= cl_image_tag @project.ngo.user.photo.key, class: "avatar"%>
+    </div>
+
+    <div>
+      <i class="fas fa-star"></i>
+    </div>
+    <div>
+      <i class="fas fa-star"></i>
+    </div>
+    <div>
+      <i class="fas fa-star"></i>
+    </div>
+    <div>
+      <i class="far fa-star"></i>
+    </div>
+    <div class="mr-5">
+      <i class="far fa-star"></i>
+    </div>
+
+    <div>
+      <p class="paragraph-no-margin">Great experience with this organization, love to work there!</p>
+    </div>
+  </div>
+
+  <div class="reviews d-flex my-5 align-items-center">
+    <div class="mr-2">
+    <%= cl_image_tag @project.ngo.user.photo.key, class: "avatar"%>
+    </div>
+
+    <div>
+      <i class="fas fa-star"></i>
+    </div>
+    <div>
+      <i class="fas fa-star"></i>
+    </div>
+    <div>
+      <i class="fas fa-star"></i>
+    </div>
+    <div>
+      <i class="far fa-star"></i>
+    </div>
+    <div class="mr-5">
+      <i class="far fa-star"></i>
+    </div>
+
+    <div>
+      <p class="paragraph-no-margin">Great experience with this organization, love to work there!</p>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+

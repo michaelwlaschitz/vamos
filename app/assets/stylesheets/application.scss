@@ -24,7 +24,7 @@ body {
 
 
 p {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 h1 {
@@ -33,11 +33,21 @@ h1 {
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 22px;
   color: $black-gray;
+  font-weight: bold;
 }
 
 h3 {
   font-size: 20px;
   color: $black-gray;
 }
+
+.paragraph-no-margin {
+  margin-bottom: 6px;
+}
+
+.h2-less-margin {
+  margin-bottom: 0px;
+}
+

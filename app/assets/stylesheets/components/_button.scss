@@ -1,3 +1,20 @@
 .btn.btn-primary.vamos {
-background-color:#F28A28;
+  background-color: #F28A28;
+}
+
+.button-apply-show {
+  background-color: #F28A28;
+  width: 100%;
+  padding: 10px 16px 10px 1px;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 5px;
+  color:white;
+  font-size: 22px;
+  text-align: center;
+  margin-top: 6px;
+}
+
+.button-apply-show:hover {
+  color: white;
 }
