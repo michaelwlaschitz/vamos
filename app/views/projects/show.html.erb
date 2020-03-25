@@ -1,0 +1,24 @@
+
+<% @project.photos.each do |photo|%>
+<div>
+<%= cl_image_tag photo.key, class: "project-image-show"%>
+</div>
+<% end %>
+
+<div class="row mt-2">
+  <div class="col-6 tab-border-bottom text-center vcenter">
+  <p class="paragraph-no-margin">Project</p>
+  </div>
+  <div class="col-6 text-center vcenter">
+  <p class="paragraph-no-margin">NGO</p>
+  </div>
+</div>
+
+<div class="container mt-2">
+
+<h2> <%= @project.title %> </h2>
+<h3> <%= @project.ngo.name %></h3>
+<p><%= @project.capacity %> </p>
+
+<p> <%= @project.description %> </p>
+</div>
