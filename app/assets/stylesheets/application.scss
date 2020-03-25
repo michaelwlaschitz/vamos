@@ -1,5 +1,3 @@
-@import "social-share-button";
-
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -14,6 +12,9 @@
 @import "components/index";
 @import "pages/index";
 
+// Social Media Sharing
+@import "social-share-button";
+
 
 body {
   background-color: white;
@@ -21,7 +22,6 @@ body {
   font-size: 16px;
   color: $black-gray;
 }
-
 
 p {
   font-size: 16px;

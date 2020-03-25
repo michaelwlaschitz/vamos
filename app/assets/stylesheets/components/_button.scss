@@ -4,11 +4,13 @@
 
 .button-apply-show {
   background-color: #F28A28;
-  width: 100%;
+  width: 90%;
+  margin:auto;
   padding: 10px 16px 10px 1px;
   border-radius: 5px;
-  position: fixed;
-  bottom: 5px;
+  position: sticky;
+  bottom: 12px;
+  left: 12px;
   color:white;
   font-size: 22px;
   text-align: center;
@@ -17,4 +19,13 @@
 
 .button-apply-show:hover {
   color: white;
+}
+
+
+.social-share-button {
+  .ssb-icon {
+    background-size: 16px;
+    height: 16px;
+    width: 16px;
+  }
 }
