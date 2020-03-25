@@ -1,0 +1,15 @@
+
+<%  @project.photos.each do |photo|%>
+<div class="project-image">
+ <p> <%= photo %> </p>
+</div>
+<% end %>
+
+<div class="container">
+
+<h2> <%= @project.title %> </h2>
+<h3> <%= @project.ngo.name %></h3>
+<p>@project.capacity</p>
+
+<p> <%= @project.description %> </p>
+</div>
