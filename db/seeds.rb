@@ -139,37 +139,37 @@ puts "Users created"
 
 puts "Seeding NGOs"
 
-ngo1 = Ngo.new(name: Faker::Company, phone: "+165099292", description: "Supporting our root causes with all our energy and effort", user: user1)
+ngo1 = Ngo.new(name: Faker::Company.name, phone: "+165099292", description: "Supporting our root causes with all our energy and effort", user: user1)
 file21 = URI.open(Faker::Company.logo)
 ngo1.logo.attach(io: file21, filename: 'logo1.jpg', content_type: 'image/jpg')
 ngo1.save
 
-ngo2 = Ngo.new(name: Faker::Company, phone: "+165099293", description: "Supporting our root causes with all our energy and effort", user: user2)
+ngo2 = Ngo.new(name: Faker::Company.name, phone: "+165099293", description: "Supporting our root causes with all our energy and effort", user: user2)
 file22 = URI.open(Faker::Company.logo)
 ngo2.logo.attach(io: file22, filename: 'logo2.jpg', content_type: 'image/jpg')
 ngo2.save
 
-ngo3 = Ngo.new(name: Faker::Company, phone: "+165099294", description: "Supporting our root causes with all our energy and effort", user: user3)
+ngo3 = Ngo.new(name: Faker::Company.name, phone: "+165099294", description: "Supporting our root causes with all our energy and effort", user: user3)
 file23 = URI.open(Faker::Company.logo)
 ngo3.logo.attach(io: file23, filename: 'logo3.jpg', content_type: 'image/jpg')
 ngo3.save
 
-ngo4 = Ngo.new(name: Faker::Company, phone: "+165099295", description: "Supporting our root causes with all our energy and effort", user: user4)
+ngo4 = Ngo.new(name: Faker::Company.name, phone: "+165099295", description: "Supporting our root causes with all our energy and effort", user: user4)
 file24 = URI.open(Faker::Company.logo)
 ngo4.logo.attach(io: file24, filename: 'logo4.jpg', content_type: 'image/jpg')
 ngo4.save
 
-ngo5 = Ngo.new(name: Faker::Company, phone: "+165099296", description: "Supporting our root causes with all our energy and effort", user: user5)
+ngo5 = Ngo.new(name: Faker::Company.name, phone: "+165099296", description: "Supporting our root causes with all our energy and effort", user: user5)
 file25 = URI.open(Faker::Company.logo)
 ngo5.logo.attach(io: file25, filename: 'logo5.jpg', content_type: 'image/jpg')
 ngo5.save
 
-ngo6 = Ngo.new(name: Faker::Company, phone: "+166099297", description: "Supporting our root causes with all our energy and effort", user: user6)
+ngo6 = Ngo.new(name: Faker::Company.name, phone: "+166099297", description: "Supporting our root causes with all our energy and effort", user: user6)
 file26 = URI.open(Faker::Company.logo)
 ngo6.logo.attach(io: file26, filename: 'logo6.jpg', content_type: 'image/jpg')
 ngo6.save
 
-ngo7 = Ngo.new(name: Faker::Company, phone: "+177099298", description: "Supporting our root causes with all our energy and effort", user: user7)
+ngo7 = Ngo.new(name: Faker::Company.name, phone: "+177099298", description: "Supporting our root causes with all our energy and effort", user: user7)
 file27 = URI.open(Faker::Company.logo)
 ngo7.logo.attach(io: file27, filename: 'logo7.jpg', content_type: 'image/jpg')
 ngo7.save
@@ -179,12 +179,12 @@ file28 = URI.open(Faker::Company.logo)
 ngo8.logo.attach(io: file28, filename: 'logo8.jpg', content_type: 'image/jpg')
 ngo8.save
 
-ngo9 = Ngo.new(name: Faker::Company, phone: "+199099299", description: "Supporting our root causes with all our energy and effort", user: user9)
+ngo9 = Ngo.new(name: Faker::Company.name, phone: "+199099299", description: "Supporting our root causes with all our energy and effort", user: user9)
 file29 = URI.open(Faker::Company.logo)
 ngo9.logo.attach(io: file29, filename: 'logo9.jpg', content_type: 'image/jpg')
 ngo9.save
 
-ngo10 = Ngo.new(name: Faker::Company, phone: "+199099200", description: "Supporting our root causes with all our energy and effort", user: user10)
+ngo10 = Ngo.new(name: Faker::Company.name, phone: "+199099200", description: "Supporting our root causes with all our energy and effort", user: user10)
 file30 = URI.open(Faker::Company.logo)
 ngo10.logo.attach(io: file30, filename: 'logo10.jpg', content_type: 'image/jpg')
 ngo10.save
