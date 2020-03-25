@@ -1,0 +1,28 @@
+<!-- <div class = "info-window">
+  <h1>HEyyyyy</h1>
+  <h2><%= project.title %></h2>
+  <p><%= project.ngo_id %></p>
+  <p><%= project.hours_per_week %></p>
+  <p><%= project.capacity%></p>
+</div> -->
+
+
+<div class="info-window">
+  <div class="project-image">
+    <% if project.photos.attached? %>
+      <%= cl_image_tag project.photos.first.key %>
+    <% end %>
+  </div>
+  <div class="project-title">
+    <h5><%= project.title %></h5>
+  </div>
+  <div class="project-ngo">
+    <p><%= project.ngo.name %></p>
+  </div>
+  <div class="project-elements d-flex justify-content-between">
+    <div><i class="far fa-clock"></i><%= project.hours_per_week %></div>
+    <div><i class="fas fa-user-friends"></i><%= project.capacity%></div>
+    <div><i class="fas fa-map-marker-alt"></i> 0.5km</div>
+  </div>
+</div>
+
