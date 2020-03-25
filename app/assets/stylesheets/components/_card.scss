@@ -26,10 +26,14 @@
   .project-ong {
     margin-bottom: 5px;
     font-size: 16px;
-    opacity: 0.8;
+    color: $light-gray;
+    font-weight: lighter;
   }
   .project-elements {
     color: gray;
     font-weight: lighter;
+    .element {
+      margin-right: 30px;
+    }
   }
 }
