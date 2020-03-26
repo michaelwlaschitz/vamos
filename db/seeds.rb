@@ -2,6 +2,9 @@ require 'faker'
 require 'open-uri'
 
 puts "Creating users"
+Booking.destroy_all
+TeamMembership.destroy_all
+Team.destroy_all
 Project.destroy_all
 Ngo.destroy_all
 User.destroy_all
@@ -93,7 +96,7 @@ file12 = File.open("app/assets/images/avatars/Marco.png")
 user12.photo.attach(io: file12, filename: 'macrco.png', content_type: 'image/png')
 user12.save
 
-user13 = User.new(first_name: "Max", last_name: "Geurtz", description: "French is the best language in the world. Happy to teach it to anyone on this planet!", email: "max@gmail.com", phone: "+5865065095", password: "max123")
+user13 = User.new(first_name: "Max", last_name: "Geurtz", description: "French is the best language in the world. Happy to teach it to anyone on this planet!", email: "max@gmail.com", phone: "+5865022365095", password: "max123")
 file13 = File.open("app/assets/images/avatars/Max.png")
 user13.photo.attach(io: file13, filename: 'max.png', content_type: 'image/png')
 user13.save
@@ -117,7 +120,6 @@ user17 = User.new(first_name: "Raphael", last_name: "Daverio", description: "Tak
 file17 = File.open("app/assets/images/avatars/Raf.png")
 user17.photo.attach(io: file17, filename: 'raph.png', content_type: 'image/png')
 user17.save
-
 
 user18 = User.new(first_name: "Sang Soo", last_name: "Ra", description: "The only real spaniard in Barcelona with South Korean roots!", email: "sangsoo@gmail.com", phone: "+34065065095", password: "sangsoo123")
 file18 = File.open("app/assets/images/avatars/Sang.jpg")
@@ -242,7 +244,33 @@ project8.save!
 
 
 puts "Seeding projects done"
+puts "Seeding teams"
 
+team1 = Team.create!(name: "The French Force")
+team2 = Team.create!(name: "International Allstars")
+
+
+puts "Seeding teams done"
+puts "Seeding team memberships"
+
+team_membership1 = TeamMembership.create!(user_id: user11.id, team_id: team1.id)
+team_membership2 = TeamMembership.create!(user_id: user12.id, team_id: team1.id)
+team_membership3 = TeamMembership.create!(user_id: user13.id, team_id: team1.id)
+team_membership4 = TeamMembership.create!(user_id: user17.id, team_id: team1.id)
+
+team_membership1 = TeamMembership.create!(user_id: user14.id, team_id: team2.id)
+team_membership2 = TeamMembership.create!(user_id: user15.id, team_id: team2.id)
+team_membership3 = TeamMembership.create!(user_id: user16.id, team_id: team2.id)
+team_membership4 = TeamMembership.create!(user_id: user18.id, team_id: team2.id)
+
+
+booking1 = Booking.create!(status: "pending", project_id: project1.id, team_id: team1.id)
+booking2 = Booking.create!(status: "pending", project_id: project2.id, team_id: team1.id)
+booking3 = Booking.create!(status: "pending", project_id: project3.id, team_id: team1.id)
+booking4 = Booking.create!(status: "pending", project_id: project4.id, team_id: team1.id)
+booking5 = Booking.create!(status: "pending", project_id: project1.id, team_id: team2.id)
+booking6 = Booking.create!(status: "pending", project_id: project2.id, team_id: team2.id)
+booking7 = Booking.create!(status: "pending", project_id: project3.id, team_id: team2.id)
 
 puts "Seeding projects done"
 
