@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_26_155029) do
+ActiveRecord::Schema.define(version: 2020_03_26_160445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2020_03_26_155029) do
     t.string "status"
     t.bigint "project_id"
     t.bigint "team_id"
-    t.integer "hours_per_week"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_bookings_on_project_id"
@@ -68,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_03_26_155029) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.integer "hours_per_week"
     t.index ["ngo_id"], name: "index_projects_on_ngo_id"
   end
 
