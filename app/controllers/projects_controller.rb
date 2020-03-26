@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.geocoded
 
-    @projects = @projects.near(params[:address])
+    filter_projects
 
     @markers = @projects.map do |project|
       {
@@ -14,6 +14,8 @@ class ProjectsController < ApplicationController
       }
     end
   end
+
+
 
   def show
     @project = Project.find(params[:id])
@@ -28,6 +30,22 @@ class ProjectsController < ApplicationController
   end
 
   def new
+  end
+
+  private
+
+  def filter_projects
+    @projects = @projects.near(params[:address], 50)
+
+    @projects = @projects.where('category IN (?)', params[:categories])
+
+    if params[:time] == "1-4"
+      @projects = @projects.where(hours_per_week: 1..4)
+    elsif params[:time] == "5-9"
+      @projects = @projects.where(hours_per_week: 5..9)
+    else
+      @projects = @projects.where(hours_per_week: 10..100)
+    end
   end
 
 end
