@@ -28,7 +28,6 @@ p {
 
 h1 {
   font-size: 27px;
-  color: white;
 }
 
 h2 {
@@ -49,3 +48,12 @@ h3 {
 .h2-less-margin {
   margin-bottom: 0px;
 }
+
+.slogan-home h1 {
+  color: $orange-vamos;
+}
+
+.text-homepage {
+  background-color: white;
+}
+
