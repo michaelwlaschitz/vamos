@@ -9,8 +9,6 @@ Project.destroy_all
 Ngo.destroy_all
 User.destroy_all
 
-
-
 puts "destroyed all"
 
 #users for NGOs
@@ -248,7 +246,6 @@ puts "Seeding teams"
 
 team1 = Team.create!(name: "The French Force")
 team2 = Team.create!(name: "International Allstars")
-
 
 puts "Seeding teams done"
 puts "Seeding team memberships"
