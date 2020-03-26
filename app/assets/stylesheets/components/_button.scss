@@ -9,8 +9,7 @@
   color: white;
   font-size: 22px;
   text-align: center;
-  margin-top: 6px;
-  width: 100%;
+  width: 90%;
 }
 
 .button-apply-show:hover {
@@ -18,12 +17,14 @@
 }
 
 .background-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
-  width: calc(100% - 10px);
+  height: 80px;
   position: fixed;
   bottom: 0px;
-  left: 5px;
-  padding-bottom: 10px;
+  width: 100%;
 }
 
 .social-share-button {

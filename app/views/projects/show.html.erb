@@ -55,10 +55,6 @@
   <%= image_tag("map.png", class: "image-map-show") %>
   </div>
 
-  <div>
-  <p> <%= link_to "APPLY WITH YOUR TEAM", to: new_project_booking_path(@project)%> </p>
-  </div>
-
   <div class="mt-3">
   <h2>Reviews for <%= @project.ngo.name %> projects</h2>
   </div>
@@ -97,11 +93,17 @@
     </div>
   </div>
 
-
-
-
 </div>
 
+<div style="height: 80px">
+</div>
+
+
+
+
+<div class="background-button">
+  <%= link_to "APPLY WITH YOUR TEAM", new_project_booking_path(@project), class: "button-apply-show"%>
+</div>
 
 
 
