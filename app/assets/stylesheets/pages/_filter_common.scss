@@ -1,0 +1,44 @@
+// COMMON FOR LOCATION + INTERESTS + TIME
+.filter-title {
+  font-size: 32px;
+  margin-top: 100px;
+}
+
+.filter-content {
+  margin-top: 50px;
+}
+
+.filter-submit {
+  background-color: $orange-vamos;
+  width: 100px;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  opacity: 0.8;
+  font-size: 24px;
+  font-weight: lighter;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+// COMMON FOR INTERESTS + TIME
+.buttons {
+  width: 100%;
+  .button {
+    background-color: #C8C8C8;
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 4px;
+    color: $black-gray;
+    text-align: center;
+    opacity: 0.8;
+    font-weight: lighter;
+    &.active {
+      opacity: 1;
+      color: black;
+    }
+  }
+}

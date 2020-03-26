@@ -1,0 +1,16 @@
+<div class="content-container">
+
+  <div class="filter-title">
+    Where do yo want to help?
+  </div>
+
+  <div class="filter-content">
+    <%= form_with url: "/interests", method: :get, local: true do |f| %>
+      <%= f.text_field :address, placeholder: 'Location', label:false %>
+      <%= button_tag( :class => "filter-submit") do %>
+        <i class='fas fa-chevron-right'></i>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
