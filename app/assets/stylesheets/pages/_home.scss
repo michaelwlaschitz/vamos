@@ -1,4 +1,35 @@
 // Specific CSS for your home-page
+
 .banner {
   color: white;
+}
+
+.home-container {
+ width: 100%;
+ height: 100vh;
+ justify-content: center;
+ padding-top:60px;
+}
+
+.home-text {
+  padding-top: 80px;
+  justify-content: center;
+}
+
+
+.banner.home-background {
+  background-size:cover;
+  height: 100vh;
+  background-position: center center;
+  padding: 0;
+}
+
+.navbar-lewagon.home {
+background: transparent;
+position: fixed;
+width: 100%;
+}
+
+.navbar-lewagon.home .fa-bars {
+color: white;
 }

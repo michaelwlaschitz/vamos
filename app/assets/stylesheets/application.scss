@@ -12,6 +12,8 @@
 @import "components/index";
 @import "pages/index";
 @import "projects/index";
+// Social Media Sharing
+@import "social-share-button";
 
 
 body {
@@ -21,32 +23,43 @@ body {
   // color: $black-gray;
 }
 
-
 p {
   font-size: 16px;
 }
 
 h1 {
-  font-size: 31px;
+  font-size: 27px;
 }
 
 h2 {
   // color: $black-gray;
   font-size: 22px;
+}
+
+h2 {
+  font-size: 25px;
   color: $black-gray;
   font-weight: bold;
 }
 
 h3 {
-  font-size: 20px;
-  // color: $black-gray;
+  font-size: 18px;
+  color: $black-gray;
 }
 
 .paragraph-no-margin {
-  margin-bottom: 6px;
+  margin: 0;
 }
 
 .h2-less-margin {
   margin-bottom: 0px;
+}
+
+.slogan-home h1 {
+  color: $orange-vamos;
+}
+
+.text-homepage {
+  background-color: white;
 }
 
