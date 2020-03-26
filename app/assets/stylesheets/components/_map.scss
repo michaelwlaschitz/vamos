@@ -1,0 +1,34 @@
+.modal-full-screen {
+  max-width: none;
+  margin: 0;
+}
+
+.mapboxgl-canvas-container {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.custom-map-modal{
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: -100vh;
+  transition: 0.5s all;
+}
+
+.mapboxgl-popup-content {
+  min-height: 100px;
+  min-width: 300px;
+  img {
+    width: 100%;
+  }
+}
