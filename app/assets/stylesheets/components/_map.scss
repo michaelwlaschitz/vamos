@@ -20,7 +20,7 @@
 .custom-map-modal{
   height: 100vh;
   width: 100vw;
-  position: absolute;
+  position: fixed;
   top: -100vh;
   transition: 0.5s all;
 }
@@ -32,3 +32,22 @@
     width: 100%;
   }
 }
+
+#map_button {
+    position: fixed;
+    bottom: 25px;
+    right: 40px;
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    color: $orange-vamos;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} //map button for the index page
+
+#map {
+  object-fit: cover;
+  margin-bottom: 10px;
+} //map for the show page
