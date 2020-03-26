@@ -31,7 +31,7 @@
       <div class="project-elements d-flex justify-content-left">
         <div class="element"><i class="far fa-clock"></i><%= project.hours_per_week %>h/week</div>
         <div class="element"><i class="fas fa-user-friends"></i><%= project.capacity%></div>
-        <div class="element"><i class="fas fa-map-marker-alt"></i> 0.5km</div>
+        <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
       </div>
       </div>
       <% end %>
