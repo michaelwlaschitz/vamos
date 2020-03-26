@@ -5,9 +5,11 @@
   </div>
 
   <div class="filter-content">
-    <%= form_with url: "/projects", method: :get, local: true do |f| %>
+    <%= form_with url: "/interests", method: :get, local: true do |f| %>
       <%= f.text_field :address, placeholder: 'Location', label:false %>
-      <%= f.submit "Next" %>
+      <%= button_tag( :class => "filter-submit") do %>
+        <i class='fas fa-chevron-right'></i>
+      <% end %>
     <% end %>
   </div>
 

@@ -1,11 +1,28 @@
 <div class="content-container">
 
   <div class="filter-title">
-    Time
+    How many hours / week ?
   </div>
 
   <div class="filter-content">
+    <div class="form-group">
 
+      <form action="/projects" method="get">
+        <input id="hidden-input" type="hidden" name="search[time][]" value="">
+        <div class="buttons d-flex justify-content-between flex-wrap">
+          <% ["1-5", "5-10", "10+"].each do |time| %>
+            <input type="checkbox" class="hidden time-input" value="<%= time %>" name="search[time][]" id="time_<%= time %>">
+            <label class="time-button button" for="time_<%= time %>">
+              <%= time%>
+            </label>
+          <% end %>
+        </div>
+        <button type="submit" class="filter-submit">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </form>
+
+    </div>
   </div>
-
 </div>
+

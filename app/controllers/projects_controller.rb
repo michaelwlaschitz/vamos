@@ -1,9 +1,9 @@
 class ProjectsController < ApplicationController
 
   def index
-    @projects = Project.all
+    @projects = Project.geocoded
 
-    @projects = Project.geocoded #returns project with coordinates
+    @projects = @projects.near(params[:address])
 
     @markers = @projects.map do |project|
       {
