@@ -5,7 +5,7 @@
 </div>
 <% end %>
 
-<div class="content-container mt-0">
+<div class="content-container mt-0 mb-0">
 <div class="row mt-2">
   <div class="col-6 tab-border-bottom text-center vcenter">
   <p class="mb-1">Project</p>
@@ -16,7 +16,7 @@
 </div>
 </div>
 
-<div class="content-container">
+<div class="content-container mb-2">
 
   <h2 class="h2-less-margin"><%= @project.title %></h2>
   <p><%= @project.ngo.name %></p>
@@ -48,17 +48,6 @@
     <p><%= @project.description %> </p>
   </div>
 
-  <div class="content-container">
-    <div class="div">
-    <p> <%= social_share_button_tag(@project.title, url: project_url(@project), image: "https://cdn.websites.hibu.com/55bc0f1f1970401fb99a2f59756c5921/dms3rep/multi/mobile/volunteering-hero-960x360.png", desc: @project.description)%></p>
-    </div>
-  </div>
-
-
-  <div class="button-apply-show">
-  <p class="paragraph-no-margin">APPLY WITH YOUR TEAM</p>
-  </div>
-
 </div>
 
 <div class="content-container">
@@ -66,35 +55,41 @@
   <%= image_tag("map.png", class: "image-map-show") %>
   </div>
 
-  <div class="background-button">
-  <div class="button-apply-show">
-  <p class="paragraph-no-margin">APPLY WITH YOUR TEAM</p>
-  </div>
+  <div>
+  <p> <%= link_to "APPLY WITH YOUR TEAM", to: new_project_booking_path(@project)%> </p>
   </div>
 
-  <div class="content-container">
+  <div class="mt-3">
   <h2>Reviews for <%= @project.ngo.name %> projects</h2>
   </div>
 
-  <div class="reviews d-flex my-5 align-items-center">
+  <div class="reviews d-flex my-3 align-items-center">
     <div class="mr-2">
     <%= cl_image_tag @project.ngo.user.photo.key, class: "avatar"%>
     </div>
 
     <div>
-      <i class="fas fa-star"></i>
-    </div>
-    <div>
-      <i class="fas fa-star"></i>
-    </div>
-    <div>
-      <i class="fas fa-star"></i>
-    </div>
-    <div>
-      <i class="far fa-star"></i>
-    </div>
-    <div class="mr-5">
-      <i class="far fa-star"></i>
+      <div class="div">
+        <%= @project.ngo.user.first_name %>
+      </div>
+
+      <div class="d-flex">
+        <div>
+          <i class="fas fa-star"></i>
+        </div>
+        <div>
+          <i class="fas fa-star"></i>
+        </div>
+        <div>
+          <i class="fas fa-star"></i>
+        </div>
+        <div>
+          <i class="far fa-star"></i>
+        </div>
+        <div class="mr-5">
+          <i class="far fa-star"></i>
+        </div>
+      </div>
     </div>
 
     <div>
@@ -102,31 +97,7 @@
     </div>
   </div>
 
-  <div class="reviews d-flex my-5 align-items-center">
-    <div class="mr-2">
-    <%= cl_image_tag @project.ngo.user.photo.key, class: "avatar"%>
-    </div>
 
-    <div>
-      <i class="fas fa-star"></i>
-    </div>
-    <div>
-      <i class="fas fa-star"></i>
-    </div>
-    <div>
-      <i class="fas fa-star"></i>
-    </div>
-    <div>
-      <i class="far fa-star"></i>
-    </div>
-    <div class="mr-5">
-      <i class="far fa-star"></i>
-    </div>
-
-    <div>
-      <p class="paragraph-no-margin">Great experience with this organization, love to work there!</p>
-    </div>
-  </div>
 
 
 </div>
