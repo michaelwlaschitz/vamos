@@ -11,7 +11,6 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
 // Social Media Sharing
 @import "social-share-button";
 
@@ -28,18 +27,17 @@ p {
 }
 
 h1 {
-  font-size: 31px;
-  color: white;
+  font-size: 27px;
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 25px;
   color: $black-gray;
   font-weight: bold;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 18px;
   color: $black-gray;
 }
 
@@ -49,5 +47,13 @@ h3 {
 
 .h2-less-margin {
   margin-bottom: 0px;
+}
+
+.slogan-home h1 {
+  color: $orange-vamos;
+}
+
+.text-homepage {
+  background-color: white;
 }
 
