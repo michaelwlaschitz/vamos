@@ -9,3 +9,28 @@
 @import "banner";
 @import "tab";
 
+h5 {
+  color: black;
+}
+
+.fa-clock, .fa-user-friends, .fa-map-marker-alt{
+  margin-right: 5px;
+}
+
+// .project-card {
+//   box-shadow: 5px 10px;
+//   --box-shadow-color: #000;
+// }
+
+// .project-card:hover  {
+//   --box-shadow-color color: gray; /* Changing the value of the variable */
+// }
+
+.project-card {
+    --box-shadow-color: gray;
+    box-shadow: 1px 2px 3px var(--box-shadow-color);
+}
+
+#project-card:hover {
+    --box-shadow-color: gray;
+}
