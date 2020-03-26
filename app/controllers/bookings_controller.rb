@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
 
+
+
   def new
     @project = Project.find(params[:project_id])
     @teams = current_user.teams
