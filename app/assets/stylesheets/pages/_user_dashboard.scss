@@ -1,5 +1,12 @@
+.accepted-status-green {
+  color: $vamos-green
+}
 
+.rejected-status-red {
+  color: $vamos-red
+}
 
-$vamos-green: #00fb85;
-$vamos-red: #fb0700;
-$vamos-blue: #0076fb;
+.pending-status-blue {
+  color: $vamos-blue
+}
+

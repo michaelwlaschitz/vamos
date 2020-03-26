@@ -4,5 +4,4 @@ class Booking < ApplicationRecord
   has_many :reviews
 
   validates :status, presence: true
-  validates :hours_per_week, presence: true
 end
