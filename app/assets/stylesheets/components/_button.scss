@@ -13,13 +13,12 @@ font-size: 20px;
 
 .button-apply-show {
   background-color: #F28A28;
-  padding: 10px 16px 10px 1px;
+  padding: 16px 10px 16px 10px;
   border-radius: 5px;
   color: white;
   font-size: 22px;
   text-align: center;
-  margin-top: 6px;
-  width: 100%;
+  width: 90%;
 }
 
 .button-apply-show:hover {
@@ -27,20 +26,38 @@ font-size: 20px;
 }
 
 .background-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
-  width: calc(100% - 10px);
+  height: 80px;
   position: fixed;
   bottom: 0px;
-  left: 5px;
-  padding-bottom: 5px;
+  width: 100%;
 }
 
 .social-share-button {
   .ssb-icon {
-    background-size: 16px;
-    height: 16px;
-    width: 16px;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
   }
+}
+
+
+
+// a.ssb-icon.ssb-facebook {
+//   background-size: 30px 30px;
+//   height: 30px;
+//   width: 40px;
+//   color: gray;
+// }
+
+a.ssb-icon.ssb-whatsapp_app {
+  background-size: 35px 35px;
+  height: 35px;
+  width: 35px;
+  color: gray;
 }
 
 
