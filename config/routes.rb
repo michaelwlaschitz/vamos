@@ -12,8 +12,6 @@ Rails.application.routes.draw do
 
   resources :teams, only: [:create]
 
-  end
-
   get "dashboard", to: "users#dashboard"
 
 
