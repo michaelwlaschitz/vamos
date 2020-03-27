@@ -12,7 +12,6 @@
 }
 
 .home-text {
-  padding-top: 80px;
   justify-content: center;
 }
 
@@ -36,10 +35,14 @@ color:white;
 
 .text-homepage {
 color: white;
+font-weight: lighter;
+text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
 .slogan-home {
 color: $orange-vamos;
-background-color: white;
-opacity: 0.8;
+opacity: 1;
+margin-bottom: 8px;
+margin-top: 272px;
+text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
