@@ -12,6 +12,7 @@
 @import "components/index";
 @import "pages/index";
 @import "projects/index";
+@import "devise/login";
 // Social Media Sharing
 @import "social-share-button";
 
@@ -44,6 +45,10 @@ h2 {
 
 h3 {
   font-size: 18px;
+  color: $black-gray;
+}
+
+a {
   color: $black-gray;
 }
 
