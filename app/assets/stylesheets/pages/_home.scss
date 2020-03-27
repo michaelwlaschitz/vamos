@@ -1,5 +1,4 @@
 // Specific CSS for your home-page
-
 .banner {
   color: white;
 }
@@ -33,6 +32,10 @@ width: 100%;
 color:white;
 }
 
+.navbar-lewagon.nav-link .home {
+color: white;
+}
+
 .text-homepage {
 color: white;
 font-weight: lighter;
@@ -46,3 +49,4 @@ margin-bottom: 8px;
 margin-top: 272px;
 text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
+
