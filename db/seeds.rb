@@ -142,37 +142,37 @@ puts "Seeding NGOs"
 
 ngo1 = Ngo.new(name: "Care", phone: "+165099292", description: "Supporting our root causes with all our energy and effort", user: user1)
 file21 = File.open("app/assets/images/logos/ngo1.png")
-user11.photo.attach(io: file21, filename: 'ngo1.png', content_type: 'image/png')
+ngo1.logo.attach(io: file21, filename: 'ngo1.png', content_type: 'image/png')
 ngo1.save!
 
 ngo2 = Ngo.new(name: "Amics de la Gent", phone: "+165099293", description: "Supporting our root causes with all our energy and effort", user: user2)
 file22 = File.open("app/assets/images/logos/ngo2.jpg")
-user11.photo.attach(io: file22, filename: 'ngo2.jpg', content_type: 'image/jpg')
+ngo2.logo.attach(io: file22, filename: 'ngo2.jpg', content_type: 'image/jpg')
 ngo2.save!
 
 ngo3 = Ngo.new(name: "Dignity Foundation", phone: "+165099294", description: "Supporting our root causes with all our energy and effort", user: user3)
 file23 = File.open("app/assets/images/logos/ngo3.png")
-user11.photo.attach(io: file23, filename: 'ngo3.png', content_type: 'image/png')
+ngo3.logo.attach(io: file23, filename: 'ngo3.png', content_type: 'image/png')
 ngo3.save!
 
 ngo4 = Ngo.new(name: "Greenpeace", phone: "+165099295", description: "Supporting our root causes with all our energy and effort", user: user4)
 file24 = File.open("app/assets/images/logos/ngo4.png")
-user11.photo.attach(io: file24, filename: 'ngo4.png', content_type: 'image/png')
+ngo4.logo.attach(io: file24, filename: 'ngo4.png', content_type: 'image/png')
 ngo4.save!
 
 ngo5 = Ngo.new(name: "The Ocean Cleanup", phone: "+165099296", description: "Supporting our root causes with all our energy and effort", user: user5)
 file25 = File.open("app/assets/images/logos/ngo5.png")
-user11.photo.attach(io: file25, filename: 'ngo5.png', content_type: 'image/png')
+ngo5.logo.attach(io: file25, filename: 'ngo5.png', content_type: 'image/png')
 ngo5.save!
 
 ngo6 = Ngo.new(name: "Spanish Red Cross", phone: "+166099297", description: "Supporting our root causes with all our energy and effort", user: user6)
 file26 = File.open("app/assets/images/logos/ngo6.png")
-user11.photo.attach(io: file26, filename: 'ngo6.png', content_type: 'image/png')
+ngo6.logo.attach(io: file26, filename: 'ngo6.png', content_type: 'image/png')
 ngo6.save!
 
 ngo7 = Ngo.new(name: "Miracle Foundation", phone: "+177099298", description: "Supporting our root causes with all our energy and effort", user: user7)
 file27 = File.open("app/assets/images/logos/ngo7.jpg")
-user11.photo.attach(io: file27, filename: 'ngoè.jpg', content_type: 'image/jpg')
+ngo7.logo.attach(io: file27, filename: 'ngoè.jpg', content_type: 'image/jpg')
 ngo7.save!
 
 
@@ -184,12 +184,12 @@ ngo8.save!
 
 ngo9 = Ngo.new(name: "Amnesty International", phone: "+199099299", description: "Supporting our root causes with all our energy and effort", user: user9)
 file29 = File.open("app/assets/images/logos/ngo9.jpg")
-user11.photo.attach(io: file29, filename: 'ngo9.jpg', content_type: 'image/jpg')
+ngo9.logo.attach(io: file29, filename: 'ngo9.jpg', content_type: 'image/jpg')
 ngo9.save!
 
 ngo10 = Ngo.new(name: "Médecins sans frontières", phone: "+199099200", description: "Supporting our root causes with all our energy and effort", user: user10)
 file30 = File.open("app/assets/images/logos/ngo10.png")
-user11.photo.attach(io: file30, filename: 'ngo10.png', content_type: 'image/png')
+ngo10.logo.attach(io: file30, filename: 'ngo10.png', content_type: 'image/png')
 ngo10.save!
 
 
