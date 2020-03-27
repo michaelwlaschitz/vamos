@@ -172,7 +172,7 @@ ngo6.save!
 
 ngo7 = Ngo.new(name: "Miracle Foundation", phone: "+177099298", description: "Supporting our root causes with all our energy and effort", user: user7)
 file27 = File.open("app/assets/images/logos/ngo7.jpg")
-ngo7.logo.attach(io: file27, filename: 'ngoè.jpg', content_type: 'image/jpg')
+ngo7.logo.attach(io: file27, filename: 'ngo7.jpg', content_type: 'image/jpg')
 ngo7.save!
 
 
