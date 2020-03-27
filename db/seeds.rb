@@ -166,7 +166,7 @@ ngo5.logo.attach(io: file25, filename: 'ngo5.png', content_type: 'image/png')
 ngo5.save!
 
 ngo6 = Ngo.new(name: "Spanish Red Cross", phone: "+166099297", description: "Supporting our root causes with all our energy and effort", user: user6)
-file26 = File.open("app/assets/images/logos/ngo6.png")
+file26 = File.open("app/assets/images/logos/ngo6.jpg")
 ngo6.logo.attach(io: file26, filename: 'ngo6.png', content_type: 'image/png')
 ngo6.save!
 
@@ -178,7 +178,7 @@ ngo7.save!
 
 ngo8 = Ngo.new(name: "Cultural Center MiMusica", phone: "+188099298", description: "Supporting our root causes with all our energy and effort", user: user8)
 file28 = URI.open(Faker::Company.logo)
-ngo8.logo.attach(io: file28, filename: 'logo8.jpg', content_type: 'image/jpg')
+ngo8.logo.attach(io: file28, filename: 'ngo8.jpg', content_type: 'image/jpg')
 ngo8.save!
 
 
