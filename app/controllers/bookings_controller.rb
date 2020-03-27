@@ -6,18 +6,15 @@ class BookingsController < ApplicationController
   def new
     @project = Project.find(params[:project_id])
     @teams = current_user.teams
+    @new_team = Team.new
     @booking = Booking.new
-    raise
   end
 
   def create
-    @booking = Booking.new(
-      {status: "pending"}
-    )
+    @booking = Booking.new(booking_params)
+    @booking.status = "pending"
     @project = Project.find(params[:project_id])
-    @team = Team.find(params[:team_id])
     @booking.project = @project
-    @booking.team = @team
     if @booking.save
       redirect_to bookings_path
     else
@@ -27,4 +24,7 @@ class BookingsController < ApplicationController
 
   private
 
+  def booking_params
+    params.require(:booking).permit(:team_id, :hours_per_week)
+  end
 end
