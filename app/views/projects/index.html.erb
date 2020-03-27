@@ -26,16 +26,18 @@
           <% end %>
         </div>
       </div>
-      <h5 class="project-title"><%= project.title %></h5>
-      <p class="project-ong"><%= project.ngo.name if project.ngo %></p>
-      <div class="project-elements d-flex justify-content-left">
-        <div class="element"><i class="far fa-clock"></i><%= project.hours_per_week %>h/week</div>
-        <div class="element"><i class="fas fa-user-friends"></i><%= project.capacity%></div>
-        <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
+      <div class="project-text-stuff">
+        <h5 class="project-title"><%= project.title %></h5>
+        <p class="project-ong"><%= project.ngo.name if project.ngo %></p>
+        <div class="project-elements d-flex justify-content-left">
+          <div class="element"><i class="far fa-clock"></i><%= project.hours_per_week %>h/week</div>
+          <div class="element"><i class="fas fa-user-friends"></i><%= project.capacity%></div>
+          <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
+        </div>
       </div>
-      </div>
-      <% end %>
-      <% end %>
+    </div>
+    <% end %>
+    <% end %>
 
 <!-- DELETE FROM HERE -->
 <!--     <div class="project-card my-4">
