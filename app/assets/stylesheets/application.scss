@@ -50,6 +50,11 @@ h3 {
 
 a {
   color: $black-gray;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .paragraph-no-margin {
