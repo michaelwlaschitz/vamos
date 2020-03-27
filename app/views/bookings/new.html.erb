@@ -1,25 +1,26 @@
 <div class="container-fluid">
   <div class="col-sm-10">
      <div class="select-team">
-        <h2 class="h2-less-margin">Booking form</h2>
-        <p class="booking form text form-text"> Time to get involved together! Please select your team in the dropdown-menu, before contacting the NGO. First time you are here? Then you can create your team here! When you've created your team it will appear in the dropdown-menu, ready to be selected. Congrats! You are ready to contact the NGO. </p>
+        <h2 class="h2-less-margin my-4">Add your team!</h2>
+        <p class="booking form text form-text"></p>
       <div class="row content-inline justify-content-center">
         <div class="col-md-6 form-group">
-            <h3>Select your team below:</h3>
+          <h3 class="my-3">Select from an existing team:</h3>
           <%= simple_form_for ([@project, @booking])  do |f| %>
-            <%= f.association :team, collection: current_user.teams %>
+            <%= f.association :team, label: false, collection: current_user.teams %>
+           <h3 class="text-center my-4"> OR </h3>
            <div class="form">
                <!--The syntax "f.simple" is used when you are nesting a form inside another form -->
-          <h3 class="team-form title">First time here? Create your team!</h3>
+          <h3 class="my-3 team-form title">Create a new team:</h3>
             <%= f.simple_fields_for :team do |team_fields| %>
-              <%= team_fields.input :name, placeholder: 'Give your team a name', label:false, class: 'form-control' %>
+              <%= team_fields.input :name, placeholder: 'Team name', label:false, class: 'form-control' %>
               <%= team_fields.input :photo, as: :file,  class: 'form-control' %>
               <%= team_fields.input :selected_project, as: :hidden, input_html: { value: @project.id } %>
             <% end %>
         </div>
     </div>
 
-            <%= f.submit "Contact the NGO", class: "btn button-apply-show"%>
+            <%= f.submit "Apply", class: "btn button-apply-show"%>
           <% end %>
         </div>
         <div class="form-group col-md-6">
