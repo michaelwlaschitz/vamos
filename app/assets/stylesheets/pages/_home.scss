@@ -1,5 +1,4 @@
 // Specific CSS for your home-page
-
 .banner {
   color: white;
 }
@@ -34,12 +33,16 @@ width: 100%;
 color:white;
 }
 
+.navbar-lewagon.nav-link .home {
+color: white;
+}
+
 .text-homepage {
 color: white;
 }
 
 .slogan-home {
 color: $orange-vamos;
-background-color: white;
-opacity: 0.8;
+background-color:rgba(255,255,255,0.8);
 }
+
