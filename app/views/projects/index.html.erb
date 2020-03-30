@@ -89,17 +89,20 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Filter Volunteering Opportunities</h5>
+        <h3 class="modal-title" id="exampleModalLabel">Filter Volunteering Opportunities</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
 
       <div class="modal-body">
+      <h2 class="mb-2">Location</h2>
       <%= form_with url: "/projects", method: :get, local: true do |f| %>
       <%= f.text_field :address, placeholder: 'Location', label:false %>
 
-        <div class="buttons d-flex justify-content-between flex-wrap">
+      <h2 class="mt-4">Interests</h2>
+
+        <div class="buttons d-flex justify-content-between flex-wrap mt-3">
           <% ["Children", "Elderly Care", "Climate Change", "Social", "Cultural", "Other"].each do |category| %>
             <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="categories_<%= category %>">
             <label class="category-button button <%= "active" if params[:categories]&.include?(category) %>" for="categories_<%= category %>">
@@ -107,24 +110,22 @@
             </label>
           <% end %>
         </div>
-        <%= params %>
+
+        <h2 class="mt-4 mb-2">Hours per Week</h2>
 
         <div class="buttons d-flex justify-content-between flex-wrap">
           <% ["1 - 4", "5 - 9", "10+"].each do |time| %>
             <input type="checkbox" class="hidden time-input" value="<%= time %>" name="time[]" id="time_<%= time %>">
             <label class="time-button button <%= "active" if params[:time]&.include?(time) %>" for="time_<%= time %>">
-              <%= time%>
+              <%= time %>
             </label>
           <% end %>
         </div>
 
       </div>
 
-
-
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%= f.submit "Save filter", class: "btn btn-primary vamos" %>
+        <%= f.submit "Save filter", class: "btn btn-primary vamos mt-3 w-100" %>
         <% end %>
       </div>
     </div>
