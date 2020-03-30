@@ -27,11 +27,22 @@ class ProjectsController < ApplicationController
     }]
   end
 
-  def create
+  def new
+    @project = Project.new
   end
 
-  def new
+  def create
+    @project = Project.new(projects_params)
+    @ngo = current_user.ngo
+    @project.ngo = @ngo
+    if @project.save
+      redirect_to redirect_to ngo_dashboard_path
+    else
+      render :new
+    end
   end
+
+
 
   private
 
@@ -48,5 +59,8 @@ class ProjectsController < ApplicationController
       @projects = @projects.where(hours_per_week: 10..100)
     end
   end
+
+  def project_params
+    params.require(:project).permit(:title, :address, :description, :capacity, :category, :hours_per_week)
 
 end

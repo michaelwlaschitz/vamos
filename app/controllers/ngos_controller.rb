@@ -8,7 +8,7 @@ class NgosController < ApplicationController
     @ngo = Ngo.new(ngo_params)
     @ngo.user = current_user
     if @ngo.save
-      redirect_to ngo_dashboard(@ngo)
+      redirect_to ngo_dashboard_path
     else
       render :new
     end
