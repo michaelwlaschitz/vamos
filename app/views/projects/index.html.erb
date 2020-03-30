@@ -1,9 +1,8 @@
 <div class = "content-container">
   <p class="opportunities-counter"> We found <%= @projects.count(:all) %> oportunities near you</p>
   <div class="filters d-flex justify-content-left">
-    <div class="filter py-1 px-3">Location</div>
-    <div class="filter py-1 px-3">Interest</div>
-    <div class="filter py-1 px-3">Hours</div>
+  <div style="font-size: 16px" class="filter py-2 px-5" data-toggle="modal" data-target="#exampleModal">Filter
+  </div>
   </div>
   <div class="card-container my-3">
 
@@ -85,7 +84,52 @@
 
   <!-- Function JS to calculate the distance between the ngo location and user location -->
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Filter Volunteering Opportunities</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
 
+      <div class="modal-body">
+      <%= form_with url: "/projects", method: :get, local: true do |f| %>
+      <%= f.text_field :address, placeholder: 'Location', label:false %>
+
+        <div class="buttons d-flex justify-content-between flex-wrap">
+          <% ["Children", "Elderly Care", "Climate Change", "Social", "Cultural", "Other"].each do |category| %>
+            <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="categories_<%= category %>">
+            <label class="category-button button <%= "active" if params[:categories]&.include?(category) %>" for="categories_<%= category %>">
+              <%= category%>
+            </label>
+          <% end %>
+        </div>
+        <%= params %>
+
+        <div class="buttons d-flex justify-content-between flex-wrap">
+          <% ["1 - 4", "5 - 9", "10+"].each do |time| %>
+            <input type="checkbox" class="hidden time-input" value="<%= time %>" name="time[]" id="time_<%= time %>">
+            <label class="time-button button <%= "active" if params[:time]&.include?(time) %>" for="time_<%= time %>">
+              <%= time%>
+            </label>
+          <% end %>
+        </div>
+
+      </div>
+
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= f.submit "Save filter", class: "btn btn-primary vamos" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

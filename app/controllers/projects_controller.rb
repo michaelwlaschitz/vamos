@@ -36,10 +36,9 @@ class ProjectsController < ApplicationController
   private
 
   def filter_projects
-    @projects = @projects.near(params[:address], 50) if params[:address]
+    @projects = @projects.near(params[:address], 50) unless params[:address].blank?
 
-    @projects = @projects.where('category IN (?)', params[:categories]) if params[:categories]
-
+    @projects = @projects.where('category IN (?)', params[:categories]) unless params[:categories].blank?
     if params[:time] == "1-4"
       @projects = @projects.where(hours_per_week: 1..4)
     elsif params[:time] == "5-9"
