@@ -8,6 +8,8 @@ import { replaceDistances } from '../functions/distance';
 
 import { addActiveClass } from '../functions/filter_choice';
 
+import { logoFileName } from '../functions/fetch_logo_file_name';
+
 
 initAutocomplete();
 initMapbox();
@@ -15,4 +17,8 @@ initMapModal();
 
 replaceDistances();
 addActiveClass();
+
+logoFileName();
+
+
 

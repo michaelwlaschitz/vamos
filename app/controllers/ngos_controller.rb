@@ -8,7 +8,7 @@ class NgosController < ApplicationController
     @ngo = Ngo.new(ngo_params)
     @ngo.user = current_user
     if @ngo.save
-      redirect_to ngo_dashboard_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -17,6 +17,6 @@ class NgosController < ApplicationController
   private
 
   def ngo_params
-    params.require(:ngo).permit(:name, :phone, :description)
+    params.require(:ngo).permit(:name, :phone, :description, :address, :logo)
   end
 end

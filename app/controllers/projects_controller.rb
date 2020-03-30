@@ -32,11 +32,11 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(projects_params)
+    @project = Project.new(project_params)
     @ngo = current_user.ngo
     @project.ngo = @ngo
     if @project.save
-      redirect_to redirect_to ngo_dashboard_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -61,7 +61,7 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :address, :description, :capacity, :category, :hours_per_week)
+    params.require(:project).permit(:title, :address, :description, :capacity, :category, :hours_per_week, photos:[])
   end
 
 end
