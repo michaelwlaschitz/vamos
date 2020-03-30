@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
   resources :projects, only: [:index, :create, :new, :show] do
     resources :bookings, only: [:new, :create]
-
    end
+
+  resources :ngos, only: [:new, :create]
 
   resources :teams, only: [:create]
 
