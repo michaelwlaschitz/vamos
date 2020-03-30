@@ -1,0 +1,39 @@
+<div class="content-container">
+  <div class="form-group">
+
+      <h1 class="mb-4">Create your NGO profile</h1>
+
+  <!-- Form -->
+
+      <%= simple_form_for @ngo do |f|  %>
+      <% if @ngo.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @ngo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+      <%= f.input :name, placeholder: 'NGO Name', label:false, class: 'form-control' %>
+      <%= f.input :description, placeholder: 'Description', label:false,class: 'form-control' %>
+      <%= f.input :address, placeholder: 'Address', label:false,class: 'form-control' %>
+      <%= f.input :phone, placeholder: 'Phone eg. +34555555', label:false,class: 'form-control' %>
+      <div class="d-flex align-items-center">
+        <label class="button-upload-file mr-2">
+        Select Logo
+        <span style="display:none;">
+        <%= f.input :logo, as: :file, input_html: {class: "logo-input"} %>
+        </span>
+        </label>
+        <div class="logo-file-name">
+        </div>
+      </div>
+      <%= f.submit "Create new NGO", class: "btn btn-primary vamos w-100"%>
+      <% end %>
+
+    </div>
+  </div>
+
+
+
