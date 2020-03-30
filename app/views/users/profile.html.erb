@@ -1,0 +1,129 @@
+
+
+  <!-- Start of User-Person Information -->
+<div class="tab-pane fade active show" id="nav-person" role="tabpanel" aria-labelledby="nav-person-tab">
+  <div class = "user_info-container d-flex justify-content-between">
+    <div class="border-bottom">
+    </div>
+
+    <div class= "all-infos-dashboard-user-unique">
+      <div class = "contact">
+        <h5> Hi, I'm <%= @user.first_name %></h5>
+      </div>
+      <div class="all-details-contact">
+        <div class="phone-user d-flex">
+          <div class="element mr-2"><i class="fas fa-phone"></i>
+          </div>
+          <div class="phone-user-ngo mr-3">
+            <p><%= @user.phone %> </p>
+          </div>
+        </div>
+        <div class="email-user-ngo d-flex">
+          <div class="email-logo mr-2"><i class="fas fa-envelope"></i>
+          </div>
+          <div class="email mr-3">
+            <p><%= @user.email %> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class= "user_info d-flex">
+      <div class="user_ngo_photo mr-3 ml-3 mt-3 mt-3">
+      <%= cl_image_tag @user.photo.key, class: "avatar"%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="border-bottom">
+</div>
+
+<!-- Start of User-Ngo Information -->
+<% if current_user.ngo %>
+  <div class="user_info-container d-flex justify-content-between">
+    <div class="name_tel">
+      <div class= "name ml-3">
+        <h2 class="h2-less-margin"><%= @user.ngo.name %></h2>
+      </div>
+      <div class="phone ml-3 d-flex">
+        <div class="element mr-2"><i class="fas fa-phone"></i>
+        </div>
+        <div class="mr-3">
+          <p><%= @user.ngo.phone %> </p>
+        </div>
+      </div>
+    </div>
+    <div class="info-all">
+      <div class=" logo mr-3 mt-10">
+        <% if @user.ngo.logo.attached? %>
+        <%= cl_image_tag @user.ngo.logo.key, class: "avatar" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% else %>
+
+<div class="border-bottom">
+</div>
+
+
+<!-- Start of User-Person-Information -->
+
+  <div class="content-container">
+    <div class="d-flex">
+    <h2 class="border-bottom">My applications</h2>
+    </div>
+
+  <% current_user.bookings.each do |booking| %>
+    <div class="project-card my-4">
+      <div class="project-image" style="background-image: url('<%= cl_image_path booking.project.photos.first.key %>')">
+
+        <div class="interest-icon border rounded-circle">
+          <% if booking.project.category == "Children" %>
+            <i class="icon fas fa-child"></i>
+          <% elsif booking.project.category == "Social" %>
+            <i class="icon fas fa-user-friends"></i>
+          <% elsif booking.project.category == "Cultural" %>
+            <i class="icon fas fa-music"></i>
+          <% elsif booking.project.category == "Environment" %>
+            <i class="icon fas fa-leaf"></i>
+          <% else booking.project.category == "Elderly Care" %>
+            <i class="icon fab fa-accessible-icon"></i>
+          <% end %>
+        </div>
+
+        <% if booking.status == "accepted" %>
+        <div class="status-button-accepted-dashboard-user">
+        Application Accepted
+        </div>
+        <% elsif booking.status == "rejected" %>
+        <div class="status-button-rejected-dashboard-user">
+        Application Rejected
+        </div>
+        <% else %>
+        <div class="status-button-pending-dashboard-user">
+        Application Pending
+        </div>
+        <% end %>
+
+      </div>
+
+      <div class="project-text-stuff">
+        <h5 class="project-title"><%= booking.project.title %></h5>
+        <p class="project-ong"><%= booking.project.ngo.name %></p>
+        <div class="project-elements d-flex justify-content-left">
+          <div class="element"><i class="far fa-clock"></i><%= booking.project.hours_per_week %>h/week</div>
+          <div class="element"><i class="fas fa-user-friends"></i><%= booking.project.capacity %></div>
+          <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= booking.project.latitude %>" data-longitude="<%= booking.project.longitude %>">calculating...</span></div>
+        </div>
+      </div>
+
+    </div>
+
+  <% end %>
+  </div>
+<% end %>
+
+<!-- Start of User-Ngo-Information -->
+
+
