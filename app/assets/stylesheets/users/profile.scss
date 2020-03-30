@@ -1,0 +1,24 @@
+
+.ngo-booking {
+  align-items: center;
+  height: 110px;
+  .booking-name-team {
+    width: 70%;
+  }
+  .booking-status {
+    width: 30%;
+  }
+}
+
+
+.team-info {
+  color: $light-gray;
+}
+
+.accept-button {
+  width: 100%;
+}
+
+.reject-button {
+  width: 100%;
+}

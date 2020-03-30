@@ -23,7 +23,5 @@ Rails.application.routes.draw do
 
   get "dashboard", to: "users#dashboard", as: :user_dashboard
 
-  get "ngos/dashboard", to: "ngos#dashboard", as: :ngo_dashboard
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
