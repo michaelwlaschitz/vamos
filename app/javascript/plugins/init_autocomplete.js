@@ -1,10 +1,25 @@
 import places from 'places.js';
 
-const initAutocomplete = () => {
-  const addressInput = document.querySelectorAll('#address, #project_address, #ngo_address');
+const initAutocompleteLocation = () => {
+  const addressInput = document.getElementById('address');
   if (addressInput) {
     places({ container: addressInput });
   }
 };
 
-export { initAutocomplete };
+const initAutocompleteProjectAddress = () => {
+  const addressInput = document.getElementById('project_address');
+  if (addressInput) {
+    places({ container: addressInput });
+  }
+};
+
+const initAutocompleteNgoAddress = () => {
+  const addressInput = document.getElementById('ngo_address');
+  if (addressInput) {
+    places({ container: addressInput });
+  }
+};
+
+
+export { initAutocompleteLocation, initAutocompleteProjectAddress, initAutocompleteNgoAddress };
