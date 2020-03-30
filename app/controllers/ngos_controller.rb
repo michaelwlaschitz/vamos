@@ -6,7 +6,7 @@ class NgosController < ApplicationController
 
   def create
     @ngo = Ngo.new(ngo_params)
-    @ngo.user = current.user
+    @ngo.user = current_user
     if @ngo.save
       redirect_to ngo_dashboard(@ngo)
     else

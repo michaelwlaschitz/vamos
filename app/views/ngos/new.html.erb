@@ -1,11 +1,11 @@
 <div class="content-container">
   <div class="form-group">
 
-      <h1>Create your NGO profile</h1>
+      <h1 class="mb-4">Create your NGO profile</h1>
 
   <!-- Form -->
 
-      <% simple.form_for @ngo do |f|  %>
+      <%= simple_form_for @ngo do |f|  %>
       <% if @ngo.errors.any? %>
       <div class="errors-container">
         <ul>
@@ -15,16 +15,17 @@
         </ul>
       </div>
       <% end %>
-      <%= f.input :title, placeholder: 'Title', label:false, class: 'form-control' %>
+      <%= f.input :name, placeholder: 'NGO Name', label:false, class: 'form-control' %>
       <%= f.input :description, placeholder: 'Description', label:false,class: 'form-control' %>
-      <%= f.input :location, placeholder: 'Location', label:false,class: 'form-control' %>
-      <%= f.input :price, placeholder: 'Price', label:false,class: 'form-control'%>
-      <%= f.input :capacity, placeholder: 'Capacity', label:false, class: 'form-control' %>
-      <%= f.input :barbecue, class: 'form-control' %>
-      <%= f.input :pool, class: 'form-control' %>
-      <%= f.input :green_area, class: 'form-control' %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true }, class: 'form-control' %>
-      <%= f.submit "Create new Garden", class: "btn btn-success w-100"%>
+      <%= f.input :phone, placeholder: 'Phone eg. +34555555', label:false,class: 'form-control' %>
+      <label class="button-upload-file">
+      Select Logo
+      <span style="display:none;">
+      <%= f.input :logo, as: :file%>
+      </span>
+      </label>
+
+      <%= f.submit "Create new NGO", class: "btn btn-primary vamos w-100"%>
       <% end %>
 
     </div>
