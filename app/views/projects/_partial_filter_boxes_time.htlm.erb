@@ -1,0 +1,8 @@
+<div class="buttons d-flex justify-content-between flex-wrap">
+  <% ["1 - 4", "5 - 9", "10+"].each do |time| %>
+  <input type="checkbox" class="hidden time-input" value="<%= time %>" name="time[]" id="time_<%= time %>">
+  <label class="time-button button <%= "active" if params[:time]&.include?(time) %>" for="time_<%= time %>">
+    <%= time %>
+  </label>
+  <% end %>
+</div>

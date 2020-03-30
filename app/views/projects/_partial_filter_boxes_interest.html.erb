@@ -1,0 +1,8 @@
+ <div class="buttons d-flex justify-content-between flex-wrap mt-3">
+  <% ["Children", "Elderly Care", "Climate Change", "Social", "Cultural", "Other"].each do |category| %>
+  <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="categories_<%= category %>">
+  <label class="category-button button <%= "active" if params[:categories]&.include?(category) %>" for="categories_<%= category %>">
+    <%= category%>
+  </label>
+  <% end %>
+</div>
