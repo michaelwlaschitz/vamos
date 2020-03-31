@@ -3,6 +3,9 @@ const addActiveClass = () => {
   if (button) {
     button.forEach((item) => {
       item.addEventListener('click', (event) => {
+        // button.forEach(btn => {
+        //   btn.classList.remove("active")
+        // })
         event.currentTarget.classList.toggle("active");
       });
 
