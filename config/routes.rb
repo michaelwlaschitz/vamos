@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   resources :teams, only: [:create]
 
+  resources :conversations, only: [] do
+  resources :messages
+  end
+
   get "dashboard", to: "users#dashboard"
 
 
