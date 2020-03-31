@@ -8,12 +8,12 @@ def new
   def create
     @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
+    @review.user = current_user
     @review.booking = @booking
-    @review.save
       if @review.save
-      redirect_to bookings_path
+      redirect_to project_path(@booking.project)
     else
-      render 'projects/show'
+      render :new
     end
   end
 
@@ -25,6 +25,6 @@ def new
   private
 
   def review_params
-    params.require(:review).permit(:content)
+    params.require(:review).permit(:content, :rating)
   end
 end
