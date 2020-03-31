@@ -78,19 +78,7 @@
     <div class="project-card my-4">
       <div class="project-image" style="background-image: url('<%= cl_image_path booking.project.photos.first.key %>')">
 
-        <div class="interest-icon border rounded-circle">
-          <% if booking.project.category == "Children" %>
-            <i class="icon fas fa-child"></i>
-          <% elsif booking.project.category == "Social" %>
-            <i class="icon fas fa-user-friends"></i>
-          <% elsif booking.project.category == "Cultural" %>
-            <i class="icon fas fa-music"></i>
-          <% elsif booking.project.category == "Environment" %>
-            <i class="icon fas fa-leaf"></i>
-          <% else booking.project.category == "Elderly Care" %>
-            <i class="icon fab fa-accessible-icon"></i>
-          <% end %>
-        </div>
+        <%= render "projects/partial_card_icons", project: booking.project %>
 
         <% if booking.status == "accepted" %>
         <div class="status-button-accepted-dashboard-user">

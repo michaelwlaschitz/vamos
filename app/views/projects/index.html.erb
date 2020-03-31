@@ -10,20 +10,9 @@
     <%= link_to project_path(project) do %>
     <div class="project-card my-4">
       <div class="project-image" style="background-image: url('<%= cl_image_path project.photos.first.key %>')">
-        <div class="interest-icon border rounded-circle">
-          <!-- <i class="fas fa-leaf"></i> -->
-          <% if project.category == "Children" %>
-            <i class="icon fas fa-child"></i>
-          <% elsif project.category == "Social" %>
-            <i class="icon fas fa-user-friends"></i>
-          <% elsif project.category == "Cultural" %>
-            <i class="icon fas fa-music"></i>
-          <% elsif project.category == "Environment" %>
-            <i class="icon fas fa-leaf"></i>
-          <% else project.category == "Elderly Care" %>
-            <i class="icon fab fa-accessible-icon"></i>
-          <% end %>
-        </div>
+
+      <%= render "projects/partial_card_icons", project: project %>
+
       </div>
       <div class="project-text-stuff">
         <h5 class="project-title"><%= project.title %></h5>
@@ -96,24 +85,17 @@
       </div>
 
       <div class="modal-body">
-      <h2 class="mb-2">Location</h2>
-      <%= form_with url: "/projects", method: :get, local: true do |f| %>
-      <%= f.text_field :address, placeholder: 'Location', label:false %>
+        <h2 class="mb-2">Location</h2>
+        <%= form_with url: "/projects", method: :get, local: true do |f| %>
+        <%= f.text_field :address, placeholder: 'Location', label:false %>
 
-      <h2 class="mt-4">Interests</h2>
+        <h2 class="mt-4">Interests</h2>
 
-       <%= render "projects/partial_filter_boxes_interest" %>
+          <%= render "projects/partial_filter_boxes_interest" %>
 
         <h2 class="mt-4 mb-2">Hours per Week</h2>
 
-        <div class="buttons d-flex justify-content-between flex-wrap">
-          <% ["1 - 4", "5 - 9", "10+"].each do |time| %>
-            <input type="checkbox" class="hidden time-input" value="<%= time %>" name="time[]" id="time_<%= time %>">
-            <label class="time-button button <%= "active" if params[:time]&.include?(time) %>" for="time_<%= time %>">
-              <%= time %>
-            </label>
-          <% end %>
-        </div>
+          <%= render "projects/partial_filter_boxes_time" %>
 
       </div>
 
