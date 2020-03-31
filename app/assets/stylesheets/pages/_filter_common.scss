@@ -38,8 +38,14 @@
     font-weight: lighter;
     &.active {
       opacity: 1;
-      color: black;
+      color: $black-gray;
+      font-weight: 400;
       border: 2px $orange-vamos solid;
+      i {
+        transition: font-size 0.2s ease;
+        color: $orange-vamos;
+        font-size: 1.2em;
+      }
     }
   }
 }

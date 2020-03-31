@@ -1,25 +1,25 @@
 
 
-  <!-- Start of User-Person Information -->
-<div class="tab-pane fade active show" id="nav-person" role="tabpanel" aria-labelledby="nav-person-tab">
-  <div class = "user_info-container d-flex justify-content-between">
-    <div class="border-bottom">
-    </div>
+<!-- PROFILE: USER PERSON + USER NGO -->
 
-    <div class= "all-infos-dashboard-user-unique">
-      <div class = "contact">
-        <h5> Hi, I'm <%= @user.first_name %></h5>
+  <div class="content-container border-bottom py-3 my-1">
+    <div class="d-flex">
+      <div class="element-1">
+        <%= cl_image_tag @user.photo.key, class: "user-image" %>
       </div>
-      <div class="all-details-contact">
+      <div class="element-2 user-other-info">
+        <h5 class="py-3"><%= @user.first_name %> <%= @user.last_name %></h5>
         <div class="phone-user d-flex">
-          <div class="element mr-2"><i class="fas fa-phone"></i>
+          <div class="element mr-2">
+            <i class="fas fa-phone"></i>
           </div>
           <div class="phone-user-ngo mr-3">
             <p><%= @user.phone %> </p>
           </div>
         </div>
         <div class="email-user-ngo d-flex">
-          <div class="email-logo mr-2"><i class="fas fa-envelope"></i>
+          <div class="email-logo mr-2">
+            <i class="fas fa-envelope"></i>
           </div>
           <div class="email mr-3">
             <p><%= @user.email %> </p>
@@ -27,103 +27,192 @@
         </div>
       </div>
     </div>
-    <div class= "user_info d-flex">
-      <div class="user_ngo_photo mr-3 ml-3 mt-3 mt-3">
-      <%= cl_image_tag @user.photo.key, class: "avatar"%>
-      </div>
-    </div>
   </div>
-</div>
 
-<div class="border-bottom">
-</div>
 
-<!-- Start of User-Ngo Information -->
+<!-- NGO INFO -->
+
 <% if current_user.ngo %>
-  <div class="user_info-container d-flex justify-content-between">
-    <div class="name_tel">
-      <div class= "name ml-3">
-        <h2 class="h2-less-margin"><%= @user.ngo.name %></h2>
-      </div>
-      <div class="phone ml-3 d-flex">
-        <div class="element mr-2"><i class="fas fa-phone"></i>
-        </div>
-        <div class="mr-3">
-          <p><%= @user.ngo.phone %> </p>
-        </div>
-      </div>
-    </div>
-    <div class="info-all">
-      <div class=" logo mr-3 mt-10">
+
+  <div class="content-container mb-1">
+    <h2 class="orange-title">My NGO</h2>
+    <div class="d-flex align-items-center">
+      <div class="element-1">
         <% if @user.ngo.logo.attached? %>
-        <%= cl_image_tag @user.ngo.logo.key, class: "avatar" %>
+          <%= cl_image_tag @user.ngo.logo.key, class: "ngo-image"%>
+        <% else %>
+          <img class="ngo-image" src="https://www.tibs.org.tw/images/default.jpg" alt="">
         <% end %>
       </div>
+      <div class="element-2 ngo-other-info">
+        <div class="ngo-name">
+          <h3 class="title-bigger"><%= @user.ngo.name %></h3>
+        </div>
+        <div class="phone d-flex">
+          <div class="element mr-2">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="mr-3">
+            <p><%= @user.ngo.phone %> </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+<!-- TEAMS INFO -->
 <% else %>
 
-<div class="border-bottom">
-</div>
-
-
-<!-- Start of User-Person-Information -->
-
-  <div class="content-container">
-    <div class="d-flex">
-    <h2 class="border-bottom">My applications</h2>
+  <div class="content-container border-bottom pb-4 mt-3 mb-0">
+    <div class="d-flex justify-content-between align-items-center">
+      <h2 class="orange-title">My teams</h2>
+      <%= link_to "Create a team", teams_path, class: "create-team-button" %>
     </div>
 
-  <% current_user.bookings.each do |booking| %>
-    <div class="project-card my-4">
-      <div class="project-image" style="background-image: url('<%= cl_image_path booking.project.photos.first.key %>')">
 
-        <div class="interest-icon border rounded-circle">
-          <% if booking.project.category == "Children" %>
-            <i class="icon fas fa-child"></i>
-          <% elsif booking.project.category == "Social" %>
-            <i class="icon fas fa-user-friends"></i>
-          <% elsif booking.project.category == "Cultural" %>
-            <i class="icon fas fa-music"></i>
-          <% elsif booking.project.category == "Environment" %>
-            <i class="icon fas fa-leaf"></i>
-          <% else booking.project.category == "Elderly Care" %>
-            <i class="icon fab fa-accessible-icon"></i>
+    <% @user.teams.each do |team| %>
+
+      <div class="team-container">
+        <h5 class="team-name"><%= team.name %></h5>
+        <div class="d-flex justify-content-between">
+          <% team.users.each do |user| %>
+            <div class="team-member">
+             <%= cl_image_tag (user.photo.key if user.photo.attached?), width: 60, height: 60, class: "rounded-circle" %>
+            </div>
           <% end %>
         </div>
-
-        <% if booking.status == "accepted" %>
-        <div class="status-button-accepted-dashboard-user">
-        Application Accepted
-        </div>
-        <% elsif booking.status == "rejected" %>
-        <div class="status-button-rejected-dashboard-user">
-        Application Rejected
-        </div>
-        <% else %>
-        <div class="status-button-pending-dashboard-user">
-        Application Pending
-        </div>
-        <% end %>
-
       </div>
 
-      <div class="project-text-stuff">
-        <h5 class="project-title"><%= booking.project.title %></h5>
-        <p class="project-ong"><%= booking.project.ngo.name %></p>
-        <div class="project-elements d-flex justify-content-left">
-          <div class="element"><i class="far fa-clock"></i><%= booking.project.hours_per_week %>h/week</div>
-          <div class="element"><i class="fas fa-user-friends"></i><%= booking.project.capacity %></div>
-          <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= booking.project.latitude %>" data-longitude="<%= booking.project.longitude %>">calculating...</span></div>
-        </div>
-      </div>
+    <% end %>
 
-    </div>
-
-  <% end %>
   </div>
 <% end %>
 
-<!-- Start of User-Ngo-Information -->
 
+<!-- BOOKINGS USER NGO -->
+<% if current_user.ngo %>
+
+  <div class="content-container mt-0">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item ">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h5 class="orange-title">Applications</h5></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><h5 class="orange-title">Projects</h5></a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="ngo-bookings">
+
+          <% @ngo_bookings.each do |booking| %>
+            <div class="ngo-booking d-flex my-4 py-1">
+              <div class="booking-name-team border-right pl-1">
+                <h3><%= booking.project.title %></h3>
+                <div class="team-info">
+                  <p class="m-0 team-name"><%= booking.team.name %></p>
+                <div class="d-flex">
+                  <% booking.team.users.each do |user| %>
+                      <%= cl_image_tag (user.photo.key if user.photo.attached?), width: 30, height: 30, class: "rounded-circle" %>
+                  <% end %>
+                </div>
+                </div>
+              </div>
+
+              <div class="booking-status">
+                <% if booking.status == "pending" %>
+                  <div class="accept-button px-3">
+                    <%= link_to "Accept", accept_booking_path(booking), method: :patch, class: "accept-button btn btn-outline-success my-1"%>
+                  </div>
+                  <div class="reject-button px-3">
+                    <%= link_to "Reject", reject_booking_path(booking), method: :patch, class: "reject-button btn btn-outline-danger my-1"%>
+                  </div>
+                <% elsif booking.status == "accepted" %>
+                  <div class="text-success">Accepted</div>
+                <% elsif booking.status == "rejected" %>
+                  <div class="text-danger">Rejected</div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <% @user.ngo.projects.each do |project| %>
+          <div class="d-flex justify-content-between mt-2">
+            <div></div>
+            <%= link_to "Create Project", new_project_path, class: "create-project"  %>
+          </div>
+          <div class="project-card mb-4 mt-3">
+            <div class="project-image" style="background-image: url('<%= cl_image_path project.photos.first.key %>')">
+            </div>
+            <div class="project-text-stuff">
+              <h5 class="project-title" id="title-ngo-side"><%= project.title %></h5>
+              <div class="project-elements d-flex justify-content-left">
+                <div class="element"><i class="far fa-clock"></i><%= project.hours_per_week %>h/week</div>
+                <div class="element"><i class="fas fa-user-friends"></i><%= project.capacity %></div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+<!-- BOOKINGS USER PERSON -->
+<% else %>
+
+  <div class="content-container mt-3">
+    <div class="d-flex">
+      <h2 class="orange-title">My applications</h2>
+    </div>
+
+    <% current_user.bookings.each do |booking| %>
+      <div class="project-card mb-4 mt-3">
+        <div class="project-image" style="background-image: url('<%= cl_image_path booking.project.photos.first.key %>')">
+          <div class="interest-icon border rounded-circle">
+            <% if booking.project.category == "Children" %>
+              <i class="icon fas fa-child"></i>
+            <% elsif booking.project.category == "Social" %>
+              <i class="icon fas fa-user-friends"></i>
+            <% elsif booking.project.category == "Cultural" %>
+              <i class="icon fas fa-music"></i>
+            <% elsif booking.project.category == "Environment" %>
+              <i class="icon fas fa-leaf"></i>
+            <% else booking.project.category == "Elderly Care" %>
+              <i class="icon fab fa-accessible-icon"></i>
+            <% end %>
+          </div>
+          <% if booking.status == "accepted" %>
+            <div class="accepted-button status-button">
+              Accepted
+            </div>
+            <div class="review-button">
+              Add a review
+            </div>
+          <% elsif booking.status == "rejected" %>
+            <div class="rejected-button status-button">
+              Rejected
+            </div>
+          <% else %>
+            <div class="pending-button status-button">
+              Pending
+            </div>
+          <% end %>
+        </div>
+        <div class="project-text-stuff">
+          <h5 class="project-title"><%= booking.project.title %></h5>
+          <p class="project-ong"><%= booking.project.ngo.name %></p>
+          <div class="project-elements d-flex justify-content-left">
+            <div class="element"><i class="far fa-clock"></i><%= booking.project.hours_per_week %>h/week</div>
+            <div class="element"><i class="fas fa-user-friends"></i><%= booking.project.capacity %></div>
+            <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= booking.project.latitude %>" data-longitude="<%= booking.project.longitude %>">calculating...</span></div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+<% end %>
 
