@@ -18,6 +18,7 @@ Rails.application.routes.draw do
           patch "/reject", to: "bookings#reject"
     end
   end
+  resources :ngos, only: [:new, :create]
 
   resources :teams, only: [:create]
 
