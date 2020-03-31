@@ -129,7 +129,7 @@ file19 = File.open("app/assets/images/avatars/Juan.jpg")
 user19.photo.attach(io: file19, filename: 'juan.jpg', content_type: 'image/jpg')
 user19.save
 
-user20 = User.new(first_name: "Jensen Daniel", last_name: "Unknown", description: "Samosasss!!!", email: "jensen@gmail.com", phone: "+1023065065095", password: "jensen123")
+user20 = User.new(first_name: "Jensen", last_name: "Daniel", description: "Samosasss!!!", email: "jensen@gmail.com", phone: "+1023065065095", password: "jensen123")
 file20 = File.open("app/assets/images/avatars/Jensen.jpg")
 user20.photo.attach(io: file20, filename: 'jensen.jpg', content_type: 'image/jpg')
 user20.save

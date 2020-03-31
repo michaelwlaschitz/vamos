@@ -4,12 +4,26 @@
 
 #nav-home-tab {
   background-color: white;
+  width: 200px;
 }
 
 #nav-profile-tab {
   background-color: white;
+  width: 200px;
+}
+
+.nav-tabs {
+  text-align: center;
+}
+.nav-item {
+  width: 50%;
 }
 
 .nav-tabs .nav-link.active {
   border-bottom: 2px $orange-vamos solid;
+  background-color: white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
 }

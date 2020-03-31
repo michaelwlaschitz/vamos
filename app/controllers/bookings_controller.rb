@@ -33,14 +33,14 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = "accepted"
     @booking.save
-    # redirect to profile
+    redirect_to user_profile_path(current_user)
   end
 
   def reject
     @booking = Booking.find(params[:id])
     @booking.status = "rejected"
     @booking.save
-    # redirect to profile
+    redirect_to user_profile_path(current_user)
   end
 
   private
