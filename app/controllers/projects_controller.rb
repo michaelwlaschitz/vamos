@@ -15,8 +15,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-
-
   def show
     @project = Project.find(params[:id])
     @ngo = @project.ngo.name
@@ -42,20 +40,17 @@ class ProjectsController < ApplicationController
     end
   end
 
-
-
   private
 
   def filter_projects
-    @projects = @projects.near(params[:address], 50) if params[:address]
+    @projects = @projects.near(params[:address], 50) unless params[:address].blank?
 
-    @projects = @projects.where('category IN (?)', params[:categories]) if params[:categories]
-
-    if params[:time] == "1-4"
+    @projects = @projects.where('category IN (?)', params[:categories]) unless params[:categories].blank?
+    if params[:time] == "1 - 4 h/week"
       @projects = @projects.where(hours_per_week: 1..4)
-    elsif params[:time] == "5-9"
+    elsif params[:time] == "5 - 9 h/week"
       @projects = @projects.where(hours_per_week: 5..9)
-    elsif params[:time] == "10+"
+    elsif params[:time] == "10+ h/week"
       @projects = @projects.where(hours_per_week: 10..100)
     end
   end
