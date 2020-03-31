@@ -10,18 +10,13 @@
 
       <form action="/time" method="get">
         <input id="hidden-input" type="hidden" name="categories[]" value="">
-        <div class="buttons d-flex justify-content-between flex-wrap">
-          <% ["Children", "Elderly Care", "Climate Change", "Social", "Cultural", "Other"].each do |category| %>
-            <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="categories_<%= category %>">
-            <label class="category-button button" for="categories_<%= category %>">
-              <%= category%>
-            </label>
-          <% end %>
-        </div>
+
+        <%= render "projects/partial_filter_boxes_interest" %>
+
         <input type="hidden" name="address" value="<%= params[:address] %>">
-        <button type="submit" class="filter-submit">
-          <i class="fas fa-chevron-right"></i>
-        </button>
+
+        <%= render "pages/partial_next_button" %>
+
       </form>
 
     </div>

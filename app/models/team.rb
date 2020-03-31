@@ -3,6 +3,7 @@ class Team < ApplicationRecord
   has_many :team_memberships
   has_many :users, through: :team_memberships
   has_one_attached :photo
+  has_many :users, through: :team_memberships
   attr_accessor :selected_project
   accepts_nested_attributes_for :team_memberships, reject_if: :all_blank, allow_destroy: true
   validates :name, presence: true, uniqueness: true

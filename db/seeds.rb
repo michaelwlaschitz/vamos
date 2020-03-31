@@ -2,6 +2,7 @@ require 'faker'
 require 'open-uri'
 
 puts "Creating users"
+Review.destroy_all
 Booking.destroy_all
 TeamMembership.destroy_all
 Team.destroy_all
@@ -129,7 +130,7 @@ file19 = File.open("app/assets/images/avatars/Juan.jpg")
 user19.photo.attach(io: file19, filename: 'juan.jpg', content_type: 'image/jpg')
 user19.save
 
-user20 = User.new(first_name: "Jensen Daniel", last_name: "Unknown", description: "Samosasss!!!", email: "jensen@gmail.com", phone: "+1023065065095", password: "jensen123")
+user20 = User.new(first_name: "Jensen", last_name: "Daniel", description: "Samosasss!!!", email: "jensen@gmail.com", phone: "+1023065065095", password: "jensen123")
 file20 = File.open("app/assets/images/avatars/Jensen.jpg")
 user20.photo.attach(io: file20, filename: 'jensen.jpg', content_type: 'image/jpg')
 user20.save
@@ -203,22 +204,22 @@ project1.save!
 
 
 project2= Project.new(title: "Supporting elderly care", hours_per_week: 5, address: "Carrer de Provença, 480, 08025 Barcelona, Spain", description: "We look for up to 15 people to support our daily activities.
-  We are aiming to improve the quality of life of older people by keeping them company, in order to avoid them feeling alone or socially excluded, and undertaking campaigns to raise awareness. We are focused on providing care at home, helping people when they are sick or on a sporadic basis." , capacity: 15 , category: "Elderly Care" , ngo: ngo2)
+  We are aiming to improve the quality of life of older people by keeping them company, in order to avoid them feeling alone or socially excluded, and undertaking campaigns to raise awareness. We are focused on providing care at home, helping people when they are sick or on a sporadic basis." , capacity: 15 , category: "Seniors" , ngo: ngo2)
 file32 = File.open("app/assets/images/projects/elderly.jpg")
 project2.photos.attach(io: file32, filename: 'img2.jpg', content_type: 'image/jpg')
 project2.save!
 
-project3= Project.new(title: "Food delivery for elderly people", hours_per_week: 5, address: "Carrer de Lepant, 150, 08013 Barcelona, Spain", description: "We look for volunteers to bring food to elderly people and spend time with them in the afternoon. 5-7 people are needed with around 5 hours time per week." , capacity: 7 , category: "Elderly Care" , ngo: ngo3)
+project3= Project.new(title: "Food delivery for elderly people", hours_per_week: 5, address: "Carrer de Lepant, 150, 08013 Barcelona, Spain", description: "We look for volunteers to bring food to elderly people and spend time with them in the afternoon. 5-7 people are needed with around 5 hours time per week." , capacity: 7 , category: "Seniors" , ngo: ngo3)
 file33 = File.open("app/assets/images/projects/elderly-delivery.jpg")
 project3.photos.attach(io: file33, filename: 'img3.jpg', content_type: 'image/jpg')
 project3.save!
 
-project4= Project.new(title: "Trees for a Green Future", hours_per_week: 20, address: "Carrer de Rossend Nobas, 31, 08018 Barcelona, Spain", description: "We look for volunteers to help us make Barcelona green again. In 2019 we plated over 2000 trees in the whole city that need to be watered and taken care of. Join with your team and let's grow good together." , capacity: 25 , category: "Environment" , ngo: ngo4)
+project4= Project.new(title: "Trees for a Green Future", hours_per_week: 20, address: "Carrer de Rossend Nobas, 31, 08018 Barcelona, Spain", description: "We look for volunteers to help us make Barcelona green again. In 2019 we plated over 2000 trees in the whole city that need to be watered and taken care of. Join with your team and let's grow good together." , capacity: 25 , category: "Climate" , ngo: ngo4)
 file34 = File.open("app/assets/images/projects/trees.jpg")
 project4.photos.attach(io: file34, filename: 'img4.jpg', content_type: 'image/jpg')
 project4.save!
 
-project5= Project.new(title: "City Cleaning Squad", hours_per_week: 20, address: "Plaça de Catalunya, 08002 Barcelona, Spain", description: "We look for volunteers to help us keep Barcelona a clean city. In the evenings and weekend we look for volunteers to support our group action of cleaning the sideways and parks of plastic and other dirt. Looking forward to hearing from you." , capacity: 50 , category: "Environment" , ngo: ngo5)
+project5= Project.new(title: "City Cleaning Squad", hours_per_week: 20, address: "Plaça de Catalunya, 08002 Barcelona, Spain", description: "We look for volunteers to help us keep Barcelona a clean city. In the evenings and weekend we look for volunteers to support our group action of cleaning the sideways and parks of plastic and other dirt. Looking forward to hearing from you." , capacity: 50 , category: "Climate" , ngo: ngo5)
 file35 = File.open("app/assets/images/projects/trees.jpg")
 project5.photos.attach(io: file35, filename: 'img5.jpg', content_type: 'image/jpg')
 project5.save!
@@ -278,6 +279,48 @@ booking4 = Booking.create!(status: "pending", project_id: project4.id, team_id: 
 booking5 = Booking.create!(status: "pending", project_id: project1.id, team_id: team2.id)
 booking6 = Booking.create!(status: "pending", project_id: project2.id, team_id: team2.id)
 booking7 = Booking.create!(status: "pending", project_id: project3.id, team_id: team2.id)
+
+review1 = Review.create!(rating: 4, content: "Amazing experience", user_id: user12.id, booking_id: booking1.id)
+review1.save!
+
+review2 = Review.create!(rating: 5, content: "I highly recommend", user_id: user11.id, booking_id: booking1.id)
+review2.save!
+
+review3 = Review.create!(rating: 5, content: "Best experience ever", user_id: user17.id, booking_id: booking2.id)
+review3.save!
+
+review4 = Review.create!(rating: 5, content: "So much fun and met amazing people", user_id: user13.id, booking_id: booking2.id)
+review4.save!
+
+review5 = Review.create!(rating: 4, content: "Good experience, feel useful", user_id: user13.id, booking_id: booking3.id)
+review5.save!
+
+review6 = Review.create!(rating: 4, content: "I'll do it again", user_id: user11.id, booking_id: booking3.id)
+review6.save!
+
+review7 = Review.create!(rating: 4, content: "first experience and it was better than I expected", user_id: user12.id, booking_id: booking4.id)
+review7.save!
+
+review8 = Review.create!(rating: 4, content: "I want to do more!", user_id: user17.id, booking_id: booking4.id)
+review8.save!
+
+review9 =  Review.create!(rating: 3, content: "Good experience", user_id: user14.id, booking_id: booking5.id)
+review9.save!
+
+review10 = Review.create!(rating: 4, content: "Great experience with this organization", user_id: user15.id, booking_id: booking5.id)
+review10.save!
+
+review11 = Review.create!(rating: 5, content: "Don't hesitate, totally worth it", user_id: user16.id, booking_id: booking6.id)
+review11.save!
+
+review12 = Review.create!(rating: 4, content: "I learnt so much and it was fun!", user_id: user18.id, booking_id: booking6.id)
+review12.save!
+
+review13 = Review.create!(rating: 3, content: "I liked the experience", user_id: user14.id, booking_id: booking7.id)
+review13.save!
+
+review14 = Review.create!(rating: 4, content: "the organization helps a lot, I met wonderful people!", user_id: user16.id, booking_id: booking7.id)
+review14.save!
 
 puts "Seeding projects done"
 

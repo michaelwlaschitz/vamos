@@ -1,0 +1,22 @@
+ <div class="buttons d-flex justify-content-between flex-wrap mt-3">
+  <% categories = {
+    "Children" => "fas fa-child",
+    "Social" => "fas fa-user-friends mr-0",
+    "Cultural" => "fas fa-music",
+    "Climate" => "fas fa-leaf",
+    "Medical" => "fas fa-briefcase-medical",
+    "Seniors" => "fab fa-accessible-icon",
+    } %>
+  <% categories.each do |category, logo| %>
+  <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="categories_<%= category %>" <%= "checked" if params[:categories]&.include?(category) %> >
+  <label class="category-button button <%= "active" if params[:categories]&.include?(category) %>" for="categories_<%= category %>">
+    <div>
+      <div class="interest-icon">
+        <i class="<%= logo %>"></i>
+      </div>
+      <%= category%>
+    </div>
+  </label>
+
+  <% end %>
+</div>

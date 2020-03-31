@@ -1,6 +1,7 @@
 class Project < ApplicationRecord
   belongs_to :ngo
   has_many :bookings
+  has_many :reviews, through: :bookings
   has_many_attached :photos
 
   validates :title, length: { maximum: 40 }, uniqueness: true, presence: true
