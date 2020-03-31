@@ -1,0 +1,16 @@
+ <div class="interest-icon border rounded-circle">
+  <!-- <i class="fas fa-leaf"></i> -->
+  <% if project.category == "Children" %>
+  <i class="icon fas fa-child"></i>
+  <% elsif project.category == "Social" %>
+  <i class="icon fas fa-user-friends mr-0"></i>
+  <% elsif project.category == "Cultural" %>
+  <i class="icon fas fa-music"></i>
+  <% elsif project.category == "Climate" %>
+  <i class="icon fas fa-leaf"></i>
+  <% elsif project.category == "Medical" %>
+  <i class="fas fa-briefcase-medical"></i>
+  <% else project.category == "Seniors" %>
+  <i class="icon fab fa-accessible-icon"></i>
+  <% end %>
+</div>

@@ -1,0 +1,11 @@
+<div class="form-row">
+              <p class="my-4"> Select your team members by  their usernames (=their email) or send and email invite to friends who haven't registered yet: </p>
+                <div class="col-6 form-group">
+                  <%= team_fields.input :user, collection: User.all, label_method: :email %>
+                  <%= team_fields.input :user, collection: User.all, label_method: :email %>
+                  <%= team_fields.input :user, collection: User.all, label_method: :email %>
+                  <%= team_fields.input :user, collection: User.all, label_method: :email %>
+                </div>
+                <div class="col-6 form-group">
+                  <%= team_fields.input :user %>
+                </div>

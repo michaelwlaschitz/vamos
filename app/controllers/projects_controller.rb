@@ -15,8 +15,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-
-
   def show
     @project = Project.find(params[:id])
     @ngo = @project.ngo.name
@@ -28,26 +26,38 @@ class ProjectsController < ApplicationController
     }]
   end
 
-  def create
+  def new
+    @project = Project.new
   end
 
-  def new
+  def create
+    @project = Project.new(project_params)
+    @ngo = current_user.ngo
+    @project.ngo = @ngo
+    if @project.save
+      redirect_to dashboard_path
+    else
+      render :new
+    end
   end
 
   private
 
   def filter_projects
-    @projects = @projects.near(params[:address], 50) if params[:address]
+    @projects = @projects.near(params[:address], 50) unless params[:address].blank?
 
-    @projects = @projects.where('category IN (?)', params[:categories]) if params[:categories]
-
-    if params[:time] == "1-4"
+    @projects = @projects.where('category IN (?)', params[:categories]) unless params[:categories].blank?
+    if params[:time] == "1 - 4 h/week"
       @projects = @projects.where(hours_per_week: 1..4)
-    elsif params[:time] == "5-9"
+    elsif params[:time] == "5 - 9 h/week"
       @projects = @projects.where(hours_per_week: 5..9)
-    elsif params[:time] == "10+"
+    elsif params[:time] == "10+ h/week"
       @projects = @projects.where(hours_per_week: 10..100)
     end
+  end
+
+  def project_params
+    params.require(:project).permit(:title, :address, :description, :capacity, :category, :hours_per_week, photos:[])
   end
 
 end
