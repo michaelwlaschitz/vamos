@@ -7,13 +7,10 @@
   <div class="filter-content">
     <%= form_with url: "/interests", method: :get, local: true do |f| %>
       <%= f.text_field :address, placeholder: 'Location', label:false %>
-
-      <button type="submit" class="filter-submit">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-
+      <%= button_tag( :class => "filter-submit") do %>
+        <i class='fas fa-chevron-right'></i>
+      <% end %>
     <% end %>
-
   </div>
 
 
