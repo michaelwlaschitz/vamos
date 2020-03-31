@@ -12,6 +12,8 @@ import { addActiveClass } from '../functions/filter_choice';
 
 import { logoFileName } from '../functions/fetch_logo_file_name';
 
+import { toggleTeamForm } from '../functions/team_form';
+
 initAutocompleteLocation();
 initAutocompleteProjectAddress();
 initAutocompleteNgoAddress();
@@ -24,5 +26,5 @@ addActiveClass();
 
 logoFileName();
 
-
+toggleTeamForm();
 
