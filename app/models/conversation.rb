@@ -1,7 +1,8 @@
 class Conversation < ApplicationRecord
-  belongs_to :ngo
-  belongs_to :team
+  belongs_to :booking
+  has_one :project, through: :booking
+  has_one :ngo, through: :project
+  has_one :team, through: :booking
 
   has_many :messages, dependent: :destroy
-  validates :ngo_id, uniqueness: { scope: :team_id }
 end

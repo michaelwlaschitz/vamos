@@ -1,16 +1,6 @@
 class MessagesController < ApplicationController
   before_action set_messages_id
 
-  def index
-    @messages = @conversation.messages
-    @messages.last.read = true if @messages.last.user_id != current_user.id
-    @message = @conversation.messages.new
-  end
-
-  def new
-    @message = @conversation.messages.new
-  end
-
   def create
     @message = @conversation.messages.new(message_params)
     if @message.save

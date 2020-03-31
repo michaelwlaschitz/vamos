@@ -1,15 +1,17 @@
 class ConversationsController < ApplicationController
   def index
-    @conversations = current_user.conversations
+    if current_user.ngo_manager?
+      @conversations = current_user.ngo_conversations
+    else
+      @conversations = current_user.team_conversations
+    end
   end
 
-  def create
-    if Conversation.between(params[:ngo_id],params[:team_id]).present?
-    @conversation = Conversation.between(params[:ngo_id],
-     params[:team_id]).first
-    else
-    @conversation = Conversation.create!(conversation_params)
-    end
+  def show
+    @conversation = Conversation.find(params[:id])
+    @messages = @conversation.messages
+    @messages.last.read = true if @messages.last.user_id != current_user.id
+    @message = @conversation.messages.new
   end
 
   private
