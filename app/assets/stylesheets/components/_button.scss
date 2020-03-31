@@ -43,6 +43,20 @@ margin-top: 36px;
   color: white;
 }
 
+.button-upload-file {
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  color: $black-gray;
+  padding: 5px 8px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 6px;
+}
+
 .background-button {
   display: flex;
   justify-content: center;
