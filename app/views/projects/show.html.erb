@@ -67,42 +67,39 @@
       <h2>Reviews for <%= @project.ngo.name %> projects</h2>
     </div>
 
-    <div class="reviews d-flex my-3 align-items-center">
-      <div class="mr-2">
-      <%= image_tag "Lorenzo.png", class: "avatar"%>
-      </div>
 
-      <div>
-        <div class="div">
-        Lorenzo
-        </div>
+  <!-- Start of reviews Information -->
 
-        <div class="d-flex">
-          <div>
-            <i class="fas fa-star"></i>
-          </div>
-          <div>
-            <i class="fas fa-star"></i>
-          </div>
-          <div>
-            <i class="fas fa-star"></i>
-          </div>
-          <div>
-            <i class="far fa-star"></i>
-          </div>
-          <div class="mr-5">
-            <i class="far fa-star"></i>
-          </div>
-        </div>
-      </div>
+    <div class="reviews my-3 align-items-center">
+        <% @reviews.each do |review| %>
+          <div class = "each_review d-flex my-3 align-items-center">
+            <%= cl_image_tag review.user.photo.key, class: "avatar mr-2"%>
+            <div>
+              <div class="div">
+              <%= review.user.first_name %>
+              </div>
 
-      <div>
-        <p class="paragraph-no-margin">Great experience with this organization, love to work there!</p>
+              <div class="d-flex">
+                <% review.rating.times do %>
+                  <div>
+                    <i class="fas fa-star"></i>
+                  </div>
+                <% end %>
+                <% (5 - review.rating).times do %>
+                  <div>
+                    <i class="far fa-star"></i>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class = "text ml-5">
+              <p class="paragraph"><%= review.content %></p>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
-  </div>
 </div>
-
 
 <!-- Start of NGO Information -->
 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">

@@ -10,6 +10,11 @@ def new
     @review = Review.new(review_params)
     @review.booking = @booking
     @review.save
+      if @review.save
+      redirect_to bookings_path
+    else
+      render 'projects/show'
+    end
   end
 
   def destroy
