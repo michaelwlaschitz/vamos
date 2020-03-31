@@ -9,11 +9,14 @@
     <% @projects.each do |project| %>
     <%= link_to project_path(project) do %>
     <div class="project-card my-4">
+      <% if project.photos.any? %>
       <div class="project-image" style="background-image: url('<%= cl_image_path project.photos.first.key %>')">
-
+      <% else %>
+      <div class="project-image" style="background-image: url('https://www.studium-ratgeber.de/wp-content/uploads/volunteering-europa.jpg')">
+      <% end %>
       <%= render "projects/partial_card_icons", project: project %>
-
       </div>
+
       <div class="project-text-stuff">
         <h5 class="project-title"><%= project.title %></h5>
         <p class="project-ong"><%= project.ngo.name if project.ngo %></p>
@@ -27,22 +30,6 @@
     <% end %>
     <% end %>
 
-<!-- DELETE FROM HERE -->
-<!--     <div class="project-card my-4">
-      <div class="project-image" style="background-image: url(<%= image_path 'teacher.jpg' %>)">
-        <div class="interest-icon border rounded-circle">
-          <i class="fas fa-leaf"></i>
-        </div>
-      </div>
-      <h5 class="project-title">Teach English to inmigrant children </h5>
-      <p class="project-ong">Red Cross</p>
-      <div class="project-elements d-flex justify-content-left">
-        <div class="element"><i class="far fa-clock"></i> 5 h</div>
-        <div class="element"><i class="fas fa-user-friends"></i> 10</div>
-        <div class="element"><i class="fas fa-map-marker-alt"></i> 0.5km</div>
-      </div>
-    </div> -->
-<!-- TILL HERE (IT'S A ROW FOR TESTING) -->
   </div>
 </div>
 

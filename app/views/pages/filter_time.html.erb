@@ -10,7 +10,7 @@
       <form action="/projects" method="get">
         <input id="hidden-input" type="hidden" name="time" value="">
 
-        <%= render "projects/partial_filter_boxes_interest" %>
+        <%= render "projects/partial_filter_boxes_time" %>
 
         <input type="hidden" name="address" value="<%= params[:address] %>">
         <% params[:categories].each do |category|  %>
