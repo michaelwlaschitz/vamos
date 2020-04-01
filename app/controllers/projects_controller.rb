@@ -47,11 +47,22 @@ class ProjectsController < ApplicationController
     @projects = @projects.near(params[:address], 50) unless params[:address].blank?
 
     @projects = @projects.where('category IN (?)', params[:categories]) unless params[:categories].blank?
-    if params[:time] == "1 - 4 h/week"
+
+    param1 = "1 - 4 h/week"
+    param2 = "5 - 9 h/week"
+    param3 = "10+ h/week"
+
+    if params[:time].include?(param1) && params[:time].include?(param2)
+      @projects = @projects.where(hours_per_week: 1..9)
+    elsif params[:time].include?(param1) && params[:time].include?(param3)
+      @projects = @projects.where(hours_per_week: 1..100)
+    elsif params[:time].include?(param2) && params[:time].include?(param3)
+    @projects = @projects.where(hours_per_week: 5..100)
+    elsif params[:time].include?(param1)
       @projects = @projects.where(hours_per_week: 1..4)
-    elsif params[:time] == "5 - 9 h/week"
+    elsif params[:time].include?(param2)
       @projects = @projects.where(hours_per_week: 5..9)
-    elsif params[:time] == "10+ h/week"
+    elsif params[:time].include?(param3)
       @projects = @projects.where(hours_per_week: 10..100)
     end
   end
