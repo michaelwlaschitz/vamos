@@ -34,10 +34,20 @@
         +<%= conversation.team.users.count - 2 %>
         </div>
 
-        <div class="coversation-time">
-        <% if conversation.messages.last.present?%>
-        <p class="paragraph-no-margin date-message-text"> <%=conversation.messages.last.message_day  %> <i class="fas fa-chevron-right"></i> </p>
-        <% end %>
+        <div class="d-flex justify-content-between align-items-center">
+
+          <div>
+          <% if conversation.messages.last.present? && conversation.messages.last.read == false %>
+          <i class="fas fa-circle orange smaller-text mb-2"></i>
+          <% end %>
+          </div>
+
+          <div>
+          <% if conversation.messages.last.present?%>
+          <p class="paragraph-no-margin date-message-text ml-1"> <%=conversation.messages.last.message_day  %>
+            <i class="fas fa-chevron-right"></i> </p>
+          <% end %>
+          </div>
         </div>
 
       </div>
