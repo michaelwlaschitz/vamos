@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
 
     if @booking.save
       @conversation = Conversation.create(booking: @booking)
-      redirect_to dashboard_path #the button for team-creation and for Contacting the NGO now is the same.
+      redirect_to user_profile_path(current_user) #the button for team-creation and for Contacting the NGO now is the same.
     else
       render :new
     end
