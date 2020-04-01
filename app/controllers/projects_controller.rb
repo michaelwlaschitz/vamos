@@ -51,6 +51,7 @@ class ProjectsController < ApplicationController
     param1 = "1 - 4 h/week"
     param2 = "5 - 9 h/week"
     param3 = "10+ h/week"
+
     if params[:time]&.reject(&:blank?).blank?
       @count = @projects.count(:all)
     else
