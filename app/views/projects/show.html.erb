@@ -5,19 +5,19 @@
 <% end %>
 
 
-<nav>
-  <div class="content-container mt-0 mb-3">
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <a class="nav-item nav-link active py-2git px-4" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Project</a>
-      <a class="nav-item nav-link py-2 px-4" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">NGO</a>
-    </div>
-  </div>
-</nav>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item ">
+    <a class="nav-link active" id="profile-tab-button" data-toggle="tab" href="#profile-tab" role="tab" aria-controls="home" aria-selected="true"><h5 class="orange-title">Project</h5></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="ngo-tab-button" data-toggle="tab" href="#ngo-tab" role="tab" aria-controls="ngo" aria-selected="false"><h5 class="orange-title">Ngo</h5></a>
+  </li>
+</ul>
 <div class="tab-content" id="nav-tabContent">
 
 
   <!-- Start of Project Information -->
-  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+  <div class="tab-pane fade show active" id="profile-tab" role="tabpanel" aria-labelledby="profile-tab">
 
     <div class="content-container mb-2 mt-1" id="project-tab">
 
@@ -68,107 +68,104 @@
     </div>
 
 
-  <!-- Start of reviews Information -->
+    <!-- Start of reviews Information -->
 
     <div class="reviews my-3 align-items-center">
-        <% @reviews.each do |review| %>
-          <div class = "each_review d-flex my-3 align-items-center">
-            <%= cl_image_tag review.user.photo.key, class: "avatar mr-2"%>
-            <div>
-              <div class="div">
-              <%= review.user.first_name %>
-              </div>
-
-              <div class="d-flex">
-                <% review.rating.times do %>
-                  <div>
-                    <i class="fas fa-star"></i>
-                  </div>
-                <% end %>
-                <% (5 - review.rating).times do %>
-                  <div>
-                    <i class="far fa-star"></i>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-            <div class = "text ml-5">
-              <p class="paragraph"><%= review.content %></p>
-            </div>
+      <% @reviews.each do |review| %>
+      <div class = "each_review d-flex my-3 align-items-center">
+        <%= cl_image_tag review.user.photo.key, class: "avatar mr-2"%>
+        <div>
+          <div class="div">
+            <%= review.user.first_name %>
           </div>
-        <% end %>
+
+          <div class="d-flex">
+            <% review.rating.times do %>
+            <div>
+              <i class="fas fa-star"></i>
+            </div>
+            <% end %>
+            <% (5 - review.rating).times do %>
+            <div>
+              <i class="far fa-star"></i>
+            </div>
+            <% end %>
+          </div>
+        </div>
+        <div class = "text ml-5">
+          <p class="paragraph"><%= review.content %></p>
+        </div>
       </div>
+      <% end %>
     </div>
+  </div>
 </div>
 
 <!-- Start of NGO Information -->
-<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+ <div class="tab-pane fade" id="ngo-tab" role="tabpanel" aria-labelledby="ngo-tab">
 
   <div class="content-container">
     <div class="info-all d-flex">
-     <div class=" logo mr-3 mt-10">
-      <% if @project.ngo.logo.attached? %>
-      <%= cl_image_tag @project.ngo.logo.key, class: "avatar" %>
-      <% end %>
-    </div>
-    <div class="name_tel">
-      <div class= "name">
-        <h2 class="h2-less-margin"><%= @project.ngo.name %></h2>
+      <div class=" logo mr-3 mt-10">
+        <% if @project.ngo.logo.attached? %>
+        <%= cl_image_tag @project.ngo.logo.key, class: "avatar" %>
+        <% end %>
       </div>
-      <div class="phone d-flex mt-2">
-        <div class="element mr-2"><i class="fas fa-phone"></i>
+      <div class="name_tel">
+        <div class= "name">
+          <h2 class="h2-less-margin"><%= @project.ngo.name %></h2>
         </div>
-        <div class="mr-3">
-          <p class="paragraph-no-margin"><%= @project.ngo.phone %> </p>
+        <div class="phone d-flex mt-2">
+          <div class="element mr-2"><i class="fas fa-phone"></i>
+          </div>
+          <div class="mr-3">
+            <p class="paragraph-no-margin"><%= @project.ngo.phone %> </p>
+          </div>
         </div>
-      </div>
-      <div class="address d-flex mt-1 mb-3">
+        <div class="address d-flex mt-1 mb-3">
           <div class="element mr-2"><i class="fas fa-map-marker-alt"></i>
           </div>
           <div class="mr-3">
             <p class="paragraph-no-margin"><%= @project.ngo.address %> </p>
           </div>
         </div>
+      </div>
     </div>
-  </div>
-  <div class="border-bottom">
-  </div>
-  <div class="mt-2">
-    <p><%= @project.ngo.description %> </p>
-  </div>
-  </div>
+    <div class="border-bottom">
+    </div>
+    <div class="mt-2">
+      <p><%= @project.ngo.description %> </p>
+    </div>
   </div>
   <div class = "user_ngo_info-container mb-2">
-  <div class="border-bottom">
-  </div>
-  <div class= "user_info d-flex">
-    <div class="user_ngo_photo ml-4 mr-3 ml-3 mt-3 mt-10">
-      <%= cl_image_tag @project.ngo.user.photo.key, class: "avatar"%>
+    <div class="border-bottom">
     </div>
-    <div class= "all infos mt-3">
-      <div class = "contact">
-        <h5> <%= @project.ngo.user.first_name %>, is your contact </h5>
+    <div class= "user_info d-flex">
+      <div class="user_ngo_photo ml-4 mr-3 ml-3 mt-3 mt-10">
+        <%= cl_image_tag @project.ngo.user.photo.key, class: "avatar"%>
       </div>
-      <div class="all-datas-contact">
-        <div class="phone mt--2 mb--2 d-flex align-items-center">
-          <div class="element mr-2"><i class="fas fa-phone"></i>
+      <div class= "all infos mt-3">
+        <div class = "contact">
+          <h5> <%= @project.ngo.user.first_name %>, is your contact </h5>
+        </div>
+        <div class="all-datas-contact">
+          <div class="phone mt--2 mb--2 d-flex align-items-center">
+            <div class="element mr-2"><i class="fas fa-phone"></i>
+            </div>
+            <div class="phone-user-ngo mr-2">
+              <p class="paragraph-no-margin"><%= @project.ngo.user.phone %> </p>
+            </div>
           </div>
-          <div class="phone-user-ngo mr-2">
-            <p class="paragraph-no-margin"><%= @project.ngo.user.phone %> </p>
+          <div class="email-user-ngo d-flex align-items-center mt-1">
+            <div class="email-logo mr-2"><i class="fas fa-envelope"></i>
+            </div>
+            <div class="email mr-2">
+              <p class="paragraph-no-margin"><%= @project.ngo.user.email %> </p>
+            </div>
           </div>
         </div>
-        <div class="email-user-ngo d-flex align-items-center mt-1">
-          <div class="email-logo mr-2"><i class="fas fa-envelope"></i>
-          </div>
-          <div class="email mr-2">
-            <p class="paragraph-no-margin"><%= @project.ngo.user.email %> </p>
-          </div>
-        </div>
       </div>
     </div>
-  </div>
-  </div>
-  </div>
   </div>
 </div>
 
