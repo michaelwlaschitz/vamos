@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action set_messages_id
+  before_action :set_messages_id, only: [:create]
 
   def create
     @message = @conversation.messages.new(message_params)
