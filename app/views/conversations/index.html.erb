@@ -1,3 +1,4 @@
+
 <div class="content-container">
   <h2 class="mb-3 border-bottom">Inbox</h2>
 
@@ -21,19 +22,26 @@
         </div>
     </div>
 
-    <div class="conversation-content">
-      <div class="d-flex justify-content-between align-items-center mb-1">
-        <div class="conversation-users font-weight-bold">
-        <%= conversation.ngo.user.first_name %>,
-        <% conversation.team.users_except(current_user).take(2).each do |user|%>
-          <% if user == conversation.team.users_except(current_user).take(2).first%>
-          <%= user.first_name%>,
-          <% else %>
-          <%= user.first_name%>,
+      <div class="conversation-content">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <div class="conversation-users font-weight-bold">
+          <%= conversation.ngo.user.first_name %>,
+          <% conversation.team.users_except(current_user).take(2).each do |user|%>
+            <% if user == conversation.team.users_except(current_user).take(2).first%>
+            <%= user.first_name%>,
+            <% else %>
+            <%= user.first_name%>,
+            <% end %>
           <% end %>
-        <% end %>
-        +<%= conversation.team.users.count - 2 %>
-        </div>
+          +<%= conversation.team.users.count - 2 %>
+          </div>
+
+          <div class="coversation-time">
+          <% if conversation.messages.last.present?%>
+          <p class="paragraph-no-margin date-message-text"> <%=conversation.messages.last.message_day  %> <i class="fas fa-chevron-right"></i> </p>
+          <% end %>
+          </div>
+
 
         <div class="d-flex justify-content-between align-items-center">
 
