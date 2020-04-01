@@ -271,6 +271,8 @@ team_membership2 = TeamMembership.create!(user_id: user15.id, team_id: team2.id)
 team_membership3 = TeamMembership.create!(user_id: user16.id, team_id: team2.id)
 team_membership4 = TeamMembership.create!(user_id: user18.id, team_id: team2.id)
 
+puts "Seeding team done"
+puts "Seeding bookings"
 
 booking1 = Booking.create!(status: "pending", project_id: project1.id, team_id: team1.id)
 booking2 = Booking.create!(status: "pending", project_id: project2.id, team_id: team1.id)
@@ -279,6 +281,9 @@ booking4 = Booking.create!(status: "pending", project_id: project4.id, team_id: 
 booking5 = Booking.create!(status: "pending", project_id: project1.id, team_id: team2.id)
 booking6 = Booking.create!(status: "pending", project_id: project2.id, team_id: team2.id)
 booking7 = Booking.create!(status: "pending", project_id: project3.id, team_id: team2.id)
+
+puts "Seeding bookings done"
+puts "Seeding reviews"
 
 review1 = Review.create!(rating: 4, content: "Amazing experience", user_id: user12.id, booking_id: booking1.id)
 review1.save!
@@ -322,7 +327,33 @@ review13.save!
 review14 = Review.create!(rating: 4, content: "the organization helps a lot, I met wonderful people!", user_id: user16.id, booking_id: booking7.id)
 review14.save!
 
-puts "Seeding projects done"
+puts "Seeding reviews done"
+puts "Seeding conversations"
+
+conversation1 = Conversation.create!(booking_id: booking1.id)
+conversation2 = Conversation.create!(booking_id: booking2.id)
+conversation3 = Conversation.create!(booking_id: booking3.id)
+conversation4 = Conversation.create!(booking_id: booking4.id)
+conversation5 = Conversation.create!(booking_id: booking5.id)
+conversation6 = Conversation.create!(booking_id: booking6.id)
+conversation7 = Conversation.create!(booking_id: booking7.id)
+
+puts "Seeding conversations done"
+puts "Seeding messages"
+
+message1 = Message.create!(body: "We are 4 guys looking forward to jointly work for your organization and do some good!", conversation_id: conversation1.id , user_id: user11.id , read: true)
+message2 = Message.create!(body: "That's great. We look for a group of people that takes care of the children in Gracia. Are you available to come over so we get to know each other in person? What about next Monday?", conversation_id: conversation1.id , user_id: user1.id , read: false)
+message3 = Message.create!(body: "I am free on Monday (as any other day since Corona Day 0) ;) !", conversation_id: conversation1.id , user_id: user12.id , read: true)
+message4 = Message.create!(body: "Free too!", conversation_id: conversation1.id , user_id: user13.id , read: true)
+message5 = Message.create!(body: "Works for me!", conversation_id: conversation1.id , user_id: user11.id , read: true)
+message6 = Message.create!(body: "Yess!", conversation_id: conversation1.id , user_id: user17.id , read: true)
+message7 = Message.create!(body: "That would also work for me. So see you guys at our office, Monday at 2PM?", conversation_id: conversation1.id , user_id: user13.id , read: true)
+message8 = Message.create!(body: "Perfect, see you then!", conversation_id: conversation1.id , user_id: user11.id , read: true)
+message9 = Message.create!(body: "Awesome, here my phone number in case you can't find it - +34650494", conversation_id: conversation1.id , user_id: user1.id , read: false)
+
+message10 = Message.create!(body: "We are 4 guys looking forward to jointly work for your organization and do some good!", conversation_id: conversation2.id , user_id: user11.id , read: true)
+
+puts "Seeding messages done"
 
 
 # curl https://openculturalcenter.org/wp-content/uploads/2019/06/occ-023-1180x437.jpg > app/assets/images/projects/cultural-center.jpg
