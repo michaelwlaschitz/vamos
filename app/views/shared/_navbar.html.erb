@@ -18,8 +18,8 @@
         </div>
       <% end %>
     </div>
-    <div class="nav-element <%# "active" if current_page?(put conversation path) %>">
-      <%= link_to user_profile_path(current_user) do %>
+    <div class="nav-element <%= "active" if current_page?(conversations_path) %>">
+      <%= link_to conversations_path do %>
         <div>
           <i class="far fa-comment-alt nav-icon"></i>
           <p class="nav-icon-tag">MESSAGES</p>
@@ -29,9 +29,9 @@
 
   <% else %>
 
-    <div class="nav-element">
+    <div class="nav-logo">
       <%= link_to "/", class: "navbar-brand" do %>
-        <%= image_tag "Vamos_logo_final.png", width: "40" %>
+        <%= image_tag "Vamos_logo_final.png"%>
       <% end %>
     </div>
     <div class="nav-element">

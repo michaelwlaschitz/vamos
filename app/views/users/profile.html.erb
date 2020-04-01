@@ -27,6 +27,10 @@
             <p><%= @user.email %> </p>
           </div>
         </div>
+        <div class="d-flex justify-content-between">
+          <div></div>
+          <%= link_to "Sign out",  destroy_user_session_path , method: :delete, class: "create-team-button" %>
+        </div>
       </div>
     </div>
   </div>
