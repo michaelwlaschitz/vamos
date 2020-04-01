@@ -1,72 +1,75 @@
+
 <div class="content-container">
   <h2 class="mb-3 border-bottom">Inbox</h2>
 
   <% @conversations.each do |conversation| %>
-  <%= link_to conversation_path(conversation) do %>
+    <%= link_to conversation_path(conversation) do %>
 
-  <div class="d-flex mb-3 border-bottom">
+    <div class="d-flex mb-3 border-bottom">
 
-<!-- Avatars Flexbox -->
-
-    <div class="conversation-avatars mr-3">
+      <div class="conversation-avatars mr-3">
       <div class="ngo-avatar">
         <%= cl_image_tag conversation.ngo.user.photo.key, class: "avatar" %>
       </div>
 
-      <div class="d-flex">
-       <div class="user-avatars">
-        <%= cl_image_tag conversation.team.users.first.photo.key, class: "avatar-small" %>
-      </div>
-      <div class="user-avatars">
-       <%= cl_image_tag conversation.team.users.second.photo.key, class: "avatar-small" %>
-     </div>
-      </div>
+        <div class="d-flex">
+           <div class="user-avatars">
+              <%= cl_image_tag conversation.team.users.first.photo.key, class: "avatar-small" %>
+           </div>
+            <div class="user-avatars">
+               <%= cl_image_tag conversation.team.users.second.photo.key, class: "avatar-small" %>
+           </div>
+        </div>
     </div>
 
-<!-- Avatars Flexbox End -->
-<!-- Conversation Flexbox -->
-
- <div class="conversation-content">
-  <div class="d-flex justify-content-between align-items-center mb-1">
-    <div class="conversation-users font-weight-bold">
-      <%= conversation.ngo.user.first_name %>,
-      <% conversation.team.users_except(current_user).take(2).each do |user|%>
-      <% if user == conversation.team.users_except(current_user).take(2).first%>
-      <%= user.first_name%>,
-      <% else %>
-      <%= user.first_name%>,
-      <% end %>
-      <% end %>
-      +<%= conversation.team.users.count - 2 %>
-    </div>
-
-    <div class="d-flex justify-content-between align-items-center">
-      <div>
-        <% if conversation.messages.last.present? && conversation.messages.last.read == false %>
-        <i class="fas fa-circle orange smaller-text mb-2"></i>
-        <% end %>
-      </div>
-      <div>
-        <% if conversation.messages.last.present?%>
-        <p class="paragraph-no-margin date-message-text ml-1"> <%=conversation.messages.last.message_day  %>
-          <i class="fas fa-chevron-right"></i> </p>
+      <div class="conversation-content">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <div class="conversation-users font-weight-bold">
+          <%= conversation.ngo.user.first_name %>,
+          <% conversation.team.users_except(current_user).take(2).each do |user|%>
+            <% if user == conversation.team.users_except(current_user).take(2).first%>
+            <%= user.first_name%>,
+            <% else %>
+            <%= user.first_name%>,
+            <% end %>
           <% end %>
-      </div>
-    </div>
+          +<%= conversation.team.users.count - 2 %>
+          </div>
 
-    <div class="font-weight-light mb-4">
+          <div class="coversation-time">
+          <% if conversation.messages.last.present?%>
+          <p class="paragraph-no-margin date-message-text"> <%=conversation.messages.last.message_day  %> <i class="fas fa-chevron-right"></i> </p>
+          <% end %>
+          </div>
+
+
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+          <% if conversation.messages.last.present? && conversation.messages.last.read == false %>
+          <i class="fas fa-circle orange smaller-text mb-2"></i>
+          <% end %>
+          </div>
+
+          <div>
+          <% if conversation.messages.last.present?%>
+          <p class="paragraph-no-margin date-message-text ml-1"> <%=conversation.messages.last.message_day  %>
+            <i class="fas fa-chevron-right"></i> </p>
+          <% end %>
+          </div>
+        </div>
+      <div class="font-weight-light mb-4">
       <% if conversation.messages.last.present? && conversation.messages.last.read == false %>
       <p class="paragraph-no-margin font-weight-bold"> <%=conversation.messages.last.body.truncate(70)%></p>
       <% elsif conversation.messages.last.present? %>
       <%=conversation.messages.last.body.truncate(70)%>
       <% else %>
-      <p class="paragraph-no-margin font-italic"> No messages yet - Text a message to the project owner!</p>
+       <p class="paragraph-no-margin font-italic"> No messages yet - Text a message to the project owner!</p>
       <% end %>
-    </div>
+      </div>
 
-</div>
-</div>
-</div>
-<% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
 <% end %>
 </div>
