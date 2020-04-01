@@ -1,0 +1,6 @@
+
+<h2>Inbox</h2>
+<%= @conversations.each do |conversation| %>
+
+<%= conversation.ngo.logo.key %>
+<%= conversation.ngo.user.first_name %>, <%= conversation.team.users_except(current_user).each do |user|%>

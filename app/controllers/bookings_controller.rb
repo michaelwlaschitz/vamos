@@ -23,6 +23,7 @@ class BookingsController < ApplicationController
     end #this if-else statement is making sure that a team is only created if no team is selected from the dropdown-menu ()
 
     if @booking.save
+      @conversation = Conversation.create(booking: @booking)
       redirect_to dashboard_path #the button for team-creation and for Contacting the NGO now is the same.
     else
       render :new

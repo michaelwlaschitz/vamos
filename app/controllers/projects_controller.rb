@@ -18,6 +18,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @ngo = @project.ngo.name
+    @reviews = @project.reviews
 
       @markers = [{
       lat: @project.latitude,

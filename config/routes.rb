@@ -10,7 +10,11 @@ Rails.application.routes.draw do
 
   resources :projects, only: [:index, :create, :new, :show] do
     resources :bookings, only: [:new, :create]
-   end
+  end
+
+  resources :bookings, only: [] do
+    resources :reviews, only: [:new, :create]
+  end
 
   resources :bookings, only: [] do
     member do
@@ -21,6 +25,10 @@ Rails.application.routes.draw do
   resources :ngos, only: [:new, :create]
 
   resources :teams, only: [:create]
+
+  resources :conversations, only: [:index, :show, :create] do
+    resources :messages, only: [:create]
+  end
 
   get "dashboard", to: "users#dashboard", as: :user_dashboard
 

@@ -9,12 +9,18 @@ class User < ApplicationRecord
   has_many :teams, through: :team_memberships
   has_many :bookings, through: :teams
   has_many :ngo_bookings, through: :ngo, source: :bookings
+
+  has_many :ngo_conversations, through: :ngo_bookings, source: :conversations
+  has_many :team_conversations, through: :bookings, source: :conversations
+
   has_one_attached :photo
 
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, format: { with: /\A.*@.*\.com\z/ }, presence: true, uniqueness: true
   validates :password, presence: true
-  validates :description, presence: true
-  validates :phone, presence: true, uniqueness: true
+
+  def ngo_manager?
+    ngos.any?
+  end
 end
