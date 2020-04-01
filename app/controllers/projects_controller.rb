@@ -46,24 +46,20 @@ class ProjectsController < ApplicationController
   def filter_projects
     @projects = @projects.near(params[:address], 50) unless params[:address].blank?
 
-    @projects = @projects.where('category IN (?)', params[:categories]) unless params[:categories].blank?
+    @projects = @projects.where('category IN (?)', params[:categories]) unless params[:categories]&.reject(&:blank?).blank?
 
     param1 = "1 - 4 h/week"
     param2 = "5 - 9 h/week"
     param3 = "10+ h/week"
-
-    if params[:time].include?(param1) && params[:time].include?(param2)
-      @projects = @projects.where(hours_per_week: 1..9)
-    elsif params[:time].include?(param1) && params[:time].include?(param3)
-      @projects = @projects.where(hours_per_week: 1..100)
-    elsif params[:time].include?(param2) && params[:time].include?(param3)
-    @projects = @projects.where(hours_per_week: 5..100)
-    elsif params[:time].include?(param1)
-      @projects = @projects.where(hours_per_week: 1..4)
-    elsif params[:time].include?(param2)
-      @projects = @projects.where(hours_per_week: 5..9)
-    elsif params[:time].include?(param3)
-      @projects = @projects.where(hours_per_week: 10..100)
+    if params[:time]&.reject(&:blank?).blank?
+      @count = @projects.count(:all)
+    else
+      filtered_projects = []
+      filtered_projects += @projects.where(hours_per_week: 1..4) if params[:time].include?(param1)
+      filtered_projects += @projects.where(hours_per_week: 5..9) if params[:time].include?(param2)
+      filtered_projects += @projects.where(hours_per_week: 10..100) if params[:time].include?(param3)
+      @projects = filtered_projects
+      @count = @projects.count
     end
   end
 
