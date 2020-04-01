@@ -1,15 +1,36 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.has-navbar-so-margin {
+  margin-bottom: 90px;
+}
+
+.navbar-container {
+  background-color: white;
+  z-index: 1000;
+  height: 65px;
   width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid gray;
+  a:hover {
+    color: gray;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.nav-element {
+  height: 46px;
+  text-align: center;
+  &.active .nav-icon, &.active .nav-icon-tag {
+    color: $orange-vamos;
+  }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-icon {
+  font-size: 24px;
+  color: gray;
+
 }
 
-
+.nav-icon-tag {
+  font-size: 12px;
+  font-weight: lighter;
+}
