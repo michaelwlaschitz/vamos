@@ -26,6 +26,10 @@ Rails.application.routes.draw do
 
   resources :teams, only: [:create]
 
+  resources :conversations, only: [:index, :show, :create] do
+    resources :messages, only: [:create]
+  end
+
   get "dashboard", to: "users#dashboard", as: :user_dashboard
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
