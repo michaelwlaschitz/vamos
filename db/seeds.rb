@@ -8,6 +8,8 @@ TeamMembership.destroy_all
 Team.destroy_all
 Project.destroy_all
 Ngo.destroy_all
+Message.destroy_all
+Conversation.destroy_all
 User.destroy_all
 
 puts "destroyed all"
