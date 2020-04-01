@@ -1,23 +1,24 @@
 <div class="content-container">
-<h2 class="mb-3 border-bottom">Inbox</h2>
+  <h2 class="mb-3 border-bottom">Inbox</h2>
 
-<% @conversations.each do |conversation| %>
+  <% @conversations.each do |conversation| %>
+    <%= link_to conversation_path(conversation) do %>
 
-  <div class="d-flex mb-3 border-bottom">
+    <div class="d-flex mb-3 border-bottom">
 
-    <div class="conversation-avatars mr-3">
-    <div class="ngo-avatar">
-    <%= cl_image_tag conversation.ngo.user.photo.key, class: "avatar" %>
-    </div>
-
-    <div class="d-flex">
-      <div class="user-avatars">
-      <%= cl_image_tag conversation.team.users.first.photo.key, class: "avatar-small" %>
+      <div class="conversation-avatars mr-3">
+      <div class="ngo-avatar">
+        <%= cl_image_tag conversation.ngo.user.photo.key, class: "avatar" %>
       </div>
-      <div class="user-avatars">
-      <%= cl_image_tag conversation.team.users.second.photo.key, class: "avatar-small" %>
-      </div>
-    </div>
+
+        <div class="d-flex">
+           <div class="user-avatars">
+              <%= cl_image_tag conversation.team.users.first.photo.key, class: "avatar-small" %>
+           </div>
+            <div class="user-avatars">
+               <%= cl_image_tag conversation.team.users.second.photo.key, class: "avatar-small" %>
+           </div>
+        </div>
     </div>
 
     <div class="conversation-content">
@@ -49,8 +50,6 @@
           <% end %>
           </div>
         </div>
-
-      </div>
       <div class="font-weight-light mb-4">
       <% if conversation.messages.last.present? && conversation.messages.last.read == false %>
       <p class="paragraph-no-margin font-weight-bold"> <%=conversation.messages.last.body.truncate(70)%></p>
@@ -61,11 +60,9 @@
       <% end %>
       </div>
 
-
-
+      </div>
     </div>
-
   </div>
+  <% end %>
 <% end %>
-
 </div>
