@@ -14,10 +14,13 @@
         </div>
       </div>
      </div>
-   </div>
+    </div>
+
    <% end %>
   <% end %>
 </div>
 
-
-
+<%= simple_form_for ([@conversation, @message]) do |f| %>
+<%= f.input :body, placeholder: "Write your message" %>
+<%= f.submit "Send" %>
+<%end%>
