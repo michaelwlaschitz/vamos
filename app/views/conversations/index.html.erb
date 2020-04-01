@@ -42,7 +42,9 @@
 
       </div>
       <div class="font-weight-light mb-4">
-      <% if conversation.messages.last.present?%>
+      <% if conversation.messages.last.present? && conversation.messages.last.read == false %>
+      <p class="paragraph-no-margin font-weight-bold"> <%=conversation.messages.last.body.truncate(70)%></p>
+      <% elsif conversation.messages.last.present? %>
       <%=conversation.messages.last.body.truncate(70)%>
       <% else %>
        <p class="paragraph-no-margin font-italic"> No messages yet - Text a message to the project owner!</p>
