@@ -19,8 +19,6 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, format: { with: /\A.*@.*\.com\z/ }, presence: true, uniqueness: true
   validates :password, presence: true
-  validates :description, presence: true
-  validates :phone, presence: true, uniqueness: true
 
   def ngo_manager?
     ngos.any?
