@@ -1,11 +1,9 @@
 <div class="content-container">
 <h2 class="mb-3 border-bottom">Inbox</h2>
 
-
-
 <% @conversations.each do |conversation| %>
 
-  <div class="d-flex mb-5">
+  <div class="d-flex mb-3 border-bottom">
 
     <div class="conversation-avatars mr-3">
     <div class="ngo-avatar">
@@ -23,29 +21,32 @@
     </div>
 
     <div class="conversation-content">
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between align-items-center mb-1">
         <div class="conversation-users font-weight-bold">
         <%= conversation.ngo.user.first_name %>,
         <% conversation.team.users_except(current_user).take(2).each do |user|%>
           <% if user == conversation.team.users_except(current_user).take(2).first%>
           <%= user.first_name%>,
           <% else %>
-          <%= user.first_name%>
+          <%= user.first_name%>,
           <% end %>
         <% end %>
+        +<%= conversation.team.users.count - 2 %>
         </div>
 
         <div class="coversation-time">
-          <p>7PM</p>
+        <% if conversation.messages.last.present?%>
+        <p class="paragraph-no-margin date-message-text"> <%=conversation.messages.last.message_day  %> <i class="fas fa-chevron-right"></i> </p>
+        <% end %>
         </div>
 
       </div>
-      <div class="font-weight-light">
-        <%= if conversation.messages.last.present?
-       conversation.messages.last.body.truncate(70) %>
-       <% else %>
-       <p>No messages yet - Text a message to the project owner!</p>
-       <% end %>
+      <div class="font-weight-light mb-4">
+      <% if conversation.messages.last.present?%>
+      <%=conversation.messages.last.body.truncate(70)%>
+      <% else %>
+       <p class="paragraph-no-margin font-italic"> No messages yet - Text a message to the project owner!</p>
+      <% end %>
       </div>
 
 
