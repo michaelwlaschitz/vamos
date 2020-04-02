@@ -1,27 +1,37 @@
-<div class="content-container">
-  <div class="form-group">
+<div class="has-navbar-so-margin">
+  <%= render 'shared/navbar' %>
 
-      <h1 class="mb-4">
-      Create a review for
-      <span style="color: #fb8500"><%= @booking.project.title %></span>
-      </h1>
+  <% @booking.project.photos.each do |photo|%>
+  <div>
+    <%= cl_image_tag photo.key, class: "project-image-show" %>
+  </div>
+  <% end %>
 
-  <!-- Form -->
-      <div class = "form pt-5 mt-3">
-        <%= simple_form_for [@booking, @review] do |f|  %>
-        <% if @review.errors.any? %>
-        <div class="errors-container">
-          <ul>
-            <% @review.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-            <% end %>
-          </ul>
+
+  <div class="content-container mt-4">
+    <div class="form-group">
+
+        <h1>
+          Write a review for <span style="color: #fb8500">"<%= @booking.project.title %>"</span>
+        </h1>
+
+    <!-- Form -->
+        <div class = "form pt-3">
+          <%= simple_form_for [@booking, @review] do |f|  %>
+          <% if @review.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @review.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+          <% end %>
+          <%= f.input :content, label: "Tell us how it went:", class: 'form-control' %>
+          <%= f.input :rating, as: :select, collection: [0, 1, 2, 3, 4, 5] %>
+          <%= f.submit "Add your review", class: "mt-1 btn btn-primary vamos w-100"%>
+          <% end %>
         </div>
-        <% end %>
-        <%= f.input :content, placeholder: 'Tell us how it went', label:false, class: 'form-control' %>
-        <%= f.input :rating, as: :select, collection: [0, 1, 2, 3, 4, 5] %>
-        <%= f.submit "Add your review", class: "btn btn-primary vamos w-100"%>
-        <% end %>
-      </div>
+    </div>
   </div>
 </div>
