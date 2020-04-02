@@ -1,22 +1,39 @@
 <div class="container-fluid chat-chat">
 
-  <h2 class="mb-3 border-bottom">
+  <div class="d-flex border-bottom mt-2 mb-3">
     <div>
-          <%= link_to conversations_path do %>
-    <i class='fas fa-chevron-left'></i>
-    <% end %>
+      <h2>
+        <%= link_to conversations_path do %>
+        <i class='fas fa-chevron-left'></i>
+        <% end %>
+      </h2>
     </div>
 
-  Chat</h2>
+    <div class="ngo-avatar ml-2">
+        <%= cl_image_tag @conversation.ngo.user.photo.key, class: "avatar-middle" %>
+    </div>
+
+    <div class="d-flex ml-3">
+      <% @conversation.team.users.each do |user| %>
+      <%= cl_image_tag user.photo.key, class: "avatar-middle" %>
+      <% end %>
+    </div>
+
+
+
+
+  </div>
+<!--   End of Top Bar Flexbox -->
+<!--   Beginning of Messages Box -->
 
   <div class="d-flex flex-column bd-highlight mb-3 chat-container">
     <div class="p-2 bd-highlight" style="overflow: scroll">
       <% @messages.each do |message| %>
-        <div class="card text-message">
+        <div class="card text-message mb-4">
           <% if message.body %>
             <% user = User.find(message.user_id) %>
-            <div class="d-flex flex-row bd-highlight mb-3">
-              <div class="p-2 bd-highlight">
+            <div class="d-flex flex-row bd-highlight align-items-center">
+              <div class="px-2 py-1 bd-highlight">
                 <%= cl_image_tag message.user.photo.key, class: "avatar" %>
               </div>
               <div class="p-2 bd-highlight header">
@@ -37,6 +54,6 @@
 
 </div>
 <%= simple_form_for ([@conversation, @message]), wrapper: :inline_form, wrapper: :inline_form, html: { class: "form-inline chat-textbox" } do |f| %>
-    <%= f.input :body, label: false, placeholder: "Write your message" %>
-  <%= f.submit "Send", class: "btn-primary send-message" %>
+   <%= f.input :body, label: false, placeholder: "Write your message"%>
+  <%= f.submit "Send", class: "button-send-message" %>
   <%end%>
