@@ -5,6 +5,15 @@
   object-fit: cover;
 }
 
+.go-back-arrow {
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  z-index: 1000;
+  color: $orange-vamos;
+  font-size: 40px;
+}
+
 .image-map-show {
   width: 100%;
   height: 300px;

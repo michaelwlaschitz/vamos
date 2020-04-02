@@ -10,7 +10,7 @@ class ConversationsController < ApplicationController
   def show
     @conversation = Conversation.find(params[:id])
     @messages = @conversation.messages
-    @messages.last.read = true if @messages.last.user_id != current_user.id
+    @messages.last.read = true if @messages.any? && @messages.last.user_id != current_user.id
     @message = @conversation.messages.new
   end
 

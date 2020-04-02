@@ -1,4 +1,6 @@
-<div class="content-container">
+<%= render 'shared/logo_top_left' %>
+
+<div class="content-container login-forms">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
@@ -6,29 +8,39 @@
       <%= f.input :first_name,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "first-name" }%>
+                  label: false,
+                  placeholder: "First Name",
+                  input_html: { class: "mb-4",autocomplete: "first-name" }%>
       <%= f.input :last_name,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "last-name" }%>
+                  label: false,
+                  placeholder: "Last Name",
+                  input_html: { class: "mb-4",autocomplete: "last-name" }%>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "email" }%>
+                  label: false,
+                  placeholder: "Email",
+                  input_html: { class: "mb-4",autocomplete: "email" }%>
       <%= f.input :password,
                   required: true,
+                  label: false,
+                  placeholder: "Password",
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :password_confirmation,
+                  label: false,
+                  placeholder: "Password Confirmation",
                   required: true,
-                  input_html: { autocomplete: "new-password" } %>
+                  input_html: { class: "my-4",autocomplete: "new-password" } %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign up", class: "btn btn-primary login-button"  %>
+      <%= f.button :submit, "Sign up", class: "mt-3 btn btn-primary login-button"  %>
     </div>
   <% end %>
-  <div class="my-2">
+  <div class="my-4">
     <%= render "devise/shared/links" %>
   </div>
 </div>

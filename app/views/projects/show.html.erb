@@ -1,3 +1,9 @@
+<%= link_to projects_path do %>
+  <div class="go-back-arrow">
+    <i class='fas fa-chevron-left'></i>
+  </div>
+<% end %>
+
 <% @project.photos.each do |photo|%>
 <div>
   <%= cl_image_tag photo.key, class: "project-image-show"%>
@@ -10,7 +16,7 @@
     <a class="nav-link active" id="profile-tab-button" data-toggle="tab" href="#profile-tab" role="tab" aria-controls="home" aria-selected="true"><h5 class="orange-title">Project</h5></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="ngo-tab-button" data-toggle="tab" href="#ngo-tab" role="tab" aria-controls="ngo" aria-selected="false"><h5 class="orange-title">Ngo</h5></a>
+    <a class="nav-link" id="ngo-tab-button" data-toggle="tab" href="#ngo-tab" role="tab" aria-controls="ngo" aria-selected="false"><h5 class="orange-title">NGO</h5></a>
   </li>
 </ul>
 <div class="tab-content" id="nav-tabContent">
@@ -57,8 +63,7 @@
       <div
       id="map"
       style="width: 90vw;
-      height: 40vh;
-      overflow: visible;"
+      height: 40vh;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
