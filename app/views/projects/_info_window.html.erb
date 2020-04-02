@@ -2,7 +2,7 @@
   <%= link_to project_path(project) do %>
   <div class="project-image">
     <% if project.photos.attached? %>
-      <%= cl_image_tag project.photos.first.key %>
+      <%= cl_image_tag project.photos.first.key%>
     <% end %>
   </div>
   <div class="project-title">

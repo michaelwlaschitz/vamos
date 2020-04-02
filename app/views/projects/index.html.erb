@@ -14,7 +14,7 @@
       <%= link_to project_path(project) do %>
       <div class="project-card my-4">
         <% if project.photos.any? %>
-        <div class="project-image" style="background-image: url('<%= cl_image_path project.photos.first.key %>')">
+        <div class="project-image" style="background-image: url('<%= cl_image_path (project.photos.first.key if project.photos.attached?) %>')">
         <% else %>
         <div class="project-image" style="background-image: url('https://www.studium-ratgeber.de/wp-content/uploads/volunteering-europa.jpg')">
         <% end %>

@@ -78,7 +78,9 @@
     <div class="reviews my-3 align-items-center">
       <% @reviews.each do |review| %>
       <div class = "each_review d-flex my-3 align-items-center">
-        <%= cl_image_tag review.user.photo.key, class: "avatar mr-2"%>
+        <% if review.user.photo.attached? %>
+          <%= cl_image_tag review.user.photo.key , class: "avatar mr-2"%>
+        <% end %>
         <div>
           <div class="div">
             <%= review.user.first_name %>
@@ -113,7 +115,7 @@
     <div class="info-all d-flex">
       <div class=" logo mr-3 mt-10">
         <% if @project.ngo.logo.attached? %>
-        <%= cl_image_tag @project.ngo.logo.key, class: "avatar" %>
+          <%= cl_image_tag @project.ngo.logo.key, class: "avatar" %>
         <% end %>
       </div>
       <div class="name_tel">
@@ -147,7 +149,9 @@
     </div>
     <div class= "user_info d-flex">
       <div class="user_ngo_photo ml-4 mr-3 ml-3 mt-3 mt-10">
-        <%= cl_image_tag @project.ngo.user.photo.key, class: "avatar"%>
+        <% if @project.ngo.user.photo.attached? %>
+          <%= cl_image_tag @project.ngo.user.photo.key , class: "avatar"%>
+        <% end %>
       </div>
       <div class= "all infos mt-3">
         <div class = "contact">
