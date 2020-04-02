@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_conversation
-  
+
   def create
     @message = @conversation.messages.new(message_params)
     @message.user = current_user
