@@ -2,3 +2,52 @@
 font: 'Roboto Slab';
 font-size: 16px;
 }
+
+
+.chat-textbox {
+  border-spacing: 0px;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  border-top: 0.5px gray solid;
+  background-color: white;
+  .message_body {
+    flex-grow: 2;
+    textarea{
+      border: none;
+      resize: none;
+      margin-left: 5px;
+      margin-top: 5px;
+    }
+  }
+}
+
+.button-send-message {
+
+border: none;
+box-shadow: none;
+background-color: #F28A28;
+color: white;
+text-align: center;
+font-family: 'Roboto Slab';
+border-radius: 10px;
+margin-right: 12px;
+padding:6px 10px;
+
+}
+
+
+.chat-chat {
+  height: 100vh;
+  position: relative;
+}
+
+.chat-container {
+
+  height: 75vh;
+}
+
+.text-message {
+  border:none;
+}

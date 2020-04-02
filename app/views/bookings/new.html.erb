@@ -1,39 +1,49 @@
 <div class="container-fluid">
   <div class="col-sm-10">
      <div class="select-team">
-        <h2 class="h2-less-margin my-4">Add your team!</h2>
-        <h3 class="my-3 team-form title">Time to create or select your team and volunteer together. Vamos!  </h3>
+        <h2 class="h2-less-margin mt-4 mb-3">Apply with your team!</h2>
+        <p class="mt-3 mb-5 team-form title">Why do it alone? Invite your friends to volunteer with you.  </p>
       <div class="row content-inline justify-content-center">
         <div class="col-md-4 form-group">
             <%= simple_form_for ([@project, @booking])  do |f| %>
               <% if current_user.teams.any? %>
-              <h3>Select your team:</h3>
-              <%= f.association :team, label: false, input_html: { class: " form-control cinput-sm"}, collection: current_user.teams %>
-                       <!--The syntax "f.simple" is used when you are nesting a form inside another form -->
-                 <%end%>
-                <%= link_to "Create new team", '#', class: "btn btn-primary vamos ngo", id: "show-team-form" %>
-                <div id="team-form-display", class="d-none">
-                 <div class="col-md-4 form-group">
-                  <h3 class="my-3 team-form title">Create a new team:</h3>
+              <div class="existing-teams">
+                <h3>Select from existing teams:</h3>
+                <%= f.association :team, label: false, input_html: { class: " form-control input-sm mt-2"}, collection: current_user.teams %>
+                         <!--The syntax "f.simple" is used when you are nesting a form inside another form -->
+                   <%end%>
+              </div>
+               <h3><span class="existing-teams">or  &nbsp;</span><%= link_to "Apply with a new team", '#', class:"orange", id: "show-team-form" %> <i class="fas fa-angle-double-right orange existing-teams"></i></h3>
+          <!--         Begin of nested create team form  -->
+
+            <div id="team-form-display", class="d-none">
+              <div class="col-md-3 form-group p-0">
+                <div class="mt-4">
                     <%= f.simple_fields_for @new_team do |team_fields| %>
                     <%= team_fields.input :name, placeholder: 'Team name', label: false, class: 'form-control mb-2 mr-sm-2' %>
-                    <%= team_fields.input :photo, input_html: { class: 'd-none mb-2 mr-sm-2' }, label_html: { class: 'button-upload-file'}, label: '📷 Team-Photo upload' %>
+
                     <div id="team_memberships">
-                      <%= team_fields.simple_fields_for :team_memberships do |tm| %>
+                    <h3>Invite users to your team</h3>
+                  <%= team_fields.simple_fields_for :team_memberships do |tm| %>
                       <%= render 'team_membership_fields' , f: tm %>
                       <% end %>
-                        <div class="links">
-                          <%= link_to_add_association 'add another team member', team_fields, :team_memberships %>
-                        </div>
-                          <%= team_fields.input :selected_project, as: :hidden, input_html: { value: @project.id } %>
-                        </div>
-                      <%end%>
+                      <div class="links">
+                        <%= link_to_add_association team_fields, :team_memberships do %>
+                        <h2 class="ml-2"> <i class="fas fa-plus-circle orange"></i> </h2>
+                        <% end %>
                       </div>
+                        <%= team_fields.input :selected_project, as: :hidden, input_html: { value: @project.id } %>
+                      </div>
+                      <%end%>
                     </div>
+                  </div>
                 </div>
              </div>
-            <div>
-              <%= f.submit "Apply", class: "btn-primary vamos application"%>
+              <%= f.simple_fields_for :message do |message_fields| %>
+                <%= message_fields.input :body,label:'Write a message to the NGO:', placeholder: 'Introduce your team', class: 'form-control' %>
+              <% end %>
+              <%= f.submit "Apply", class: "btn-primary vamos application", id: "second-button-team"%>
+          
             </div>
           </div>
         </div>

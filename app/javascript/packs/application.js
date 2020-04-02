@@ -15,6 +15,10 @@ import { logoFileName } from '../functions/fetch_logo_file_name';
 
 import { toggleTeamForm } from '../functions/team_form';
 
+import { initSelect2 } from '../plugins/init_select2';
+
+initSelect2();
+
 initAutocompleteLocation();
 initAutocompleteProjectAddress();
 initAutocompleteNgoAddress();
