@@ -73,7 +73,9 @@
                         <p class="m-0 team-name"><%= booking.team.name %></p>
                         <div class="d-flex">
                           <% booking.team.users.each do |user| %>
-                              <%= cl_image_tag (user.photo.key if user.photo.attached?), width: 30, height: 30, class: "rounded-circle" %>
+                            <% if user.photo.attached? %>
+                              <%= cl_image_tag user.photo.key, width: 30, height: 30, class: "rounded-circle" %>
+                            <% end %>
                           <% end %>
                         </div>
                       </div>
@@ -92,7 +94,7 @@
                   <% elsif booking.status == "accepted" %>
                     <p id="accepted-text">Accepted</p>
                   <% elsif booking.status == "rejected" %>
-                    <p id="rejected-text">Declined</p>
+                    <p style="font-size: 18px">Declined</p>
                   <% end %>
                 </div>
               </div>
@@ -128,7 +130,9 @@
     <div class="content-container border-bottom py-3 my-1">
       <div class="d-flex">
         <div class="element-1">
-          <%= cl_image_tag @user.photo.key, class: "user-image" %>
+          <% if @user.photo.attached? %>
+            <%= cl_image_tag @user.photo.key, class: "user-image" %>
+          <% end %>
         </div>
         <div class="element-2 user-other-info">
           <h5 class="py-1"><%= @user.first_name %> <%= @user.last_name %></h5>
@@ -193,7 +197,7 @@
 
       <% current_user.bookings.each do |booking| %>
         <div class="project-card mb-4 mt-3">
-          <div class="project-image" style="background-image: url('<%= cl_image_path booking.project.photos.first.key %>')">
+          <div class="project-image" style="background-image: url('<%= cl_image_path booking.project.photos.first.key if booking.project.photos.attached? %>')">
             <div class="interest-icon border rounded-circle">
               <% if booking.project.category == "Children" %>
                 <i class="icon fas fa-child"></i>
@@ -211,9 +215,12 @@
               <div class="accepted-button status-button">
                 Accepted
               </div>
-              <div class="review-button">
-                Add a review
-              </div>
+              <%= link_to new_booking_review_path(booking)  do  %>
+                <div class="review-button">
+                  Add a review
+                </div>
+              <% end %>
+
             <% elsif booking.status == "rejected" %>
               <div class="rejected-button status-button">
                 Rejected

@@ -88,13 +88,11 @@
   }
 }
 
-#rejected-text {
-  font-size: 18px;
-  font-weight: bold;
-}
+
 #accepted-text {
   color: $orange-vamos;
   font-size: 18px;
+  font-weight: bold;
 }
 
 .create-project {
@@ -180,11 +178,11 @@
 }
 
 .accepted-button {
-    background-color: $green-vamos;
+    background-color: $orange-vamos;
 }
 
 .rejected-button {
-  background-color: $red-vamos;
+  background-color: $black-gray;
 }
 
 .pending-button {
