@@ -5,36 +5,40 @@
   <% if current_user.ngo %>
 
     <div class="content-container mt-4 mb-1">
-      <h2 class="orange-title">My NGO</h2>
-      <div class="d-flex align-items-center">
-        <div class="element-1">
+      <h1 class="orange-title mb-3"><%= @user.ngo.name %></h1>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="ngo-other-info">
+          <div class="name-user d-flex align-items-center mb-2">
+            <div class="element mr-2">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="ml-1">
+              <h3 class="mb-0"><%= @user.first_name %> <%= @user.last_name %></h3>
+            </div>
+          </div>
+          <div class="phone-user d-flex align-items-center">
+            <div class="element mr-2">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="phone-user-ngo mr-3">
+              <p class="paragraph-no-margin"><%= @user.phone %> </p>
+            </div>
+          </div>
+          <div class="email-user-ngo d-flex align-items-center py-2">
+            <div class="email-logo mr-2">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="email mr-3">
+              <p class="paragraph-no-margin"><%= @user.email %> </p>
+            </div>
+          </div>
+        </div>
+        <div>
           <% if @user.ngo.logo.attached? %>
             <%= cl_image_tag @user.ngo.logo.key, class: "ngo-image"%>
           <% else %>
             <img class="ngo-image" src="https://www.tibs.org.tw/images/default.jpg" alt="">
           <% end %>
-        </div>
-        <div class="element-2 ngo-other-info">
-          <h5><%= @user.ngo.name %> Contact:</h5>
-          <div class="d-flex justify-content-between align-items-center">
-            <h3><%= @user.first_name %> <%= @user.last_name %></h3>
-          </div>
-          <div class="phone-user d-flex">
-            <div class="element mr-2">
-              <i class="fas fa-phone"></i>
-            </div>
-            <div class="phone-user-ngo mr-3">
-              <p><%= @user.phone %> </p>
-            </div>
-          </div>
-          <div class="email-user-ngo d-flex">
-            <div class="email-logo mr-2">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div class="email mr-3">
-              <p><%= @user.email %> </p>
-            </div>
-          </div>
         </div>
       </div>
       <div class="d-flex justify-content-between">
@@ -64,27 +68,31 @@
                 <div class="booking-name-team border-right pl-1">
                   <h3><%= booking.project.title %></h3>
                   <div class="team-info">
-                    <p class="m-0 team-name"><%= booking.team.name %></p>
-                  <div class="d-flex">
-                    <% booking.team.users.each do |user| %>
-                        <%= cl_image_tag (user.photo.key if user.photo.attached?), width: 30, height: 30, class: "rounded-circle" %>
-                    <% end %>
-                  </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="m-0 team-name"><%= booking.team.name %></p>
+                        <div class="d-flex">
+                          <% booking.team.users.each do |user| %>
+                              <%= cl_image_tag (user.photo.key if user.photo.attached?), width: 30, height: 30, class: "rounded-circle" %>
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
                 <div class="booking-status">
                   <% if booking.status == "pending" %>
-                    <div class="accept-button px-3">
-                      <%= link_to "Accept", accept_booking_path(booking), method: :patch, class: "accept-button btn btn-outline-success my-1"%>
+                    <div class="accept-button px-3 my-2">
+                      <%= link_to "Accept", accept_booking_path(booking), method: :patch, class: "green-color"%>
                     </div>
-                    <div class="reject-button px-3">
-                      <%= link_to "Reject", reject_booking_path(booking), method: :patch, class: "reject-button btn btn-outline-danger my-1"%>
+                    <div class="reject-button px-3 my-2">
+                      <%= link_to "Reject", reject_booking_path(booking), method: :patch, class: "red-color"%>
                     </div>
                   <% elsif booking.status == "accepted" %>
-                    <div class="text-success">Accepted</div>
+                    <p id="accepted-text">Accepted</p>
                   <% elsif booking.status == "rejected" %>
-                    <div class="text-danger">Rejected</div>
+                    <p id="rejected-text">Declined</p>
                   <% end %>
                 </div>
               </div>
@@ -123,24 +131,24 @@
           <%= cl_image_tag @user.photo.key, class: "user-image" %>
         </div>
         <div class="element-2 user-other-info">
-          <h5 class="py-3"><%= @user.first_name %> <%= @user.last_name %></h5>
-          <div class="phone-user d-flex">
+          <h5 class="py-1"><%= @user.first_name %> <%= @user.last_name %></h5>
+          <div class="phone-user d-flex align-items-center">
             <div class="element mr-2">
               <i class="fas fa-phone"></i>
             </div>
             <div class="phone-user-ngo mr-3">
-              <p><%= @user.phone %> </p>
+              <p class="paragraph-no-margin"><%= @user.phone %> </p>
             </div>
           </div>
-          <div class="email-user-ngo d-flex">
+          <div class="email-user-ngo d-flex align-items-center my-2">
             <div class="email-logo mr-2">
               <i class="fas fa-envelope"></i>
             </div>
             <div class="email mr-3">
-              <p><%= @user.email %> </p>
+              <p class="paragraph-no-margin"><%= @user.email %> </p>
             </div>
           </div>
-          <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-between mt-4">
             <div></div>
             <%= link_to "Sign out",  destroy_user_session_path , method: :delete, class: "create-team-button" %>
           </div>
@@ -155,12 +163,18 @@
 
       <% @user.teams.each do |team| %>
         <div class="team-container">
-          <h5 class="team-name text-center"><%= team.name %></h5>
+          <h5 class="team-name text-center mt-2"><%= team.name %></h5>
           <div class="d-flex justify-content-around">
             <% team.users.each do |user| %>
-              <div class="team-member">
-               <%= cl_image_tag (user.photo.key if user.photo.attached?), width: 60, height: 60, class: "rounded-circle" %>
-              </div>
+              <% if user.photo.attached? %>
+                <div class= "team-member-yes-exist">
+                  <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle" %>
+                </div>
+              <% else %>
+                <div class= "team-member-no-exist">
+                  <%= image_tag "https://healthandlearning.org/wp-content/uploads/2019/10/invis-user.png", width: 60, height: 60, class: "rounded-circle"  %>
+                </div>
+              <% end %>
             <% end %>
           </div>
         </div>
