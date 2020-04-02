@@ -36,9 +36,11 @@
               <div class="px-2 py-1 bd-highlight">
                 <%= cl_image_tag message.user.photo.key, class: "avatar" %>
               </div>
-              <div class="p-2 bd-highlight header">
+              <div class="p-2 bd-highlight header d-flex justify-content-between w-100">
                 <strong><%= user.first_name %></strong>
+                <div class = "date">
                 <%= message.message_full_time %>
+                </div>
               </div>
             </div>
             <div class="p-2 bd-highlight">
@@ -54,6 +56,6 @@
 
 </div>
 <%= simple_form_for ([@conversation, @message]), wrapper: :inline_form, wrapper: :inline_form, html: { class: "form-inline chat-textbox" } do |f| %>
-   <%= f.input :body, label: false, placeholder: "Write your message"%>
+  <%= f.input :body, label: false, placeholder: "Write your message"%>
   <%= f.submit "Send", class: "button-send-message" %>
   <%end%>
