@@ -23,16 +23,17 @@ font-size: 16px;
   }
 }
 
-.send-message {
+.button-send-message {
 
+border: none;
+box-shadow: none;
 background-color: #F28A28;
 color: white;
-box-shadow: 0 0 5px rgba(0,0,0,0.2);
 text-align: center;
 font-family: 'Roboto Slab';
 border-radius: 10px;
-margin-right: 10px;
-padding: 4px 5px;
+margin-right: 12px;
+padding:6px 10px;
 
 }
 
