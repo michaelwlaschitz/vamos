@@ -1,26 +1,42 @@
-<h2>CHAT</h2>
+<div class="container-fluid chat-chat">
 
-<div class=”chat-conversation”>
-  <% @messages.each do |message| %>
-    <% if message.body %>
-     <% user = User.find(message.user_id) %>
-     <div class=”item”>
-      <div class=”content”>
-       <div class=”header”><strong><%= user.first_name %></strong>     <%= message.message_time %></div>
-        <div class=”list”>
-         <div class=”item”>
-          <i class=”right triangle icon”></i>
-           <%= message.body %>
-        </div>
-      </div>
-     </div>
+  <h2 class="mb-3 border-bottom">
+    <div>
+          <%= link_to conversations_path do %>
+    <i class='fas fa-chevron-left'></i>
+    <% end %>
     </div>
 
-   <% end %>
-  <% end %>
-</div>
+  Chat</h2>
 
-<%= simple_form_for ([@conversation, @message]) do |f| %>
-<%= f.input :body, placeholder: "Write your message" %>
-<%= f.submit "Send" %>
-<%end%>
+  <div class="d-flex flex-column bd-highlight mb-3 chat-container">
+    <div class="p-2 bd-highlight" style="overflow: scroll">
+      <% @messages.each do |message| %>
+        <div class="card text-message">
+          <% if message.body %>
+            <% user = User.find(message.user_id) %>
+            <div class="d-flex flex-row bd-highlight mb-3">
+              <div class="p-2 bd-highlight">
+                <%= cl_image_tag message.user.photo.key, class: "avatar" %>
+              </div>
+              <div class="p-2 bd-highlight header">
+                <strong><%= user.first_name %></strong>
+                <%= message.message_full_time %>
+              </div>
+            </div>
+            <div class="p-2 bd-highlight">
+              <%= message.body %>
+            </div>
+        <% end %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
+
+</div>
+<%= simple_form_for ([@conversation, @message]), wrapper: :inline_form, wrapper: :inline_form, html: { class: "form-inline chat-textbox" } do |f| %>
+    <%= f.input :body, label: false, placeholder: "Write your message" %>
+  <%= f.submit "Send", class: "btn-primary send-message" %>
+  <%end%>
