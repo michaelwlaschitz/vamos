@@ -24,6 +24,11 @@ class BookingsController < ApplicationController
 
     if @booking.save
       @conversation = Conversation.create(booking: @booking)
+      @message = Message.new(message_params)
+      @message.conversation = @conversation
+      @message.user = current_user
+      @message.save
+      # create a new message from the form to start the conversation
       redirect_to user_profile_path(current_user) #the button for team-creation and for Contacting the NGO now is the same.
     else
       render :new
@@ -52,6 +57,10 @@ class BookingsController < ApplicationController
 
   def team_params
     params.require(:booking).require(:team).permit(:name, :photo)
+  end
+
+  def message_params
+    params.require(:booking).require(:message).permit(:body)
   end
 
   def add_users_to_team
