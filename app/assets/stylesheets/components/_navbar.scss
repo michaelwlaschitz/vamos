@@ -12,7 +12,8 @@
   position: absolute;
   top: 15px;
   right: 20px;
-  img {
+  z-index: 10;
+    img {
     width: 40px;
   }
 }
