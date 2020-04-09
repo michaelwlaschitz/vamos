@@ -16,10 +16,11 @@
 
 @media(min-width: 992px) {
   .content-container {
-    width: 70%;
+    width: 90%;
   }
   .filter-container {
-    width: 50%;
+    width: 90%;
+    margin-top: 0px;
   }
 }
 @media(min-width: 768px) and (max-width: 991px) {
@@ -27,12 +28,12 @@
     width: 80%;
   }
   .filter-container {
-    width: 60%;
+    width: 90%;
+    margin-top: 0px;
   }
 }
 @media(min-width: 575px) and (max-width: 767px) {
   .content-container {
-
   }
 }
 
