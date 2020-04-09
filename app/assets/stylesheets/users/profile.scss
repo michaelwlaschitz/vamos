@@ -9,6 +9,7 @@
 
 .element-1, .element-2 {
   width: 50%;
+  max-width: 200px;
 }
 
 // IF USER IS NGO
@@ -50,6 +51,7 @@
       font-weight: lighter;
     }
   }
+
   .booking-status {
     margin-left: 20px;
     width: 30%;
@@ -206,6 +208,14 @@
   color: $orange-vamos;
 }
 
+.project.card {
+  background-color: white;
+}
 
-
+@media(min-width: 992px) {
+  .project.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
