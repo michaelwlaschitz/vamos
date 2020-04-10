@@ -1,8 +1,9 @@
 <%= render 'shared/logo_top_left' %>
 
-<div class="content-container login-forms">
+<div class="content-container d-flex justify-content-center content-container login-forms">
+   <div class="simple-form">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
+      <div class="form-group">
         <%= f.input :email,
                     required: false,
                     label: false,
@@ -24,6 +25,7 @@
     <div class="my-2">
       <%= render "devise/shared/links" %>
     </div>
+  </div>
 </div>
 
 
