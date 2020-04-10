@@ -1,5 +1,5 @@
 <div class="has-navbar-so-margin">
-  <%= render 'shared/navbar' %>
+  <%= render 'shared/mobile_navbar' %>
 
 <!-- IF USER IS NGO: -->
   <% if current_user.ngo %>
@@ -106,7 +106,7 @@
               <%= link_to "Create Project", new_project_path, class: "create-project"  %>
             </div>
           <% @user.ngo.projects.each do |project| %>
-            <div class="project-card mb-4 mt-3">
+            <div class="mobile-project-card mb-4 mt-3">
               <div class="project-image" style="background-image: url('<%= cl_image_path project.photos.first.key %>')">
               </div>
               <div class="project-text-stuff">
