@@ -106,7 +106,7 @@
               <%= link_to "Create Project", new_project_path, class: "create-project"  %>
             </div>
           <% @user.ngo.projects.each do |project| %>
-            <div class="project-card mb-4 mt-3">
+            <div class="project-card-profile-3">
               <div class="project-image" style="background-image: url('<%= cl_image_path project.photos.first.key %>')">
               </div>
               <div class="project-text-stuff">
@@ -127,7 +127,7 @@
 <!-- IF USER IS VOLUNTEER: -->
   <% else %>
 
-    <div class="content-container border-bottom py-3 my-1">
+    <div class="content-container-profile border-bottom py-3 my-1">
       <div class="d-flex">
         <div class="element-1">
           <% if @user.photo.attached? %>
@@ -160,19 +160,19 @@
       </div>
     </div>
 
-    <div class="content-container border-bottom pb-4 mt-3 mb-0">
-      <div class="d-flex justify-content-between align-items-center">
+    <div class="content-container-profile-team border-bottom pb-4 mt-3 mb-0">
+      <div class=" d-flex justify-content-between align-items-center">
         <h2 class="orange-title">My teams</h2>
       </div>
 
       <% @user.teams.each do |team| %>
         <div class="team-container">
           <h5 class="team-name text-center mt-2"><%= team.name %></h5>
-          <div class="d-flex justify-content-around">
+          <div class=" user-photo d-flex justify-content-around">
             <% team.users.each do |user| %>
               <% if user.photo.attached? %>
-                <div class= "team-member-yes-exist">
-                  <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle" %>
+                <div class= "team-member-yes-exist-volunteer">
+                  <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer" %>
                 </div>
               <% else %>
                 <div class= "team-member-no-exist">
@@ -190,13 +190,13 @@
       <% end %>
     </div>
 
-    <div class="content-container mt-3">
-      <div class="d-flex">
-        <h2 class="orange-title">My applications</h2>
-      </div>
+    <div class="content-container-profile mt-3">
+      <h2 class="orange-title">My Application</h2>
+    </div>
+    <div class="content-container-profile mt-3">
 
       <% current_user.bookings.each do |booking| %>
-        <div class="project-card mb-4 mt-3">
+        <div class="project-card-profile flex-md-row mb-4 mt-3">
           <div class="project-image" style="background-image: url('<%= cl_image_path booking.project.photos.first.key if booking.project.photos.attached? %>')">
             <div class="interest-icon border rounded-circle">
               <% if booking.project.category == "Children" %>
