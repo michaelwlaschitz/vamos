@@ -12,3 +12,24 @@
   margin-top: 330px;
   margin-bottom: 10px;
 }
+
+@media(min-width: 992px) {
+  #progress3 {
+    position: absolute;
+    bottom: 10px;
+    width: 500px;
+  }
+}
+@media(min-width: 768px) and (max-width: 991px) {
+  #progress3 {
+    position: absolute;
+    bottom: 10px;
+    width: 400px;
+  }
+}
+@media(min-width: 575px) and (max-width: 767px) {
+  #progress3 {
+  margin-top: 500px;
+  }
+}
+

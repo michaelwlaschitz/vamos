@@ -20,10 +20,14 @@
   font-weight: lighter;
   position: absolute;
   right: 20px;
-  bottom: 20px;
-  margin-bottom: 50px;
+  bottom: 0px;
 }
 
+.filter-buttons {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 // COMMON FOR INTERESTS + TIME
 .buttons {
@@ -50,5 +54,57 @@
       }
     }
   }
+}
+
+.filter-image {
+  display:none;
+  height: 100vh;
+  width: 500px;
+  flex-grow: 1;
+  object-fit: cover;
+}
+
+@media(min-width: 992px) {
+  .filter-submit {
+    position: static;
+    margin-top: 40px;
+  }
+  .filter-image {
+    display: block;
+    margin-left: 50px;
+  }
+  .filter-content {
+    width: 500px;
+  }
+  .filter-form {
+    margin-top: 50px;
+    position: relative;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+  .filter-submit{
+    position: static;
+    margin-top: 30px;
+  }
+  .filter-image {
+    display:block;
+    margin-left: 50px;
+  }
+  .filter-content {
+      width: 400px;
+    }
+  .filter-form {
+      margin-top: 50px;
+      position: relative;
+    }
+}
+
+@media(min-width: 575px) and (max-width: 767px) {
+  .slogan-home {
+  }
+  .filter-content {
+      max-width: 400px;
+    }
 }
 
