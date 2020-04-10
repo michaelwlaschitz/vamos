@@ -6,19 +6,34 @@
   padding: 0px;
 }
 
+.filter-container {
+  margin: auto;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  width: 90%;
+  padding: 0px;
+}
+
 @media(min-width: 992px) {
   .content-container {
-    width: 70%;
+    width: 90%;
+  }
+  .filter-container {
+    width: 90%;
+    margin-top: 0px;
   }
 }
 @media(min-width: 768px) and (max-width: 991px) {
   .content-container {
     width: 80%;
   }
+  .filter-container {
+    width: 90%;
+    margin-top: 0px;
+  }
 }
 @media(min-width: 575px) and (max-width: 767px) {
   .content-container {
-
   }
 }
 
