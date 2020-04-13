@@ -11,25 +11,3 @@
 input#user-email.form-control.string.email.optional {
   margin-top: 40px;
 }
-
-
-.simple-form {
-  max-width: 500px;
-  width: 100%;
-}
-
-@media(min-width: 992px) {
-  .simple-form {
-    width: 100%;
-  }
-}
-@media(min-width: 768px) and (max-width: 991px) {
-  .simple-form {
-    width: 100%;
-  }
-}
-@media(min-width: 575px) and (max-width: 767px) {
-  .simple-form {
-
-  }
-}
