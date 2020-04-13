@@ -51,6 +51,7 @@
       font-weight: lighter;
     }
   }
+
   .booking-status {
     margin-left: 20px;
     width: 30%;
@@ -284,6 +285,10 @@
   color: $orange-vamos;
 }
 
+.project.card {
+  background-color: white;
+}
+
 
 .project-card-profile {  // add to rename the cards to not have the same effects on the projects index page
   padding-bottom: 0.5rem;
@@ -382,6 +387,7 @@
     width: 80%;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+
   }
 }
 

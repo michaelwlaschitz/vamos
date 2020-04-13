@@ -1,8 +1,7 @@
-<div class="content-container">
-  <div class="form-group">
+<div class="content-container d-flex justify-content-center align-items-center">
+  <div class="simple-form">
 
       <h1 class="mb-4">Create your NGO profile</h1>
-
   <!-- Form -->
 
       <%= simple_form_for @ngo do |f|  %>
@@ -29,7 +28,7 @@
         <div class="logo-file-name">
         </div>
       </div>
-      <%= f.submit "Create new NGO", class: "btn btn-primary vamos w-100"%>
+      <%= f.submit "Create new NGO", class: "button-vamos primary-style vamos w-100"%>
       <% end %>
 
     </div>

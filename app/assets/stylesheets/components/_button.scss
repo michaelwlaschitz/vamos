@@ -1,6 +1,4 @@
-.btn.btn-primary.vamos {
-background-color:#F28A28;
-color: white;
+.button-vamos {
 justify-content: center;
 border-radius: 10px;
 height: 40;
@@ -11,115 +9,45 @@ font-family: 'Roboto Slab';
 font-size: 20px;
 margin-top: 36px;
 border-color:#F28A28;
+text-decoration: none;
+z-index: 10;
+display: inline-block;
+vertical-align: middle;
+cursor: pointer;
+user-select: none;
+padding: 0.375rem 0.75rem;
+border: 1px solid transparent;
+line-height: 1.5;
+padding: 0.375rem 0.75rem;
+transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+box-sizing: border-box;
 }
 
-.btn.btn-primary.vamos.ngo {
-background-color: transparent;
-color: #F28A28;
-justify-content: center;
-border-radius: 15px;
-height: 40;
-width: 90%;
-box-shadow: 0 0 10px rgba(0,0,0,0.2);
-text-align: center;
-font-family: 'Roboto Slab';
-font-size: 20px;
-margin-top: 36px;
-}
-
-
-.button-apply-show {
-  background-color: #F28A28;
-  padding: 16px 10px 16px 10px;
-  border-radius: 5px;
-  color: white;
-  font-size: 22px;
-  text-align: center;
-  width: 90%;
-  font-weight: bold;
+.button-vamos:hover {
   text-decoration: none;
-  z-index: 10;
 }
 
-.button-apply-show:hover {
+.primary-stlye {
+  background-color:#F28A28;
   color: white;
 }
 
-.button-upload-file {
-  background: linear-gradient(top, #f9f9f9, #e3e3e3);
-  color: $black-gray;
-  padding: 5px 8px;
-  border: 1px solid #999;
-  border-radius: 3px;
-  outline: none;
-  cursor: pointer;
-  text-shadow: 1px 1px #fff;
-  font-weight: 700;
-  font-size: 16px;
-  margin-top: 6px;
+.secondary-style {
+  background-color: transparent;
+  color: #F28A28;
+  border-color:#F28A28;
 }
 
-.background-button {
+.background-button-show-page {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
-  height: 80px;
+  height: 70px;
   position: fixed;
-  bottom: 0px;
+  bottom: -11px;
   width: 100%;
   z-index: 10;
-}
-
-.social-share-button {
-  .ssb-icon {
-    background-size: 40px 40px;
-    height: 40px;
-    width: 40px;
-  }
-}
-
-// a.ssb-icon.ssb-facebook {
-//   background-size: 30px 30px;
-//   height: 30px;
-//   width: 40px;
-//   color: gray;
-// }
-
-a.ssb-icon.ssb-whatsapp_app {
-  background-size: 35px 35px;
-  height: 35px;
-  width: 35px;
-  color: gray;
-}
-
-.button-create-team {
-background-color:#F28A28;
-color: white;
-justify-content: center;
-border-radius: 10px;
-height: 40;
-width: 90%;
-box-shadow: 0 0 10px rgba(0,0,0,0.2);
-text-align: center;
-font-family: 'Roboto Slab';
-font-size: 20px;
-}
-
-.button-team {
-background-color:white;
-opacity: 0.9;
-color: #F28A28;
-border-color:#F28A28;
-justify-content: center;
-border-radius: 10px;
-height: 35;
-width: 98%;
-box-shadow: 0 0 10px rgba(0,0,0,0.2);
-text-align: center;
-font-family: 'Roboto Slab';
-font-size: 20px;
-margin-bottom: 10px;
 }
 
 .button-upload-file {
@@ -135,5 +63,31 @@ margin-bottom: 10px;
   font-size: 16px;
   margin-top: 6px;
 }
+
+@media(min-width: 992px) {
+  .button-vamos {
+    max-width: 400px;
+  }
+}
+@media(min-width: 768px) and (max-width: 991px) {
+  .button-vamos {
+    max-width: 300px;
+  }
+}
+
+@media(min-width: 575px) and (max-width: 767px) {
+  .button-vamos {
+    max-width: 300px;
+  }
+}
+
+@media(min-width: 200px) and (max-width: 574px) {
+  .button-vamos {
+    max-width: 300px;
+  }
+}
+
+
+
 
 

@@ -10,34 +10,37 @@ const fitMapToMarkers = (map, markers) => {
 
 
 const initMapbox = () => {
-  const mapElement = document.getElementById('map');
+  const mapElements = document.querySelectorAll('#map');
 
-  if (mapElement) { // only build a map if there's a div#map to inject into
-    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10',
-      center: [-74.5, 40], // starting position
-      zoom: 9 // starting zoom
-    });
+  if (mapElements) { // only build a map if there's a div#map to inject into
+    mapElements.forEach((mapElement) => {
 
-    map.addControl(new mapboxgl.NavigationControl());
+      mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+      const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v10',
+        center: [-74.5, 40], // starting position
+        zoom: 9 // starting zoom
+      });
+
+      map.addControl(new mapboxgl.NavigationControl());
 
 
-    const markers = JSON.parse(mapElement.dataset.markers);
-    markers.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup) // add this
-        .addTo(map);
-    });
+      const markers = JSON.parse(mapElement.dataset.markers);
+      markers.forEach((marker) => {
+        const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+        new mapboxgl.Marker()
+          .setLngLat([ marker.lng, marker.lat ])
+          .setPopup(popup) // add this
+          .addTo(map);
+      });
 
-    fitMapToMarkers(map, markers);
+      fitMapToMarkers(map, markers);
 
-    $('#exampleModal').on('show.bs.modal', function () {
-      map.resize()
-      console.log("test");
+      $('#exampleModal').on('show.bs.modal', function () {
+        map.resize()
+        console.log("test");
+      });
 
     });
   }

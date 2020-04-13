@@ -13,6 +13,7 @@
 @import "pages/index";
 @import "projects/index";
 @import "ngos/index";
+@import "reviews/index";
 @import "users/index";
 @import "chat/index";
 @import "devise/login";
@@ -37,6 +38,12 @@ h1 {
   font-size: 27px;
 }
 
+@media(min-width: 992px) {
+  h1 {
+    font-size: 36px;
+  }
+}
+
 h2 {
   // color: $black-gray;
   font-size: 22px;
@@ -56,6 +63,7 @@ h3 {
 a {
   color: $black-gray;
   text-decoration: none;
+  opacity: 0.93;
 }
 
 .smaller-text {
@@ -64,7 +72,8 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: $orange-vamos;
+  color: white;
+  opacity: 1;
 }
 
 .paragraph-no-margin {
