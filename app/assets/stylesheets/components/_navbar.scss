@@ -24,7 +24,7 @@
   margin-bottom: 90px;
 }
 
-.mobile-navbar-container {
+.mobile-navbar {
   background-color: white;
   z-index: 1000;
   height: 65px;
@@ -58,24 +58,44 @@
 }
 
 // DESKTOP NAVBAR
-
-.desktop-navbar-container {
-  background-color: white;
-  .nav-logo img {
-    width: 40px;
+.desktop-navbar {
+  justify-content: space-between;
+  border-bottom: 1px solid #DEE2E6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .navbar-collapse {
+    flex-grow: 0;
   }
 }
 
 @media(min-width: 992px) {
-
+  .mobile-navbar {
+    display: none !important; //probably because of the positioning, I can't do it without this, lmk if you find solution.
+  }
+  .has-navbar-so-margin {
+    margin-bottom: 0px;
+  }
+  .logo-top-left {
+    display: none;
+  }
 }
 
 @media(min-width: 768px) and (max-width: 991px) {
-
+  .mobile-navbar {
+    display: none !important;
+  }
+  .has-navbar-so-margin {
+    margin-bottom: 0px;
+  }
+  .logo-top-left {
+    display: none;
+  }
 }
 
-@media(min-width: 575px) and (max-width: 767px) {
-
+@media(max-width: 767px) {
+  .desktop-navbar {
+    display: none;
+  }
 }
 
 
