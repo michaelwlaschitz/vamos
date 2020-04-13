@@ -7,3 +7,79 @@
 .conversation-content {
   flex-grow: 1;
 }
+
+.content-container-chat {
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  width: 90%;
+  padding: 0px;
+  max-width: 700px;
+  a:hover {
+    color: red;
+  }
+}
+
+@media(min-width: 992px) {
+  .content-container-chat {
+    width: 80%;
+    height: 80%;
+  }
+}
+@media(min-width: 768px) and (max-width: 991px) {
+  .content-container-chat {
+    width: 70%;
+    height: 70%;
+  }
+}
+
+.line-text-status{
+  line-height: 100%;
+}
+
+@media(min-width: 992px) {
+  .line-text-status {
+    line-height: 50%;
+  }
+}
+@media(min-width: 768px) and (max-width: 991px) {
+  .line-text-status {
+    line-height: 80%;
+  }
+}
+
+@media(min-width: 575px) and (max-width: 767px) {
+  .line-text-status {
+    line-height: 100%;
+  }
+}
+
+
+//Display the project name when it's on desktop
+#desktop-show-project-chat {
+display:none;
+}
+
+@media screen and (min-width: 992px) {
+#desktop-show-project-chat{
+display: block; }
+}
+
+//Display the project name when it's on desktop
+#mobile-show-chat {
+display:block;
+}
+
+@media screen and (min-width: 992px) {
+#mobile-show-chat{
+display: none; }
+}
+
+#mobile-show-status-right {
+  display:none;
+}
+
+@media screen and (min-width: 992px) {
+#mobile-show-status-right{
+display: block; }
+}
