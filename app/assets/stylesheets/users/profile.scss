@@ -89,12 +89,15 @@
 }
 
 @media(min-width: 992px) {
-  .booking-name-team {
-
+  .booking-status {
+    margin-right: 100px;
   }
 }
 
-
+.team-name-ngo {
+  font-weight: lighter;
+  padding-bottom: 10px;
+}
 
 #accepted-text {
   color: $orange-vamos;
@@ -151,7 +154,7 @@
 }
 
 .rounded-circle-volunteer {  //imagz size
-
+  border-radius: 50%;
 }
 
 @media(min-width: 992px) {
@@ -166,6 +169,19 @@
     height: 66px;
   }
 }
+
+.rounded-circle {
+
+} //user photo for ngos
+
+@media(min-width: 992px) {
+  .rounded-circle {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
 
 .team-member-no-exist {
   border-radius: 50%;
@@ -388,3 +404,6 @@
   }
 }
 
+.fa-user-friends {
+  margin-left: 5px;
+}
