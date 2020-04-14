@@ -56,21 +56,20 @@
 .desktop-card-container {
   width: 1200px;
   flex-grow:1;
+  a :hover {
+    color: #5f6368;
+  }
   .desktop-project-card {
     display: flex;
     justify-content: center;
     align-items: center;
     .project-image {
-      object-fit: contain;
+      object-fit: cover;
       height: 200px;
       width: 350px;
       border-radius: 4px;
     }
     .project-text-stuff {
-      & :hover {
-        color: $orange-vamos;
-        text-decoration: none;
-      }
       .project-title {
         color: $orange-vamos;
       }
@@ -85,6 +84,9 @@
         display: -webkit-box;
         -webkit-line-clamp: 3; /* number of lines to show */
         -webkit-box-orient: vertical;
+        & :hover {
+
+        }
       }
     }
   }
@@ -102,6 +104,9 @@
 
 @media(min-width: 992px) {
   .mobile-projects-index {
+    display: none;
+  }
+  .mobile-projects-index #map {
     display: none;
   }
 }
