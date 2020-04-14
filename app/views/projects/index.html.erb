@@ -1,3 +1,85 @@
+<!-- MOBILE INDEX PAGE -->
+<div class="mobile-projects-index">
+  <div class="has-navbar-so-margin">
+    <%= render 'shared/mobile_navbar' %>
+    <div class = "content-container">
+      <p class="opportunities-counter"> We found <%= @count %> oportunities near you</p>
+      <div class="filters d-flex justify-content-left">
+        <div style="font-size: 16px" class="filter py-1 px-5" data-toggle="modal" data-target="#exampleModal">Filter</div>
+      </div>
+      <div class="mobile-card-container my-3">
+        <% @projects.each do |project| %>
+          <%= link_to project_path(project) do %>
+            <div class="mobile-project-card my-4">
+              <% if project.photos.any? %>
+              <div class="project-image" style="background-image: url('<%= cl_image_path (project.photos.first.key if project.photos.attached?) %>')">
+                <%= render "projects/partial_card_icons", project: project %>
+              </div>
+              <% else %>
+              <div class="project-image" style="background-image: url('https://www.studium-ratgeber.de/wp-content/uploads/volunteering-europa.jpg')"></div>
+              <% end %>
+              <div class="project-text-stuff">
+                <h5 class="project-title"><%= project.title %></h5>
+                <p class="project-ong"><%= project.ngo.name if project.ngo %></p>
+                <div class="project-elements d-flex justify-content-left">
+                  <div class="element"><i class="far fa-clock"></i><%= project.hours_per_week %>h/week</div>
+                  <div class="element"><i class="fas fa-user-friends"></i><%= project.capacity%></div>
+                  <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- Button trigger modal -->
+  <i id="map_button" button class ="fas fa-map-marker-alt open-map-modal fa-2x"></i>
+  <!-- Modal -->
+  <div class="custom-map-modal">
+    <div class="position-relative">
+      <div style="top: 25px; left: 25px; z-index: 2000" class="position-absolute close-map-modal">
+        <i class="far fa-times-circle fa-2x"></i>
+      </div>
+      <div
+        id="map-mobile"
+        style="width: 100vw;
+        height: 100vh;
+        overflow: visible;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </div>
+  <!-- Function JS to calculate the distance between the ngo location and user location -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Filter Volunteering Opportunities</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h2 class="mb-2">Location</h2>
+          <%= form_with url: "/projects", method: :get, local: true do |f| %>
+          <%= f.text_field :address, placeholder: 'Location', label:false %>
+          <h2 class="mt-4">Interests</h2>
+          <%= render "projects/partial_filter_boxes_interest" %>
+          <h2 class="mt-4 mb-2">Hours per Week</h2>
+          <%= render "projects/partial_filter_boxes_time" %>
+        </div>
+        <div class="modal-footer"></div>
+        <%= f.submit "Save filter", class: "btn btn-primary vamos mt-3 w-100" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 
 <!-- DESKTOP INDEX PAGE -->
 <div class="has-navbar-so-margin">
@@ -42,94 +124,11 @@
       <% end %>
     </div>
     <div class="desktop-map">
-      <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-        <% @markers.each do |marker| %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- MOBILE INDEX PAGE -->
-<div class="mobile-projects-index">
-  <div class="has-navbar-so-margin">
-    <%= render 'shared/mobile_navbar' %>
-    <div class = "content-container">
-      <p class="opportunities-counter"> We found <%= @count %> oportunities near you</p>
-      <div class="filters d-flex justify-content-left">
-        <div style="font-size: 16px" class="filter py-1 px-5" data-toggle="modal" data-target="#exampleModal">Filter</div>
-      </div>
-      <div class="mobile-card-container my-3">
-        <% @projects.each do |project| %>
-        <%= link_to project_path(project) do %>
-        <div class="mobile-project-card my-4">
-          <% if project.photos.any? %>
-          <div class="project-image" style="background-image: url('<%= cl_image_path (project.photos.first.key if project.photos.attached?) %>')">
-            <%= render "projects/partial_card_icons", project: project %>
-          </div>
-          <% else %>
-          <div class="project-image" style="background-image: url('https://www.studium-ratgeber.de/wp-content/uploads/volunteering-europa.jpg')"></div>
-          <% end %>
-          <div class="project-text-stuff">
-            <h5 class="project-title"><%= project.title %></h5>
-            <p class="project-ong"><%= project.ngo.name if project.ngo %></p>
-            <div class="project-elements d-flex justify-content-left">
-              <div class="element"><i class="far fa-clock"></i><%= project.hours_per_week %>h/week</div>
-              <div class="element"><i class="fas fa-user-friends"></i><%= project.capacity%></div>
-              <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
-            </div>
-          </div>
-        </div>
-        <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <!-- Button trigger modal -->
-  <i id="map_button" button class ="fas fa-map-marker-alt open-map-modal fa-2x"></i>
-  <!-- Modal -->
-  <div class="custom-map-modal">
-    <div class="position-relative">
-      <div style="top: 25px; left: 25px; z-index: 2000" class="position-absolute close-map-modal">
-        <i class="far fa-times-circle fa-2x"></i>
-      </div>
       <div
-        id="map"
-        style="width: 100vw;
-        height: 100vh;
-        overflow: visible;"
+        id="map-desktop"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
   </div>
-  <!-- Function JS to calculate the distance between the ngo location and user location -->
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalLabel">Filter Volunteering Opportunities</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <h2 class="mb-2">Location</h2>
-          <%= form_with url: "/projects", method: :get, local: true do |f| %>
-          <%= f.text_field :address, placeholder: 'Location', label:false %>
-          <h2 class="mt-4">Interests</h2>
-          <%= render "projects/partial_filter_boxes_interest" %>
-          <h2 class="mt-4 mb-2">Hours per Week</h2>
-          <%= render "projects/partial_filter_boxes_time" %>
-        </div>
-        <div class="modal-footer"></div>
-        <%= f.submit "Save filter", class: "btn btn-primary vamos mt-3 w-100" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
 </div>
