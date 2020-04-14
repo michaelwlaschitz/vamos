@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   end
   resources :ngos, only: [:new, :create]
 
-  resources :teams, only: [:create]
+  resources :teams, only: [:new, :create]
 
   resources :conversations, only: [:index, :show, :create] do
     resources :messages, only: [:create]

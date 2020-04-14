@@ -156,9 +156,14 @@
 <div style="height: 80px">
 </div>
 
-<div class="background-button-show-page">
-  <%= link_to "APPLY WITH YOUR TEAM", new_project_booking_path(@project), class: "button-vamos primary-stlye mb-5"%>
-</div>
+<form action="/application" method="get">
+  <input id="hidden-input" type="hidden" name="id" value="">
+  <button type="submit" class="button-vamos">
+  Apply with your team!
+  </button>
+
+</form>
+
 
 
 
