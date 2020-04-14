@@ -18,13 +18,13 @@
   }
 }
 
-// NORMAL NAVBAR
+// MOBILE NAVBAR
 
 .has-navbar-so-margin {
   margin-bottom: 90px;
 }
 
-.navbar-container {
+.mobile-navbar {
   background-color: white;
   z-index: 1000;
   height: 65px;
@@ -36,27 +36,72 @@
   a:hover {
     color: gray;
   }
-}
+  .nav-element {
+    height: 46px;
+    text-align: center;
+    .nav-icon {
+      font-size: 24px;
+      color: gray;
 
-.nav-element {
-  height: 46px;
-  text-align: center;
-  &.active .nav-icon, &.active .nav-icon-tag {
-    color: $orange-vamos;
+    }
+    .nav-icon-tag {
+      font-size: 12px;
+      font-weight: lighter;
+    }
+    &.active .nav-icon, &.active .nav-icon-tag {
+      color: $orange-vamos;
+    }
+  }
+  .nav-logo img {
+    width: 38px;
   }
 }
 
-.nav-logo img {
-  width: 38px;
+// DESKTOP NAVBAR
+.desktop-navbar {
+  justify-content: space-between;
+  border-bottom: 1px solid #DEE2E6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .navbar-collapse {
+    flex-grow: 0;
+  }
 }
 
-.nav-icon {
-  font-size: 24px;
-  color: gray;
-
+@media(min-width: 992px) {
+  .mobile-navbar {
+    display: none !important; //probably because of the positioning, I can't do it without this, lmk if you find solution.
+  }
+  .has-navbar-so-margin {
+    margin-bottom: 0px;
+  }
+  .logo-top-left {
+    display: none;
+  }
 }
 
-.nav-icon-tag {
-  font-size: 12px;
-  font-weight: lighter;
+@media(min-width: 768px) and (max-width: 991px) {
+  .mobile-navbar {
+    display: none !important;
+  }
+  .has-navbar-so-margin {
+    margin-bottom: 0px;
+  }
+  .logo-top-left {
+    display: none;
+  }
 }
+
+@media(max-width: 767px) {
+  .desktop-navbar {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+

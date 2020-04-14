@@ -1,19 +1,68 @@
-.content .header {
-font: 'Roboto Slab';
-font-size: 16px;
+.conversation-go-back-arrow {
+  font-size: 40px;
+  color: $orange-vamos;
+}
+.before-conversation-stuff {
+  height: 100px;
+  .conversation-booking-status {
+    opacity: 0.6;
+    font-weight: lighter;
+  }
+}
+
+.chat-chat {
+  height: 100vh;
+  position: relative;
+}
+
+.messages-container {
+  height: 75vh;
+  .message-box {
+    font-weight: lighter;
+    border-radius: 10px;
+    flex-grow: 1;
+    font-size: 14px;
+    .message-info {
+      opacity: 0.5;
+      font-size: 12px;
+    }
+    .avatar-box {
+      width: auto;
+    }
+  }
+}
+
+.my-message {
+  background-color: $orange-vamos;
+  color: white;
+}
+.someones-message {
+  background-color: #EDEFED;
+}
+
+.button-send-message {
+  color: $orange-vamos;
+  text-align: center;
+  font-family: 'Roboto Slab';
+  font-size: 18px;
+  margin-right: 12px;
+  padding:6px 10px;
+  border: none;
+  width: 10%;
 }
 
 .chat-textbox {
   border-spacing: 0px;
+  border: none;
   width: 100%;
   position: fixed;
   bottom: 0px;
   display: flex;
-  border-top: 0.5px gray solid;
   background-color: white;
   .message_body {
-    flex-grow: 2;
+    flex-grow: 1;
     textarea{
+      width: 90%;
       border: none;
       resize: none;
       margin-left: 5px;
@@ -22,31 +71,61 @@ font-size: 16px;
   }
 }
 
-.button-send-message {
-
-border: none;
-box-shadow: none;
-background-color: #F28A28;
-color: white;
-text-align: center;
-font-family: 'Roboto Slab';
-border-radius: 10px;
-margin-right: 12px;
-padding:6px 10px;
-
-}
-
-
-.chat-chat {
-  height: 100vh;
-  position: relative;
-}
-
-.chat-container {
-
-  height: 75vh;
-}
-
 .text-message {
   border:none;
+}
+
+@media(min-width: 992px) {
+  .conversation-go-back-arrow {
+    position: fixed;
+    left: 30px;
+    top: 100px;
+  }
+  .conversation-booking-status {
+    padding-top: 30px;
+  }
+  .responsive-chat-container {
+    width: 60%;
+    margin: auto;
+  }
+  .messages-container {
+    height: 70vh;
+  }
+  .chat-textbox {
+    width: 60%;
+    padding-bottom: 20px;
+    #message_body {
+      height: 100px;
+    }
+  }
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+  .conversation-go-back-arrow {
+    position: fixed;
+    left: 30px;
+    top: 100px;
+  }
+  .conversation-booking-status {
+    padding-top: 30px;
+  }
+
+  .responsive-chat-container {
+    width: 70%;
+    margin: auto;
+  }
+  .messages-container {
+    height: 70vh;
+  }
+  .chat-textbox {
+    width: 70%;
+    padding-bottom: 20px;
+    #message_body {
+      height: 100px;
+    }
+  }
+}
+
+@media(min-width: 575px) and (max-width: 767px) {
+
 }

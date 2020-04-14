@@ -9,6 +9,7 @@
 
 .element-1, .element-2 {
   width: 50%;
+  max-width: 200px;
 }
 
 // IF USER IS NGO
@@ -50,6 +51,7 @@
       font-weight: lighter;
     }
   }
+
   .booking-status {
     margin-left: 20px;
     width: 30%;
@@ -84,10 +86,19 @@
         color: $orange-vamos;
       }
     }
-
   }
 }
 
+@media(min-width: 992px) {
+  .booking-status {
+    margin-right: 100px;
+  }
+}
+
+.team-name-ngo {
+  font-weight: lighter;
+  padding-bottom: 10px;
+}
 
 #accepted-text {
   color: $orange-vamos;
@@ -125,15 +136,58 @@
   border-radius: 50%;
 }
 
-.team-member-yes-exist{
+.team-member-yes-exist-volunteer{  //contour size
   border-radius: 50%;
   border: 2px solid $orange-vamos;
 }
+
+@media(min-width: 992px) {
+  .team-member-yes-exist-volunteer {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media(min-width: 768px) and (max-width: 991px) {
+  .team-member-yes-exist-volunteer {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.rounded-circle-volunteer {  //imagz size
+  border-radius: 50%;
+}
+
+@media(min-width: 992px) {
+  .rounded-circle-volunteer {
+    width: 76px;
+    height: 76px;
+  }
+}
+@media(min-width: 768px) and (max-width: 991px) {
+  .rounded-circle-volunteer {
+    width: 66px;
+    height: 66px;
+  }
+}
+
+.rounded-circle {
+
+} //user photo for ngos
+
+@media(min-width: 992px) {
+  .rounded-circle {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
 .team-member-no-exist {
   border-radius: 50%;
   border: 2px solid gray;
 }
-
 
 
 .create-team-button {
@@ -157,8 +211,33 @@
   }
 }
 
+.user-photo {
+
+}
+
+@media(min-width: 992px) {
+  .user-photo {
+    margin-right: 150px;
+    margin-left: 150px;
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+}
+@media(min-width: 768px) and (max-width: 991px) {
+  .user-photo {
+    margin-right: 150px;
+    margin-left: 150px;
+  }
+}
+
 .team-name {
   font-weight: lighter;
+}
+
+@media(min-width: 992px) {
+  .team-name {
+    margin-bottom: 20px;
+  }
 }
 
 
@@ -168,7 +247,7 @@
   padding: 5px 5px;
   box-shadow: 5px;
   font-size: 16px;
-  position: absolute;
+  // position: absolute; best solution to have the button fits the card in every screen
   left: 230px;
   bottom: 135px;
   border-radius: 5px;
@@ -206,6 +285,131 @@
   color: $orange-vamos;
 }
 
+.project.card {
+  background-color: white;
+}
 
 
+.project-card-profile {  // add to rename the cards to not have the same effects on the projects index page
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 1px 2px 3px gray;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
+  .project-image {
+    background-size: cover;
+    width: 100%;
+    height: 180px;
+    position: relative;
+  }
+  .interest-icon {
+    background-color: white;
+    text-align: center;
+    padding: 7px;
+    box-shadow: 5px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    position: absolute;
+    left: 3px;
+    bottom: 3px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project-text-stuff {
+    padding-left: 5px;
+    .project-title {
+      margin: 0px 0px 0px;
+      font-size: 22px;
+      margin-bottom: 4px;
+      margin-top: 4px;
+    }
+    .project-ong {
+      margin-bottom: 5px;
+      font-size: 16px;
+      color: $light-gray;
+      font-weight: lighter;
+    }
+    .project-elements {
+      color: gray;
+      font-weight: lighter;
+      .element {
+        margin-right: 30px;
+      }
+      a {
+      text-decoration: none;
+      }
+    }
+  }
+}
+.project-text-stuff:hover {
+  text-decoration: none;
+}
+
+
+@media(min-width: 992px) {
+  .project-card-profile {
+    max-width: 350px;
+    padding-right: 2px;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+  .project-card-profile {
+    width: 80%;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    max-width: 350px;
+  }
+}
+
+.content-container-profile {
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  width: 90%;
+  padding: 0px;
+  display: grid;
+}
+
+@media(min-width: 992px) {
+  .content-container-profile {
+    width: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+}
+@media(min-width: 768px) and (max-width: 991px) {
+  .content-container-profile {
+    width: 80%;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+
+  }
+}
+
+.content-container-profile-team {
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  width: 90%;
+  padding: 0px;
+}
+
+@media(min-width: 992px) {
+  .content-container-profile-team {
+    width: 80%;
+  }
+}
+@media(min-width: 768px) and (max-width: 991px) {
+  .content-container-profile-team {
+    width: 80%;
+  }
+}
+
+.fa-user-friends {
+  margin-left: 5px;
+}

@@ -1,5 +1,5 @@
 <div class="has-navbar-so-margin">
-  <%= render 'shared/navbar' %>
+  <%= render 'shared/mobile_navbar' %>
 
   <% @booking.project.photos.each do |photo|%>
   <div>
@@ -7,9 +7,8 @@
   </div>
   <% end %>
 
-
-  <div class="content-container mt-4">
-    <div class="form-group">
+  <div class="d-flex justify-content-center align-items-center content-container mt-4">
+    <div class="simple-form">
 
         <h1>
           Write a review for <span style="color: #fb8500">"<%= @booking.project.title %>"</span>

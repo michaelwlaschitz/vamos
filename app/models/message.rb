@@ -11,4 +11,8 @@ class Message < ApplicationRecord
   created_at.strftime("%d %b")
   end
 
+  def message_date
+    created_at.strftime("%d %B %Y")
+  end
+
 end
