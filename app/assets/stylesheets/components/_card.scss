@@ -93,7 +93,7 @@
 }
 .desktop-map {
   width: 60%;
-  #map {
+  #map-desktop {
     width: 100%;
     height: 100vh;
     position: sticky;
@@ -104,9 +104,6 @@
 
 @media(min-width: 992px) {
   .mobile-projects-index {
-    display: none;
-  }
-  .mobile-projects-index #map {
     display: none;
   }
 }
