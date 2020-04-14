@@ -15,29 +15,29 @@
         </div>
       <% @projects.each do |project| %>
       <%= link_to project_path(project) do %>
-      <div class="row mx-3 py-4 border-top">
-        <div class = "desktop-project-card">
-          <div>
-            <% if project.photos.any? %>
-            <div class="project-image" style="background-image: url('<%= cl_image_path (project.photos.first.key if project.photos.attached?) %>')"></div>
-            <% else %>
-            <div class="project-image" style="background-image: url('https://www.studium-ratgeber.de/wp-content/uploads/volunteering-europa.jpg')"></div>
-            <% end %>
-          </div>
-          <div class="project-text-stuff ml-2">
-            <h5 class="project-title"><%= project.title %></h5>
-            <p class="project-ong my-2"><%= project.ngo.name if project.ngo %></p>
-            <div class="project-elements d-flex">
-              <div class="element mr-3"><i class="far fa-clock"></i><%= project.hours_per_week %>h/week</div>
-              <div class="element mr-3"><i class="fas fa-user-friends"></i><%= project.capacity%></div>
-              <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
+        <div class="row mx-3 py-4 border-top">
+          <div class = "desktop-project-card">
+            <div>
+              <% if project.photos.any? %>
+              <div class="project-image" style="background-image: url('<%= cl_image_path (project.photos.first.key if project.photos.attached?) %>')"></div>
+              <% else %>
+              <div class="project-image" style="background-image: url('https://www.studium-ratgeber.de/wp-content/uploads/volunteering-europa.jpg')"></div>
+              <% end %>
             </div>
-            <div class="project-description mt-4">
-              <p class="paragraph-no-margin"><%= project.description %></p>
+            <div class="project-text-stuff ml-2">
+              <h5 class="project-title"><%= project.title %></h5>
+              <p class="project-ong my-2"><%= project.ngo.name if project.ngo %></p>
+              <div class="project-elements d-flex">
+                <div class="element mr-3"><i class="far fa-clock"></i><%= project.hours_per_week %>h/week</div>
+                <div class="element mr-3"><i class="fas fa-user-friends"></i><%= project.capacity%></div>
+                <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
+              </div>
+              <div class="project-description mt-4">
+                <p class="paragraph-no-margin"><%= project.description %></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       <% end %>
       <% end %>
     </div>
