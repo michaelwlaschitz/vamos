@@ -20,6 +20,9 @@
 
     <!--   Users in chat -->
 
+      <div id="desktop-show-project-chat">
+        <p class="style-project"><strong>Project: </strong><%= conversation.project.title%></p>
+      </div>
       <div class="d-flex justify-content-between align-items-center mb-1">
         <div class="conversation-users font-weight-bold">
           <%= conversation.ngo.user.first_name %>,
@@ -56,20 +59,11 @@
           <% elsif conversation.messages.last.present? %>
           <%=conversation.messages.last.body.truncate(70)%>
           <% else %>
-          <p class="paragraph-no-margin font-italic"> No messages yet - Text a message to the project owner!</p>
+          <p class="paragraph-no-margin font-italic"> No messages yet - Feel free to ask any questions!</p>
           <% end %>
           <div id="mobile-show-status-right">
-            <%if conversation.booking.status == "pending"%>
-              <p style="color:#F28A28"><strong><%= conversation.booking.status%></strong></p>
-            <%elsif conversation.booking.status == "rejected"%>
-              <p style="color:black"><strong><%= conversation.booking.status%></strong></p>
-            <% else %>
-              <p style="color:green"><strong><%= conversation.booking.status%></strong></p>
-            <% end %>
+            <%=conversation.booking.status%>
           </div>
-        </div>
-        <div id="desktop-show-project-chat">
-          <p><strong>Project: </strong><%= conversation.project.title%></p>
         </div>
         <div id="mobile-show-chat">
           <%if conversation.booking.status == "pending"%>
@@ -80,9 +74,7 @@
             <p style="color:green"><strong><%= conversation.booking.status%></strong></p>
           <% end %>
         </div>
-
       </div>
-
     </div>
   </div>
 <% end %>

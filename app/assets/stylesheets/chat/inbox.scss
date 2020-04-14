@@ -16,7 +16,7 @@
   padding: 0px;
   max-width: 700px;
   a:hover {
-    color: red;
+    color: $black-gray;
   }
 }
 
@@ -33,27 +33,10 @@
   }
 }
 
-.line-text-status{
-  line-height: 100%;
+.style-project {
+  margin-bottom: 0px;
+  color: #F28A28;
 }
-
-@media(min-width: 992px) {
-  .line-text-status {
-    line-height: 50%;
-  }
-}
-@media(min-width: 768px) and (max-width: 991px) {
-  .line-text-status {
-    line-height: 80%;
-  }
-}
-
-@media(min-width: 575px) and (max-width: 767px) {
-  .line-text-status {
-    line-height: 100%;
-  }
-}
-
 
 //Display the project name when it's on desktop
 #desktop-show-project-chat {
