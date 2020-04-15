@@ -89,12 +89,6 @@
   }
 }
 
-@media(min-width: 992px) {
-  .booking-status {
-    margin-right: 100px;
-  }
-}
-
 .team-name-ngo {
   font-weight: lighter;
   padding-bottom: 10px;
@@ -111,14 +105,29 @@
   border: 1px solid $orange-vamos;
   border-radius: 10px;
   height: 40px;
-  width: 330px;
+  width: 350px;
   padding-top: 6px;
-  margin-top: 10px;
   text-align: center;
-  color: $orange-vamos;
   font-weight: lighter;
   font-size: 18px;
+  background-color: #F28A28;
+  color: white;
 }
+
+@media(min-width: 992px) {
+  .create-project {
+  }
+}
+
+@media(min-width: 575px) and (max-width: 767px) {
+  .create-project {
+    position: fixed;
+    bottom: 100px;
+    background-color: white;
+    display: flex;
+  }
+}
+
 
 #title-ngo-side {
   font-size: 20px;
@@ -412,4 +421,75 @@
 
 .fa-user-friends {
   margin-left: 5px;
+}
+
+
+// If user is NGO
+.content-container-profile-ngo-project {
+  margin: auto;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding: 0px;
+  display: grid;
+}
+
+@media(min-width: 992px) {
+  .content-container-profile-ngo-project {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+  .content-container-profile-ngo-project {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+}
+
+
+
+// ngo profile container
+.content-container-ngo-profile {
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  width: 90%;
+  padding: 0px;
+  display: block;
+}
+
+@media(min-width: 992px) {
+  .content-container-ngo-profile {
+    display: none;
+  }
+}
+
+// ngo application container for mobile
+
+.ngo-bookings-mobile {
+  display: block;
+}
+
+@media(min-width: 992px) {
+  .ngo-bookings-mobile {
+    display: none;
+  }
+}
+// ngo application container for desktop
+.content-container-ngo-bookings-desktop {
+  display: none;
+  }
+
+@media(min-width: 992px) {
+  .content-container-ngo-bookings-desktop {
+    display: block;
+  }
+}
+
+
+.ngo-datas {
+  padding-right: 100px;
+  padding-left: 160px;
+  box-shadow: 5px;
 }
