@@ -18,10 +18,24 @@
 
     <div class="conversation-content w-100">
 
-    <!--   Users in chat -->
+    <!--   Users in chat & project name on desktop-->
 
       <div id="desktop-show-project-chat">
-        <p class="style-project"><strong>Project: </strong><%= conversation.project.title%></p>
+        <div class="d-flex justify-content-between align-items-center">
+          <p class="style-project"><strong>Project: </strong><%= conversation.project.title%></p>
+            <div class="">
+              <% if conversation.messages.last.present? && conversation.messages.last.read == false && conversation.messages.last.user_id != current_user.id %>
+              <i class="fas fa-circle orange smaller-text mb-2"></i>
+              <% end %>
+            </div>
+            <div>
+              <% if conversation.messages.last.present?%>
+              <p class="paragraph-no-margin date-message-text ml-1">
+                <%=conversation.messages.last.message_day  %>
+              <i class="fas fa-chevron-right"></i> </p>
+              <% end %>
+            </div>
+        </div>
       </div>
       <div class="d-flex justify-content-between align-items-center mb-1">
         <div class="conversation-users font-weight-bold">
@@ -29,7 +43,7 @@
           <%= conversation.team.name%>
         </div>
 
-    <!--   Date and time -->
+    <!--   Date and time according to screen-->
 
         <div class="d-flex justify-content-between align-items-center">
           <div>
@@ -39,15 +53,18 @@
           </div>
           <div>
             <% if conversation.messages.last.present?%>
-            <p class="paragraph-no-margin date-message-text ml-1">
+            <p class="paragraph-no-margin date-message-text-2 ml-1">
               <%=conversation.messages.last.message_day  %>
             <i class="fas fa-chevron-right"></i> </p>
             <% end %>
           </div>
+          <div id="mobile-show-status-right">
+            <%=conversation.booking.status.capitalize%>
+          </div>
         </div>
       </div>
 
-  <!--   Messages && display status according to the screen-->
+  <!--   Messages -->
 
       <div class="font-weight-light mb-4">
 
@@ -61,17 +78,14 @@
           <% else %>
           <p class="paragraph-no-margin font-italic"> No messages yet - Feel free to ask any questions!</p>
           <% end %>
-          <div id="mobile-show-status-right">
-            <%=conversation.booking.status%>
-          </div>
         </div>
         <div id="mobile-show-chat">
           <%if conversation.booking.status == "pending"%>
-            <p style="color:#F28A28"><strong><%= conversation.booking.status%></strong></p>
+            <p style="color:#F28A28"><strong><%= conversation.booking.status.capitalize%></strong></p>
           <%elsif conversation.booking.status == "rejected"%>
-            <p style="color:black"><strong><%= conversation.booking.status%></strong></p>
+            <p style="color:black"><strong><%= conversation.booking.status.capitalize%></strong></p>
           <% else %>
-            <p style="color:green"><strong><%= conversation.booking.status%></strong></p>
+            <p style="color:green"><strong><%= conversation.booking.status.capitalize%></strong></p>
           <% end %>
         </div>
       </div>
