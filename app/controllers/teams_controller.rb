@@ -1,9 +1,9 @@
 class TeamsController < ApplicationController
 
   def new
-    raise
     @project = Project.find(params[:id])
-    @team = Team.new
+    @new_team = Team.new
+    @new_team.team_memberships.build
   end
 
   def create
