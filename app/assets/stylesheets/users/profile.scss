@@ -429,6 +429,7 @@
   margin: auto;
   margin-bottom: 0px;
   margin-top: 0px;
+  width: 90%;
   padding: 0px;
   display: grid;
 }
@@ -444,6 +445,12 @@
   .content-container-profile-ngo-project {
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+  }
+}
+
+@media(min-width: 575px) and (max-width: 767px) {
+  .content-container-profile-ngo-project {
+    width: 80%;
   }
 }
 
@@ -489,7 +496,64 @@
 
 
 .ngo-datas {
-  padding-right: 100px;
+  padding-right: 50px;
   padding-left: 160px;
   box-shadow: 5px;
+}
+
+
+//ngo rows, application on desktop
+
+.project-name-booking {
+  margin-right: 20px;
+  margin-left: 20px;
+  max-width: 200px;
+}
+
+.team-name-ngo {
+  margin-right: 20px;
+  margin-left: 20px;
+  max-width: 200px;
+}
+
+.booking-time {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+.booking-status-app-desktop {
+    margin-left: 20px;
+    width: 30%;
+    text-align: center;
+    .accept-button-app-desktop {
+      border: 1px solid white;
+      width: 50%;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      background-color: $orange-vamos;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: 2px;
+      .green-color {
+        color: white;
+      }
+    }
+    .reject-button-app-desktop {
+      border: 1px solid $orange-vamos;
+      width: 50%;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      background-color: white;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: 2px;
+      .red-color {
+        color: $orange-vamos;
+      }
+    }
 }

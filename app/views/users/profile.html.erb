@@ -137,12 +137,12 @@
               <div class="col-8 ngo-booking-datas">  <!-- Column 2, application for ngo on desktop -->
               <% @ngo_bookings.each do |booking| %>
                 <div class="ngo-booking d-flex my-4 py-1">
-                  <div class="booking-status">
+                  <div class="booking-status-app-desktop">
                     <% if booking.status == "pending" %>
-                      <div class="accept-button px-3 my-2">
+                      <div class="accept-button-app-desktop px-3 my-2">
                         <%= link_to "Accept", accept_booking_path(booking), method: :patch, class: "green-color"%>
                       </div>
-                      <div class="reject-button px-3 my-2">
+                      <div class="reject-button-app-desktop px-3 my-2">
                         <%= link_to "Reject", reject_booking_path(booking), method: :patch, class: "red-color"%>
                       </div>
                     <% elsif booking.status == "accepted" %>
@@ -151,29 +151,18 @@
                       <p style="font-size: 18px">Declined</p>
                     <% end %>
                   </div>
-                  <div class="booking-name-team border-right pl-1">
-                    <h3><%= booking.project.title %></h3>
-                    <div class="team-info">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                          <p class="m-0 team-name-ngo"><%= booking.team.name %></p>
-                          <div class="d-flex">
-                            <% booking.team.users.each do |user| %>
-                              <% if user.photo.attached? %>
-                                <%= cl_image_tag user.photo.key, width: 30, height: 30, class: "rounded-circle" %>
-                              <% end %>
-                            <% end %>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="booking-name-team border-right d-flex pl-1">
+                    <p class="project-name-booking"><%= booking.project.title %></p>
+                      <p class="m-0 team-name-ngo"><%= booking.team.name %></p>
+                      <p class="booking-time"><%= booking.created_at.strftime("%m-%d-%Y") %></p>
+                      <i class="far fa-comment-alt fa-2x"></i>
                   </div>
                 </div>
               <% end %>
               </div>
-            </div>
-          </div>
-        </div>
+            </div>  <!-- don't touch end of row-->
+          </div>  <!-- don't touch end of container-->
+        </div> <!-- don't touch end of tab-->
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
               <!-- project part NGO -->
           <div class="content-container-profile-ngo-project">
