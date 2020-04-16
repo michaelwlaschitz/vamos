@@ -1,5 +1,11 @@
 class TeamsController < ApplicationController
 
+  def new
+    raise
+    @project = Project.find(params[:id])
+    @team = Team.new
+  end
+
   def create
     @team = Team.new(team_params)
     if @team.save

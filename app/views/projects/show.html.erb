@@ -157,10 +157,13 @@
 </div>
 
 <form action="/application" method="get">
-  <input id="hidden-input" type="hidden" name="id" value="">
-  <button type="submit" class="button-vamos">
-  Apply with your team!
+  <%= hidden_field_tag(:id, params["id"]) %>
+
+<div class=background-button-show-page>
+  <button type="submit" class="button-vamos primary-stlye mt-0">
+    Apply with your team!
   </button>
+</div>
 
 </form>
 
