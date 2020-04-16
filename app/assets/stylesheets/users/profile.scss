@@ -476,6 +476,9 @@
 
 .ngo-bookings-mobile {
   display: block;
+  width: 90%;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 @media(min-width: 992px) {
@@ -483,6 +486,20 @@
     display: none;
   }
 }
+
+@media(min-width: 768px) and (max-width: 991px) {
+  .ngo-bookings-mobile {
+    width: 80%;
+  }
+}
+
+@media(min-width: 575px) and (max-width: 767px) {
+  .ngo-bookings-mobile {
+    width: 80%;
+  }
+}
+
+
 // ngo application container for desktop
 .content-container-ngo-bookings-desktop {
   display: none;
