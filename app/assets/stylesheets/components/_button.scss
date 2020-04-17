@@ -38,16 +38,14 @@ box-sizing: border-box;
   border-color:#F28A28;
 }
 
-.background-button-show-page {
+.apply-button-showpage {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
   height: 70px;
-  position: fixed;
-  bottom: -11px;
   width: 100%;
   z-index: 10;
+  background-color: white;
 }
 
 .button-upload-file {

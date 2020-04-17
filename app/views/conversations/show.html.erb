@@ -55,12 +55,13 @@
         <% end %>
       </div>
     </div>
-  </div>
-
-
-  <%= simple_form_for ([@conversation, @message]), wrapper: :inline_form, html: { class: "form-inline chat-textbox border-top" } do |f| %>
+    <%= simple_form_for ([@conversation, @message]), wrapper: :inline_form, html: { class: "form-inline chat-textbox border-top" } do |f| %>
     <%= f.input :body, label: false, placeholder: "Write your message"%>
     <%= f.submit "Send", class: "button-send-message" %>
   <%end%>
+  </div>
+
+
+
 
 </div>
