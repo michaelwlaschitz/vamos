@@ -1,4 +1,5 @@
 <div class="booking-confirmation-container">
+  <%= render 'shared/mobile_navbar' %>
   <div class="confirmation-message pt-3">
     <% if @booking.team.users.any? {|user| user.first_name == nil} %>
       <h2 class="text-center mt-1"><span class="orange"><%= @booking.team.name %></span>, last step!</h2>
