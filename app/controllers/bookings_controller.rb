@@ -4,9 +4,7 @@ class BookingsController < ApplicationController
   def new
     @project = Project.find(params[:project_id])
     @teams = current_user.teams
-    @new_team = Team.new
     @booking = Booking.new
-    @new_team.team_memberships.build
   end
 
   def create

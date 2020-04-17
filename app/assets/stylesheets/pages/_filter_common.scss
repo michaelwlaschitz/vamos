@@ -8,6 +8,10 @@
   margin-top: 50px;
 }
 
+.filter-form {
+    margin-top: 60px;
+  }
+
 .filter-submit {
   background-color: $orange-vamos;
   width: 100px;
@@ -20,7 +24,7 @@
   font-weight: lighter;
   position: absolute;
   right: 20px;
-  bottom: 0px;
+  bottom: 100px;
 }
 
 .filter-buttons {
@@ -72,6 +76,7 @@
   .filter-image {
     display: block;
     margin-left: 50px;
+    height: calc(100vh - 80px)
   }
   .filter-content {
     width: 500px;
@@ -90,6 +95,7 @@
   .filter-image {
     display:block;
     margin-left: 50px;
+    height: calc(100vh - 80px)
   }
   .filter-content {
       width: 400px;

@@ -1,6 +1,7 @@
 #progress1 {
-  margin-top: 460px;
-  margin-bottom: 10px;
+  position: absolute;
+  bottom: 10px;
+  width: 340px;
 }
 
 .form-location {
@@ -8,16 +9,16 @@
 
 @media(min-width: 992px) {
   #progress1 {
-    position: absolute;
-    bottom: 10px;
-    width: 500px;
+    position: static;
+    width: 100%;
+    margin-top: 300px;
   }
 }
 @media(min-width: 768px) and (max-width: 991px) {
   #progress1 {
-    position: absolute;
-    bottom: 10px;
-    width: 400px;
+    position: static;
+    width: 100%;
+    margin-top: 300px;
   }
 }
 @media(min-width: 575px) and (max-width: 767px) {

@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   def filter_interests
   end
 
-  def application
+  def apply
     @project = Project.find(params[:id])
   end
 

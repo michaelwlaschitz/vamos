@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  get 'application', to: 'pages#application', as: :application
+  get 'apply', to: 'pages#apply', as: :application
   get 'location', to: 'pages#filter_location', as: :filter_location
   get 'interests', to: 'pages#filter_interests', as: :filter_interests
   get 'time', to: 'pages#filter_time', as: :filter_time
