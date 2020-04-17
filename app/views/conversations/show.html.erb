@@ -10,7 +10,11 @@
         <div class="conversation-booking-status mt-2"><%= @conversation.booking.status.capitalize %></div>
       </div>
       <div>
-        <h3 class="text-center">💪🏼<%= @conversation.team.name %>, get ready to volunteer with <%= @conversation.ngo.name %>  </h3>
+        <% if current_user.ngo %>
+          <h3 class="text-center">Chat with <%= @conversation.team.name %> 🙌🏼  </h3>
+        <% else %>
+          <h3 class="text-center">Chat with <%= @conversation.ngo.user.first_name %> from <%= @conversation.ngo.name %> 🙌🏼  </h3>
+        <% end %>
       </div>
       <div></div>
     </div>
@@ -29,22 +33,20 @@
                     <%= message.body %>
                   </div>
                   <div class="message-info">
-                    Sent ·
-                    <%= message.message_date %>
+                    Sent · <%= message.message_date %>
                   </div>
                 </div>
                 <%= cl_image_tag message.user.photo.key, class: "avatar avatar-box" %>
               </div>
             <% else %>
-              <div class="d-flex my-4">
+              <div class="d-flex my-4 align-items-end">
                 <%= cl_image_tag message.user.photo.key, class: "avatar avatar-box" %>
                 <div class="message-box someones-message ml-3 p-2">
                   <div class="message-content">
                     <%= message.body %>
                   </div>
                   <div class="message-info">
-                    <%= user.first_name %> <%= user.last_name %> ·
-                    <%= message.message_date %>
+                    <%= user.first_name %> <%= user.last_name %> · <%= message.message_date %>
                   </div>
                 </div>
               </div>
