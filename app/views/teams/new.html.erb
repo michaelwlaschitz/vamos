@@ -8,7 +8,16 @@
   <div class="form-group">
     <h3>Choose a team name</h3>
     <%= simple_form_for @new_team  do |team_fields| %>
-      <%= team_fields.error_notification %>
+
+      <% if @new_team.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @new_team.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
       <%= team_fields.hidden_field "id", :value => params[:id] %>
       <%= team_fields.input :name, label: false, placeholder: "The Treegantics"%>
 
@@ -17,14 +26,14 @@
       <%= render 'team_membership_fields' , f: tm %>
       <% end %>
 
-    <div class="links">
-      <%= link_to_add_association team_fields, :team_memberships do %>
-      <h2 class="ml-2"> <i class="fas fa-plus-circle orange"></i> </h2>
-      <% end %>
-    </div>
+      <div class="links">
+        <%= link_to_add_association team_fields, :team_memberships do %>
+        <h2 class="ml-2"> <i class="fas fa-plus-circle orange"></i> </h2>
+        <% end %>
+      </div>
 
       <%= team_fields.submit "Create team", class: "button-vamos primary-style w-100"%>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 
 </div>
