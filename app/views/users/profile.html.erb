@@ -51,12 +51,13 @@
     <div class="content-container-ngo">
       <div class="row ngo-all-desktop">
         <div class="col-4 ngo-datas">
-          <% if current_user.photo.attached? %>
-            <%= cl_image_tag current_user.photo.key, class: "ngo-image"%>
+          <div class="card-ngo-profile">
+            <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "ngo-image-desktop"%>
           <% else %>
-            <img class="ngo-image" src="https://www.tibs.org.tw/images/default.jpg" alt="">
+            <img class="ngo-image-desktop" src="https://www.tibs.org.tw/images/default.jpg" alt="">
           <% end %>
-          <h1 class="orange-title mb-3"><%= @user.ngo.name %></h1>
+          <h1 class="orange-title-desktop mb-3"><%= @user.ngo.name %></h1>
           <div class="ngo-other-info">
             <div class="name-user d-flex align-items-center mb-2">
               <div class="element mr-2">
@@ -83,8 +84,9 @@
               </div>
             </div>
           </div>
+          </div>
         </div>
-        <div class="col-8 tab-datas">
+        <div class="col-12 col-lg-8 tab-datas">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item ">
           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><h5 class="orange-title">Applications</h5></a>
@@ -136,30 +138,54 @@
           </div>
           <!-- desktop version of application-->
           <div class="content-container-ngo-bookings-desktop">
-            <div class="ngo-booking-datas">  <!-- Column 2, application for ngo on desktop -->
-            <% @ngo_bookings.each do |booking| %>
-              <div class="ngo-booking d-flex my-4 py-1">
-                <div class="booking-status-app-desktop">
-                  <% if booking.status == "pending" %>
-                    <div class="accept-button-app-desktop px-3 my-2">
-                      <%= link_to "Accept", accept_booking_path(booking), method: :patch, class: "green-color"%>
-                    </div>
-                    <div class="reject-button-app-desktop px-3 my-2">
-                      <%= link_to "Reject", reject_booking_path(booking), method: :patch, class: "red-color"%>
-                    </div>
-                  <% elsif booking.status == "accepted" %>
-                    <p id="accepted-text">Accepted</p>
-                  <% elsif booking.status == "rejected" %>
-                    <p style="font-size: 18px">Declined</p>
-                  <% end %>
+            <div class="container ngo-booking-datas">
+              <div class="row table-titles border-bottom my-2 py-2">
+                <div class="col-3">
+                  <h3 class="project-name-table">Project Name</h3>
                 </div>
-                <div class="booking-name-team border-right d-flex pl-1">
-                  <p class="project-name-booking"><%= booking.project.title %></p>
-                    <p class="m-0 team-name-ngo"><%= booking.team.name %></p>
-                    <p class="booking-time"><%= booking.created_at.strftime("%m-%d-%Y") %></p>
-                    <i class="far fa-comment-alt fa-2x"></i>
+                <div class="col-3">
+                  <h3 class="team-name-table">Team Name</h3>
+                </div>
+                <div class="col-2">
+                  <h3 class="date-table">Date</h3>
+                </div>
+                <div class="col-2">
+                  <h3 class="status-table">Status</h3>
                 </div>
               </div>
+              <% @ngo_bookings.each do |booking| %>
+                <div class="row border-bottom my-4 pb-3">
+                  <div class="col-3">
+                    <p class="project-name-booking"><%= booking.project.title %></p>
+                  </div>
+                  <div class="col-3">
+                    <p class="m-0 team-name-ngo"><%= booking.team.name %></p>
+                  </div>
+                  <div class="col-2">
+                    <p class="booking-time"><%= booking.created_at.strftime("%m-%d-%Y") %></p>
+                  </div>
+                  <div class="col-2">
+                    <div class="booking-status-app-desktop">
+                    <% if booking.status == "pending" %>
+                      <div class="accept-button-app-desktop px-3 mb-2">
+                        <%= link_to "Accept", accept_booking_path(booking), method: :patch, class: "green-color"%>
+                      </div>
+                      <div class="reject-button-app-desktop px-3 mb-2">
+                        <%= link_to "Reject", reject_booking_path(booking), method: :patch, class: "red-color"%>
+                      </div>
+                    <% elsif booking.status == "accepted" %>
+                      <p id="accepted-text">Accepted</p>
+                    <% elsif booking.status == "rejected" %>
+                      <p style="font-size: 18px">Declined</p>
+                    <% end %>
+                    </div>
+                  </div>
+                  <div class="col-2 chat-button">
+                    <%= link_to conversation_path(booking.conversation) do  %>
+                      <i class="chat-ngo far fa-comment-alt fa-2x"></i>
+                    <% end %>
+                  </div>
+                </div>
               <% end %>
             </div>
           </div>  <!-- don't touch end of container-->
