@@ -19,7 +19,6 @@
   height: 75vh;
   .message-box {
     font-weight: lighter;
-    border-radius: 10px;
     flex-grow: 1;
     font-size: 14px;
     .message-info {
@@ -27,7 +26,6 @@
       font-size: 12px;
     }
     .avatar-box {
-      width: auto;
     }
   }
 }
@@ -35,9 +33,11 @@
 .my-message {
   background-color: $orange-vamos;
   color: white;
+  border-radius: 10px 10px 0px 10px;
 }
 .someones-message {
   background-color: #EDEFED;
+  border-radius: 10px 10px 10px 0px;
 }
 
 .button-send-message {
@@ -55,8 +55,6 @@
   border-spacing: 0px;
   border: none;
   width: 100%;
-  position: fixed;
-  bottom: 0px;
   display: flex;
   background-color: white;
   .message_body {
@@ -89,11 +87,9 @@
     margin: auto;
   }
   .messages-container {
-    height: 70vh;
+    height: 60vh;
   }
   .chat-textbox {
-    width: 60%;
-    padding-bottom: 20px;
     #message_body {
       height: 100px;
     }
@@ -115,11 +111,9 @@
     margin: auto;
   }
   .messages-container {
-    height: 70vh;
+    height: 60vh;
   }
   .chat-textbox {
-    width: 70%;
-    padding-bottom: 20px;
     #message_body {
       height: 100px;
     }
@@ -127,5 +121,8 @@
 }
 
 @media(min-width: 575px) and (max-width: 767px) {
-
+  .chat-textbox {
+    position: fixed;
+    bottom: 0px;
+  }
 }
