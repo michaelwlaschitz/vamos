@@ -46,9 +46,18 @@
             <p>5km</p>
           </div>
         </div>
-        <div class="desktop-apply-button-showpage apply-button-showpage my-4">
-          <%= link_to "APPLY WITH YOUR TEAM", new_project_booking_path(@project), class: "button-vamos primary-stlye mb-5"%>
+
+
+        <form action="/apply" method="get">
+        <%= hidden_field_tag(:id, params["id"]) %>
+
+        <div class="desktop-apply-button-showpage apply-button-showpage">
+          <button type="submit" class="button-vamos primary-style mb-5">
+          Apply with your team!
+        </button>
         </div>
+        </form>
+
         <div class="mt-2"
         id="map"
         style="width: 100%;
@@ -151,16 +160,20 @@
             </div>
           </div>
         </div>
-        <div class="desktop-apply-button-showpage apply-button-showpage my-4">
-          <%= link_to "APPLY WITH YOUR TEAM", new_project_booking_path(@project), class: "button-vamos primary-stlye mb-5"%>
+
+        <form action="/apply" method="get">
+        <%= hidden_field_tag(:id, params["id"]) %>
+
+        <div class="desktop-apply-button-showpage apply-button-showpage">
+          <button type="submit" class="button-vamos primary-style mb-5">
+          Apply with your team!
+        </button>
         </div>
+        </form>
+
       </div>
     </div>
   </div>
-</div>
-
-<div class="mobile-apply-button-showpage apply-button-showpage">
-  <%= link_to "APPLY WITH YOUR TEAM", new_project_booking_path(@project), class: "button-vamos primary-stlye mb-5"%>
 </div>
 
 <div style="height: 80px">
@@ -169,12 +182,11 @@
 <form action="/apply" method="get">
   <%= hidden_field_tag(:id, params["id"]) %>
 
-<div class=background-button-show-page>
-  <button type="submit" class="button-vamos primary-style mt-0 mb-2">
+<div class="mobile-apply-button-showpage apply-button-showpage">
+  <button type="submit" class="button-vamos primary-style mb-5">
     Apply with your team!
   </button>
 </div>
-
 
 </form>
 
