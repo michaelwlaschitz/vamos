@@ -500,22 +500,19 @@
 }
 
 
-// ngo application container for desktop
-.content-container-ngo-bookings-desktop {
-  display: none;
-  }
-
-@media(min-width: 992px) {
-  .content-container-ngo-bookings-desktop {
-    display: block;
-  }
-}
-
+// ngo infos on the left, display only on desktop
 
 .ngo-datas {
   padding-right: 50px;
   padding-left: 160px;
   box-shadow: 5px;
+  display: none;
+}
+
+@media(min-width: 992px) {
+  .ngo-datas {
+    display: block;
+  }
 }
 
 
@@ -573,4 +570,15 @@
         color: $orange-vamos;
       }
     }
+}
+
+
+.ngo-booking-datas {
+  display: none;
+}
+
+@media(min-width: 992px) {
+  .ngo-booking-datas {
+    display: block;
+  }
 }
