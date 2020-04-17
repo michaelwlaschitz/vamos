@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+  get 'apply', to: 'pages#apply', as: :application
   get 'location', to: 'pages#filter_location', as: :filter_location
   get 'interests', to: 'pages#filter_interests', as: :filter_interests
   get 'time', to: 'pages#filter_time', as: :filter_time
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
   end
   resources :ngos, only: [:new, :create]
 
-  resources :teams, only: [:create]
+  resources :teams, only: [:new, :create]
 
   resources :conversations, only: [:index, :show, :create] do
     resources :messages, only: [:create]

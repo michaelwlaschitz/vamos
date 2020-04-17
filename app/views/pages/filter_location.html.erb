@@ -9,7 +9,7 @@
 
       <div class="filter-content">
         <%= form_with url: "/interests", method: :get, local: true do |f| %>
-          <%= f.text_field :address, placeholder: 'Location', label:false %>
+          <%= f.text_field :address, placeholder: 'Type Barcelona address', label:false %>
           <%= button_tag( :class => "filter-submit") do %>
             <i class='fas fa-chevron-right'></i>
           <% end %>

@@ -13,7 +13,9 @@
 @import "pages/index";
 @import "projects/index";
 @import "users/index";
+@import "bookings/index";
 @import "chat/index";
+@import "team/index";
 @import "devise/login";
 @import "bookings/index";
 // Social Media Sharing
@@ -41,11 +43,6 @@ h1 {
   h1 {
     font-size: 36px;
   }
-}
-
-h2 {
-  // color: $black-gray;
-  font-size: 22px;
 }
 
 h2 {
