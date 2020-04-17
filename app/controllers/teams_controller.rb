@@ -7,11 +7,10 @@ class TeamsController < ApplicationController
   end
 
   def create
-    raise
     @project = Project.find(params[:team][:id])
-    @team = Team.new(team_params)
-    if @team.save
-      TeamMembership.create(user: current_user, team: @team)
+    @new_team = Team.new(team_params)
+    if @new_team.save
+      TeamMembership.create(user: current_user, team: @new_team)
       add_users_to_team()
       redirect_to new_project_booking_path(@project), notice: "Your team has been successfully created !"
     end
@@ -23,7 +22,7 @@ class TeamsController < ApplicationController
   end
 
   def add_users_to_team
-    emails = params[:booking][:team][:team_memberships_attributes].values.map{|hash| hash[:user] }
+    emails = params[:team][:team_memberships_attributes].values.map{|hash| hash[:user] }
     # Iterate over all emails to send invitation email
     emails.each do |email|
       # If the user already exists, .invite! will not send an email and instead returns the already existing user

@@ -8,12 +8,11 @@ class BookingsController < ApplicationController
   end
 
   def create
-    raise
     @booking = Booking.new(booking_params)
     @booking.status = "pending"
     @project = Project.find(params[:project_id])
     @booking.project = @project
-    @team = Team.find(params[:team])
+    @team = Team.find(params[:booking][:team_id])
     @booking.team = @team
 
     if @booking.save
