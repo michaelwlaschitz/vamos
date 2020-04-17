@@ -1,1 +1,38 @@
-<h1>Hello</h1>
+<% @project.photos.each do |photo| %>
+<%= cl_image_tag photo.key, class: "image-small-height"%>
+<% end %>
+
+<div class="content-container">
+
+  <h2 class="h2-less-margin mb-3">Application Overview</h2>
+
+  <h3><strong>Project:</strong> <%= @project.title %></h3>
+  <h3><strong>Organization:</strong> <%= @project.ngo.name %></h3>
+
+  <div class="form-group">
+    <%= simple_form_for ([@project, @booking])  do |f| %>
+        <h3 class="mt-4">Selected Team:</h3>
+        <div class="mb-2">
+          <%= f.association :team, label: false, input_html: {class: " form-control mt-2"}, collection: current_user.teams, selected: current_user.teams.last%>
+        </div>
+
+      <div class="mb-4">
+        <h3>Application Message</h3>
+        <%= f.simple_fields_for :message do |message_fields| %>
+        <%= message_fields.input :body, as: :text, placeholder: "Write some words about your team and motivation to volunteer.", label: false, input_html: {rows: 5} %>
+        <% end %>
+      </div>
+
+      <%= f.submit "Send Application", class: "button-vamos primary-style w-100 mt-0"%>
+      <% end %>
+    </div>
+
+  <form action="/teams/new" method="get">
+    <%= hidden_field_tag(:id, params[:project_id]) %>
+    <button type="submit" class="border-0">
+      Apply with a new team
+      <i class="fas fa-angle-double-right orange"></i>
+    </button>
+  </form>
+
+</div>
