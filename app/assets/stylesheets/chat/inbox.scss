@@ -60,9 +60,22 @@ display: none; }
 
 #mobile-show-status-right {
   display:none;
+  color: #8d8d8d;
 }
 
 @media screen and (min-width: 992px) {
 #mobile-show-status-right{
 display: block; }
 }
+
+.date-message-text-2 {
+  font-size: 11px;
+  color: $black-gray;
+  font-weight: lighter;
+}
+
+@media screen and (min-width: 992px) {
+.date-message-text-2{
+display: none; }
+}
+
