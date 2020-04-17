@@ -1,0 +1,38 @@
+<div class="booking-confirmation-container">
+  <div class="confirmation-message pt-3">
+    <% if @booking.team.users.any? {|user| user.first_name == nil} %>
+      <h2 class="text-center mt-1"><span class="orange"><%= @booking.team.name %></span>, last step!</h2>
+      <p>It looks like <strong>not all of your team members have an account</strong> with Vamos. But don't worry, we sent them an <strong>email</strong> so that they can <strong> quickly sign up</strong>.</p>
+      <p>When all the profiles are registered, the application will be sent to the NGO.</p>
+
+      <p class="fun-fact">Did you know that a NGO is 70% more likely to accept an application if they can have some basic info of the volunteers?</p>
+    <% else %>
+      <h2 class="text-center"><span class="orange"><%= @booking.team.name %></span>, your application has been sent!</h2>
+    <% end %>
+
+  </div>
+  <div class="text-center">
+    <h2 class="mt-5"><%= @booking.project.title %></h2>
+  </div>
+  <div class="confirmation-picture mb-5">
+    <%= cl_image_tag @booking.project.photos.first.key %>
+  </div>
+
+  <% if @booking.team.users.any? {|user| user.first_name == nil} == false %>
+    <div class="d-flex mt-3">
+      <%= cl_image_tag @booking.project.ngo.user.photo.key, class: "contact-avatar" %>
+      <div class="ml-3">
+        <h3><%= @booking.project.ngo.user.first_name %> is your contact from <%= @booking.project.ngo.name %> </h3>
+        <h3 class="m-0">Questions?</h3>
+        <%= link_to conversation_path(@booking.conversation) do  %>
+          <h3 class="enter-chat-button">
+            Send a message
+          </h3>
+        <% end %>
+      </div>
+
+    </div>
+
+  <% end %>
+
+</div>
