@@ -7,7 +7,6 @@ class TeamsController < ApplicationController
   end
 
   def create
-    raise
     @project = Project.find(params[:team][:id])
     @new_team = Team.new(team_params)
     if @new_team.save
