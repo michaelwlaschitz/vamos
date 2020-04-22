@@ -4,9 +4,6 @@
     .orange {
       color: $orange-vamos;
     }
-    .fun-fact {
-      color: gray
-    }
   }
   .confirmation-picture img {
     width: 100%;
@@ -33,12 +30,14 @@
 @media(min-width: 992px) {
   .booking-confirmation-container {
     max-width: 50%;
+    margin-bottom: 200px;
   }
 }
 
 @media(min-width: 768px) and (max-width: 991px) {
   .booking-confirmation-container {
     width: 60%;
+    margin-bottom: 200px;
   }
 }
 

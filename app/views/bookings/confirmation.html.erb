@@ -2,18 +2,16 @@
   <%= render 'shared/mobile_navbar' %>
   <div class="confirmation-message pt-3">
     <% if @booking.team.users.any? {|user| user.first_name == nil} %>
-      <h2 class="text-center mt-1"><span class="orange"><%= @booking.team.name %></span>, last step!</h2>
+      <h2 class="text-center mb-4 mt-3"><span class="orange"><%= @booking.team.name %></span>, last step!</h2>
       <p>It looks like <strong>not all of your team members have an account</strong> with Vamos. But don't worry, we sent them an <strong>email</strong> so that they can <strong> quickly sign up</strong>.</p>
       <p>When all the profiles are registered, the application will be sent to the NGO.</p>
-
-      <p class="fun-fact">Did you know that a NGO is 70% more likely to accept an application if they can have some basic info of the volunteers?</p>
     <% else %>
       <h2 class="text-center"><span class="orange"><%= @booking.team.name %></span>, your application has been sent!</h2>
     <% end %>
 
   </div>
-  <div class="text-center">
-    <h2 class="mt-5"><%= @booking.project.title %></h2>
+  <div>
+    <h3 class="mt-5 mb-3"><%= @booking.project.title %> with <%= @booking.project.ngo.name %></h3>
   </div>
   <div class="confirmation-picture mb-5">
     <%= cl_image_tag @booking.project.photos.first.key %>
