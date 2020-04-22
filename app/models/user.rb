@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :team_conversations, through: :bookings, source: :conversation
 
   has_one_attached :photo
+    # :default_url => ":style/missing_avatar.png"
+
 
   validates :first_name, presence: true
   validates :last_name, presence: true

@@ -7,7 +7,7 @@ protected # can be called by any instance of the same controller (not only insid
 # and registers.)
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:accept_invitation, keys: [:first_name, :last_name, :description, :phone])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
+    devise_parameter_sanitizer.permit(:accept_invitation, keys: [:first_name, :last_name, :description, :phone, :photo])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :photo])
   end
 end
