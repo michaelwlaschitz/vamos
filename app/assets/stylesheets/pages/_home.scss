@@ -54,14 +54,24 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
   .slogan-home {
     margin-top: 150px;
   }
+
+  .hide-desktop {
+    display:none;
+  }
 }
 @media(min-width: 768px) and (max-width: 991px) {
   .slogan-home {
     margin-top: 200px;
   }
+  .hide-desktop {
+    display:none;
+  }
 }
 @media(min-width: 575px) and (max-width: 767px) {
   .slogan-home {
+  }
+  .hide-desktop {
+    display:none;
   }
 }
 
