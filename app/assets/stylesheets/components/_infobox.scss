@@ -7,3 +7,22 @@
   --box-shadow-color: gray;
   box-shadow: 0.2px 1px 1px var(--box-shadow-color);
 }
+
+
+@media(min-width: 992px) {
+  .apply-container{
+    width: 50%;
+    margin: auto;
+  }
+}
+@media(min-width: 768px) and (max-width: 991px) {
+  .apply-container{
+    width: 70%;
+    margin: auto;
+  }
+}
+@media(min-width: 575px) and (max-width: 767px) {
+
+}
+
+
