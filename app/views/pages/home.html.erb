@@ -7,15 +7,22 @@
     <div class="row align-items-center">
       <div class="col-sm-10 offset-1 home-text">
 
-        <div class="d-flex justify-content-between align-items-center navbar-home">
+
           <% if user_signed_in? %>
-          <%= render 'shared/logo_top_left' %>
-          <h3 class="paragraph-no-margin"> <%= link_to 'My dashboard', user_profile_path(current_user), class: "text-homepage mr-4" %> </h3>
+          <div class="d-flex justify-content-between align-items-center navbar-home">
+            <div class="position-static"> <%= render 'shared/logo_top_left' %>
+            </div>
+            <h3 class="paragraph-no-margin mt-4"> <%= link_to 'My dashboard', user_profile_path(current_user), class: "text-homepage mr-4" %> </h3>
+          </div>
           <% else %>
-          <%= render 'shared/logo_top_left' %>
-          <h3 class="paragraph-no-margin"> <%= link_to 'Login', new_user_session_path, class: "text-homepage mr-4" %> </h3>
+          <div class="d-flex justify-content-between align-items-center navbar-home">
+            <div class="position-static">
+            <%= render 'shared/logo_top_left' %>
+          </div>
+            <h3 class="paragraph-no-margin mt-4"> <%= link_to 'Login', new_user_session_path, class: "text-homepage mr-4" %> </h3>
+          </div>
           <% end %>
-        </div>
+
 
         <h1 class="slogan home slogan-home"><strong>Support local causes.<br>Do it with friends.</strong></h1>
       </div>
