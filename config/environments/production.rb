@@ -8,7 +8,7 @@ Rails.application.configure do
 
   config.action_mailer.postmark_settings   = { api_token: ENV['POSTMARK_API_TOKEN'] }
 
-  config.action_mailer.default_url_options = { host: 'vamosbarcelona.com'}
+  config.action_mailer.default_url_options = { host: 'www.vamosbarcelona.com'}
 
 
   # Eager load code on boot. This eager loads most of Rails and
