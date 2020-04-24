@@ -77,19 +77,9 @@
               <% end %>
               <div>
                 <div class="div">
-                  <%= review.user.first_name %>
+                  <p class="review-name m-0"><strong><%= review.user.first_name %></strong></p>
+                  <p class="paragraph m-0"><%= review.content %></p>
                 </div>
-                <div class="d-flex">
-                  <% review.rating.times do %>
-                    <i class="fas fa-star"></i>
-                  <% end %>
-                  <% (5 - review.rating).times do %>
-                    <i class="far fa-star"></i>
-                  <% end %>
-                </div>
-              </div>
-              <div class = "text ml-5">
-                <p class="paragraph"><%= review.content %></p>
               </div>
             </div>
           <% end %>
