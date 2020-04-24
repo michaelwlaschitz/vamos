@@ -6,6 +6,10 @@ const modal = document.querySelector(".modal")
 console.log(button)
 console.log(modal)
 
+modal.addEventListener('click', (event) => {
+  event.stopPropagation();
+});
+
 button.addEventListener("click", (event) => {
   console.log(event)
   modal.classList.remove('show');
