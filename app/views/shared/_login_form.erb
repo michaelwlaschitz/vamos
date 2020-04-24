@@ -1,4 +1,4 @@
-<div class="modal fade login-modal-lg"tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -8,10 +8,9 @@
         </button>
       </div>
       <div class="modal-body">
-      <div class="errors">
-      </div>
-        <%= simple_form_for(resource_name, :url => session_path(resource_name), remote: true) do |f| %>
-          <div class="form-inputs">
+        <div class="errors">
+        </div>
+        <%= simple_form_for(resource_name, :url => session_path(resource_name), remote: true, class:"login-form") do |f| %>
             <%= f.input :email,
                     required: false,
                     label: false,
@@ -24,12 +23,13 @@
                     placeholder: "Password",
                     input_html: { class: "mb-4",autocomplete: "current-password" } %>
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            <%= link_to "Forgot your password?", new_password_path(:user) %>
           </div>
           <div class="modal-footer">
-            <%= f.button :submit, "Log in", class: "button-vamos primary-style my-3 w-100" %>
+            <%= f.button :submit, "Log in", id:"sign-in-button", class: "button-vamos primary-style my-3 w-100" %>
           </div>
         <% end %>
-        </div>
+      </div>
     </div>
   </div>
 </div>
