@@ -11,8 +11,6 @@ import { addActiveClass } from '../functions/filter_choice';
 
 import { initMapModal } from "../functions/map_modal.js"
 
-import { initLoginModal } from "../functions/login_modal.js"
-
 import { initMapbox } from '../plugins/init_mapbox';
 
 import { replaceDistances } from '../functions/distance';
@@ -22,8 +20,6 @@ import { logoFileName } from '../functions/fetch_logo_file_name';
 import { initSelect2 } from '../plugins/init_select2';
 
 initSelect2();
-
-initLoginModal();
 
 initAutocompleteLocation();
 initAutocompleteProjectAddress();
