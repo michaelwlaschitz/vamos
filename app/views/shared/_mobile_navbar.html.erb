@@ -35,7 +35,7 @@
       <% end %>
     </div>
     <div class="nav-element">
-      <%= link_to "/users/sign_in" do %>
+      <%= link_to "Login", data: {toggle: "modal", target: ".bd-example-modal-lg"}, class: "nav-link" do %>
         <div>
           <i class="far fa-user nav-icon"></i>
           <p class="nav-icon-tag">SIGN IN</p>
@@ -45,3 +45,5 @@
 
   <% end %>
 </div>
+
+<%= render 'shared/login_form' %>

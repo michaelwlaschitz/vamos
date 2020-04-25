@@ -25,10 +25,13 @@
                 input_html: { class: "mb-4",autocomplete: "current-password" } %>
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>
-          <div class="modal-footer">
+          <div class="button-modal modal-footer">
             <%= f.button :submit, "Log in", class: "button-vamos primary-style my-3 w-100" %>
           </div>
         <% end %>
+        <div class="my-4">
+        <%= render "devise/shared/links" %>
+        </div>
       </div>
     </div>
   </div>
