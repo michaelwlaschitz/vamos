@@ -1,6 +1,7 @@
 <%= render 'shared/logo_top_left' %>
 
 <div class="content-container">
+  <h2 class="mb-4"> Welcome to Vamos - the Plattorm for Social Volunteering</h2>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
@@ -9,29 +10,29 @@
                   required: true,
                   autofocus: true,
                   label: false,
-                  placeholder: "First Name",
+                  placeholder: "First Name*",
                   input_html: { class: "mb-4",autocomplete: "first-name" }%>
       <%= f.input :last_name,
                   required: true,
                   autofocus: true,
                   label: false,
-                  placeholder: "Last Name",
+                  placeholder: "Last Name*",
                   input_html: { class: "mb-4",autocomplete: "last-name" }%>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
                   label: false,
-                  placeholder: "Email",
+                  placeholder: "Email*",
                   input_html: { class: "mb-4",autocomplete: "email" }%>
       <%= f.input :password,
                   required: true,
                   label: false,
-                  placeholder: "Password",
+                  placeholder: "Password*",
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :password_confirmation,
                   label: false,
-                  placeholder: "Password Confirmation",
+                  placeholder: "Password Confirmation*",
                   required: true,
                   input_html: { class: "my-4",autocomplete: "new-password" } %>
 
@@ -53,7 +54,7 @@
   <% end %>
   <div class="mt-3">
     <%- if controller_name != 'sessions' %>
-      <%= link_to "Log in", new_session_path(resource_name) %><br />
+      <%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal-lg"} %><br />
     <% end %>
   </div>
   <div class="my-4">
