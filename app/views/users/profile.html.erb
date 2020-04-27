@@ -15,14 +15,6 @@
               <h3 class="mb-0"><%= @user.first_name %> <%= @user.last_name %></h3>
             </div>
           </div>
-          <div class="phone-user d-flex align-items-center">
-            <div class="element mr-2">
-              <i class="fas fa-phone"></i>
-            </div>
-            <div class="phone-user-ngo mr-3">
-              <p class="paragraph-no-margin"><%= @user.phone %> </p>
-            </div>
-          </div>
           <div class="email-user-ngo d-flex align-items-center py-2">
             <div class="email-logo mr-2">
               <i class="fas fa-envelope"></i>
@@ -30,6 +22,17 @@
             <div class="email mr-3">
               <p class="paragraph-no-margin"><%= @user.email %> </p>
             </div>
+          </div>
+          <div class="phone-user d-flex align-items-center">
+            <% if @user.phone.present? %>
+              <div class="element mr-2">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="phone-user-ngo mr-3">
+                <p class="paragraph-no-margin"><%= @user.phone %> </p>
+              </div>
+            <% else %>
+            <% end %>
           </div>
         </div>
         <div>
@@ -57,7 +60,7 @@
           <% else %>
             <img class="ngo-image-desktop" src="https://www.tibs.org.tw/images/default.jpg" alt="">
           <% end %>
-          <h1 class="orange-title-desktop mb-3"><%= @user.ngo.name %></h1>
+          <h2 class="orange-title-desktop mb-3"><%= @user.ngo.name %></h2>
           <div class="ngo-other-info">
             <div class="name-user d-flex align-items-center mb-2">
               <div class="element mr-2">
@@ -67,14 +70,6 @@
                 <h3 class="mb-0"><%= @user.first_name %> <%= @user.last_name %></h3>
               </div>
             </div>
-            <div class="phone-user d-flex align-items-center">
-              <div class="element mr-2">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div class="phone-user-ngo mr-3">
-                <p class="paragraph-no-margin"><%= @user.phone %> </p>
-              </div>
-            </div>
             <div class="email-user-ngo d-flex align-items-center py-2">
               <div class="email-logo mr-2">
                 <i class="fas fa-envelope"></i>
@@ -82,6 +77,17 @@
               <div class="email mr-3">
                 <p class="paragraph-no-margin"><%= @user.email %> </p>
               </div>
+            </div>
+            <div class="phone-user d-flex align-items-center">
+              <% if %>
+                <div class="element mr-2">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="phone-user-ngo mr-3">
+                  <p class="paragraph-no-margin"><%= @user.phone %> </p>
+                </div>
+              <% else %>
+              <% end %>
             </div>
           </div>
           </div>
@@ -241,14 +247,6 @@
         </div>
         <div class="element-2 user-other-info">
           <h5 class="py-1"><%= @user.first_name %> <%= @user.last_name %></h5>
-          <div class="phone-user d-flex align-items-center">
-            <div class="element mr-2">
-              <i class="fas fa-phone"></i>
-            </div>
-            <div class="phone-user-ngo mr-3">
-              <p class="paragraph-no-margin"><%= @user.phone %> </p>
-            </div>
-          </div>
           <div class="email-user-ngo d-flex align-items-center my-2">
             <div class="email-logo mr-2">
               <i class="fas fa-envelope"></i>
@@ -256,6 +254,17 @@
             <div class="email mr-3">
               <p class="paragraph-no-margin"><%= @user.email %> </p>
             </div>
+          </div>
+          <div class="phone-user d-flex align-items-center">
+            <% if @user.phone.present? %>
+              <div class="element mr-2">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="phone-user-ngo mr-3">
+                <p class="paragraph-no-margin"><%= @user.phone %> </p>
+              </div>
+            <% else %>
+            <% end %>
           </div>
           <div class="d-flex justify-content-between mt-4">
             <div></div>
@@ -278,6 +287,7 @@
               <% if user.photo.attached? %>
                 <div class= "team-member-yes-exist-volunteer">
                   <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer" %>
+                  <p class="first_name"><%= user.first_name %></p>
                 </div>
               <% else %>
                 <div class= "team-member-no-exist">

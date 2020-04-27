@@ -88,7 +88,6 @@
 
 .team-member-yes-exist-volunteer{  //contour size
   border-radius: 50%;
-  border: 2px solid $orange-vamos;
 }
 
 @media(min-width: 992px) {
@@ -112,14 +111,24 @@
   .rounded-circle-volunteer {
     width: 76px;
     height: 76px;
+    border: 2px solid #fb8500;
   }
 }
 @media(min-width: 768px) and (max-width: 991px) {
   .rounded-circle-volunteer {
     width: 66px;
     height: 66px;
+    border: 2px solid #fb8500;
   }
 }
+
+@media(max-width: 767px) {
+  .rounded-circle-volunteer {
+    border: 2px solid #fb8500;
+
+  }
+}
+
 
 .rounded-circle {
 
@@ -225,9 +234,8 @@
   box-shadow: 5px;
   font-size: 16px;
   position: absolute;
-  // left: 210px;
-  // bottom: 90px;
-  left: 5px;
+  top: 0px;
+  right: 0px;
   bottom: 138px;
   border-radius: 5px;
   opacity: 0.9;
@@ -597,7 +605,7 @@
 }
 
 .ngo-image-desktop {
-  border-radius: 50px;
+  border-radius: 90px;
   width: 140px;
   object-fit: cover;
   display: block;
@@ -608,5 +616,9 @@
 .orange-title-desktop {
   color: $orange-vamos;
   margin-right: 10px;
+  text-align: center;
+}
+
+.first_name {
   text-align: center;
 }
