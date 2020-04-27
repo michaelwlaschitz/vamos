@@ -3,7 +3,7 @@
   <div class="has-navbar-so-margin">
     <%= render 'shared/mobile_navbar' %>
     <div class = "content-container">
-      <p class="opportunities-counter"> We found <%= @count %> oportunities near you</p>
+      <p class="opportunities-counter"> We found <%= @count %> opportunities near you</p>
       <div class="filters d-flex justify-content-left">
         <div style="font-size: 16px" class="filter py-1 px-5" data-toggle="modal" data-target="#exampleModal">Filter</div>
       </div>
@@ -99,9 +99,11 @@
           <h2 class="mt-4 mb-2">Hours per Week</h2>
           <%= render "projects/partial_filter_boxes_time" %>
         </div>
+        <div class = "content-container">
         <div class="modal-footer"></div>
-        <%= f.submit "Save filter", class: "btn btn-primary vamos mt-3 w-100" %>
+        <%= f.submit "Save filter", class: "button-vamos primary-style mt-0 w-100" %>
         <% end %>
+        </div>
       </div>
     </div>
   </div>

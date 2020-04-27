@@ -1,5 +1,4 @@
 <%= render 'shared/logo_top_left' %>
-
 <div class="content-container d-flex justify-content-center content-container login-forms">
    <div class="simple-form">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -17,7 +16,6 @@
                     input_html: { class: "mb-4",autocomplete: "current-password" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
-
       <div class="form-actions">
         <%= f.button :submit, "Log in", class: "btn btn-primary login-button my-3" %>
       </div>
@@ -29,5 +27,4 @@
     </div>
   </div>
 </div>
-
 

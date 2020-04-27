@@ -1,4 +1,14 @@
 <div class="content-container">
+
+<!--   Back arrow to go to dashboard -->
+
+  <div class="d-flex mb-2 align-items-center justify-content-right">
+    <i class='fas fa-chevron-left orange'></i>
+    <i class='fas fa-chevron-left orange mr-1'></i>
+    <%= link_to "Back to dashboard",user_profile_path(current_user), class: "orange"%>
+  </div>
+
+<!-- form start -->
   <div class="form-group">
 
       <h1 class="mb-4">Create your project</h1>
@@ -35,5 +45,5 @@
       <%= f.submit "Create new project", class: "button-vamos primary-style w-100 mt-3"%>
       <% end %>
 
-    </div>
   </div>
+</div>
