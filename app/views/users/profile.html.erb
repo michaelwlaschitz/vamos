@@ -55,7 +55,7 @@
       <div class="row ngo-all-desktop">
         <div class="col-4 ngo-datas">
           <div class="card-ngo-profile">
-          
+
             <%= cl_image_tag current_user.photo.key, class: "ngo-image-desktop"%>
           <h2 class="orange-title-desktop mb-3"><%= @user.ngo.name %></h2>
 
@@ -278,9 +278,10 @@
           <h5 class="team-name text-center mt-2"><%= team.name %></h5>
           <div class=" user-photo d-flex justify-content-around">
             <% team.users.each do |user| %>
-            
+
               <div class= "team-member-yes-exist-volunteer">
                 <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer" %>
+                <%= user.first_name %>
               </div>
             <% end %>
           </div>
