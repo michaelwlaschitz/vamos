@@ -3,7 +3,7 @@
   <div class="has-navbar-so-margin">
     <%= render 'shared/mobile_navbar' %>
     <div class = "content-container">
-      <p class="opportunities-counter"> We found <%= @count %> oportunities near you</p>
+      <p class="opportunities-counter"> We found <%= @count %> opportunities near you</p>
       <div class="filters d-flex justify-content-left">
         <div style="font-size: 16px" class="filter py-1 px-5" data-toggle="modal" data-target="#exampleModal">Filter</div>
       </div>
@@ -11,13 +11,41 @@
         <% @projects.each do |project| %>
           <%= link_to project_path(project) do %>
             <div class="mobile-project-card my-4">
-              <% if project.photos.any? %>
-              <div class="project-image" style="background-image: url('<%= cl_image_path (project.photos.first.key if project.photos.attached?) %>')">
-                <%= render "projects/partial_card_icons", project: project %>
+
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <% project.photos.each_with_index do |photo, index| %>
+                    <% if index == 0 %>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="<% index %>" class="active"></li>
+                    <% else %>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="<% index %>"></li>
+                    <% end %>
+                  <% end %>
+                </ol>
+                <div class="carousel-inner">
+                  <% project.photos.each_with_index do |photo, index| %>
+                    <% if index == 0 %>
+                      <div class="carousel-item active">
+                        <%= cl_image_tag photo.key, class: "d-block project-image", alt:"Project picture" %>
+                        <%= render "projects/partial_card_icons", project: project %>
+                      </div>
+                    <% else %>
+                      <div class="carousel-item">
+                        <%= cl_image_tag photo.key, class: "d-block project-image", alt:"Project picture" %>
+                        <%= render "projects/partial_card_icons", project: project %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
-              <% else %>
-              <div class="project-image" style="background-image: url('https://www.studium-ratgeber.de/wp-content/uploads/volunteering-europa.jpg')"></div>
-              <% end %>
               <div class="project-text-stuff">
                 <h5 class="project-title"><%= project.title %></h5>
                 <p class="project-ong"><%= project.ngo.name if project.ngo %></p>
@@ -71,9 +99,11 @@
           <h2 class="mt-4 mb-2">Hours per Week</h2>
           <%= render "projects/partial_filter_boxes_time" %>
         </div>
+        <div class = "content-container">
         <div class="modal-footer"></div>
-        <%= f.submit "Save filter", class: "btn btn-primary vamos mt-3 w-100" %>
+        <%= f.submit "Save filter", class: "button-vamos primary-style mt-0 w-100" %>
         <% end %>
+        </div>
       </div>
     </div>
   </div>
@@ -100,11 +130,38 @@
         <div class="row mx-3 py-4 border-top">
           <div class = "desktop-project-card">
             <div>
-              <% if project.photos.any? %>
-              <div class="project-image" style="background-image: url('<%= cl_image_path (project.photos.first.key if project.photos.attached?) %>')"></div>
-              <% else %>
-              <div class="project-image" style="background-image: url('https://www.studium-ratgeber.de/wp-content/uploads/volunteering-europa.jpg')"></div>
-              <% end %>
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <% project.photos.each_with_index do |photo, index| %>
+                    <% if index == 0 %>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="<% index %>" class="active"></li>
+                    <% else %>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="<% index %>"></li>
+                    <% end %>
+                  <% end %>
+                </ol>
+                <div class="carousel-inner">
+                  <% project.photos.each_with_index do |photo, index| %>
+                    <% if index == 0 %>
+                      <div class="carousel-item active">
+                        <%= cl_image_tag photo.key, class: "d-block project-image", alt:"Project picture" %>
+                      </div>
+                    <% else %>
+                      <div class="carousel-item">
+                        <%= cl_image_tag photo.key, class: "d-block project-image", alt:"Project picture" %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
             </div>
             <div class="project-text-stuff ml-3">
               <h5 class="project-title"><%= project.title %></h5>

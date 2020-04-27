@@ -25,18 +25,28 @@ box-sizing: border-box;
 
 .button-vamos:hover {
   text-decoration: none;
+  color: white;
+  opacity: 1;
 }
 
 .primary-style {
   background-color:#F28A28;
   color: white;
+  opacity: 0.90;
+}
+
+.button-modal {
+  justify-content: left;
 }
 
 .secondary-style {
   background-color: transparent;
   color: #F28A28;
   border-color:#F28A28;
+  opacity: 0.90;
 }
+
+// white sticky background of the button
 
 .apply-button-showpage {
   display: flex;

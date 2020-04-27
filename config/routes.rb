@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  devise_for :users, controllers: {
+        sessions: 'users/sessions'
+  }
 
   root to: 'pages#home'
 
@@ -34,6 +37,8 @@ Rails.application.routes.draw do
   end
 
   get "dashboard", to: "users#dashboard", as: :user_dashboard
+
+  # needed for modal login
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
