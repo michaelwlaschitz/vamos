@@ -276,11 +276,11 @@
       <% @user.teams.each do |team| %>
         <div class="team-container">
           <h5 class="team-name text-center mt-2"><%= team.name %></h5>
-          <div class=" user-photo d-flex justify-content-around">
+          <div class=" user-photo d-flex justify-content-around mt-2">
             <% team.users.each do |user| %>
 
-              <div class= "team-member-yes-exist-volunteer">
-                <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer" %>
+              <div class= "team-member-yes-exist-volunteer text-center mb-1">
+                <div class= "mb-1"> <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer" %> </div>
                 <%= user.first_name %>
               </div>
             <% end %>
