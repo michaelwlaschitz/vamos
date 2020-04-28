@@ -19,13 +19,26 @@
 
 .white {
   color: white;
+  text-decoration: none;
+}
+
+white:active {
+  color: white;
+}
+
+.white:focus {
+  color: white;
+}
+
+.white:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .find-volunteer {
   padding-right: 50px;
   padding-top: 100px;
 }
-
 
 .banner.home-background {
   background-size: cover;
