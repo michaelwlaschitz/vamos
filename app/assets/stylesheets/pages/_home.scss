@@ -26,10 +26,12 @@
 
 
 .banner.home-background {
-  background-size:cover;
+  background-size: cover;
   height: 100vh;
   background-position: center center;
   padding: 0;
+  background-image: url('<%= image_path "Volunteering/Volunteering5.jpg"%>'), linear-gradient(rgba(0,0,0, 0.4),rgba(0,0,0,0.));
+  background-repeat: no-repeat;
 }
 
 // .navbar-lewagon.home {
