@@ -4,7 +4,7 @@
 <div class="content-container-chat">
   <h2 class="mb-3 border-bottom">Inbox</h2>
   <% @conversations.each do |conversation| %>
-  <%= link_to conversation_path(conversation) do %>
+  <%= link_to conversation_path(conversation), class: "dark-gray" do %>
 
   <div class="d-flex mb-3 border-bottom">
 

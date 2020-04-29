@@ -7,7 +7,7 @@
               <%= render 'shared/logo_top_left' %>
             </div>
             <div class="hide-desktop">
-              <h3 class="paragraph-no-margin mt-2"> <%= link_to 'My dashboard', user_profile_path(current_user), class: "white mr-4" %> </h3>
+              <h3 class="paragraph-no-margin mt-2"> <%= link_to 'My dashboard', user_profile_path(current_user), class: "white mr-4 hide-desktop" %> </h3>
             </div>
           </div>
 
@@ -17,19 +17,85 @@
             <%= render 'shared/logo_top_left' %>
             </div>
             <div class="hide-desktop">
-              <h3 class="paragraph-no-margin mt-4"> <%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal-lg"}, class: "nav-link text-homepage mr-2" %> </h3>
+              <h3 class="paragraph-no-margin"> <%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal-lg"}, class: "nav-link text-homepage mr-2" %> </h3>
             </div>
           </div>
           <% end %>
+      <div class="d-flex">
+        <div>
+          <h1 class="slogan-home"><strong>Support local causes.<br>Do it with friends.</strong></h1>
+          <h3 class="text homepage text-homepage">
+            Filter, search, apply for <br>volunteering around you!
+          </h3>
 
-        <h1 class="slogan-home"><strong>Support local causes.<br>Do it with friends.</strong></h1>
-        <h3 class="text homepage text-homepage">
-          Filter, search, apply for <br>volunteering around you!
-        </h3>
+          <%= link_to "Vamos!", filter_location_path, class: "button-vamos primary-style w-100 mt-3" %>
 
-        <%= link_to "Vamos!", filter_location_path, class: "button-vamos primary-style w-100 mt-3" %>
+          <h3 class="text-right mt-4 "><%= link_to "Find volunteers >>", new_ngo_path, class: "white hide-desktop"%></h3>
+        </div>
+      </div>
+  </div>
+</div>
 
-      <h3 class="text-right mt-4 "><%= link_to "Find volunteers >>", new_ngo_path, class: "white"%></h3>
+<!-- Product Description -->
+
+<div class="product-description d-flex py-5 px-4 hide-desktop">
+
+  <%= image_tag "Screens/index.png", class: "phone-screen"%>
+
+  <div class="product-info">
+    <div class="d-flex align-items-center mt-5">
+      <h2><i class="fas fa-search orange mr-4"></i></h2>
+      <div>
+        <h2 class="orange">Find local projects that fit you</h2>
+        <p>With Vamos you can filter by category, location and time to find the best opportunity for you.</p>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center mt-5">
+      <h2><i class="fas fa-file-alt orange mr-4"></i></h2>
+      <div>
+        <h2 class="orange">Apply with your friends</h2>
+        <p>At Vamos you can sign up for volunteering together with your friends and with a few click send an application as a team.</p>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center mt-5">
+      <h2><i class="fas fa-comments orange mr-4"></i></h2>
+      <div>
+      <h2 class="orange">Chat with the project owner</h2>
+      <p>Find out all the details about the opportunity and engage with the volunteering coordinator via chat.</p>
+      </div>
+    </div>
 
   </div>
 </div>
+
+<div class="d-flex justify-content-center text-center py-5 blue-background">
+  <div>
+    <h2 class="bold home-h2-container">Looking for volunteers? </h2>
+    <p>Create your first project for free in less than <strong>3 minutes!</strong></p>
+    <%= link_to "Get started", new_ngo_path, class: "button-vamos primary-style mt-2" %>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

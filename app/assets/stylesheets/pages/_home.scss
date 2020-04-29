@@ -67,6 +67,18 @@ font-weight: lighter;
 text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
+.product-description {
+  background-color: $very-light-gray;
+}
+
+.product-info {
+  max-width: 500px;
+}
+
+.home-h2-container {
+  max-width: 500px;
+}
+
 .slogan-home {
 color: white;
 opacity: 1;
@@ -88,6 +100,10 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
     padding-right: 30px;
     padding-top: 200px;
   }
+  .banner.home-background {
+    padding-left: 80px;
+    padding-top: 350px;
+  }
 }
 @media(min-width: 768px) and (max-width: 991px) {
   .slogan-home {
@@ -99,6 +115,11 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   .find-volunteer {
     padding-right: 30px;
     padding-top: 200px;
+  }
+
+  .banner.home-background {
+    padding-left: 80px;
+    padding-top: 350px;
   }
 }
 @media(min-width: 575px) and (max-width: 767px) {
