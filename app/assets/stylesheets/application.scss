@@ -15,6 +15,7 @@
 @import "users/index";
 @import "bookings/index";
 @import "chat/index";
+@import "ngo/index";
 @import "team/index";
 @import "devise/login";
 @import "bookings/index";
@@ -57,7 +58,7 @@ h3 {
 }
 
 a {
-  color: $black-gray;
+  color: white;
   text-decoration: none;
   opacity: 0.93;
 }

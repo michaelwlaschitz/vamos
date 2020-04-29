@@ -8,6 +8,8 @@
   height: 100vh;
   justify-content: center;
   padding-top:60px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .home-text {
@@ -17,6 +19,20 @@
 
 .white {
   color: white;
+  text-decoration: none;
+}
+
+white:active {
+  color: white;
+}
+
+.white:focus {
+  color: white;
+}
+
+.white:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .find-volunteer {
@@ -24,9 +40,8 @@
   padding-top: 100px;
 }
 
-
 .banner.home-background {
-  background-size:cover;
+  background-size: cover;
   height: 100vh;
   background-position: center center;
   padding: 0;
@@ -53,11 +68,12 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
 .slogan-home {
-color: $orange-vamos;
+color: white;
 opacity: 1;
 margin-bottom: 8px;
 margin-top: 272px;
-text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+font-size: 31px;
+text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 
 @media(min-width: 992px) {

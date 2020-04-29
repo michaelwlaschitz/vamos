@@ -1,56 +1,35 @@
-
-
-<div class="banner home-background" style="background-image: linear-gradient(rgba(0,0,0, 0.4),rgba(0,0,0,0.4)), url('<%= image_path "strongtogether.jpg"%>'); background-repeat: no-repeat;">
-
+<div class="banner home-background" style="background-image: linear-gradient(rgba(0,0,0, 0.3),rgba(0,0,0,0.4)), url('<%= image_path "Volunteering/Volunteering5.jpg"%>'); background-repeat: no-repeat;">
   <div class='container-fluid home-container pt-4'>
-
-    <div class="row align-items-center">
-      <div class="col-sm-10 offset-1 home-text">
-
-
           <% if user_signed_in? %>
+
           <div class="d-flex justify-content-between align-items-center navbar-home">
             <div class="position-static">
               <%= render 'shared/logo_top_left' %>
             </div>
             <div class="hide-desktop">
-              <h3 class="paragraph-no-margin mt-4"> <%= link_to 'My dashboard', user_profile_path(current_user), class: "text-homepage mr-4" %> </h3>
+              <h3 class="paragraph-no-margin mt-2"> <%= link_to 'My dashboard', user_profile_path(current_user), class: "white mr-4" %> </h3>
             </div>
           </div>
+
           <% else %>
           <div class="d-flex justify-content-between align-items-center navbar-home">
             <div class="position-static">
             <%= render 'shared/logo_top_left' %>
             </div>
             <div class="hide-desktop">
-              <h3 class="paragraph-no-margin mt-4"> <%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal-lg"}, class: "nav-link text-homepage mr-4" %> </h3>
+              <h3 class="paragraph-no-margin mt-4"> <%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal-lg"}, class: "nav-link text-homepage mr-2" %> </h3>
             </div>
           </div>
           <% end %>
 
-
-        <h1 class="slogan home slogan-home"><strong>Support local causes.<br>Do it with friends.</strong></h1>
-      </div>
-    </div>
-
-    <div class="row align-items-center">
-      <div class="col-sm-10 offset-1 home-text image-box-background">
+        <h1 class="slogan-home"><strong>Support local causes.<br>Do it with friends.</strong></h1>
         <h3 class="text homepage text-homepage">
-          Find opportunities around you, <br>
-          build a team, volunteer together.
+          Filter, search, apply for <br>volunteering around you!
         </h3>
-      </div>
-    </div>
 
-    <div class= "row align-items-center">
-      <div class="col-sm-10 offset-1 home-text">
-        <%= link_to "Vamos!", filter_location_path, class: "button-vamos primary-style" %>
-      </div>
-    </div>
+        <%= link_to "Vamos!", filter_location_path, class: "button-vamos primary-style w-100 mt-3" %>
 
-    <div class="find-volunteer col-sm-10 offset-1 home-text d-flex justify-content-end">
-      <h3><%= link_to "Find volunteers", new_ngo_path, class: "white" %></h3>
-    </div>
+      <h3 class="text-right mt-4 "><%= link_to "Find volunteers >>", new_ngo_path, class: "white"%></h3>
 
   </div>
 </div>
