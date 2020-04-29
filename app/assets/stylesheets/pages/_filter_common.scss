@@ -72,11 +72,13 @@
   .filter-submit {
     position: static;
     margin-top: 40px;
+    margin-left: 338px;
   }
   .filter-image {
     display: block;
-    margin-left: 50px;
-    height: calc(100vh - 80px)
+    margin-left: 100px;
+    height: calc(100vh - 80px);
+    width: 780px;
   }
   .filter-content {
     width: 500px;
@@ -94,7 +96,7 @@
   }
   .filter-image {
     display:block;
-    margin-left: 50px;
+    margin-left: 20px;
     height: calc(100vh - 80px)
   }
   .filter-content {
