@@ -3,6 +3,9 @@ class PagesController < ApplicationController
   def home
   end
 
+  def about_vamos
+  end
+
   def filter_location
   end
 
