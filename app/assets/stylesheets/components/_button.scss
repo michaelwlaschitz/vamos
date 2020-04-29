@@ -3,7 +3,7 @@ justify-content: center;
 border-radius: 10px;
 height: 40;
 width: 90%;
-box-shadow: 0 0 10px rgba(0,0,0,0.2);
+box-shadow: 0 0 5px rgba(0,0,0,0.2);
 text-align: center;
 font-family: 'Roboto Slab';
 font-size: 20px;
@@ -23,9 +23,15 @@ transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-
 box-sizing: border-box;
 }
 
-.button-vamos:hover {
+.button-vamos.primary-style:hover {
   text-decoration: none;
   color: white;
+  opacity: 1;
+}
+
+.button-vamos.secondary-style:hover {
+  text-decoration: none;
+  color: #F28A28;
   opacity: 1;
 }
 

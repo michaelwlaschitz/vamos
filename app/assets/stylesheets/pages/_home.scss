@@ -67,6 +67,18 @@ font-weight: lighter;
 text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
+.product-description {
+  background-color: $very-light-gray;
+}
+
+.product-info {
+  max-width: 500px;
+}
+
+.home-h2-container {
+  max-width: 500px;
+}
+
 .slogan-home {
 color: white;
 opacity: 1;

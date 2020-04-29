@@ -11,6 +11,7 @@ $red-vamos: #fb0000;
 $light-gray: #909090;
 //dark black-gray for fonts:
 $black-gray: #505050;
+$very-light-gray: #F7F7F7;
 
 //secondary grays for fonts and other elements:
 $secondary_gray_light:#A0A0A0;
@@ -25,4 +26,16 @@ $green: #1EDD88;
 
 .orange {
   color: $orange-vamos;
+}
+
+.gray {
+  color: $light-gray;
+}
+
+.dark-gray {
+  color: $black-gray;
+}
+
+.blue-background {
+  background-color: #00fbd5;
 }
