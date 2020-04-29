@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+  get 'about-vamos', to: 'pages#about_vamos', as: :about_vamos
+
   get 'apply', to: 'pages#apply', as: :application
   get 'location', to: 'pages#filter_location', as: :filter_location
   get 'interests', to: 'pages#filter_interests', as: :filter_interests
