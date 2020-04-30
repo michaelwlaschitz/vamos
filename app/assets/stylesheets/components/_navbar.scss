@@ -54,6 +54,7 @@
     .nav-icon-tag {
       font-size: 12px;
       font-weight: lighter;
+      color: $light-gray;
     }
     &.active .nav-icon, &.active .nav-icon-tag {
       color: $orange-vamos;
@@ -65,15 +66,72 @@
 }
 
 // DESKTOP NAVBAR
+
 .desktop-navbar {
   justify-content: space-between;
   border-bottom: 1px solid #DEE2E6;
-  padding-top: 10px;
-  padding-bottom: 10px;
   .navbar-collapse {
-    flex-grow: 0;
+    display: flex;
+    justify-content: space-between;
+    .navbar-nav {
+      align-items: center !important;
+      .nav-item {
+        font-size: 14px;
+        border-radius: 30px;
+        text-align: center;
+        padding: 1px 6px 1px 6px;
+        widows: 100px;
+        .nav-link {
+          color: #212121 !important;
+        }
+        &:hover {
+          background-color: #F7F7F7;
+        }
+      }
+    }
   }
 }
+
+.yes-signed#search-projects {
+  width: 140px;
+  max-height: 40px;
+}
+.yes-signed#find-volunteers {
+  max-height: 40px;
+  width: 140px;
+}
+.yes-signed#about-vamos {
+  max-height: 40px;
+  width: 140px;
+}
+#logedin {
+  width: 70px;
+  &:hover {
+    background-color: white;
+  }
+}
+
+.no-signed#search-projects {
+  width: 250px;
+}
+#login {
+  -webkit-box-shadow: 1px 1px 13px -2px rgba(168,165,168,0.58);
+  -moz-box-shadow: 1px 1px 13px -2px rgba(168,165,168,0.58);
+  box-shadow: 1px 1px 13px -2px rgba(168,165,168,0.58);
+  &:hover {
+    -webkit-box-shadow: 1px 1px 14px 2px rgba(168,165,168,0.58);
+    -moz-box-shadow: 1px 1px 14px 2px rgba(168,165,168,0.58);
+    box-shadow: 1px 1px 14px 2px rgba(168,165,168,0.58);
+  }
+}
+
+
+
+
+.dropdown-toggle::after {
+    content: none;
+}
+
 
 @media(min-width: 992px) {
   .mobile-navbar {
