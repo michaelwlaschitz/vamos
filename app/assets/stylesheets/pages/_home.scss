@@ -93,6 +93,10 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
     margin-top: 150px;
   }
 
+  .product-info {
+  margin-top: 50px;
+  }
+
   .hide-desktop {
     display:none;
   }
@@ -112,6 +116,9 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   .hide-desktop {
     display:none;
   }
+  .product-info {
+  margin-top: 50px;
+  }
   .find-volunteer {
     padding-right: 30px;
     padding-top: 200px;
@@ -129,6 +136,15 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
     padding-right: 20px;
     padding-top: 150px;
     font-weight: 32;
+  }
+  .product-info {
+  margin-top: 50px;
+  }
+}
+
+@media(max-width: 575px) {
+  .hide-mobile {
+    display:none;
   }
 }
 
