@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :filter_location, :filter_interests, :filter_time]
+  skip_before_action :authenticate_user!, only: [:home, :filter_location, :filter_interests, :filter_time, :about_vamos]
   def home
   end
 
@@ -17,5 +17,8 @@ class PagesController < ApplicationController
   end
 
   def filter_time
+  end
+
+  def about_vamos
   end
 end
