@@ -1,5 +1,5 @@
 <div class="banner home-background" style="background-image: linear-gradient(rgba(0,0,0, 0.3),rgba(0,0,0,0.4)), url('<%= image_path "Volunteering/Volunteering5.jpg"%>'); background-repeat: no-repeat;">
-  <div class='container-fluid home-container pt-4'>
+  <div class='container-fluid home-container py-4'>
           <% if user_signed_in? %>
 
           <div class="d-flex justify-content-between align-items-center navbar-home">
@@ -38,11 +38,11 @@
 
 <!-- Product Description -->
 
-<div class="product-description d-flex py-5 px-4 hide-desktop">
+<div class="product-description d-flex py-5 px-4 hide-desktop justify-content-around align-items-center">
 
-  <%= image_tag "Screens/index.png", class: "phone-screen hide-mobile"%>
+  <%= image_tag "Screens/index.png", class: "phone-screen hide-mobile ml-5"%>
 
-  <div class="product-info">
+  <div class="product-info mr-3">
     <div class="d-flex align-items-center">
       <h2><i class="fas fa-search orange mr-4"></i></h2>
       <div>
