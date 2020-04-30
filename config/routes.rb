@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   end
   resources :ngos, only: [:new, :create]
 
+  get 'ngos/home', to: 'ngos#home', as: :ngos_home
+
   resources :teams, only: [:new, :create]
 
   resources :conversations, only: [:index, :show, :create] do
