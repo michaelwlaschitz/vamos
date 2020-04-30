@@ -1,7 +1,51 @@
-#team-image {
+#team-image-desktop {
+  flex-grow: 1;
+  object-fit: cover;
+  object-position: center;
+  margin-left: 100px;
+  height: calc(100vh - 80px);
+  width: 780px;
+}
+
+#team-image-mobile {
   height: 200px;
   width: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.text-center-mobile {
+  display: block;
+}
+
+.text-center-desktop {
+  display: none;
+}
+
+
+@media(min-width: 992px) {
+  .text-center-mobile {
+  display: none;
+  }
+  .text-center-desktop {
+  display: block;
+  }
+  .form-style-desktop {
+    width: 100%;
+    margin-top: 100px;
+  }
+  .simple-form {
+    width: 500px;
+  }
+  .button-vamos {
+    max-width: 500px;
+  }
+  .title {
+    margin-bottom: 40px;
+  }
+  .content-container {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
