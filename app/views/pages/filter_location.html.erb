@@ -4,13 +4,13 @@
 <!--   Begin of form -->
     <div class="filter-form">
       <h2 class="mt-5">
-        <span style="color: #fb8500">Where</span> do you want to help?
+        <span style="color: #fb8500">Where</span> do you want to help with your friends?
       </h2>
 
       <div class="filter-content">
         <%= form_with url: "/interests", method: :get, local: true do |f| %>
           <%= f.text_field :address, placeholder: 'Type Barcelona address', label:false %>
-          <%= button_tag( :class => "filter-submit") do %>
+          <%= button_tag( :class => "filter-submit-location") do %>
             <i class='fas fa-chevron-right'></i>
           <% end %>
         <% end %>
@@ -23,7 +23,7 @@
 <!--   End of form -->
 
     <div>
-    <%= image_tag "strongtogether.jpg", class: "filter-image"%>
+    <%= image_tag "location.jpg", class: "filter-image"%>
     </div>
 
 

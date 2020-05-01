@@ -1,5 +1,5 @@
 class NgosController < ApplicationController
-
+skip_before_action :authenticate_user!, only: [:home]
   def new
     @ngo = Ngo.new
   end
@@ -12,6 +12,9 @@ class NgosController < ApplicationController
     else
       render :new
     end
+  end
+
+  def home
   end
 
   private

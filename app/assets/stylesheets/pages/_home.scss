@@ -68,7 +68,7 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
 .product-description {
-  background-color: $very-light-gray;
+  background-color: white;
 }
 
 .product-info {
@@ -94,7 +94,7 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   }
 
   .product-info {
-  margin-top: 50px;
+  margin-top: 5px;
   }
 
   .hide-desktop {
@@ -106,8 +106,15 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   }
   .banner.home-background {
     padding-left: 80px;
-    padding-top: 350px;
+    padding-top: 150px;
   }
+  .banner.home-background h1 {
+    font-size: 40px;
+  }
+  .banner.home-background h3 {
+    font-size: 20px;
+  }
+
 }
 @media(min-width: 768px) and (max-width: 991px) {
   .slogan-home {
@@ -117,16 +124,16 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
     display:none;
   }
   .product-info {
-  margin-top: 50px;
+  margin-top: 5px;
   }
   .find-volunteer {
     padding-right: 30px;
-    padding-top: 200px;
+    padding-top: 180px;
   }
 
   .banner.home-background {
     padding-left: 80px;
-    padding-top: 350px;
+    padding-top: 150px;
   }
 }
 @media(min-width: 575px) and (max-width: 767px) {
@@ -134,11 +141,11 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   }
   .find-volunteer {
     padding-right: 20px;
-    padding-top: 150px;
+    padding-top: 100px;
     font-weight: 32;
   }
   .product-info {
-  margin-top: 50px;
+  margin-top: 5px;
   }
 }
 
