@@ -1,83 +1,98 @@
-<div class="banner home-background" style="background-image: linear-gradient(rgba(0,0,0, 0.3),rgba(0,0,0,0.4)), url('<%= image_path "Volunteering/Volunteering5.jpg"%>'); background-repeat: no-repeat;">
-  <div class='container-fluid home-container py-4'>
-          <% if user_signed_in? %>
+<body>
+  <div class="banner home-background" style="background-image: linear-gradient(rgba(0,0,0, 0.3),rgba(0,0,0,0.4)), url('<%= image_path "Volunteering/Volunteering5.jpg"%>'); background-repeat: no-repeat;">
+    <div class='container-fluid home-container py-4'>
+            <% if user_signed_in? %>
 
-          <div class="d-flex justify-content-between align-items-center navbar-home">
-            <div class="position-static">
+            <div class="d-flex justify-content-between align-items-center navbar-home">
+              <div class="position-static">
+                <%= render 'shared/logo_top_left' %>
+              </div>
+              <div class="hide-desktop">
+                <h3 class="paragraph-no-margin mt-2"> <%= link_to 'My dashboard', user_profile_path(current_user), class: "white mr-4 hide-desktop" %> </h3>
+              </div>
+            </div>
+
+            <% else %>
+            <div class="d-flex justify-content-between align-items-center navbar-home">
+              <div class="position-static">
               <%= render 'shared/logo_top_left' %>
+              </div>
+              <div class="hide-desktop">
+                <h3 class="paragraph-no-margin"> <%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal-lg"}, class: "nav-link text-homepage mr-2" %> </h3>
+              </div>
             </div>
-            <div class="hide-desktop">
-              <h3 class="paragraph-no-margin mt-2"> <%= link_to 'My dashboard', user_profile_path(current_user), class: "white mr-4 hide-desktop" %> </h3>
-            </div>
-          </div>
+            <% end %>
+        <div class="d-flex">
+          <div>
+            <h1 class="slogan-home"><strong>Support local causes.<br>Do it with friends.</strong></h1>
+            <h3 class="text homepage text-homepage">
+              Filter, search, apply for <br>volunteering around you!
+            </h3>
 
-          <% else %>
-          <div class="d-flex justify-content-between align-items-center navbar-home">
-            <div class="position-static">
-            <%= render 'shared/logo_top_left' %>
-            </div>
-            <div class="hide-desktop">
-              <h3 class="paragraph-no-margin"> <%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal-lg"}, class: "nav-link text-homepage mr-2" %> </h3>
-            </div>
+            <%= link_to "Vamos!", filter_location_path, class: "button-vamos primary-style w-100 mt-3" %>
+
+            <h3 class="text-right mt-4 "><%= link_to "Find volunteers >>", new_ngo_path, class: "white hide-desktop"%></h3>
           </div>
-          <% end %>
-      <div class="d-flex">
+        </div>
+    </div>
+  </div>
+
+  <!-- Product Description -->
+
+  <div class="product-description d-flex py-5 px-4 hide-desktop justify-content-around align-items-center">
+
+    <%= image_tag "Screens/index.png", class: "phone-screen hide-mobile ml-5"%>
+
+    <div class="product-info mr-3">
+      <div class="d-flex align-items-center">
+        <h2><i class="fas fa-search orange mr-4"></i></h2>
         <div>
-          <h1 class="slogan-home"><strong>Support local causes.<br>Do it with friends.</strong></h1>
-          <h3 class="text homepage text-homepage">
-            Filter, search, apply for <br>volunteering around you!
-          </h3>
-
-          <%= link_to "Vamos!", filter_location_path, class: "button-vamos primary-style w-100 mt-3" %>
-
-          <h3 class="text-right mt-4 "><%= link_to "Find volunteers >>", new_ngo_path, class: "white hide-desktop"%></h3>
+          <h2 class="orange">Find local projects that fit you</h2>
+          <p>With Vamos you can filter by category, location and time to find the best opportunity for you.</p>
         </div>
       </div>
-  </div>
-</div>
 
-<!-- Product Description -->
-
-<div class="product-description d-flex py-5 px-4 hide-desktop justify-content-around align-items-center">
-
-  <%= image_tag "Screens/index.png", class: "phone-screen hide-mobile ml-5"%>
-
-  <div class="product-info mr-3">
-    <div class="d-flex align-items-center">
-      <h2><i class="fas fa-search orange mr-4"></i></h2>
-      <div>
-        <h2 class="orange">Find local projects that fit you</h2>
-        <p>With Vamos you can filter by category, location and time to find the best opportunity for you.</p>
+      <div class="d-flex align-items-center mt-5">
+        <h2><i class="fas fa-file-alt orange mr-4"></i></h2>
+        <div>
+          <h2 class="orange">Apply with your friends</h2>
+          <p>At Vamos you can sign up for volunteering together with your friends and with a few click send an application as a team.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="d-flex align-items-center mt-5">
-      <h2><i class="fas fa-file-alt orange mr-4"></i></h2>
-      <div>
-        <h2 class="orange">Apply with your friends</h2>
-        <p>At Vamos you can sign up for volunteering together with your friends and with a few click send an application as a team.</p>
+      <div class="d-flex align-items-center mt-5">
+        <h2><i class="fas fa-comments orange mr-4"></i></h2>
+        <div>
+        <h2 class="orange">Chat with the project owner</h2>
+        <p>Find out all the details about the opportunity and engage with the volunteering coordinator via chat.</p>
+        </div>
       </div>
+
     </div>
-
-    <div class="d-flex align-items-center mt-5">
-      <h2><i class="fas fa-comments orange mr-4"></i></h2>
-      <div>
-      <h2 class="orange">Chat with the project owner</h2>
-      <p>Find out all the details about the opportunity and engage with the volunteering coordinator via chat.</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="d-flex justify-content-center text-center dark-gray-background">
-  <div>
-    <h2 class="bold home-h2-container">Looking for volunteers? </h2>
-    <p>Create your first project for free in less than <strong>3 minutes!</strong></p>
-    <%= link_to "Get started", new_ngo_path, class: "button-vamos primary-style mt-2" %>
   </div>
 
-</div>
+  <div class="d-flex justify-content-center text-center dark-gray-background">
+    <div>
+      <h2 class="bold home-h2-container">Looking for volunteers? </h2>
+      <p>Create your first project for free in less than <strong>3 minutes!</strong></p>
+      <%= link_to "Get started", new_ngo_path, class: "button-vamos primary-style mt-2" %>
+    </div>
+  </div>
+
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/5eabfd9710362a7578be0b03/default';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+</body>
 
 
 
