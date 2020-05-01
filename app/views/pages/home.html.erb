@@ -36,13 +36,13 @@
   </div>
 </div>
 
-<!-- Product Description -->
+<!-- USP Description -->
 
-<div class="product-description d-flex py-5 px-4 hide-desktop justify-content-around align-items-center">
+<div class="usp-description d-flex py-5 px-4 hide-desktop justify-content-around align-items-center">
 
   <%= image_tag "Screens/index.png", class: "phone-screen hide-mobile ml-5"%>
 
-  <div class="product-info mr-3">
+  <div class="usp-info mr-3">
     <div class="d-flex align-items-center">
       <h2><i class="fas fa-search orange mr-4"></i></h2>
       <div>
@@ -70,13 +70,72 @@
   </div>
 </div>
 
-<div class="d-flex justify-content-center text-center dark-gray-background">
+<!-- CTA NGO
+ -->
+
+<div class="d-flex justify-content-center text-center light-gray-background">
   <div>
     <h2 class="bold home-h2-container">Looking for volunteers? </h2>
     <p>Create your first project for free in less than <strong>3 minutes!</strong></p>
     <%= link_to "Get started", new_ngo_path, class: "button-vamos primary-style mt-2" %>
   </div>
+</div>
 
+<!-- App Description
+ -->
+<div class="content-container hide-mobile">
+  <div class="product-description text-center mt-5">
+    <h2 clas="orange">How do I find volunteering on Vamos?</h2>
+
+    <div class="d-flex align-items-top mt-5 mb-5 px-5 justify-content-center">
+
+      <div class="feature-info">
+        <h2><i class="fas fa-filter orange mb-2"></i></h2>
+        <p>Filter by location, cause and time investment.</p>
+      </div>
+
+      <i class="fas fa-chevron-right mx-4 mt-2 orange"></i>
+
+      <div class="feature-info">
+        <h2><i class="fas fa-info-circle orange mb-2"></i></h2>
+        <p>Read detailled info about volunteering opportunties.</p>
+      </div>
+
+      <i class="fas fa-chevron-right mx-4 orange mt-2 "></i>
+
+       <div class="feature-info">
+        <h2><i class="fas fa-file-alt orange mb-2"></i></h2>
+        <p>Create your team and apply.</p>
+      </div>
+
+      <i class="fas fa-chevron-right mx-4 orange mt-2 "></i>
+
+      <div class="feature-info">
+        <h2><i class="fas fa-check-circle orange mb-2"></i></h2>
+        <p>The project owner accepts the application.</p>
+      </div>
+
+      <i class="fas fa-chevron-right mx-4 orange mt-2 "></i>
+
+      <div class="feature-info">
+        <h2><i class="fas fa-comments orange mb-2"></i></h2>
+        <p>Chat with the contact person and your team.</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Vision
+ -->
+
+<div class="content-container">
+  <div class="vision-card">
+    <h2 class="bold home-h2-container">Looking for volunteers? </h2>
+    <p>Create your first project for free in less than <strong>3 minutes!</strong></p>
+    <%= link_to "Get started", new_ngo_path, class: "button-vamos primary-style mt-2" %>
+  </div>
 </div>
 
 

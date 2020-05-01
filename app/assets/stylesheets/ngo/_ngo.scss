@@ -9,6 +9,29 @@
   max-width: 500px;
 }
 
+.card-category-ngo-new {
+  background-color: white;
+  float: left;
+  border-radius: 4px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  width: 460px;
+  margin-top: 60px;
+  margin-left: 50px;
+  margin-right: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.ngo-screen {
+  width: 500px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin-right: 30px;
+}
+
 .banner-home-page {
   background-size: cover;
   height: 100vh;
@@ -75,20 +98,6 @@
   }
 }
 
-.card-category-ngo-new {
-  background-color: white;
-  float: left;
-  border-radius: 4px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-  width: 460px;
-  margin-top: 60px;
-  margin-left: 50px;
-  margin-right: 10px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
-}
 
 .category-field {
   margin-bottom: 20px;
