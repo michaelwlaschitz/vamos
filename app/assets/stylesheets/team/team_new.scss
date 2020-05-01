@@ -22,6 +22,14 @@
   display: none;
 }
 
+.content-container-create-team {
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  width: 90%;
+  padding: 0px;
+}
+
 
 @media(min-width: 992px) {
   .text-center-mobile {
@@ -43,7 +51,7 @@
   .title {
     margin-bottom: 40px;
   }
-  .content-container {
+  .content-container-create-team {
     margin-top: 0;
     margin-bottom: 0;
   }
