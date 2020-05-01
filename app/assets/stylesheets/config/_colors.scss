@@ -3,7 +3,7 @@
 // buttons and highlights:
 $orange-vamos:#fb8500;
 $light-orange: #FDEAD7;
-$green-vamos: #00fb85;
+$green-vamos: #00B9AE;
 $blue-vamos: #0076fb;
 $red-vamos: #fb0000;
 
@@ -39,4 +39,8 @@ $green: #1EDD88;
 .light-gray-background {
   padding: 80px 10px;
   background-color: $very-light-gray;
+}
+
+.green {
+  color: $green-vamos;
 }
