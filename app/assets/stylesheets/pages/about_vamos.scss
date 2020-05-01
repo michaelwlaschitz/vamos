@@ -1,0 +1,55 @@
+
+.aboutvamos-banner {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.vamos-story {
+  color: $orange-vamos;
+  font-size: 22px;
+  width: 80%;
+  margin: auto;
+}
+
+.motivational-quote {
+  background-color: #F0ECF5;
+  font-style: italic;
+  h3 {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+.team-container {
+  width: 80%;
+  margin: auto;
+  .founders-title, .advisors-title {
+    margin-top: 40px;
+  }
+  .vamos-member {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 1px 1px 13px -2px rgba(168,165,168,0.58);
+    -moz-box-shadow: 1px 1px 13px -2px rgba(168,165,168,0.58);
+    box-shadow: 1px 1px 13px -2px rgba(168,165,168,0.58);
+    .member-picture {
+      width: 200px;
+    }
+    .member-name {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    .member-role {
+      text-align: center;
+      color: gray;
+    }
+    .linkedin-icon {
+      text-align: center;
+      color: #7AE5F5;
+      font-size: 20px;
+    }
+  }
+}

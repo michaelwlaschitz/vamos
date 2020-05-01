@@ -55,39 +55,42 @@
       <div class="row ngo-all-desktop">
         <div class="col-4 ngo-datas">
           <div class="card-ngo-profile">
-
-            <%= cl_image_tag current_user.photo.key, class: "ngo-image-desktop"%>
-          <h2 class="orange-title-desktop mb-3"><%= @user.ngo.name %></h2>
-
-          <div class="ngo-other-info">
-            <div class="name-user d-flex align-items-center mb-2">
-              <div class="element mr-2">
-                <i class="fas fa-user"></i>
-              </div>
-              <div class="ml-1">
-                <h3 class="mb-0"><%= @user.first_name %> <%= @user.last_name %></h3>
-              </div>
-            </div>
-            <div class="email-user-ngo d-flex align-items-center py-2">
-              <div class="email-logo mr-2">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="email mr-3">
-                <p class="paragraph-no-margin"><%= @user.email %> </p>
-              </div>
-            </div>
-            <div class="phone-user d-flex align-items-center">
-              <% if %>
-                <div class="element mr-2">
-                  <i class="fas fa-phone"></i>
+            <a href="">
+              <p class="edit-profile-button">Edit profile</p>
+            </a>
+            <div class="ngo-info">
+              <%= cl_image_tag current_user.photo.key, class: "ngo-image-desktop"%>
+              <h2 class="orange-title-desktop mb-3"><%= @user.ngo.name %></h2>
+              <div class="ngo-other-info">
+                <div class="name-user d-flex align-items-center mb-2">
+                  <div class="element mr-2">
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <div class="ml-1">
+                    <h3 class="mb-0"><%= @user.first_name %> <%= @user.last_name %></h3>
+                  </div>
                 </div>
-                <div class="phone-user-ngo mr-3">
-                  <p class="paragraph-no-margin"><%= @user.phone %> </p>
+                <div class="email-user-ngo d-flex align-items-center py-2">
+                  <div class="email-logo mr-2">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="email mr-3">
+                    <p class="paragraph-no-margin"><%= @user.email %> </p>
+                  </div>
                 </div>
-              <% else %>
-              <% end %>
+                <div class="phone-user d-flex align-items-center">
+                  <% if %>
+                    <div class="element mr-2">
+                      <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="phone-user-ngo mr-3">
+                      <p class="paragraph-no-margin"><%= @user.phone %> </p>
+                    </div>
+                  <% else %>
+                  <% end %>
+                </div>
+              </div>
             </div>
-          </div>
           </div>
         </div>
         <div class="col-12 col-lg-8 tab-datas">
