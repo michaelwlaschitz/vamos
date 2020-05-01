@@ -47,7 +47,7 @@
                 </a>
               </div>
               <div class="project-text-stuff">
-                <h5 class="project-title"><%= project.title %></h5>
+                <h5><%= link_to project.title, project_path(project), class: "project-title"%></h5>
                 <p class="project-ong"><%= project.ngo.name if project.ngo %></p>
                 <div class="project-elements d-flex justify-content-left">
                   <div class="element"><i class="far fa-clock"></i><%= project.hours_per_week %>h/week</div>
@@ -164,7 +164,7 @@
               </div>
             </div>
             <div class="project-text-stuff ml-3">
-              <h5 class="project-title"><%= project.title %></h5>
+              <h5><%= link_to project.title, project_path(project), class: "project-title"%></h5>
               <p class="project-ong my-2"><%= project.ngo.name if project.ngo %></p>
               <div class="project-elements d-flex">
                 <div class="element mr-3"><i class="far fa-clock"></i><%= project.hours_per_week %>h/week</div>
