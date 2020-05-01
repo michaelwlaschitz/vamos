@@ -87,6 +87,9 @@
               <% else %>
               <% end %>
             </div>
+            <div id="button-info"class="d-flex justify-content-center mt-2">
+              <%= link_to "CREATE PROJECT", new_project_path, class: "button-vamos primary-style w-150 mt-0"  %>
+            </div>
           </div>
           </div>
         </div>
@@ -195,38 +198,40 @@
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
               <!-- project part NGO -->
           <div class="content-container-profile-ngo-project">
-          <% @user.ngo.projects.each do |project| %>
-            <div class="project-card-profile flex-md-row mb-4 mt-3">
-              <div class="project-image" style="background-image: url('<%= cl_image_path project.photos.first.key if project.photos.attached? %>')">
-                <div class="interest-icon border rounded-circle">
-                  <% if project.category == "Children" %>
-                    <i class="icon fas fa-child"></i>
-                  <% elsif project.category == "Social" %>
-                    <i class="icon fas fa-user-friends"></i>
-                  <% elsif project.category == "Cultural" %>
-                    <i class="icon fas fa-music"></i>
-                  <% elsif project.category == "Environment" %>
-                    <i class="icon fas fa-leaf"></i>
-                  <% else project.category == "Elderly Care" %>
-                    <i class="icon fab fa-accessible-icon"></i>
-                  <% end %>
+            <div class="container ngo-app-datas">
+              <% @user.ngo.projects.each do |project| %>
+                <div class="project-card-profile flex-md-row mb-4 mt-3">
+                  <div class="project-image" style="background-image: url('<%= cl_image_path project.photos.first.key if project.photos.attached? %>')">
+                    <div class="interest-icon border rounded-circle">
+                      <% if project.category == "Children" %>
+                        <i class="icon fas fa-child"></i>
+                      <% elsif project.category == "Social" %>
+                        <i class="icon fas fa-user-friends"></i>
+                      <% elsif project.category == "Cultural" %>
+                        <i class="icon fas fa-music"></i>
+                      <% elsif project.category == "Environment" %>
+                        <i class="icon fas fa-leaf"></i>
+                      <% else project.category == "Elderly Care" %>
+                        <i class="icon fab fa-accessible-icon"></i>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="project-text-stuff">
+                    <h5 class="project-title"><%= project.title %></h5>
+                    <p class="project-ong"><%= project.ngo.name %></p>
+                    <div class="project-elements d-flex justify-content-left">
+                      <div class="element"><i class="far fa-clock"></i><%= project.hours_per_week %>h/week</div>
+                      <div class="element"><i class="fas fa-user-friends"></i><%= project.capacity %></div>
+                      <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="project-text-stuff">
-                <h5 class="project-title"><%= project.title %></h5>
-                <p class="project-ong"><%= project.ngo.name %></p>
-                <div class="project-elements d-flex justify-content-left">
-                  <div class="element"><i class="far fa-clock"></i><%= project.hours_per_week %>h/week</div>
-                  <div class="element"><i class="fas fa-user-friends"></i><%= project.capacity %></div>
-                  <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
-                </div>
+              <% end %>
+              <div class="d-flex justify-content-center mt-2">
+                <%= link_to "CREATE PROJECT", new_project_path, class: "button-vamos primary-style w-100 mt-0"  %>
               </div>
             </div>
-          <% end %>
-          <div class="d-flex justify-content-center mt-2">
-            <%= link_to "CREATE PROJECT", new_project_path, class: "button-vamos primary-style w-100 mt-0"  %>
           </div>
-        </div>
         </div> <!-- end of the tab -->
       </div>
     </div>

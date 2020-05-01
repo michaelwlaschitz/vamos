@@ -434,8 +434,7 @@
   }
 }
 
-
-.content-container-profile-ngo-project {
+.content-container-profile-ngo-project.ngo-app-datas {
   margin: auto;
   margin-bottom: 0px;
   margin-top: 0px;
@@ -448,6 +447,9 @@
   .content-container-profile-ngo-project {
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+  }
+  .ngo-app-datas {
+    min-height: 500px;
   }
 }
 
@@ -586,9 +588,9 @@
   .ngo-booking-datas {
     display: block;
     width: 100%;
+    min-height: 500px;
   }
 }
-
 
 // ngo profile
 
@@ -621,4 +623,8 @@
 
 .first_name {
   text-align: center;
+}
+
+.button-info {
+
 }
