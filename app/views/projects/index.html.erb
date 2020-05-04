@@ -80,7 +80,7 @@
     </div>
   </div>
   <!-- Function JS to calculate the distance between the ngo location and user location -->
-  <!-- Filter Modal -->
+  <!-- Mobile Filter Modal -->
   <div class="modal fade" id="filterModalMobile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -97,7 +97,20 @@
           <h2 class="mt-4">Interests</h2>
           <%= render "projects/partial_filter_boxes_interest" %>
           <h2 class="mt-4 mb-2">Hours per Week</h2>
-          <%= render "projects/partial_filter_boxes_time" %>
+
+        <!--   This does not work desktop -->
+
+          <div class="buttons filter-buttons">
+            <% ["1 - 4 h/week", "5 - 9 h/week", "10+ h/week"].each do |time| %>
+            <input type="checkbox" class="hidden time-input" value="<%= time %>" name="time[]" id="time_<%= time %>" <%= "checked" if params[:time]&.include?(time) %>>
+            <label class="time-button button <%= "active" if params[:time]&.include?(time) %>" for="time_<%= time %>">
+              <%= time %>
+            </label>
+            <% end %>
+          </div>
+
+        <!--   End -->
+
         </div>
         <div class = "content-container">
         <div class="modal-footer"></div>

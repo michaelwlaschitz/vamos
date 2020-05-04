@@ -158,6 +158,9 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   .usp-info {
   margin-top: 5px;
   }
+  .hide-mobile {
+    display:none;
+  }
 }
 
 @media(max-width: 575px) {
