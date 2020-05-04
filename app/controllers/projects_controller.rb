@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    raise
     @projects = Project.all
 
     filter_projects
