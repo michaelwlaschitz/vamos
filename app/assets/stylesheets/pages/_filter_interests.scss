@@ -9,28 +9,11 @@
   justify-content: center;
 }
 
-#progress2 {
-  position: absolute;
-  bottom: 10px;
-  width: 340px;
-}
-
 @media(min-width: 992px) {
-  #progress2 {
-    position: static;
-    width: 88%;
-    margin-top: 80px;
-  }
+
 }
 @media(min-width: 768px) and (max-width: 991px) {
-  #progress2 {
-    position: static;
-    width: 100%;
-    margin-top: 80px;
-  }
+
 }
-@media(min-width: 575px) and (max-width: 767px) {
-  #progress2 {
-  margin-top: 500px;
-  }
+@media(max-width: 767px) {
 }
