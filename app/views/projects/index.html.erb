@@ -95,7 +95,29 @@
           <%= form_with url: "/projects", method: :get, local: true do |f| %>
           <%= f.text_field :address, placeholder: 'Location', label:false %>
           <h2 class="mt-4">Interests</h2>
-          <%= render "projects/partial_filter_boxes_interest" %>
+
+              <div class="buttons filter-buttons">
+                <% categories = {
+                  "Children" => "fas fa-child",
+                  "Social" => "fas fa-user-friends mr-0",
+                  "Cultural" => "fas fa-music",
+                  "Climate" => "fas fa-leaf",
+                  "Medical" => "fas fa-briefcase-medical",
+                  "Seniors" => "fab fa-accessible-icon",
+                  } %>
+                <% categories.each do |category, logo| %>
+                <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="mobile_categories_<%= category %>" <%= "checked" if params[:categories]&.include?(category) %> >
+                <label id="mobile-button" class="category-button button <%= "active" if params[:categories]&.include?(category) %>" for="mobile_categories_<%= category %>">
+                  <div>
+                    <div class="interest-icon">
+                      <i class="<%= logo %>"></i>
+                    </div>
+                    <%= category%>
+                  </div>
+                </label>
+                <% end %>
+              </div>
+
           <h2 class="mt-4 mb-2">Hours per Week</h2>
 
         <!--   This does not work desktop -->
@@ -103,7 +125,7 @@
           <div class="buttons filter-buttons">
             <% ["1 - 4 h/week", "5 - 9 h/week", "10+ h/week"].each do |time| %>
             <input type="checkbox" class="hidden time-input" value="<%= time %>" name="time[]" id="time_<%= time %>" <%= "checked" if params[:time]&.include?(time) %>>
-            <label class="time-button button <%= "active" if params[:time]&.include?(time) %>" for="time_<%= time %>">
+            <label id="mobile-button" class="time-button button <%= "active" if params[:time]&.include?(time) %>" for="time_<%= time %>">
               <%= time %>
             </label>
             <% end %>
@@ -216,9 +238,41 @@
             <%= form_with url: "/projects", method: :get, local: true do |f| %>
             <%= f.text_field :address, placeholder: 'Location', label:false, id:"filter-desktop-location" %>
             <h2 class="mt-4">Interests</h2>
-            <%= render "projects/partial_filter_boxes_interest" %>
+
+                <div class="buttons filter-buttons">
+                  <% categories = {
+                    "Children" => "fas fa-child",
+                    "Social" => "fas fa-user-friends mr-0",
+                    "Cultural" => "fas fa-music",
+                    "Climate" => "fas fa-leaf",
+                    "Medical" => "fas fa-briefcase-medical",
+                    "Seniors" => "fab fa-accessible-icon",
+                    } %>
+                  <% categories.each do |category, logo| %>
+                  <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="desktop_categories_<%= category %>" <%= "checked" if params[:categories]&.include?(category) %> >
+                  <label id="desktop-button" class="category-button button <%= "active" if params[:categories]&.include?(category) %>" for="desktop_categories_<%= category %>">
+                    <div>
+                      <div class="interest-icon">
+                        <i class="<%= logo %>"></i>
+                      </div>
+                      <%= category%>
+                    </div>
+                  </label>
+
+                  <% end %>
+                </div>
+
             <h2 class="mt-4 mb-2">Hours per Week</h2>
-            <%= render "projects/partial_filter_boxes_time" %>
+
+              <div class="buttons filter-buttons">
+                <% ["1 - 4 h/week", "5 - 9 h/week", "10+ h/week"].each do |time| %>
+                <input type="checkbox" class="hidden time-input" value="<%= time %>" name="time[]" id="desktop_time_<%= time %>" <%= "checked" if params[:time]&.include?(time) %>>
+                <label id="desktop-button" class="time-button button <%= "active" if params[:time]&.include?(time) %>" for="desktop_time_<%= time %>">
+                  <%= time %>
+                </label>
+                <% end %>
+              </div>
+
           </div>
           <div class="content-container">
             <div class="modal-footer">
