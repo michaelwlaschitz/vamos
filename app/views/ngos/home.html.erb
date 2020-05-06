@@ -1,44 +1,46 @@
-s<div class="banner home-background" style="background-image: linear-gradient(rgba(0,0,0, 0.3),rgba(0,0,0,0.4)), url('<%= image_path "Volunteering/Volunteering4.jpg"%>'); background-repeat: no-repeat;">
+
+<body>
+ <div class="banner home-background" style="background-image: linear-gradient(rgba(0,0,0, 0.3),rgba(0,0,0,0.4)), url('<%= image_path "Volunteering/Volunteering4.jpg"%>'); background-repeat: no-repeat;">
   <div class='container-fluid home-container py-4'>
           <% if user_signed_in? %>
 
-          <div class="d-flex justify-content-between align-items-center navbar-home">
-            <div class="position-static">
+            <div class="d-flex justify-content-between align-items-center navbar-home">
+              <div class="position-static">
+                <%= render 'shared/logo_top_left' %>
+              </div>
+              <div class="hide-desktop">
+                <h3 class="paragraph-no-margin mt-2"> <%= link_to 'My dashboard', user_profile_path(current_user), class: "white mr-4 hide-desktop" %> </h3>
+              </div>
+            </div>
+
+            <% else %>
+            <div class="d-flex justify-content-between align-items-center navbar-home">
+              <div class="position-static">
               <%= render 'shared/logo_top_left' %>
+              </div>
+              <div class="hide-desktop">
+                <h3 class="paragraph-no-margin"> <%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal-lg"}, class: "nav-link text-homepage mr-2" %> </h3>
+              </div>
             </div>
-            <div class="hide-desktop">
-              <h3 class="paragraph-no-margin mt-2"> <%= link_to 'My dashboard', user_profile_path(current_user), class: "white mr-4 hide-desktop" %> </h3>
-            </div>
+            <% end %>
+        <div class="d-flex">
+          <div>
+            <h1 class="slogan-home"><strong>Attract young people <br>who are eager to do good!</strong></h1>
+            <h3 class="text homepage text-homepage">
+              Create your first project for free <br>with just a few clicks!
+            </h3>
+
+            <%= link_to "Vamos!", new_ngo_path, class: "button-vamos primary-style w-100 mt-3" %>
+
+            <h3 class="text-right mt-4 "><%= link_to "Find volunteers >>", new_ngo_path, class: "white hide-desktop"%></h3>
           </div>
-
-          <% else %>
-          <div class="d-flex justify-content-between align-items-center navbar-home">
-            <div class="position-static">
-            <%= render 'shared/logo_top_left' %>
-            </div>
-            <div class="hide-desktop">
-              <h3 class="paragraph-no-margin"> <%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal-lg"}, class: "nav-link text-homepage mr-2" %> </h3>
-            </div>
-          </div>
-          <% end %>
-      <div class="d-flex">
-        <div>
-          <h1 class="slogan-home"><strong>Attract young people <br>who are eager to do good!</strong></h1>
-          <h3 class="text homepage text-homepage">
-            Create your first project for free <br>with just a few clicks!
-          </h3>
-
-          <%= link_to "Vamos!", new_ngo_path, class: "button-vamos primary-style w-100 mt-3" %>
-
-          <h3 class="text-right mt-4 "><%= link_to "Find volunteers >>", new_ngo_path, class: "white hide-desktop"%></h3>
         </div>
-      </div>
+    </div>
   </div>
-</div>
 
-<!-- Product Description -->
+  <!-- Product Description -->
 
-<div class="product-description d-flex py-5 px-4 hide-desktop justify-content-around align-items-center">
+  <div class="product-description d-flex py-5 px-4 hide-desktop justify-content-around align-items-center">
 
   <%= image_tag "Screens/ngo_screen.png", class: "ngo-screen hide-mobile ml-5"%>
 
@@ -49,26 +51,25 @@ s<div class="banner home-background" style="background-image: linear-gradient(rg
         <h2 class="orange">Create a project in less than 3 minutes</h2>
         <p class="paragraph-no-margin">Where, when, how many?  Create your project with a few clicks. We will find volunteers for you!</p>
       </div>
-    </div>
 
-    <div class="d-flex align-items-center mt-5">
-      <h2><i class="fas fa-chart-bar orange mr-4"></i></h2>
-      <div>
-        <h2 class="orange">Easily manage applications</h2>
-        <p>Through a simple application dashboard you view, accept and reject applications.</p>
+      <div class="d-flex align-items-center mt-5">
+        <h2><i class="fas fa-chart-bar orange mr-4"></i></h2>
+        <div>
+          <h2 class="orange">Easily manage applications</h2>
+          <p>Through a simple application dashboard you view, accept and reject applications.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="d-flex align-items-center mt-5">
-      <h2><i class="fas fa-comments orange mr-4"></i></h2>
-      <div>
-      <h2 class="orange">Chat with Volunteer Teams</h2>
-      <p>We provide a simple chat function to talk to potential volunteer teams.</p>
+      <div class="d-flex align-items-center mt-5">
+        <h2><i class="fas fa-comments orange mr-4"></i></h2>
+        <div>
+        <h2 class="orange">Chat with Volunteer Teams</h2>
+        <p>We provide a simple chat function to talk to potential volunteer teams.</p>
+        </div>
       </div>
-    </div>
 
+    </div>
   </div>
-</div>
 
 <div class="d-flex justify-content-center text-center light-gray-background">
   <div>
@@ -77,6 +78,20 @@ s<div class="banner home-background" style="background-image: linear-gradient(rg
     <%= link_to "Create free project", new_ngo_path, class: "button-vamos primary-style mt-2" %>
   </div>
 
-</div>
+  <%= render 'shared/login_form' %>
 
-<%= render 'shared/login_form' %>
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/5eabfd9710362a7578be0b03/default';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+</body>
