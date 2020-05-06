@@ -5,16 +5,16 @@
   object-fit: cover;
 }
 
-.vamos-story {
-  color: $orange-vamos;
+.vamos-story-text {
+  color: $black-gray;
   font-size: 22px;
-  width: 80%;
-  margin: auto;
 }
 
 .motivational-quote {
   background-color: #F0ECF5;
   font-style: italic;
+  padding-top: 60px;
+  padding-bottom: 60px;
   h3 {
     width: 80%;
     margin: auto;
@@ -34,7 +34,7 @@
     -moz-box-shadow: 1px 1px 13px -2px rgba(168,165,168,0.58);
     box-shadow: 1px 1px 13px -2px rgba(168,165,168,0.58);
     .member-picture {
-      width: 200px;
+      width: 250px;
     }
     .member-name {
       text-align: center;
@@ -50,6 +50,7 @@
       text-align: center;
       color: #7AE5F5;
       font-size: 20px;
+      margin-bottom: 10px;
     }
   }
 }

@@ -20,7 +20,7 @@ const initMapbox = () => {
       const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v10',
-        center: [-74.5, 40], // starting position
+        center: [2.16, 41.4], // starting position
         zoom: 9 // starting zoom
       });
 
@@ -50,7 +50,7 @@ const initMapbox = () => {
       const map = new mapboxgl.Map({
         container: 'map-desktop',
         style: 'mapbox://styles/mapbox/streets-v10',
-        center: [-74.5, 40], // starting position
+        center: [2.16, 41.4], // starting position
         zoom: 9 // starting zoom
       });
 
@@ -75,7 +75,7 @@ const initMapbox = () => {
       const map = new mapboxgl.Map({
         container: 'map-mobile',
         style: 'mapbox://styles/mapbox/streets-v10',
-        center: [-74.5, 40], // starting position
+        center: [2.16, 41.4], // starting position
         zoom: 9 // starting zoom
       });
 
@@ -98,8 +98,6 @@ const initMapbox = () => {
         console.log("test");
       });
     }
-
-
 
 };
 
