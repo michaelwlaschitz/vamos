@@ -5,7 +5,7 @@
     <div class = "content-container">
       <p class="opportunities-counter"> We found <%= @count %> opportunities near you</p>
       <div class="filters d-flex justify-content-left">
-        <div style="font-size: 16px" class="filter py-1 px-5" data-toggle="modal" data-target="#exampleModal">Filter</div>
+        <div style="font-size: 16px" class="filter py-1 px-5" data-toggle="modal" data-target="#filterModalMobile">Filter</div>
       </div>
       <div class="mobile-card-container my-3">
         <% @projects.each do |project| %>
@@ -47,7 +47,7 @@
                 </a>
               </div>
               <div class="project-text-stuff">
-                <h5 class="project-title"><%= project.title %></h5>
+                <h5><%= link_to project.title, project_path(project), class: "project-title"%></h5>
                 <p class="project-ong"><%= project.ngo.name if project.ngo %></p>
                 <div class="project-elements d-flex justify-content-left">
                   <div class="element"><i class="far fa-clock"></i><%= project.hours_per_week %>h/week</div>
@@ -61,7 +61,7 @@
       </div>
     </div>
   </div>
-  <!-- Button trigger modal -->
+  <!-- Map Modal -->
   <i id="map_button" button class ="fas fa-map-marker-alt open-map-modal fa-2x"></i>
   <!-- Modal -->
   <div class="custom-map-modal">
@@ -80,8 +80,8 @@
     </div>
   </div>
   <!-- Function JS to calculate the distance between the ngo location and user location -->
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Mobile Filter Modal -->
+  <div class="modal fade" id="filterModalMobile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -97,7 +97,20 @@
           <h2 class="mt-4">Interests</h2>
           <%= render "projects/partial_filter_boxes_interest" %>
           <h2 class="mt-4 mb-2">Hours per Week</h2>
-          <%= render "projects/partial_filter_boxes_time" %>
+
+        <!--   This does not work desktop -->
+
+          <div class="buttons filter-buttons">
+            <% ["1 - 4 h/week", "5 - 9 h/week", "10+ h/week"].each do |time| %>
+            <input type="checkbox" class="hidden time-input" value="<%= time %>" name="time[]" id="time_<%= time %>" <%= "checked" if params[:time]&.include?(time) %>>
+            <label class="time-button button <%= "active" if params[:time]&.include?(time) %>" for="time_<%= time %>">
+              <%= time %>
+            </label>
+            <% end %>
+          </div>
+
+        <!--   End -->
+
         </div>
         <div class = "content-container">
         <div class="modal-footer"></div>
@@ -118,9 +131,9 @@
   <div class="d-flex">
     <div class="desktop-card-container">
         <div class="opportunities-filter p-3">
-          <p class="opportunities-counter"> We found <%= @count %> oportunities near you</p>
+          <p class="opportunities-counter"> We found <%= @count %> opportunities near you</p>
           <div class="filters d-flex justify-content-left">
-            <div style="font-size: 16px" class="filter py-1 px-5" data-toggle="modal" data-target="#exampleModal">
+            <div style="font-size: 16px" class="filter py-1 px-5" data-toggle="modal" data-target="#filterModalDesktop">
               Filter
             </div>
           </div>
@@ -164,7 +177,7 @@
               </div>
             </div>
             <div class="project-text-stuff ml-3">
-              <h5 class="project-title"><%= project.title %></h5>
+              <h5><%= link_to project.title, project_path(project), class: "project-title"%></h5>
               <p class="project-ong my-2"><%= project.ngo.name if project.ngo %></p>
               <div class="project-elements d-flex">
                 <div class="element mr-3"><i class="far fa-clock"></i><%= project.hours_per_week %>h/week</div>
@@ -180,11 +193,42 @@
       <% end %>
       <% end %>
     </div>
+<!-- Desktop Map -->
     <div class="desktop-map">
       <div
         id="map-desktop"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+<!-- Desktop Filters -->
+    <div class="modal fade" id="filterModalDesktop" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">Filter Volunteering Opportunities</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h2 class="mb-2">Location</h2>
+            <%= form_with url: "/projects", method: :get, local: true do |f| %>
+            <%= f.text_field :address, placeholder: 'Location', label:false, id:"filter-desktop-location" %>
+            <h2 class="mt-4">Interests</h2>
+            <%= render "projects/partial_filter_boxes_interest" %>
+            <h2 class="mt-4 mb-2">Hours per Week</h2>
+            <%= render "projects/partial_filter_boxes_time" %>
+          </div>
+          <div class="content-container">
+            <div class="modal-footer">
+              </div>
+              <%= f.submit "Save filter", class: "button-vamos primary-style mt-0 mb-2 w-100" %>
+              <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,36 +1,33 @@
-<div class="filter-container">
-  <div class="d-flex">
+<div class="desktop-with-pic">
+  <div class="filter-container">
+    <div class="filter-form">
+      <h2 class="mt-5">
+        How many <span style="color: #fb8500"> hours per week </span> can you support local causes?
+      </h2>
 
-<!--   Begin of form -->
-  <div class="filter-form">
-    <h2 class="mt-5">
-      How many <span style="color: #fb8500"> hours per week </span> can you support local causes?
-    </h2>
+      <div class="filter-content">
+        <div class="form-group">
+          <form action="/projects" method="get">
+            <input id="hidden-input" type="hidden" name="time[]" value="">
+            <%= render "projects/partial_filter_boxes_time" %>
+            <input type="hidden" name="address" value="<%= params[:address] %>">
+            <% params[:categories].each do |category|  %>
+            <input type="hidden" name="categories[]" value="<%= category %>">
+            <% end %>
+            <%= render "pages/partial_next_button" %>
+          </form>
+        </div>
+      </div>
 
-    <div class="filter-content">
-      <div class="form-group">
-        <form action="/projects" method="get">
-          <input id="hidden-input" type="hidden" name="time[]" value="">
-          <%= render "projects/partial_filter_boxes_time" %>
-          <input type="hidden" name="address" value="<%= params[:address] %>">
-          <% params[:categories].each do |category|  %>
-          <input type="hidden" name="categories[]" value="<%= category %>">
-          <% end %>
-          <%= render "pages/partial_next_button" %>
-        </form>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 66%;" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">66%</div>
       </div>
     </div>
-
-    <div class="progress" id="progress3">
-      <div class="progress-bar" role="progressbar" style="width: 66%;" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">66%</div>
-    </div>
   </div>
-  <!--   End of form -->
 
-  <div>
+  <div class="filter-image-container">
     <%= image_tag "strongtogether.jpg", class: "filter-image"%>
   </div>
 
-  </div>
 </div>
 

@@ -597,13 +597,26 @@
 .card-ngo-profile {
   border: 1px solid #e4e4e4;
   margin-top: 50px;
-  padding-top: 50px;
-  padding-right: 30px;
-  padding-bottom: 50px;
-  padding-left: 30px;
   min-width: 200px;
   max-width: 250px;
   height: 450px;
+  .ngo-info {
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+  }
+}
+
+.edit-profile-button{
+  color: $green-vamos;
+  text-align: right;
+  font-weight: lighter;
+  padding-right: 20px;
+  padding-top: 10px;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .ngo-image-desktop {

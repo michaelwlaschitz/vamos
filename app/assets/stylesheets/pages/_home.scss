@@ -47,6 +47,11 @@ white:active {
   padding: 0;
 }
 
+.vision-card {
+  background-color: rgba(255, 255, 255, 0.90);
+  padding: 30px 50px;
+}
+
 // .navbar-lewagon.home {
 // background: transparent;
 // position: fixed;
@@ -67,12 +72,18 @@ font-weight: lighter;
 text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
-.product-description {
+.usp-description {
   background-color: white;
 }
 
-.product-info {
+.usp-info {
   max-width: 500px;
+  min-width: 300px;
+}
+
+.feature-info {
+  max-width: 200px;
+  min-width: 100px;
 }
 
 .home-h2-container {
@@ -93,7 +104,7 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
     margin-top: 150px;
   }
 
-  .product-info {
+  .usp-info {
   margin-top: 5px;
   }
 
@@ -123,7 +134,7 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   .hide-desktop {
     display:none;
   }
-  .product-info {
+  .usp-info {
   margin-top: 5px;
   }
   .find-volunteer {
@@ -144,8 +155,11 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
     padding-top: 100px;
     font-weight: 32;
   }
-  .product-info {
+  .usp-info {
   margin-top: 5px;
+  }
+  .hide-mobile {
+    display:none;
   }
 }
 
