@@ -1,7 +1,14 @@
-<h2>Forgot your password?</h2>
+<%= render 'shared/logo_top_left' %>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
+
+<div class="white-space-forgot-password-page">
+</div>
+<div class="content-container mt-5">
+
+  <h2 class="mb-3">Forgot your password? <br> No problemo!</h2>
+
+  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :email,
@@ -11,8 +18,11 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
+    <%= f.button :submit, "Reset my password per mail", class: "button-vamos primary-style mt-0" %>
   </div>
-<% end %>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <div class="my-3">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
