@@ -43,7 +43,7 @@
           </div>
           <div class="d-flex justify-content-between">
             <div id="back">
-              <%= link_to "Back to dashboard",user_profile_path(current_user), class: "orange mt-10"%>
+              <%= link_to "Back to dashboard",user_profile_path, class: "orange mt-10"%>
             </div>
             <%= f.submit "Create", class: "button-vamos primary-style w-50 mt-3 ml-10"%>
           </div>
@@ -60,7 +60,7 @@
     <div class="d-flex mb-2 align-items-center justify-content-right">
       <i class='fas fa-chevron-left orange'></i>
       <i class='fas fa-chevron-left orange mr-1'></i>
-      <%= link_to "Back to dashboard",user_profile_path(current_user), class: "orange"%>
+      <%= link_to "Back to dashboard",user_profile_path, class: "orange"%>
     </div>
 
     <!-- form start -->

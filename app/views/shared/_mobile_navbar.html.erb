@@ -10,8 +10,8 @@
         </div>
       <% end %>
     </div>
-    <div class="nav-element <%= "active" if current_page?(user_profile_path(current_user)) %>">
-      <%= link_to user_profile_path(current_user) do %>
+    <div class="nav-element <%= "active" if current_page?(user_profile_path) %>">
+      <%= link_to user_profile_path do %>
         <div>
           <i class="far fa-user nav-icon"></i>
           <p class="nav-icon-tag">PROFILE</p>

@@ -8,7 +8,7 @@ skip_before_action :authenticate_user!, only: [:home]
     @ngo = Ngo.new(ngo_params)
     @ngo.user = current_user
     if @ngo.save
-      redirect_to user_profile_path(current_user)
+      redirect_to user_profile_path
     else
       render :new
     end

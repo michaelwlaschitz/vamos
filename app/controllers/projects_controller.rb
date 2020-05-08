@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
     @ngo = current_user.ngo
     @project.ngo = @ngo
     if @project.save
-      redirect_to user_profile_path(current_user)
+      redirect_to user_profile_path
     else
       render :new
     end
