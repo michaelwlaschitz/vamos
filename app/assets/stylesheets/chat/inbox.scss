@@ -14,6 +14,7 @@
   margin-top: 20px;
   width: 90%;
   padding: 0px;
+  height: calc(100vh - 250px);
   max-width: 700px;
   a:hover {
     color: $black-gray;
@@ -23,13 +24,11 @@
 @media(min-width: 992px) {
   .content-container-chat {
     width: 80%;
-    height: 80%;
   }
 }
 @media(min-width: 768px) and (max-width: 991px) {
   .content-container-chat {
     width: 70%;
-    height: 70%;
   }
 }
 
