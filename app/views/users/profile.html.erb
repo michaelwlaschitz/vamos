@@ -54,10 +54,10 @@
       <div class="row ngo-all-desktop">
         <div class="col-4 ngo-datas">
           <div class="card-ngo-profile">
-            <a href="">
-              <p class="edit-profile-button">Edit profile</p>
-            </a>
             <div class="ngo-info">
+              <a href="">
+              <p class="edit-profile-button">Edit profile</p>
+              </a>
               <%= cl_image_tag current_user.photo.key, class: "ngo-image-desktop"%>
               <h2 class="orange-title-desktop mb-3"><%= @user.ngo.name %></h2>
               <div class="ngo-other-info">
@@ -90,10 +90,10 @@
                 </div>
               </div>
             </div>
-            <div id="button-info"class="d-flex button mt-4">
-              <%= link_to "Create Project", new_project_path, class: "button-vamos primary-style w-150 mt-0"  %>
-            </div>
           </div>
+          <div id="button-info mb-5"class="d-flex button mt-4">
+              <%= link_to "Create Project", new_project_path, class: "button-vamos primary-style w-100 mt-1"  %>
+            </div>
         </div>
         <div class="col-12 col-lg-8 tab-datas">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -148,8 +148,8 @@
             <% end %>
           </div>
           <!-- desktop version of application-->
-          <div class="content-container-ngo-bookings-desktop">
-            <div class="container ngo-booking-datas">
+          <div class="content-container-ngo-bookings-desktop mb-5">
+            <div class="container ngo-booking-datas mb-5">
               <div class="row table-titles border-bottom my-2 py-2">
                 <div class="col-3">
                   <h3 class="project-name-table">Project Name</h3>
@@ -171,6 +171,9 @@
                   </div>
                   <div class="col-3">
                     <p class="m-0 team-name-ngo"><%= booking.team.name %></p>
+                    <% link_to teams_path(booking.team) %>
+                    <p>See application</p>
+                    </a>
                   </div>
                   <div class="col-2">
                     <p class="booking-time"><%= booking.created_at.strftime("%m-%d-%Y") %></p>

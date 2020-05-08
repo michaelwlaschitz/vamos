@@ -6,6 +6,12 @@
 
 .login-forms {
   margin-top: 170px;
+  height: calc(100vh - 420px);
+}
+
+.signup-forms {
+  margin-top: 80px;
+  height: calc(100vh - 340px);
 }
 
 input#user-email.form-control.string.email.optional {
