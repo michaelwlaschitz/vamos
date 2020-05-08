@@ -118,7 +118,11 @@
                         <p class="m-0 team-name-ngo"><%= booking.team.name %></p>
                         <div class="d-flex">
                           <% booking.team.users.each do |user| %>
-                            <%= cl_image_tag user.photo.key, width: 30, height: 30, class: "rounded-circle" %>
+
+
+                            <div class= "mb-2 mr-3"> <%= cl_image_tag user.photo.key, width: 30, height: 30, class: "rounded-circle" %>
+                              <%= user.first_name %>
+                            </div>
                           <% end %>
                         </div>
                       </div>
@@ -286,15 +290,16 @@
           <div class=" user-photo d-flex justify-content-around mt-2">
             <% team.users.each do |user| %>
 
-              <div class= "team-member-yes-exist-volunteer text-center mb-1">
-                <div class= "mb-1"> <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer" %> </div>
-                <%= user.first_name %>
+              <div class= "team-member-yes-exist-volunteer text-center mb-3">
+                <div class= "mb-2 mr-3"> <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer" %>
+                  <%= user.first_name %>
+                </div>
               </div>
             <% end %>
           </div>
         </div>
       <% end %>
-      <%= link_to teams_path do %>
+      <%= link_to new_team_path do %>
         <div class="create-team-button-alternative text-center">
           <p class="p-size">Create a team</p>
         </div>
@@ -306,54 +311,56 @@
     </div>
     <div class="content-container-profile mt-3">
 
-      <% current_user.bookings.each do |booking| %>
-        <div class="project-card-profile flex-md-row mb-4 mt-3">
-          <div class="project-image" style="background-image: url('<%= cl_image_path booking.project.photos.first.key if booking.project.photos.attached? %>')">
-            <div class="interest-icon border rounded-circle">
-              <% if booking.project.category == "Children" %>
-                <i class="icon fas fa-child"></i>
-              <% elsif booking.project.category == "Social" %>
-                <i class="icon fas fa-user-friends"></i>
-              <% elsif booking.project.category == "Cultural" %>
-                <i class="icon fas fa-music"></i>
-              <% elsif booking.project.category == "Environment" %>
-                <i class="icon fas fa-leaf"></i>
-              <% else booking.project.category == "Elderly Care" %>
-                <i class="icon fab fa-accessible-icon"></i>
-              <% end %>
-            </div>
-            <% if booking.status == "accepted" %>
-              <div class="accepted-button status-button">
-                Accepted
-              </div>
-              <%= link_to new_booking_review_path(booking)  do  %>
-                <div class="review-button">
-                  Add a review
-                </div>
-              <% end %>
-
-            <% elsif booking.status == "rejected" %>
-              <div class="rejected-button status-button">
-                Rejected
-              </div>
-            <% else %>
-              <div class="pending-button status-button">
-                Pending
-              </div>
+    <% current_user.bookings.each do |booking| %>
+    <%= link_to project_path(booking.project) do %>
+      <div class="project-card-profile flex-md-row mb-4 mt-3">
+        <div class="project-image" style="background-image: url('<%= cl_image_path booking.project.photos.first.key if booking.project.photos.attached? %>')">
+          <div class="interest-icon border rounded-circle">
+            <% if booking.project.category == "Children" %>
+            <i class="icon fas fa-child"></i>
+            <% elsif booking.project.category == "Social" %>
+            <i class="icon fas fa-user-friends"></i>
+            <% elsif booking.project.category == "Cultural" %>
+            <i class="icon fas fa-music"></i>
+            <% elsif booking.project.category == "Environment" %>
+            <i class="icon fas fa-leaf"></i>
+            <% else booking.project.category == "Elderly Care" %>
+            <i class="icon fab fa-accessible-icon"></i>
             <% end %>
           </div>
-          <div class="project-text-stuff">
-            <h5 class="project-title"><%= booking.project.title %></h5>
-            <p class="project-ong"><%= booking.project.ngo.name %></p>
-            <div class="project-elements d-flex justify-content-left">
-              <div class="element"><i class="far fa-clock"></i><%= booking.project.hours_per_week %>h/week</div>
-              <div class="element"><i class="fas fa-user-friends"></i><%= booking.project.capacity %></div>
-              <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= booking.project.latitude %>" data-longitude="<%= booking.project.longitude %>">calculating...</span></div>
-            </div>
+          <% if booking.status == "accepted" %>
+          <div class="accepted-button status-button">
+            Accepted
           </div>
+          <%= link_to new_booking_review_path(booking)  do  %>
+          <div class="review-button">
+            Add a review
+          </div>
+          <% end %>
+
+          <% elsif booking.status == "rejected" %>
+          <div class="rejected-button status-button">
+            Rejected
+          </div>
+          <% else %>
+          <div class="pending-button status-button">
+            Pending
+          </div>
+          <% end %>
         </div>
-      <% end %>
+        <div class="project-text-stuff">
+          <h5 class="project-title"><%= booking.project.title.truncate(33) %></h5>
+          <p class="project-ong"><%= booking.project.ngo.name %></p>
+          <div class="project-elements d-flex justify-content-left">
+          <div class="element"><i class="far fa-clock"></i><%= booking.project.hours_per_week %>h/week</div>
+          <div class="element"><i class="fas fa-user-friends"></i><%= booking.project.capacity %></div>
+          <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= booking.project.latitude %>" data-longitude="<%= booking.project.longitude %>">calculating...</span></div>
+        </div>
+      </div>
     </div>
+  <% end %>
+  <% end %>
+</div>
 
   <% end %>
 
