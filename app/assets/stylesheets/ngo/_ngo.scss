@@ -9,6 +9,10 @@
   max-width: 500px;
 }
 
+.usp-picture-container {
+  padding: 90px 100px;
+}
+
 .card-category-ngo-new {
   background-color: white;
   float: left;
@@ -37,6 +41,15 @@
   height: 100vh;
   background-position: center center;
   padding: 0;
+}
+
+.usp-box  {
+  background-color: $orange-vamos;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  width: 350px;
 }
 
 .full-screen {

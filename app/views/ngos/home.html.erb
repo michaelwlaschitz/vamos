@@ -37,9 +37,60 @@
     </div>
   </div>
 
-  <!-- Product Description -->
+  <!-- USP Description -->
+  <div class="py-3">
+  <h2 class="text-center mt-3">The Benefits of Vamos</h2>
+  <p class="text-center mt-2">Vamos supports NGOs finding long-term supporters through <br>a platform highly targeted to the young generation.</p>
 
-  <div class="product-description d-flex py-5 px-4 hide-desktop justify-content-around align-items-center">
+  <div class="d-flex py-5 px-4 hide-desktop justify-content-around align-items-center">
+
+    <div class="usp-info mr-3">
+      <div class="d-flex align-items-center">
+        <h1><i class="far fa-arrow-alt-circle-right orange mr-4"></i></h1>
+        <div>
+          <h2 class="orange">Easy application process</h2>
+          <p class="paragraph-no-margin">Users go through a simple and fast process, without lengthy forms or long email interactions.</p>
+        </div>
+      </div>
+      <div class="d-flex align-items-center mt-5">
+        <h1><i class="fas fa-magic orange mr-4"></i></h1>
+        <div>
+          <h2 class="orange">Simple and intuitive design</h2>
+          <p>The design of Vamos helps the promotion and transparency of the projects and thus attract more young people.</p>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center mt-5">
+        <h1><i class="fas fa-users orange mr-4"></i></h1>
+        <div>
+          <h2 class="orange">Application in teams</h2>
+          <p>Users can apply with their friends to take the first step in volunteering together.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ml-3 usp-picture-container" style="background-image: linear-gradient(rgba(0,0,0, 0.3),rgba(0,0,0,0.4)), url('<%= image_path "aboutvamos-banner2.jpg"%>'); background-size: cover; ">
+
+      <div class="d-flex mb-5 usp-box align-items-center">
+        <h1><i class="fas fa-long-arrow-alt-down white mr-3"></i></h1>
+        <h3 class="white font-weight-normal">Reduce the barrier for young people to get involved with your organization.</h3>
+      </div>
+
+      <div class="d-flex usp-box align-items-center">
+        <h1><i class="fas fa-long-arrow-alt-up white mr-3"></i></h1>
+        <h3 class="white font-weight-normal">Attract more long-term volunteers, supporters donors to your projects.</h3>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Product Description -->
+<div class="light-gray-background py-3">
+  <h2 class="text-center mt-4">How it works</h2>
+  <p class="text-center mt-2">Vamos provides an intutive platform for NGOs to easily create projects, <br>manage applications and chat with teams of volunteers.</p>
+
+  <div class="product-description d-flex py-4 px-4 hide-desktop justify-content-around align-items-center">
 
   <%= image_tag "Screens/ngo_screen.png", class: "ngo-screen hide-mobile ml-5"%>
 
@@ -69,12 +120,16 @@
 
     </div>
   </div>
+</div>
 
-<div class="d-flex justify-content-center text-center light-gray-background">
+<!--
+End of Product -->
+
+<div class="d-flex justify-content-center text-center py-5">
   <div>
-    <h2 class="bold home-h2-container">But what's the cost?</h2>
+    <h2 class="bold home-h2-container mt-3">Pricing</h2>
     <p class="ngo-cta">We want you to try Vamos and convince you of our plattform. Therefore the whole first month is free without automatic renewal.</p>
-    <%= link_to "Create free project", new_ngo_path, class: "button-vamos primary-style mt-2" %>
+    <%= link_to "Create free project", new_ngo_path, class: "button-vamos primary-style mt-2 mb-3" %>
   </div>
 </div>
 
