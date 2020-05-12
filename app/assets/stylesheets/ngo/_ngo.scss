@@ -13,6 +13,10 @@
   padding: 90px 100px;
 }
 
+.paragraph-width-smaller {
+  max-width: 500px;
+}
+
 .card-category-ngo-new {
   background-color: white;
   float: left;
@@ -113,8 +117,13 @@
 @media(min-width: 575px) and (max-width: 767px) {
   .content-container-photo {
   }
+  .usp-box  {
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  width: auto;
+  }
 }
-
 
 .category-field {
   margin-bottom: 20px;
