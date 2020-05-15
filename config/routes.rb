@@ -4,18 +4,20 @@ Rails.application.routes.draw do
         sessions: 'users/sessions'
   }
 
-  scope '(:locale)', locale: /es/ do
+
+  scope "(:locale)", locale: /es|de/ do
     root to: 'pages#home'
     get 'ngos/home', to: 'ngos#home', as: :ngos_home
-  end
-
-  resources :projects, only: [:index, :create, :new, :show] do
+    get 'about-vamos', to: 'pages#about_vamos', as: :about_vamos
+    resources :projects, only: [:index, :create, :new, :show] do
     resources :bookings, only: [:new, :create]
     get 'bookings/:booking_id/confirmation', to: 'bookings#confirmation', as: :booking_confirmation
     get "dashboard", to: "users#dashboard", as: :user_dashboard
   end
+  end
 
-  get 'about-vamos', to: 'pages#about_vamos', as: :about_vamos
+
+
   get 'location', to: 'pages#filter_location', as: :filter_location
   get 'interests', to: 'pages#filter_interests', as: :filter_interests
   get 'time', to: 'pages#filter_time', as: :filter_time
