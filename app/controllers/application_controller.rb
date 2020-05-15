@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
 
 helper_method :resource_name, :resource, :devise_mapping, :resource_class
@@ -7,9 +8,14 @@ def resource_name
   :user
 end
 
+def default_url_options
+  { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
+end
+
 def resource
   @resource ||= User.new
 end
+
 def resource_class
   User
 end
@@ -22,6 +28,9 @@ protected # can be called by any instance of the same controller (not only insid
 # needed for the invitation form (permitting the params for when a new member accepts an invitation
 # and registers.)
 
+def set_locale
+  I18n.locale  = params[:locale] || I18n.default_locale
+end
 
 def configure_permitted_parameters
   devise_parameter_sanitizer.permit(:accept_invitation, keys: [:first_name, :last_name, :description, :phone, :photo])

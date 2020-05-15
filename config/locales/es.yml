@@ -1,0 +1,100 @@
+es:
+
+  global:
+    navbar:
+      search: "Buscar projectos"
+      find: "Econtrar voluntarios"
+      about: "Sobre Vamos"
+      profile: "Perfil"
+
+  activerecord:
+    models:
+      project: "proyecto"
+      ngo: "ONG"
+      user:
+      review:
+      team:
+
+    attributes:
+      projects:
+        title: "Título"
+        address:
+        capacity:
+        category:
+        description: "Descripción"
+      ngo:
+        name:
+        phone:
+        description:
+        address:
+      review:
+        rating:
+        content:
+      team:
+        name:
+      user:
+        first_name:
+        last_name:
+        email:
+        description:
+        phone:
+
+
+  pages:
+    home:
+      title_for_html: "<strong>Ayuda projectos locales <br>con tus amigos.</strong>"
+      sub_title_for_html: "Buscar y registrate con tu equipo <br>para voluntariados cerca de ti."
+      find: "Encuentra voluntarios >>"
+
+      function1_title: "Encuentra proyectos locales que quedan a ti"
+      function1_text: "Con Vamos, puede filtrar por categoría, ubicación y tiempo para encontrar la mejor oportunidad para ti"
+      function2_title: "Aplicar con tus amigos"
+      function2_text: "En Vamos, puedes inscribirte para ser voluntario junto con tus amigos y, con unos pocos clics, enviar una solicitud en equipo."
+      function3_title: "Chatear con la dueña del proyecto"
+      function3_text: "Conozca todos los detalles sobre la oportunidad e interactúe con el coordinador de voluntariado a través del chat."
+
+      ngo_cta_title: "Buscando voluntarios?"
+      ngo_cta_text_for_hmtl: "¡Crea tu primer proyecto gratis en menos de 3 minutos!"
+      ngo_cta_button: "Vamos"
+
+      process_title: "¿Cómo encuentro voluntariado en Vamos?"
+      process_step1: "Filtra por ubicación, causa y tiempo."
+      process_step2: "Encuentra información detallada sobre oportunidades de voluntariado."
+      process_step3: "Crea tu equipo y aplica."
+      process_step4: "Chatea con el propietario del proyecto y confirma tu lugar."
+
+      vision_title: "Nuestra Visión"
+      vision_text: "Somos un equipo joven e internacional de Francia, España y Austria. Nuestro objetivo es capacitar a las personas para hacer el bien en su entorno local. Los usuarios de Vamos deberían sentirse inspirados y motivados para ayudar a otras personas necesitadas y obtener una experiencia invaluable junto con sus amigos."
+
+  ngos:
+    home:
+      title_for_html: "<strong>Encuentre seguidores a largo <br>plazo para su organización</strong>"
+      sub_title_for_html: "Crea tu primer proyecto gratis <br>con unos pocos clics!"
+      usp_title: "Los Beneficios de Vamos"
+      usp_sub_title: "Vamos ayuda a las ONG a encontrar seguidores a largo plazo a través de una plataforma altamente dirigida a la generación joven."
+      usp1_title: "Proceso de solicitud super fácil"
+      usp1_text: "Los usuarios pasan por un proceso simple y rápido, sin largos formularios o largas interacciones por correo electrónico."
+      usp2_title: "Diseño simple e intuitivo"
+      usp2_text: "El diseño de Vamos ayuda a la promoción y transparencia de los proyectos y atrae así a más jóvenes."
+      usp3_title: "Aplicación en equipos"
+      usp3_text: "Los usuarios pueden registráse con sus amigos para dar el primer paso como voluntarios juntos."
+      key_benefit1: "Reduzca la barrera para que los jóvenes se involucren con su organización."
+      key_benefit2: "Atraiga a más voluntarios y donantes a largo para sus proyectos."
+      function_title: "Cómo funciona"
+      function_sub_title: "Vamos ofrece una plataforma intuitiva para que las ONG creen fácilmente proyectos, administren aplicaciones y chateen con equipos de voluntarios."
+      function1_title: "Crea un proyecto en menos de 3 minutos"
+      function1_text: "¿Dónde, cuándo, cuántos? Crea tu proyecto con unos pocos clics. ¡Encontraremos voluntarios para usted!"
+      function2_title: "Administre fácilmente las aplicaciones"
+      function2_text: "A través de un panel de aplicaciones simple, puede ver y responder a aplicaciones."
+      function3_title: "Chatea con equipos voluntarios"
+      function3_text: "Ofrecemos una función de chat simple para hablar con los equipos de voluntarios."
+      pricing_title: "Precios"
+      pricing_sub_title: "Queremos que pruebe Vamos y lo convenza de nuestra plataforma. Por lo tanto, todo el primer mes es gratuito sin renovación automática."
+      pricing_button: "Crea un proyecto gratis"
+
+  projects:
+    index:
+      zero: "Desafortunadamente, todavía no tenemos proyectos en su área. ¿Sabes algo que debería estar allí? ¡Háganos saber por chat o correo!"
+      one: '¡Encontramos una oportunidad, pero hay más por venir!'
+      other: "Hay %{count} oportunidades cerca de usted."
+      filter: "Fitrar"
