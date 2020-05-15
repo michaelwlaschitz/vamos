@@ -1,0 +1,13 @@
+<li class= "ml-2">
+  <%= link_to root_path do %>
+    <div class="d-flex align-items-center">
+      <%= image_tag "Flags/flag_uk.jpg", class: "flags mb-2"%>
+    </div>
+  <% end %>
+
+  <%= link_to root_path(locale: :es) do %>
+    <div class="d-flex align-items-center">
+      <%= image_tag "Flags/flag_spain.jpg", class: "flags"%>
+    </div>
+  <% end %>
+</li>

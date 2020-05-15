@@ -30,20 +30,7 @@
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
-          <li class= "ml-2">
-            <%= link_to root_path do %>
-              <div class="d-flex align-items-center">
-                <%= image_tag "Flags/flag_uk.jpg", class: "flags mb-2"%>
-              </div>
-            <% end %>
-
-            <%= link_to root_path(locale: :es) do %>
-              <div class="d-flex align-items-center">
-                <%= image_tag "Flags/flag_spain.jpg", class: "flags"%>
-              </div>
-            <% end %>
-
-          </li>
+          <%= render 'shared/language_change' %>
         <% else %>
           <li id="search-projects" class="no-signed nav-item <%= 'active' if current_page?(controller: '/projects', action: 'index') %>">
             <a class="nav-link" href="/projects"><%= t("global.navbar.search") %></a>
@@ -54,9 +41,10 @@
           <li id="about-vamos" class="no-signed nav-item <%= 'active' if current_page?(controller: '/pages', action: 'about_vamos') %>">
             <a class="nav-link" href="/about-vamos"><%= t("global.navbar.about") %></a>
           </li>
-          <li id="login" class="no-signed nav-item">
+          <li id="login" class="no-signed nav-item mr-3">
             <%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal-lg"}, class: "nav-link" %>
           </li>
+          <%= render 'shared/language_change' %>
         <% end %>
       </ul>
     </div>
