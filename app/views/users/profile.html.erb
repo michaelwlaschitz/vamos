@@ -1,5 +1,151 @@
 <div class="has-navbar-so-margin">
 <%= render 'shared/mobile_navbar' %>
+  <div class="profile-page">
+    <div class="d-flex justify-content-between">
+      <div></div>
+      <%= link_to user_profile_path do %>
+      <div class="button-edit-profile">
+        Edit profile
+      </div>
+    <% end %>
+    </div>
+
+
+    <!-- USER NGO -->
+    <% if current_user.ngo %>
+      <div class="d-flex justify-content-between">
+        <div class="left-part">
+          <div class="box-title">
+            PERSONAL DETAILS
+          </div>
+          <div class="user-image-container">
+            <%= cl_image_tag @user.photo.key, class: "user-image"%>
+            <%= link_to user_profile_path do %>
+              <div class="button-edit-user-image">
+                <i class="far fa-edit"></i>
+              </div>
+            <% end %>
+          </div>
+          <div class="container">
+            <div class="row my-4">
+              <div class="col-4 detail-title">
+                Name
+              </div>
+              <div class="col-8">
+                <%= @user.first_name %>
+                <%= @user.last_name  %>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col-4 detail-title">
+                Phone
+              </div>
+              <div class="col-8">
+                <%= @user.phone %>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col-4 detail-title">
+                Email
+              </div>
+              <div class="col-8">
+                <%= @user.email %>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col-4 detail-title">
+                Description
+              </div>
+              <div class="col-8">
+                <%= @user.description %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right-part">
+          <div class="box-title">
+            NGO DETAILS
+          </div>
+          <div class="d-flex justify-content-between">
+            <div class="user-image-container">
+              <%= cl_image_tag @user.ngo.logo.key, class: "logo-image"%>
+              <%= link_to user_profile_path do %>
+                <div class="button-edit-user-image">
+                  <i class="far fa-edit"></i>
+                </div>
+              <% end %>
+            </div>
+
+          </div>
+          <p class="profile-category">CONTACT INFORMATION:</p>
+          <div class="container">
+            <div class="row my-4">
+              <div class="col">
+                Phone:
+              </div>
+              <div class="col">
+                <%= @user.phone %>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col">
+                Email:
+              </div>
+              <div class="col">
+                <%= @user.email %>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col">
+                Description:
+              </div>
+              <div class="col">
+                <%= @user.description %>
+              </div>
+            </div>
+          </div>
+          <p class="profile-category separation">NGO INFORMATION:</p>
+          <div class="container">
+            <div class="row my-4">
+              <div class="col">
+                Name:
+              </div>
+              <div class="col">
+                <%= @user.ngo.name %>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col">
+                Description:
+              </div>
+              <div class="col">
+                <%= @user.ngo.description %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- USER VOLUNTEER -->
+    <% else %>
+
+
+
+    <% end %>
+  </div>
+</div>
+
+
+<!-- Email, firstname, lastname, description, phone -->
+
+
+
+
+
+
+
+<div class="has-navbar-so-margin">
+<%= render 'shared/mobile_navbar' %>
 <!-- IF USER IS NGO: -->
   <% if current_user.ngo %>
     <!-- NGO infos we only see on mobile: -->
