@@ -20,6 +20,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+gem 'rails-i18n'
+
 
 gem 'devise'
 gem 'devise-i18n'

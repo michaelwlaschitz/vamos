@@ -31,7 +31,7 @@
 
           <%= link_to "Vamos!", filter_location_path, class: "button-vamos primary-style w-100 mt-3" %>
 
-          <h3 class="text-right mt-4 "><%= link_to "Find volunteers >>", new_ngo_path, class: "white hide-desktop"%></h3>
+          <h3 class="text-right mt-4 "><%= link_to t(".find"), new_ngo_path, class: "white hide-desktop"%></h3>
         </div>
       </div>
     </div>
@@ -46,24 +46,24 @@
       <div class="d-flex align-items-center">
         <h2><i class="fas fa-search orange mr-4"></i></h2>
         <div>
-          <h2 class="orange">Find local projects that fit you</h2>
-          <p>With Vamos you can filter by category, location and time to find the best opportunity for you.</p>
+          <h2 class="orange"> <%= t(".function1_title") %> </h2>
+          <p><%= t(".function1_text") %></p>
         </div>
       </div>
 
       <div class="d-flex align-items-center mt-5">
         <h2><i class="fas fa-file-alt orange mr-4"></i></h2>
         <div>
-          <h2 class="orange">Apply with your friends</h2>
-          <p>At Vamos you can sign up for volunteering together with your friends and with a few click send an application as a team.</p>
+          <h2 class="orange"><%= t(".function2_title") %> </h2>
+          <p><%= t(".function2_text") %></p>
         </div>
       </div>
 
       <div class="d-flex align-items-center mt-5">
         <h2><i class="fas fa-comments orange mr-4"></i></h2>
         <div>
-        <h2 class="orange">Chat with the project owner</h2>
-        <p>Find out all the details about the opportunity and engage with the volunteering coordinator via chat.</p>
+        <h2 class="orange"> <%= t(".function3_title") %> </h2>
+        <p><%= t(".function3_text") %></p>
         </div>
       </div>
 
@@ -75,9 +75,9 @@
 
 <div class="d-flex justify-content-center text-center light-gray-background">
   <div>
-    <h2 class="bold home-h2-container">Looking for volunteers? </h2>
-    <p>Create your first project for free in less than <strong>3 minutes!</strong></p>
-    <%= link_to "Get started", new_ngo_path, class: "button-vamos primary-style mt-2" %>
+    <h2 class="bold home-h2-container"><%= t(".ngo_cta_title") %></h2>
+    <p><%= t(".ngo_cta_text_for_html") %></p>
+    <%= link_to t(".ngo_cta_button"), new_ngo_path, class: "button-vamos primary-style mt-2" %>
   </div>
 </div>
 
@@ -85,41 +85,34 @@
  -->
 <div class="content-container hide-mobile">
   <div class="product-description mt-5">
-    <h2 clas="orange">How do I find volunteering on Vamos?</h2>
+    <h2 clas="orange"><%= t(".process_title") %></h2>
 
     <div class="d-flex align-items-top mt-5 mb-5 justify-content-center">
 
       <div class="feature-info text-center">
         <h2><i class="fas fa-filter orange mb-2"></i></h2>
-        <p>Filter by location, cause and time investment.</p>
+        <p><%= t(".process_step1") %></p>
       </div>
 
       <i class="fas fa-chevron-right mx-4 mt-2 orange"></i>
 
       <div class="feature-info text-center">
         <h2><i class="fas fa-info-circle orange mb-2"></i></h2>
-        <p>Read detailled info about volunteering opportunties.</p>
+        <p><%= t(".process_step2") %></p>
       </div>
 
       <i class="fas fa-chevron-right mx-4 orange mt-2 "></i>
 
        <div class="feature-info text-center">
         <h2><i class="fas fa-file-alt orange mb-2"></i></h2>
-        <p>Create your team and apply.</p>
-      </div>
-
-      <i class="fas fa-chevron-right mx-4 orange mt-2 "></i>
-
-      <div class="feature-info text-center">
-        <h2><i class="fas fa-check-circle orange mb-2"></i></h2>
-        <p>The project owner accepts the application.</p>
-      </div>
+        <p><%= t(".process_step3") %></p>
+        </div>
 
       <i class="fas fa-chevron-right mx-4 orange mt-2 "></i>
 
       <div class="feature-info text-center">
         <h2><i class="fas fa-comments orange mb-2"></i></h2>
-        <p>Chat with the contact person and your team.</p>
+        <p><%= t(".process_step4") %></p>
       </div>
 
     </div>

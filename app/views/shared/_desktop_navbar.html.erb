@@ -10,14 +10,14 @@
       <ul class="navbar-nav navbar-right">
 
         <% if user_signed_in? %>
-          <li id="search-projects" class="yes-signed nav-item <%= 'active' if current_page?(controller: '/projects', action: 'index') %>">
+          <li id="search-projects" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/projects', action: 'index') %>">
             <a class="nav-link" href="/projects"><%= t("global.navbar.search") %> </a>
           </li>
           <li id="find-volunteers" class="yes-signed nav-item <%= 'active' if current_page?(controller: '/ngos', action: 'new') %>">
             <a class="nav-link" href="/ngos/home"><%= t("global.navbar.find") %></a>
           </li>
-          <li id="about-vamos" class="yes-signed nav-item <%= 'active' if current_page?(controller: '/pages', action: 'about_vamos') %>">
-            <a class="nav-link" href="/about-vamos"><%= t("global.navbar.about") %></a>
+          <li id="about-vamos" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/pages', action: 'about_vamos') %>">
+            <a class="nav-link mr-2" href="/about-vamos"><%= t("global.navbar.about") %></a>
           </li>
           <li id="logedin" class="yes-signed nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,13 +32,14 @@
           </li>
           <%= render 'shared/language_change' %>
         <% else %>
-          <li id="search-projects" class="no-signed nav-item <%= 'active' if current_page?(controller: '/projects', action: 'index') %>">
-            <a class="nav-link" href="/projects"><%= t("global.navbar.search") %></a>
+          <li id="search-projects" class="no-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/projects', action: 'index') %>">
+            <%= link_to t("global.navbar.search"), projects_path, class: "nav-link" %>
+            <%# By using links, we ensure that default_url_options are actually used!  %>
           </li>
           <li id="find-volunteers" class="no-signed nav-item <%= 'active' if current_page?(controller: '/ngos', action: 'new') %>">
             <a class="nav-link" href="/ngos/home"><%= t("global.navbar.find") %></a>
           </li>
-          <li id="about-vamos" class="no-signed nav-item <%= 'active' if current_page?(controller: '/pages', action: 'about_vamos') %>">
+          <li id="about-vamos" class="no-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/pages', action: 'about_vamos') %>">
             <a class="nav-link" href="/about-vamos"><%= t("global.navbar.about") %></a>
           </li>
           <li id="login" class="no-signed nav-item mr-3">
