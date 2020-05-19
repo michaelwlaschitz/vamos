@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def profile
     @user = current_user
     @ngo_bookings = current_user.ngo_bookings
+    @ngo_reviews = current_user.ngo_reviews
   end
 
 end

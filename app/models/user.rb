@@ -6,6 +6,7 @@ class User < ApplicationRecord
         # devise invitable comes from new gem and allows as to invite users.
   has_many :reviews
   has_one :ngo
+  has_many :ngo_reviews, through: :ngo, source: :reviews
   has_many :team_memberships
   has_many :teams, through: :team_memberships
   has_many :bookings, through: :teams

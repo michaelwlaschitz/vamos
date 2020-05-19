@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between">
       <div></div>
       <%= link_to user_profile_path do %>
-      <div class="button-edit-profile">
+      <div class="button-edit-profile mb-3">
         Edit profile
       </div>
     <% end %>
@@ -64,62 +64,51 @@
         </div>
         <div class="right-part">
           <div class="box-title">
-            NGO DETAILS
+          NGO DETAILS
           </div>
-          <div class="d-flex justify-content-between">
-            <div class="user-image-container">
-              <%= cl_image_tag @user.ngo.logo.key, class: "logo-image"%>
-              <%= link_to user_profile_path do %>
-                <div class="button-edit-user-image">
-                  <i class="far fa-edit"></i>
+          <div class="ngo-details-content">
+            <div class="d-flex justify-content-between">
+              <div class="ngo-image-container">
+                <%= cl_image_tag @user.ngo.logo.key, class: "ngo-image"%>
+                <%= link_to user_profile_path do %>
+                  <div class="button-edit-ngo-image">
+                    <i class="far fa-edit"></i>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row my-4">
+                <div class="col-3 detail-title">
+                  Name:
                 </div>
-              <% end %>
-            </div>
-
-          </div>
-          <p class="profile-category">CONTACT INFORMATION:</p>
-          <div class="container">
-            <div class="row my-4">
-              <div class="col">
-                Phone:
+                <div class="col-9">
+                  <%= @user.ngo.name %>
+                </div>
               </div>
-              <div class="col">
-                <%= @user.phone %>
-              </div>
-            </div>
-            <div class="row my-4">
-              <div class="col">
-                Email:
-              </div>
-              <div class="col">
-                <%= @user.email %>
+              <div class="row my-4">
+                <div class="col-3 detail-title">
+                  Description:
+                </div>
+                <div class="col-9">
+                  <%= @user.ngo.description %>
+                </div>
               </div>
             </div>
-            <div class="row my-4">
-              <div class="col">
-                Description:
-              </div>
-              <div class="col">
-                <%= @user.description %>
-              </div>
-            </div>
-          </div>
-          <p class="profile-category separation">NGO INFORMATION:</p>
-          <div class="container">
-            <div class="row my-4">
-              <div class="col">
-                Name:
-              </div>
-              <div class="col">
-                <%= @user.ngo.name %>
-              </div>
-            </div>
-            <div class="row my-4">
-              <div class="col">
-                Description:
-              </div>
-              <div class="col">
-                <%= @user.ngo.description %>
+            <h3 class="reviews-title"><%= @user.ngo.name %>'s reviews:</h3>
+            <div>
+              <div class="reviews-container">
+                <% @ngo_reviews.each do |review| %>
+                  <div class="review">
+                    <div class="review-user-image-container">
+                      <%= cl_image_tag review.booking.team.users.first.photo.key, class: "review-user-image" %>
+                    </div>
+                    <div class="review-content">
+                      <%= review.booking.project.title %> <br>
+                      <%= review.content %>
+                    </div>
+                  </div>
+                <% end %>
               </div>
             </div>
           </div>

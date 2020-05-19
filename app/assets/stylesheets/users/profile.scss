@@ -15,16 +15,16 @@
 .profile-page {
   width: 80%;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
   .box-title {
     height: 70px;
     text-align: center;
     padding-top: 25px;
     font-weight: bold;
-    color: $light-gray;
+    color: $orange-vamos;
     font-size: 18px;
     letter-spacing: 1px;
-    border-bottom: 0.5px solid #DADAD8;
+    border-bottom: 0.5px solid $orange-vamos;
   }
   .left-part {
     width: 30%;
@@ -49,6 +49,9 @@
       margin-top: 20px;
       border-radius: 50%;
       width: 100%;
+      -webkit-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+      -moz-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+      box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
     }
     .button-edit-user-image {
       position: absolute;
@@ -61,7 +64,8 @@
       background-color: $green-vamos;
       color: white;
       text-align: center;
-      padding-top: 5px;
+      padding-top: 6px;
+      padding-left: 2px;
       &:hover {
         background-color: white;
         border: 1px solid $green-vamos;
@@ -69,28 +73,72 @@
       }
     }
   }
-
   .detail-title {
     font-weight: bold;
   }
 }
 
 .right-part {
-  .logo-image {
-    margin-top: 80px;
-    width: 200px;
-  }
-  h1 {
-    font-size: 30px;
-  }
-  .profile-category {
-    color: $light-gray;
-    margin-top: 50px;
-  }
-  .separation {
-    margin-top: 100px;
+  .ngo-details-content {
+    padding: 20px;
+    .ngo-image-container {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      .ngo-image {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .button-edit-ngo-image {
+        position: absolute;
+        font-size: 18px;
+        bottom: 0px;
+        right: 0px;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: $green-vamos;
+        color: white;
+        text-align: center;
+        padding-top: 4px;
+        &:hover {
+          background-color: white;
+          border: 1px solid $green-vamos;
+          color: $green-vamos;
+        }
+      }
+    }
+    .detail-title {
+      font-weight: bold;
+    }
+    .reviews-title {
+      padding-top: 25px;
+      font-weight: bold;
+      color: $light-gray;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+    .review {
+      display: flex;
+      justify-content: between;
+      .review-user-image-container {
+        width: 30%;
+        .review-user-image {
+          width: 80px;
+          border-radius: 50%;
+        }
+      }
+      .review-content {
+        width: 70%;
+      }
+    }
   }
 }
+
+
 
 
 
