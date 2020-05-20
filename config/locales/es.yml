@@ -122,3 +122,6 @@ es:
   conversations:
     index:
       inbox: "Mensajes"
+  teams:
+    new:
+      title_for_html: "<span style='color: #fb8500'>Create</span> your Volunteering Team"
