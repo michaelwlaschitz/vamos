@@ -101,7 +101,7 @@ es:
 
   projects:
    index:
-      key:
+      projects:
         zero: "Desafortunadamente, todavía no tenemos proyectos en su área. ¿Sabes algo que debería estar allí? ¡Háganos saber por chat o correo!"
         one: '¡Encontramos una oportunidad, pero hay más por venir!'
         other: "Hay %{count} oportunidades cerca de usted"
