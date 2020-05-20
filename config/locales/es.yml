@@ -6,6 +6,10 @@ es:
       find: "Econtrar voluntarios"
       about: "Sobre Vamos"
       profile: "Perfil"
+      conversations: "Mensajes"
+      login: "Inicia sesión"
+      logout: "Salir"
+
 
   activerecord:
     models:
@@ -100,12 +104,21 @@ es:
       pricing_button: "Crea un proyecto gratis"
 
   projects:
-   index:
+    index:
       projects:
         zero: "Desafortunadamente, todavía no tenemos proyectos en su área. ¿Sabes algo que debería estar allí? ¡Háganos saber por chat o correo!"
-        one: '¡Encontramos una oportunidad, pero hay más por venir!'
+        one: "¡Encontramos una oportunidad, pero hay más por venir!"
         other: "Hay %{count} oportunidades cerca de usted"
       filter: "Fitrar"
       filter_title: "Fitrar por oportunidades"
       location: "Ubicación"
       interest: "Interés"
+    show:
+      project: "Proyecto"
+      organization: "Organización"
+      apply: "Aplica con tu equipo"
+      reviews_for: "Reseñas para proyectos de %{name}"
+
+  conversations:
+    index:
+      inbox: "Mensajes"

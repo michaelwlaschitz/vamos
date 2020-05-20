@@ -36,6 +36,9 @@ en:
       find: "Find volunteers"
       about: "About Vamos"
       profile: "Profile"
+      messages: "Messajes"
+      login: "Login"
+      logout: "Logout"
 
 
   activerecord:
@@ -129,13 +132,22 @@ en:
       pricing_sub_title: "We want you to try Vamos and convince you of our plattform. Therefore the whole first month is free without automatic renewal."
       pricing_button: "Create a free project"
 
-    projects:
-      index:
-        projects:
-          zero: "Unfortunately, we don't have projects in your area yet. You know some that should be there? Let us know via chat or mail!"
-          one: 'We found one opportunity, but there are more to come!'
-          more: 'There are %{count} opportunities near you.'
-        filter: "Filter"
-        filter_title: "Filter Volunteering Opportunities"
-        location: "Location"
-        interest: "Interest"
+  projects:
+    index:
+      projects:
+        zero: "Unfortunately, we don't have projects in your area yet. You know some that should be there? Let us know via chat or mail!"
+        one: 'We found one opportunity, but there are more to come!'
+        other: 'There are %{count} opportunities near you.'
+      filter: "Filter"
+      filter_title: "Filter Volunteering Opportunities"
+      location: "Location"
+      interest: "Interest"
+    show:
+      project: "Projects"
+      organization: "Organization"
+      apply: "Apply with your team"
+      reviews_for: "Reviews for projects of %{name}"
+
+  conversations:
+    index:
+      inbox: "Inbox"
