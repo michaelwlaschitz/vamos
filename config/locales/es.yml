@@ -58,14 +58,21 @@ es:
       ngo_cta_button: "Vamos"
 
       process_title: "¿Cómo encuentro voluntariado en Vamos?"
-      process_step1: "Filtra por ubicación, causa y tiempo."
+      process_step1: "Filtra por ubicación, causa y tiempo para encontrar las mejores oportunidades para tí."
       process_step2: "Encuentra información detallada sobre oportunidades de voluntariado."
-      process_step3: "Crea tu equipo y aplica."
-      process_step4: "Chatea con el propietario del proyecto y confirma tu lugar."
+      process_step3: "Crea tu equipo invitando tus amigos y aplica para oportunidades en pocos clicks."
+      process_step4: "Chatea con el propietario del proyecto y confirma tu participación."
 
       vision_title: "Nuestra Visión"
       vision_text: "Somos un equipo joven e internacional de Francia, España y Austria. Nuestro objetivo es capacitar a las personas para hacer el bien en su entorno local. Los usuarios de Vamos deberían sentirse inspirados y motivados para ayudar a otras personas necesitadas y obtener una experiencia invaluable junto con sus amigos."
 
+    about_vamos:
+      vision_title: "Nuestra Visión"
+      vision_text: "Somos un equipo joven e internacional de Francia, España y Austria. Nuestro objetivo es capacitar a las personas para hacer el bien en su entorno local. Los usuarios de Vamos deberían sentirse inspirados y motivados para ayudar a otras personas necesitadas y obtener una experiencia invaluable junto con sus amigos."
+      quote: "Ningún acto de bondad, por pequeño que sea, nunca se desperdicia."
+      team_title: "Fundadores de Vamos"
+      team_advisors: "Asesores de Vamos"
+      role_florian: "Estratega Digital"
   ngos:
     home:
       title_for_html: "<strong>Encuentre seguidores a largo <br>plazo para su organización</strong>"
@@ -94,7 +101,11 @@ es:
 
   projects:
     index:
-      zero: "Desafortunadamente, todavía no tenemos proyectos en su área. ¿Sabes algo que debería estar allí? ¡Háganos saber por chat o correo!"
-      one: '¡Encontramos una oportunidad, pero hay más por venir!'
-      other: "Hay %{count} oportunidades cerca de usted."
+      projects:
+        zero: "Desafortunadamente, todavía no tenemos proyectos en su área. ¿Sabes algo que debería estar allí? ¡Háganos saber por chat o correo!"
+        one: '¡Encontramos una oportunidad, pero hay más por venir!'
+        other: "Hay %{count} oportunidades cerca de usted"
       filter: "Fitrar"
+      filter_title: "Fitrar por oportunidades"+
+      location: "Ubicación"
+      interest: "Interés"

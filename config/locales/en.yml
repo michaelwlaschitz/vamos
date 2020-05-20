@@ -96,6 +96,13 @@ en:
 
       vision_title: "Our Vision"
       vision_text: "We are a young and international team from France, Spain and Austria. Our goal is to empower people to do good in their local environment. The users of Vamos should feel inspired and motivated to help others in need and gain invaluable experience together with their friends."
+    about_vamos:
+      vision_title: "Our Vision"
+      vision_text: "We are a young and international team from France, Spain and Austria. Our goal is to empower people to do good in their local environment. The users of Vamos should feel inspired and motivated to help others in need and gain invaluable experience together with their friends."
+      quote: "No act of kindness, no matter how small, is ever wasted."
+      team_title: "Vamos Founders"
+      team_advisors: "Vamos Advisors"
+      role_florian: "Digital Strategist"
   ngos:
     home:
       title_for_html: "<strong>Attract young people <br>who are eager to do good!</strong>"
@@ -124,7 +131,11 @@ en:
 
     projects:
       index:
-        zero: "Unfortunately, we don't have projects in your area yet. You know some that should be there? Let us know via chat or mail!"
-        one: 'We found one opportunity, but there are more to come!'
-        other: 'There are %{count} opportunities near you.'
+        projects:
+          zero: "Unfortunately, we don't have projects in your area yet. You know some that should be there? Let us know via chat or mail!"
+          one: 'We found one opportunity, but there are more to come!'
+          more: 'There are %{count} opportunities near you.'
         filter: "Filter"
+        filter_title: "Filter Volunteering Opportunities"
+        location: "Location"
+        interest: "Interest"

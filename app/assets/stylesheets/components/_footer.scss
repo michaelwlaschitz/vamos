@@ -5,6 +5,13 @@
   background-color: $black-gray;
   .footer-icons {
     font-size: 26px;
+    a{
+      opacity: 0.9;
+    }
+    a:hover {
+      color: white;
+      opacity: 1;
+    }
   }
 }
 
