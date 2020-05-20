@@ -116,23 +116,42 @@
     }
     .reviews-title {
       padding-top: 25px;
+      color: $orange-vamos;
       font-weight: bold;
-      color: $light-gray;
-      font-size: 18px;
+      font-size: 22px;
       letter-spacing: 1px;
     }
     .review {
       display: flex;
       justify-content: between;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding-top: 10px;
       .review-user-image-container {
-        width: 30%;
+        width: 20%;
         .review-user-image {
-          width: 80px;
+          width: 70px;
           border-radius: 50%;
         }
       }
       .review-content {
-        width: 70%;
+        padding-bottom: 30px;
+        border-bottom: 1px solid $light-gray;
+        width: 80%;
+        .review-team {
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        .review-text {
+          font-weight: lighter;
+        }
+        .review-project {
+          color: $orange-vamos;
+          font-weight: lighter;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
   }
@@ -236,11 +255,14 @@
 
 // IF USER IS VOLUNTEER
 
-// .user-image {
-//   width: 100px;
-//   height: 100px;
-//   border-radius: 50%;
-// }
+.content-container-profile {
+  .user-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+}
+
 
 .team-member-yes-exist-volunteer{  //contour size
   border-radius: 50%;
