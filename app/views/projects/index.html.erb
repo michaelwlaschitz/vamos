@@ -3,7 +3,7 @@
   <div class="has-navbar-so-margin">
     <%= render 'shared/mobile_navbar' %>
     <div class = "content-container">
-      <p class="opportunities-counter"> We found <%= @count %> opportunities near you</p>
+      <p class="opportunities-counter"> <%= t('.projects', count: @projects.count) %></p>
       <div class="filters d-flex justify-content-left">
         <div style="font-size: 16px" class="filter py-1 px-5" data-toggle="modal" data-target="#filterModalMobile"><%= t("Fitrar")%> </div>
       </div>
@@ -85,16 +85,16 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalLabel">Filter Volunteering Opportunities</h3>
+          <h3 class="modal-title" id="exampleModalLabel"><%= t(".filter_title")%></h3>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <h2 class="mb-2">Location</h2>
+          <h2 class="mb-2"><%= t(".location")%></h2>
           <%= form_with url: "/projects", method: :get, local: true do |f| %>
           <%= f.text_field :address, placeholder: 'Location', label:false %>
-          <h2 class="mt-4">Interests</h2>
+          <h2 class="mt-4"><%= t(".interest")%></h2>
 
               <div class="buttons filter-buttons">
                 <% categories = {
@@ -153,10 +153,10 @@
   <div class="d-flex">
     <div class="desktop-card-container">
         <div class="opportunities-filter p-3">
-          <p class="opportunities-counter"> We found <%= @count %> opportunities near you</p>
+          <p class="opportunities-counter"> <%= t('.projects', count: @projects.count) %></p>
           <div class="filters d-flex justify-content-left">
             <div style="font-size: 16px" class="filter py-1 px-5" data-toggle="modal" data-target="#filterModalDesktop">
-              Filter
+              <%= t(".filter") %>
             </div>
           </div>
         </div>
@@ -228,16 +228,16 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title" id="exampleModalLabel">Filter Volunteering Opportunities</h3>
+            <h3 class="modal-title" id="exampleModalLabel"><%= t(".filter_title")%></h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <h2 class="mb-2">Location</h2>
+            <h2 class="mb-2"><%= t(".location")%></h2>
             <%= form_with url: "/projects", method: :get, local: true do |f| %>
             <%= f.text_field :address, placeholder: 'Location', label:false, id:"filter-desktop-location" %>
-            <h2 class="mt-4">Interests</h2>
+            <h2 class="mt-4"><%= t(".interest")%></h2>
 
                 <div class="buttons filter-buttons">
                   <% categories = {

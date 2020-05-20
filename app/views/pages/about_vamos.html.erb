@@ -4,18 +4,18 @@
 </div>
 
 <div class="team-container">
-  <h4 class="mt-3">About Vamos</h4>
+  <h4 class="mt-3"><%= t(".vision_title") %></h4>
   <hr style="height:2px;width:15%;text-align:left;margin-left:0;border-width:0;background-color:orange;">
   <div class="vamos-story-text pt-3 pb-5">
-  We are a young and international team from France, Spain and Austria. Our goal is to empower people to do good in their local environment. Users of Vamos should feel inspired and motivated to help others in need and gain invaluable experience together with their friends.
+  <%= t(".vision_text") %>
   </div>
 </div>
 
 <div class="motivational-quote">
-  <h2 class="team-container font-italic">No act of kindness, no matter how small, is ever wasted. <br> Vamos!</h2>
+  <h2 class="team-container font-italic"><%= t(".quote") %><br> Vamos!</h2>
 </div>
 <div class="team-container mb-5">
-  <h4 class="founders-title">Vamos Founders</h4>
+  <h4 class="founders-title"><%= t(".team_title") %></h4>
   <hr style="height:2px;width:15%;text-align:left;margin-left:0;border-width:0;background-color:orange;">
   <div class="vamos-team d-flex justify-content-around">
     <div class="vamos-member">
@@ -49,13 +49,13 @@
       </a>
     </div>
   </div>
-  <h4 class="advisors-title">Vamos Advisors</h4>
+  <h4 class="advisors-title"><%= t(".team_advisors") %></h4>
   <hr style="height:2px;width:15%;text-align:left;margin-left:0;border-width:0;background-color:orange;">
   <div class="vamos-team d-flex justify-content-center">
     <div class="vamos-member">
       <img src="<%= image_path "vamos_members/florian.jpg"%>" class="member-picture" alt="">
       <p class="member-name">Florian Ott</p>
-      <p class="member-role">Digital Strategist, IBM</p>
+      <p class="member-role"><%= t(".role_florian") %>, IBM</p>
       <a href="#" target="_blank">
         <div class="linkedin-icon">
           <i class="fab fa-linkedin-in"></i>
