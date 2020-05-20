@@ -33,7 +33,8 @@
           <%= render 'shared/language_change' %>
         <% else %>
           <li id="search-projects" class="no-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/projects', action: 'index') %>">
-            <a class="nav-link" href="/projects"><%= t("global.navbar.search") %></a>
+            <%= link_to t("global.navbar.search"), projects_path, class: "nav-link" %>
+            <%# By using links, we ensure that default_url_options are actually used!  %>
           </li>
           <li id="find-volunteers" class="no-signed nav-item <%= 'active' if current_page?(controller: '/ngos', action: 'new') %>">
             <a class="nav-link" href="/ngos/home"><%= t("global.navbar.find") %></a>
