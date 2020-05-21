@@ -143,59 +143,59 @@ puts "Users created"
 puts "Seeding NGOs"
 
 
-ngo1 = Ngo.new(name: "Care", address: "Carrer de Sant Agustí, 14, 08012 Barcelona, Spain", phone: "+165099292", description: "Supporting our root causes with all our energy and effort", user_id: user1.id)
+ngo1 = Ngo.new(name: "Care", address: "Carrer de Sant Agustí, 14, 08012 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user1.id)
 file21 = File.open("app/assets/images/logos/ngo1.png")
 ngo1.logo.attach(io: file21, filename: 'ngo1.png', content_type: 'image/png')
 ngo1.save!
 
-ngo2 = Ngo.new(name: "Amics de la Gent", address: "Carrer de Provença, 480, 08025 Barcelona, Spain", phone: "+165099293", description: "Supporting our root causes with all our energy and effort", user_id: user2.id)
+ngo2 = Ngo.new(name: "Amics de la Gent", address: "Carrer de Provença, 480, 08025 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user2.id)
 file22 = File.open("app/assets/images/logos/ngo2.jpg")
 ngo2.logo.attach(io: file22, filename: 'ngo2.jpg', content_type: 'image/jpg')
 ngo2.save!
 
-ngo3 = Ngo.new(name: "Dignity Foundation", address: "Carrer de Lepant, 150, 08013 Barcelona, Spain", phone: "+165099294", description: "Supporting our root causes with all our energy and effort", user_id: user3.id)
+ngo3 = Ngo.new(name: "Dignity Foundation", address: "Carrer de Lepant, 150, 08013 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user3.id)
 file23 = File.open("app/assets/images/logos/ngo3.png")
 ngo3.logo.attach(io: file23, filename: 'ngo3.png', content_type: 'image/png')
 ngo3.save!
 
-ngo4 = Ngo.new(name: "Greenpeace", address: "Carrer de Rossend Nobas, 31, 08018 Barcelona, Spain", phone: "+165099295", description: "Supporting our root causes with all our energy and effort", user_id: user4.id)
+ngo4 = Ngo.new(name: "Greenpeace", address: "Carrer de Rossend Nobas, 31, 08018 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user4.id)
 file24 = File.open("app/assets/images/logos/ngo4.png")
 ngo4.logo.attach(io: file24, filename: 'ngo4.png', content_type: 'image/png')
 ngo4.save!
 
-ngo5 = Ngo.new(name: "The Ocean Cleanup", address: "Plaça de Catalunya, 08002 Barcelona, Spain", phone: "+165099296", description: "Supporting our root causes with all our energy and effort", user_id: user5.id)
+ngo5 = Ngo.new(name: "The Ocean Cleanup", address: "Plaça de Catalunya, 08002 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user5.id)
 file25 = File.open("app/assets/images/logos/ngo5.png")
 ngo5.logo.attach(io: file25, filename: 'ngo5.png', content_type: 'image/png')
 ngo5.save!
 
-ngo6 = Ngo.new(name: "Spanish Red Cross", address: "Carrer de Ferlandina, 20, 08001 Barcelona, Spain", phone: "+166099297", description: "Supporting our root causes with all our energy and effort", user_id: user6.id)
+ngo6 = Ngo.new(name: "Spanish Red Cross", address: "Carrer de Ferlandina, 20, 08001 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user6.id)
 file26 = File.open("app/assets/images/logos/ngo6.jpg")
 ngo6.logo.attach(io: file26, filename: 'ngo6.png', content_type: 'image/png')
 ngo6.save!
 
-ngo7 = Ngo.new(name: "Miracle Foundation", address: "Carrer de la Nació, 42, 08026 Barcelona, Spain", phone: "+177099298", description: "Supporting our root causes with all our energy and effort", user_id: user7.id)
+ngo7 = Ngo.new(name: "Miracle Foundation", address: "Carrer de la Nació, 42, 08026 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user7.id)
 file27 = File.open("app/assets/images/logos/ngo7.jpg")
 ngo7.logo.attach(io: file27, filename: 'ngo7.jpg', content_type: 'image/jpg')
 ngo7.save!
 
 
-ngo8 = Ngo.new(name: "Cultural Center MiMusica", address: "Carrer d'en Xuclà, 4, 08001 Barcelona, Spain", phone: "+188099298", description: "Supporting our root causes with all our energy and effort", user_id: user8.id)
+ngo8 = Ngo.new(name: "Cultural Center MiMusica", address: "Carrer d'en Xuclà, 4, 08001 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user8.id)
 file28 = URI.open(Faker::Company.logo)
 ngo8.logo.attach(io: file28, filename: 'ngo8.jpg', content_type: 'image/jpg')
 ngo8.save!
 
 
-ngo9 = Ngo.new(name: "Amnesty International", address: "Carrer d'Alfons XII, 19, 08006 Barcelona, Spain", phone: "+199099299", description: "Supporting our root causes with all our energy and effort", user_id: user9.id)
+ngo9 = Ngo.new(name: "Amnesty International", address: "Carrer d'Alfons XII, 19, 08006 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user9.id)
 file29 = File.open("app/assets/images/logos/ngo9.jpg")
 ngo9.logo.attach(io: file29, filename: 'ngo9.jpg', content_type: 'image/jpg')
 ngo9.save!
 
-ngo10 = Ngo.new(name: "Médecins sans frontières", address: "Carrer de Zamora, 54, 08005 Barcelona, Spain", phone: "+199099200", description: "Supporting our root causes with all our energy and effort", user_id: user10.id)
+ngo10 = Ngo.new(name: "Médecins sans frontières", address: "Carrer de Zamora, 54, 08005 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user10.id)
 file30 = File.open("app/assets/images/logos/ngo10.png")
 ngo10.logo.attach(io: file30, filename: 'ngo10.png', content_type: 'image/png')
 ngo10.save!
 
-ngo11 = Ngo.new(name: "Caritas", address: "Via Laietana, 5, 08003 Barcelona, Spain", phone: "+1990992011", description: "Supporting our root causes with all our energy and effort", user_id: user19.id)
+ngo11 = Ngo.new(name: "Caritas", address: "Via Laietana, 5, 08003 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user19.id)
 file31 = File.open("app/assets/images/logos/ngo11.jpg")
 ngo11.logo.attach(io: file31, filename: 'ngo11.jpg', content_type: 'image/jpg')
 ngo11.save!
@@ -204,61 +204,61 @@ ngo11.save!
 puts "NGOs done"
 puts "Seeding projects"
 
-project1= Project.new(title: "Teaching children in Gracia", hours_per_week: 8, address: "Carrer de Sant Agustí, 14, 08012 Barcelona, Spain", description: "We need 7-10 people that support our school in teaching young children English skills as well as spending time with them in the afternoon." , capacity: 10 , category: "Children" , ngo: ngo1)
+project1= Project.new(title: "Teaching children in Gracia", address: "Carrer de Sant Agustí, 14, 08012 Barcelona, Spain", description: "We need 7-10 people that support our school in teaching young children English skills as well as spending time with them in the afternoon." , capacity: 10 , category: "Children" , ngo: ngo1, start_date: Date.today , end_date: Date.today , start_time: 9, end_time: 15 )
 file32 = File.open("app/assets/images/projects/teaching.jpg")
 project1.photos.attach(io: file32, filename: 'img1.jpg', content_type: 'image/jpg')
 project1.save!
 
 
-project2= Project.new(title: "Supporting elderly care", hours_per_week: 5, address: "Carrer de Provença, 480, 08025 Barcelona, Spain", description: "We look for up to 15 people to support our daily activities.
-  We are aiming to improve the quality of life of older people by keeping them company, in order to avoid them feeling alone or socially excluded, and undertaking campaigns to raise awareness. We are focused on providing care at home, helping people when they are sick or on a sporadic basis." , capacity: 15 , category: "Seniors" , ngo: ngo2)
+project2= Project.new(title: "Supporting elderly care", address: "Carrer de Provença, 480, 08025 Barcelona, Spain", description: "We look for up to 15 people to support our daily activities.
+  We are aiming to improve the quality of life of older people by keeping them company, in order to avoid them feeling alone or socially excluded, and undertaking campaigns to raise awareness. We are focused on providing care at home, helping people when they are sick or on a sporadic basis." , capacity: 15 , category: "Seniors" , ngo: ngo2, start_date: Date.today , end_date: Date.today , start_time: 9, end_time: 15)
 file33 = File.open("app/assets/images/projects/elderly.jpg")
 project2.photos.attach(io: file33, filename: 'img2.jpg', content_type: 'image/jpg')
 project2.save!
 
-project3= Project.new(title: "Food delivery for elderly people", hours_per_week: 5, address: "Carrer de Lepant, 150, 08013 Barcelona, Spain", description: "We look for volunteers to bring food to elderly people and spend time with them in the afternoon. 5-7 people are needed with around 5 hours time per week." , capacity: 7 , category: "Seniors" , ngo: ngo3)
+project3= Project.new(title: "Food delivery for elderly people", address: "Carrer de Lepant, 150, 08013 Barcelona, Spain", description: "We look for volunteers to bring food to elderly people and spend time with them in the afternoon. 5-7 people are needed with around 5 hours time per week." , capacity: 7 , category: "Seniors" , ngo: ngo3, start_date: Date.today , end_date: Date.today , start_time: 9, end_time: 15)
 file34 = File.open("app/assets/images/projects/elderly-delivery.jpg")
 project3.photos.attach(io: file34, filename: 'img3.jpg', content_type: 'image/jpg')
 project3.save!
 
-project4= Project.new(title: "Trees for a Green Future", hours_per_week: 20, address: "Carrer de Rossend Nobas, 31, 08018 Barcelona, Spain", description: "We look for volunteers to help us make Barcelona green again. In 2019 we plated over 2000 trees in the whole city that need to be watered and taken care of. Join with your team and let's grow good together." , capacity: 25 , category: "Climate" , ngo: ngo4)
+project4= Project.new(title: "Trees for a Green Future", address: "Carrer de Rossend Nobas, 31, 08018 Barcelona, Spain", description: "We look for volunteers to help us make Barcelona green again. In 2019 we plated over 2000 trees in the whole city that need to be watered and taken care of. Join with your team and let's grow good together." , capacity: 25 , category: "Climate" , ngo: ngo4, start_date: Date.today , end_date: Date.today , start_time: 9, end_time: 15)
 file35 = File.open("app/assets/images/projects/trees.jpg")
 project4.photos.attach(io: file35, filename: 'img4.jpg', content_type: 'image/jpg')
 project4.save!
 
-project5= Project.new(title: "City Cleaning Squad", hours_per_week: 20, address: "Plaça de Catalunya, 08002 Barcelona, Spain", description: "We look for volunteers to help us keep Barcelona a clean city. In the evenings and weekend we look for volunteers to support our group action of cleaning the sideways and parks of plastic and other dirt. Looking forward to hearing from you." , capacity: 50 , category: "Climate" , ngo: ngo5)
+project5= Project.new(title: "City Cleaning Squad", address: "Plaça de Catalunya, 08002 Barcelona, Spain", description: "We look for volunteers to help us keep Barcelona a clean city. In the evenings and weekend we look for volunteers to support our group action of cleaning the sideways and parks of plastic and other dirt. Looking forward to hearing from you." , capacity: 50 , category: "Climate" , ngo: ngo5, start_date: Date.today , end_date: Date.today , start_time: 9, end_time: 15)
 file36 = File.open("app/assets/images/projects/trees.jpg")
 project5.photos.attach(io: file36, filename: 'img5.jpg', content_type: 'image/jpg')
 project5.save!
 
-project6= Project.new(title: "Social work for homeless", hours_per_week: 6, address: "Carrer de Ferlandina, 20, 08001 Barcelona, Spain", description: "Everyday homeless people in Barcelona need food and shelter. We take care of them and provide them with basic food and drinks as well as prepare beds for overnight stay. We look for 3-5 people to support us during the week in the evenings" , capacity: 5 , category: "Social" , ngo: ngo6)
+project6= Project.new(title: "Social work for homeless", address: "Carrer de Ferlandina, 20, 08001 Barcelona, Spain", description: "Everyday homeless people in Barcelona need food and shelter. We take care of them and provide them with basic food and drinks as well as prepare beds for overnight stay. We look for 3-5 people to support us during the week in the evenings" , capacity: 5 , category: "Social" , ngo: ngo6, start_date: Date.today , end_date: Date.today , start_time: 9, end_time: 15)
 file37 = File.open("app/assets/images/projects/social-work.jpg")
 project6.photos.attach(io: file37, filename: 'img6.jpg', content_type: 'image/jpg')
 project6.save!
 
 
-project7= Project.new(title: "Orphane Support Care Center", hours_per_week: 10, address: "Carrer de la Nació, 42, 08026 Barcelona, Spain", description: "This project aims to provide an opportunity for needy children and orphans to live and learn under one roof until they are adopted or integrated in the community or placed with family members who can take better care of them. Due to poverty, neglect and abuse, many children are forced to leave their homes without basic education.
-Our Orphanage care project initiative has tremendously improved the lives of children. Our aim is to give these orphanages extra support so they can provide the children with good quality food, clothing and school supplies. Through the commitment and dedication of our volunteers, we have contributed immensely to the basic education of these children who sometimes lack the quality foundation." , capacity: 5, category: "Children" , ngo: ngo7)
+project7= Project.new(title: "Orphane Support Care Center", address: "Carrer de la Nació, 42, 08026 Barcelona, Spain", description: "This project aims to provide an opportunity for needy children and orphans to live and learn under one roof until they are adopted or integrated in the community or placed with family members who can take better care of them. Due to poverty, neglect and abuse, many children are forced to leave their homes without basic education.
+Our Orphanage care project initiative has tremendously improved the lives of children. Our aim is to give these orphanages extra support so they can provide the children with good quality food, clothing and school supplies. Through the commitment and dedication of our volunteers, we have contributed immensely to the basic education of these children who sometimes lack the quality foundation." , capacity: 5, category: "Children" , ngo: ngo7, start_date: Date.today , end_date: Date.today , start_time: 9, end_time: 15)
 file38 = File.open("app/assets/images/projects/orphan.jpg")
 project7.photos.attach(io: file38, filename: 'img7.jpg', content_type: 'image/jpg')
 project7.save!
 
-project8= Project.new(title: "Cultural Center Support", hours_per_week: 6, address: "Carrer d'en Xuclà, 4, 08001 Barcelona, Spain", description: "Cultural Center MiMusica organizes various music events for people of low income to enjoy their free-time. Join our organization team and let's create something cool together." , capacity: 3 , category: "Cultural" , ngo: ngo8)
+project8= Project.new(title: "Cultural Center Support", address: "Carrer d'en Xuclà, 4, 08001 Barcelona, Spain", description: "Cultural Center MiMusica organizes various music events for people of low income to enjoy their free-time. Join our organization team and let's create something cool together." , capacity: 3 , category: "Cultural" , ngo: ngo8, start_date: Date.today , end_date: Date.today , start_time: 9, end_time: 15)
 file39 = File.open("app/assets/images/projects/cultural-center.jpg")
 project8.photos.attach(io: file39, filename: 'img8.jpg', content_type: 'image/jpg')
 project8.save!
 
-project9= Project.new(title: "Promotion & Event Support", hours_per_week: 5, address: "Passeig de Picasso, 21, 08003 Barcelona, Spain", description: "Due to Corona Crisis the Ciutadela Park is the only one where people can still spend some time on the weekends. Amnesty International organizes music and free food and is looking for volunteers to support 3 promotion activities in April." , capacity: 6 , category: "Cultural" , ngo: ngo9)
+project9= Project.new(title: "Promotion & Event Support", address: "Passeig de Picasso, 21, 08003 Barcelona, Spain", description: "Due to Corona Crisis the Ciutadela Park is the only one where people can still spend some time on the weekends. Amnesty International organizes music and free food and is looking for volunteers to support 3 promotion activities in April." , capacity: 6 , category: "Cultural" , ngo: ngo9, start_date: Date.today , end_date: Date.today , start_time: 9, end_time: 15)
 file40 = File.open("app/assets/images/projects/promotion-support.jpg")
 project9.photos.attach(io: file40, filename: 'img9.jpg', content_type: 'image/jpg')
 project9.save!
 
-project10= Project.new(title: "Elderly Patient Support", hours_per_week: 20, address: "Carrer de Villarroel, 170, 08036 Barcelona, Spain", description:"Doctors without limits is getting to their capacity limits due to the corona crisis. Therefore we look for volunteers supporting our operation in the Hospital Clinic in Barcelona." , capacity: 15, category: "Medical" , ngo: ngo10)
+project10= Project.new(title: "Elderly Patient Support", address: "Carrer de Villarroel, 170, 08036 Barcelona, Spain", description:"Doctors without limits is getting to their capacity limits due to the corona crisis. Therefore we look for volunteers supporting our operation in the Hospital Clinic in Barcelona." , capacity: 15, category: "Medical" , ngo: ngo10, start_date: Date.today , end_date: Date.today , start_time: 9, end_time: 15)
 file41 = File.open("app/assets/images/projects/medical-support.jpg")
 project10.photos.attach(io: file41, filename: 'img10.jpg', content_type: 'image/jpg')
 project10.save!
 
-project11= Project.new(title: "Clothes Distribution", hours_per_week: 3, address: "Via Laietana, 5, 08003 Barcelona, Spain", description:"We distribute clothes to homeless people and need more support." , capacity: 7, category: "Social" , ngo: ngo11)
+project11= Project.new(title: "Clothes Distribution", address: "Via Laietana, 5, 08003 Barcelona, Spain", description:"We distribute clothes to homeless people and need more support." , capacity: 7, category: "Social" , ngo: ngo11, start_date: Date.today , end_date: Date.today , start_time: 9, end_time: 15)
 file42 = File.open("app/assets/images/projects/clothes_distribution.jpg")
 project11.photos.attach(io: file42, filename: 'img11.jpg', content_type: 'image/jpg')
 project11.save!

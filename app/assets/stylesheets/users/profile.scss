@@ -55,17 +55,16 @@
     }
     .button-edit-user-image {
       position: absolute;
-      font-size: 18px;
-      bottom: 15px;
-      right: 15px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+      font-size: 16px;
+      bottom: 0px;
+      right: 55px;
+      width: 100px;
+      height: 30px;
+      border-radius: 20px;
       background-color: $green-vamos;
       color: white;
       text-align: center;
-      padding-top: 6px;
-      padding-left: 2px;
+      padding-top: 3px;
       &:hover {
         background-color: white;
         border: 1px solid $green-vamos;
@@ -94,12 +93,14 @@
       }
       .button-edit-ngo-image {
         position: absolute;
-        font-size: 18px;
+        font-size: 16px;
         bottom: 0px;
         right: 0px;
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100px;
+        height: 30px;
+        border-radius: 20px;
         background-color: $green-vamos;
         color: white;
         text-align: center;
