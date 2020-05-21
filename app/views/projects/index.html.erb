@@ -3,7 +3,7 @@
   <div class="has-navbar-so-margin">
     <%= render 'shared/mobile_navbar' %>
     <div class = "content-container">
-      <p class="opportunities-counter"> <%= t('.key', count: @projects.count) %> </p>
+      <p class="opportunities-counter"> <%= t('.projects', count: @projects.count) %> </p>
       <div class="filters d-flex justify-content-left">
         <div style="font-size: 16px" class="filter py-1 px-5" data-toggle="modal" data-target="#filterModalMobile"><%= t("Fitrar")%> </div>
       </div>
@@ -153,7 +153,7 @@
   <div class="d-flex">
     <div class="desktop-card-container">
         <div class="opportunities-filter p-3">
-          <p class="opportunities-counter"> <%= t('.key', count: @projects.count) %></p>
+          <p class="opportunities-counter"> <%= t('.projects', count: @projects.count) %></p>
           <div class="filters d-flex justify-content-left">
             <div style="font-size: 16px" class="filter py-1 px-5" data-toggle="modal" data-target="#filterModalDesktop">
               <%= t(".filter") %>

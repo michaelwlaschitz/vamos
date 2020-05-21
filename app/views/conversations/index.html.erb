@@ -2,7 +2,7 @@
   <%= render 'shared/mobile_navbar' %>
 
 <div class="content-container-chat">
-  <h2 class="mb-3 border-bottom">Inbox</h2>
+  <h2 class="border-bottom mb-3 mt-3 py-1"> <%= t(".inbox") %></h2>
   <% @conversations.each do |conversation| %>
   <%= link_to conversation_path(conversation), class: "dark-gray" do %>
 
