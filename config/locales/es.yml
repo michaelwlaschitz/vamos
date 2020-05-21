@@ -9,39 +9,41 @@ es:
       conversations: "Mensajes"
       login: "Inicia sesión"
       logout: "Salir"
+      explore: "Explorar"
+      dashboard: "Panel de Control"
 
 
   activerecord:
     models:
-      project: "proyecto"
+      project: "Proyecto"
       ngo: "ONG"
-      user:
-      review:
-      team:
+      user: "Usuario"
+      review: "Reseña"
+      team: "Equipo"
 
     attributes:
       projects:
         title: "Título"
-        address:
-        capacity:
-        category:
+        address: "Dirección"
+        capacity: "Capacidad de voluntarios"
+        category: "Categoría"
         description: "Descripción"
       ngo:
-        name:
-        phone:
-        description:
-        address:
+        name: "Nombre"
+        phone: "Número de teléfono"
+        description: "Descripción"
+        address: "Dirección"
       review:
-        rating:
-        content:
+        rating: "Reseñas"
+        content: "Comentario"
       team:
-        name:
+        name: "Nombre de Equipo"
       user:
-        first_name:
-        last_name:
-        email:
-        description:
-        phone:
+        first_name: "Nombre"
+        last_name: "Apellido"
+        email: "Email"
+        description: "Descripción"
+        phone: "Número de teléfono"
 
 
   pages:
@@ -77,6 +79,16 @@ es:
       team_title: "Fundadores de Vamos"
       team_advisors: "Asesores de Vamos"
       role_florian: "Estratega Digital"
+
+    filter_location:
+      title_for_html: "<span style='color: #fb8500'>Dónde en Barcelona</span> quieres ayudar con tus amigos?"
+      type_address: "Escriba tu dirección"
+
+    filter_interests:
+      select_causes_for_html: "¿Qué <span style='color: #fb8500'>causas</span> te interesan más?"
+
+
+
   ngos:
     home:
       title_for_html: "<strong>Encuentre seguidores a largo <br>plazo para su organización</strong>"
@@ -124,4 +136,19 @@ es:
       inbox: "Mensajes"
   teams:
     new:
-      title_for_html: "<span style='color: #fb8500'>Create</span> your Volunteering Team"
+      title_for_html: "<span style='color: #fb8500'>Crea</span> tu equipo de voluntariados"
+      team_name: "Elige un nombre para tu equipo"
+      invite_friends: "Invita amigos a tu equipo"
+      create_team: "Crea tu equipo"
+  bookings:
+    new:
+      application_overview: "Resumen de aplicación"
+      project: "Proyecto"
+      organization: "Organización"
+      selected_team: "Equipo elegido"
+      application_message: "Mensaje de aplicación"
+      send_application: "Envié la aplicación"
+      apply: "Aplica con un equipo nuevo"
+      motivation: "Escribe unas palabras sobre la motivación de tí y tus amigos para ayudar en ese proyecto.
+        Aumenta sus chance de obtener los espacios disponibles."
+

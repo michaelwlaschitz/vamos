@@ -10,7 +10,7 @@
       </div>
 
       <div class="simple-form">
-        <h3>Choose a team name</h3>
+        <h3><%= t(".team_name") %> </h3>
         <%= simple_form_for @new_team  do |team_fields| %>
           <% if @new_team.errors.any? %>
           <div class="errors-container">
@@ -24,7 +24,7 @@
           <%= team_fields.hidden_field "id", :value => params[:id] %>
           <%= team_fields.input :name, label: false, placeholder: "The Treegantics"%>
 
-          <h3>Invite your friends</h3>
+          <h3><%= t(".invite_friends") %></h3>
           <%= team_fields.simple_fields_for :team_memberships do |tm| %>
           <%= render 'team_membership_fields' , f: tm %>
           <% end %>
@@ -35,7 +35,7 @@
             <% end %>
           </div>
 
-          <%= team_fields.submit "Create team", class: "button-vamos primary-style w-100"%>
+          <%= team_fields.submit t(".create_team"), class: "button-vamos primary-style w-100"%>
 
         <% end %>
       </div>

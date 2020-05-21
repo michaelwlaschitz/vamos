@@ -39,6 +39,8 @@ en:
       messages: "Messajes"
       login: "Login"
       logout: "Logout"
+      explore: "Explore"
+      dashboard: "My Dashboard"
 
 
   activerecord:
@@ -106,6 +108,15 @@ en:
       team_title: "Vamos Founders"
       team_advisors: "Vamos Advisors"
       role_florian: "Digital Strategist"
+
+    filter_location:
+      title_for_html: "<span style='color: #fb8500'>Where in Barcelona</span> do you want to help with your friends?"
+      type_address: "Type your address"
+
+    filter_interests:
+      select_causes_for_html: "What <span style='color: #fb8500'>causes</span> are you most interested in?"
+
+
   ngos:
     home:
       title_for_html: "<strong>Attract young people <br>who are eager to do good!</strong>"
@@ -155,3 +166,17 @@ en:
   teams:
     new:
       title_for_html: "<span style='color: #fb8500'>Create</span> your Volunteering Team"
+      team_name: "Choose a team name"
+      invite_friends: "Invite your frieds to the team"
+      create_team: "Create team"
+
+  bookings:
+    new:
+      application_overview: "Application Overview"
+      project: "Project"
+      organization: "Organizations"
+      selected_team: "Selected team"
+      application_message: "Application Message"
+      send_application: "Send application"
+      apply: "Apply with a new team"
+      motivation: "Write some words about why you and your friends want to volunteer for this project. This increases your chance to get the available spots."

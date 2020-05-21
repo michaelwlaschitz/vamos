@@ -82,17 +82,16 @@
           </div>
         </div>
 
-        <form action="/teams/new" method="get">
-        <%= hidden_field_tag(:id, params["id"]) %>
+       <!-- Apply button -->
 
-      <!-- Apply button -->
+        <%= form_tag(new_team_path, :method => "get") do %>
+          <%= hidden_field_tag(:id, params["id"]) %>
+          <div class="desktop-apply-button-showpage apply-button-showpage">
+          <%= submit_tag(t(".apply"), class: "button-vamos primary-style mb-5") %>
+          </div>
+        <% end %>
 
-        <div class="desktop-apply-button-showpage apply-button-showpage">
-          <button type="submit" class="button-vamos primary-style mb-5">
-          <%= t(".apply") %>
-        </button>
-        </div>
-        </form>
+
 
       <!-- Map -->
 
@@ -191,15 +190,12 @@
           </div>
         </div>
 
-        <form action="/teams/new" method="get">
-        <%= hidden_field_tag(:id, params["id"]) %>
-
-        <div class="desktop-apply-button-showpage apply-button-showpage">
-          <button type="submit" class="button-vamos primary-style mb-5">
-          Apply with your team!
-        </button>
-        </div>
-        </form>
+        <%= form_tag(new_team_path, :method => "get") do %>
+          <%= hidden_field_tag(:id, params["id"]) %>
+          <div class="desktop-apply-button-showpage apply-button-showpage">
+          <%= submit_tag(t(".apply"), class: "button-vamos primary-style mb-5") %>
+          </div>
+        <% end %>
 
       </div>
     </div>
@@ -209,16 +205,13 @@
 <div style="height: 80px">
 </div>
 
-<form action="/apply" method="get">
+
+<%= form_tag(new_team_path, :method => "get") do %>
   <%= hidden_field_tag(:id, params["id"]) %>
-
-<div class="mobile-apply-button-showpage apply-button-showpage">
-  <button type="submit" class="button-vamos primary-style mb-5">
-    Apply with your team!
-  </button>
-</div>
-
-</form>
+  <div class="mobile-apply-button-showpage apply-button-showpage">
+  <%= submit_tag(t(".apply"), class: "button-vamos primary-style mb-5") %>
+  </div>
+<% end %>
 
 
 
