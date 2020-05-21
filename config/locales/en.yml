@@ -42,6 +42,14 @@ en:
       explore: "Explore"
       dashboard: "My Dashboard"
 
+    interests:
+      children: "Children"
+      social: "Social"
+      cultural: "Cultural"
+      climate: "Climate"
+      medical: "Medical"
+      seniors: "Seniors"
+
 
   activerecord:
     models:

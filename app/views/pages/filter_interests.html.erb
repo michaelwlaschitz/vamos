@@ -7,13 +7,16 @@
 
       <div class="filter-content">
         <div class="form-group">
-          <form action="/time" method="get">
-            <input id="hidden-input" type="hidden" name="categories[]" value="">
+          <%= form_tag(filter_time_path, :method => "get", local: true) do %>
+            <%= hidden_field_tag(:address, params[:address]) %>
             <%= render "projects/partial_filter_boxes_interest" %>
-            <input type="hidden" name="address" value="<%= params[:address] %>">
-            <%= render "pages/partial_next_button" %>
-          </form>
+            <%= hidden_field_tag(:categories) %>
+            <%= button_tag :type => "submit", :class => "filter-submit" do %>
+            <i class='fas fa-chevron-right'></i>
+            <% end %>
+          <% end %>
         </div>
+      </div>
 
         <div class="progress">
           <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">33%</div>

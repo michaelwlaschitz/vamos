@@ -12,6 +12,14 @@ es:
       explore: "Explorar"
       dashboard: "Panel de Control"
 
+    interests:
+      children: "Niños"
+      social: "Social"
+      cultural: "Cultural"
+      climate: "Medio Ambiente"
+      medical: "Salud"
+      seniors: "Mayores"
+
 
   activerecord:
     models:

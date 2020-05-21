@@ -5,23 +5,21 @@
         <%= t(".title_for_html") %>
       </h2>
 
-
       <div class="filter-content">
-      <%= form_tag(filter_interests_path, :method => "get", local: true) do %>
-      <%= text_field_tag :address, nil, placeholder: t(".type_address") %>
-      <%= hidden_field_tag(:id, params[:project_id]) %>
-      <%= button_tag :type => "submit", :class => "filter-submit" do %>
-      <i class='fas fa-chevron-right'></i>
-      <% end %>
-      <% end %>
+        <%= form_tag(filter_interests_path, :method => "get", local: true) do %>
+        <%= text_field_tag :address, nil, placeholder: t(".type_address") %>
+        <%= hidden_field_tag(:id, params[:project_id]) %>
+        <%= button_tag :type => "submit", :class => "filter-submit" do %>
+        <i class='fas fa-chevron-right'></i>
+        <% end %>
+        <% end %>
       </div>
 
       <div class="progress">
         <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+        </div>
       </div>
     </div>
-  </div>
-
   <div class="filter-image-container">
     <%= image_tag "location.jpg", class: "filter-image"%>
   </div>
