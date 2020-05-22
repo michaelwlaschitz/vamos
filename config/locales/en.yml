@@ -174,7 +174,7 @@ en:
   teams:
     new:
       title_for_html: "<span style='color: #fb8500'>Create</span> your Volunteering Team"
-      team_name: "Choose a team name"
+      team_name: "Choose a team name (max 20 characters)"
       invite_friends: "Invite your frieds to the team"
       create_team: "Create team"
 
