@@ -6,6 +6,7 @@ class User < ApplicationRecord
         # devise invitable comes from new gem and allows as to invite users.
   has_many :reviews
   has_one :ngo
+  has_many :ngo_reviews, through: :ngo, source: :reviews
   has_many :team_memberships
   has_many :teams, through: :team_memberships
   has_many :bookings, through: :teams
@@ -16,11 +17,9 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
-
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, format: { with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }, presence: true, uniqueness: true
-  validates :password, presence: true
 
   def ngo_manager?
     ngo.present?

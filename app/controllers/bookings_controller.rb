@@ -49,7 +49,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:team_id, :hours_per_week)
+    params.require(:booking).permit(:team_id, :start_date, :end_date, :start_time, :end_time)
   end
 
   def message_params

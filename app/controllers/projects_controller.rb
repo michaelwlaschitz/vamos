@@ -56,16 +56,17 @@ class ProjectsController < ApplicationController
       @count = @projects.count(:all)
     else
       filtered_projects = []
-      filtered_projects += @projects.where(hours_per_week: 1..4) if params[:time].include?(param1)
-      filtered_projects += @projects.where(hours_per_week: 5..9) if params[:time].include?(param2)
-      filtered_projects += @projects.where(hours_per_week: 10..100) if params[:time].include?(param3)
+      # commented this so that it does not break after removing hours_per_week, not sure how to fix it for now
+      # filtered_projects += @projects.where(hours_per_week: 1..4) if params[:time].include?(param1)
+      # filtered_projects += @projects.where(hours_per_week: 5..9) if params[:time].include?(param2)
+      # filtered_projects += @projects.where(hours_per_week: 10..100) if params[:time].include?(param3)
       @projects = filtered_projects
       @count = @projects.count
     end
   end
 
   def project_params
-    params.require(:project).permit(:title, :address, :description, :capacity, :category, :hours_per_week, photos:[])
+    params.require(:project).permit(:title, :address, :description, :capacity, :category, :start_time, :end_time, :start_date, :end_date, photos:[])
   end
 
 end

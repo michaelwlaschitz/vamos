@@ -1,11 +1,11 @@
  <div class="buttons filter-buttons">
   <% categories = {
-    "Children" => "fas fa-child",
-    "Social" => "fas fa-user-friends mr-0",
-    "Cultural" => "fas fa-music",
-    "Climate" => "fas fa-leaf",
-    "Medical" => "fas fa-briefcase-medical",
-    "Seniors" => "fab fa-accessible-icon",
+    t("global.interests.children") => "fas fa-child",
+    t("global.interests.social") => "fas fa-user-friends mr-0",
+    t("global.interests.cultural") => "fas fa-music",
+    t("global.interests.climate") => "fas fa-leaf",
+    t("global.interests.medical") => "fas fa-briefcase-medical",
+    t("global.interests.seniors") => "fab fa-accessible-icon",
     } %>
   <% categories.each do |category, logo| %>
   <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="categories_<%= category %>" <%= "checked" if params[:categories]&.include?(category) %> >

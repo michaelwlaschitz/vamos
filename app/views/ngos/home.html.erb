@@ -9,7 +9,7 @@
                 <%= render 'shared/logo_top_left' %>
               </div>
               <div class="hide-desktop">
-                <h3 class="paragraph-no-margin mt-2"> <%= link_to 'My dashboard', user_profile_path, class: "white mr-4 hide-desktop" %> </h3>
+                <h3 class="paragraph-no-margin mt-2"> <%= link_to t("global.navbar.dashboard"), user_profile_path, class: "white mr-4 hide-desktop" %> </h3>
               </div>
             </div>
 
@@ -19,19 +19,17 @@
               <%= render 'shared/logo_top_left' %>
               </div>
               <div class="hide-desktop">
-                <h3 class="paragraph-no-margin"> <%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal-lg"}, class: "nav-link text-homepage mr-2" %> </h3>
+                <h3 class="paragraph-no-margin"> <%= link_to t("global.navbar.login"), data: {toggle: "modal", target: ".bd-example-modal-lg"}, class: "nav-link text-homepage mr-2" %> </h3>
               </div>
             </div>
             <% end %>
         <div class="d-flex">
           <div>
-            <h1 class="slogan-home"><strong>Attract young people <br>who are eager to do good!</strong></h1>
+            <h1 class="slogan-home"> <%= t(".title_for_html") %> </h1>
             <h3 class="text homepage text-homepage">
-              Create your first project for free <br>with just a few clicks!
+              <%= t(".sub_title_for_html") %>
             </h3>
             <%= link_to "Vamos!", new_ngo_path, class: "button-vamos primary-style w-100 mt-3" %>
-
-            <h3 class="text-right mt-4 "><%= link_to "Find volunteers >>", new_ngo_path, class: "white hide-desktop"%></h3>
           </div>
         </div>
     </div>
@@ -39,8 +37,8 @@
 
   <!-- USP Description Desktop-->
   <div class="py-3 hide-mobile">
-  <h2 class="text-center mt-3">The Benefits of Vamos</h2>
-  <p class="mt-2 text-center ">Vamos supports NGOs finding long-term supporters through a platform highly targeted to the young generation.</p>
+  <h2 class="text-center mt-3"><%= t(".usp_title") %></h2>
+  <p class="mt-2 text-center "> <%= t(".usp_sub_title") %></p>
 
   <div class="d-flex py-5 px-4 justify-content-around align-items-center">
 
@@ -48,23 +46,25 @@
       <div class="d-flex align-items-center">
         <h1><i class="far fa-arrow-alt-circle-right orange mr-4"></i></h1>
         <div>
-          <h2 class="orange">Easy application process</h2>
-          <p class="paragraph-no-margin">Users go through a simple and fast process, without lengthy forms or long email interactions.</p>
+          <h2 class="orange"><%= t(".usp1_title") %></h2>
+          <p class="paragraph-no-margin"><%= t(".usp1_text") %></p>
         </div>
       </div>
+
+
       <div class="d-flex align-items-center mt-5">
         <h1><i class="fas fa-magic orange mr-4"></i></h1>
         <div>
-          <h2 class="orange">Simple and intuitive design</h2>
-          <p>The design of Vamos helps the promotion and transparency of the projects and thus attract more young people.</p>
+          <h2 class="orange"><%= t(".usp2_title") %></h2>
+          <p><%= t(".usp2_text") %></p>
         </div>
       </div>
 
       <div class="d-flex align-items-center mt-5">
         <h1><i class="fas fa-users orange mr-4"></i></h1>
         <div>
-          <h2 class="orange">Application in teams</h2>
-          <p>Users can apply with their friends to take the first step in volunteering together.</p>
+          <h2 class="orange"><%= t(".usp3_title") %></h2>
+          <p><%= t(".usp3_text") %></p>
         </div>
       </div>
     </div>
@@ -73,12 +73,12 @@
 
       <div class="d-flex mb-5 usp-box align-items-center">
         <h1><i class="fas fa-long-arrow-alt-down white mr-3"></i></h1>
-        <h3 class="white font-weight-normal">Reduce the barrier for young people to get involved with your organization.</h3>
+        <h3 class="white font-weight-normal"><%= t(".key_benefit1") %></h3>
       </div>
 
       <div class="d-flex usp-box align-items-center">
         <h1><i class="fas fa-long-arrow-alt-up white mr-3"></i></h1>
-        <h3 class="white font-weight-normal">Attract more long-term volunteers, supporters donors to your projects.</h3>
+        <h3 class="white font-weight-normal"><%= t(".key_benefit2") %></h3>
       </div>
 
     </div>
@@ -87,50 +87,51 @@
 
 <!-- USP Description Mobile-->
   <div class="py-3 hide-desktop px-3">
-    <h2 class="text-center mt-3">The Benefits of Vamos</h2>
-    <p class="mt-2 text-center ">Vamos supports NGOs finding long-term supporters through a platform highly targeted to the young generation.</p>
+    <h2 class="text-center mt-3"><%= t(".usp_title") %></h2>
+    <p class="mt-2 text-center "><%= t(".usp_sub_title") %></p>
 
     <div class="usp-info mr-3 pl-3 pr-2">
       <div class="d-flex align-items-center">
         <h1><i class="far fa-arrow-alt-circle-right orange mr-4"></i></h1>
         <div>
-          <h2 class="orange mt-3">Easy application process</h2>
-          <p class="paragraph-no-margin">Users go through a simple and fast process, without lengthy forms or long email interactions.</p>
+          <h2 class="orange mt-3"><%= t(".usp1_title") %></h2>
+          <h2 class="orange mt-3"><%= t(".usp1_text") %></h2>
+          <p class="paragraph-no-margin"></p>
         </div>
       </div>
       <div class="d-flex align-items-center mt-4">
         <h1><i class="fas fa-magic orange mr-4"></i></h1>
         <div>
-          <h2 class="orange">Simple and intuitive design</h2>
-          <p>The design of Vamos helps the promotion and transparency of the projects and thus attract more young people.</p>
+          <h2 class="orange"><%= t(".usp2_title") %></h2>
+          <p><%= t(".usp2_text") %></p>
         </div>
       </div>
 
       <div class="d-flex align-items-center mt-4">
         <h1><i class="fas fa-users orange mr-4"></i></h1>
         <div>
-          <h2 class="orange">Application in teams</h2>
-          <p>Users can apply with their friends to take the first step in volunteering together.</p>
+          <h2 class="orange"><%= t(".usp3_title") %></h2>
+          <p><%= t(".usp3_text") %></p>
         </div>
       </div>
     </div>
 
     <div class="d-flex mb-4 mt-5 usp-box align-items-center">
       <h1><i class="fas fa-long-arrow-alt-down white mr-3"></i></h1>
-      <h3 class="white font-weight-normal">Reduce the barrier for young people to get involved with your organization.</h3>
+      <h3 class="white font-weight-normal"><%= t(".key_benefit1") %></h3>
     </div>
 
     <div class="d-flex mb-4 mt-3 usp-box align-items-center">
       <h1><i class="fas fa-long-arrow-alt-up white mr-3"></i></h1>
-      <h3 class="white font-weight-normal">Attract more long-term volunteers, supporters donors to your projects.</h3>
+      <h3 class="white font-weight-normal"><%= t(".key_benefit2") %></h3>
     </div>
 
   </div>
 
 <!-- Product Description -->
 <div class="light-gray-background py-3 px-3">
-  <h2 class="text-center mt-4">How it works</h2>
-  <p class="text-center mt-2">Vamos provides an intutive platform for NGOs to easily create projects, manage applications and chat with teams of volunteers.</p>
+  <h2 class="text-center mt-4"><%= t(".function_title") %></h2>
+  <p class="text-center mt-2"><%= t(".function_sub_title") %></p>
 
   <div class="product-description d-flex py-4 px-4 hide-desktop justify-content-around align-items-center">
 
@@ -140,23 +141,23 @@
       <div class="d-flex align-items-center">
         <h1><i class="fas fa-check-square orange mr-4"></i></h1>
         <div>
-          <h2 class="orange">Create a project in less than 3 minutes</h2>
-          <p class="paragraph-no-margin">Where, when, how many?  Create your project with a few clicks. We will find volunteers for you!</p>
+          <h2 class="orange"><%= t(".function1_title") %></h2>
+          <p class="paragraph-no-margin"><%= t(".function1_text") %></p>
         </div>
       </div>
       <div class="d-flex align-items-center mt-5">
         <h1><i class="fas fa-chart-bar orange mr-4"></i></h1>
         <div>
-          <h2 class="orange">Easily manage applications</h2>
-          <p>Through a simple application dashboard you view, accept and reject applications.</p>
+          <h2 class="orange"><%= t(".function2_title") %></h2>
+          <p><%= t(".function2_text") %></p>
         </div>
       </div>
 
       <div class="d-flex align-items-center mt-5">
         <h1><i class="fas fa-comments orange mr-4"></i></h1>
         <div>
-          <h2 class="orange">Chat with Volunteer Teams</h2>
-          <p>We provide a simple chat function to talk to potential volunteer teams.</p>
+          <h2 class="orange"><%= t(".function3_title") %></h2>
+          <p><%= t(".function3_text") %></p>
         </div>
       </div>
 
@@ -169,9 +170,9 @@ End of Product -->
 
 <div class="d-flex justify-content-center text-center py-5 px-3">
   <div>
-    <h2 class="bold home-h2-container mt-3">Pricing</h2>
-    <p class="ngo-cta">We want you to try Vamos and convince you of our plattform. Therefore the whole first month is free without automatic renewal.</p>
-    <%= link_to "Create free project", new_ngo_path, class: "button-vamos primary-style mt-2 mb-3" %>
+    <h2 class="bold home-h2-container mt-3"><%= t(".pricing_title") %></h2>
+    <p class="ngo-cta"><%= t(".pricing_sub_title") %></p>
+    <%= link_to t(".pricing_button"), new_ngo_path, class: "button-vamos primary-style mt-2 mb-3" %>
   </div>
 </div>
 

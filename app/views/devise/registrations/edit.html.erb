@@ -1,35 +1,73 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="content-container w-75 mt-5">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+<!--   <h2 class="mb-4">Edit profile</h2>
+ -->
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <div class="form-inputs">
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+      <% if current_user.ngo %>
+        <h2 class="orange-title">Edit NGO</h2>
+        <%= f.simple_fields_for current_user.ngo do |t|%>
+          <%= t.input :name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { class: "mb-4",autocomplete: "name" }%>
+          <%= t.input :description,
+                    required: true,
+                    autofocus: true,
+                    input_html: { class: "mb-4",autocomplete: "description" }%>
+        <% end %>
+      <% end %>
 
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-  </div>
+      <h2 class="orange-title">Edit User</h2>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
+      <%= f.input :first_name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { class: "mb-4",autocomplete: "first-name" }%>
+      <%= f.input :last_name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { class: "mb-4",autocomplete: "last-name" }%>
 
-<h3>Cancel my account</h3>
+      <%= f.input :phone,
+                  required: true,
+                  autofocus: true,
+                  input_html: { class: "mb-4",autocomplete: "phone" }%>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <%= f.input :description,
+                  required: true,
+                  autofocus: true,
+                  input_html: { class: "mb-4",autocomplete: "description" }%>
 
-<%= link_to "Back", :back %>
+
+
+      <%= f.input :email, required: true, autofocus: true %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
+
+      <%= f.input :password,
+                  hint: "leave it blank if you don't want to change it",
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :current_password,
+                  hint: "we need your current password to confirm your changes",
+                  required: true,
+                  input_html: { autocomplete: "current-password" } %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Update", class: "button-vamos primary-style" %>
+    </div>
+  <% end %>
+
+  <p class="mt-5"><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :deletes, class: "dark-gray" %></p>
+
+  <%= link_to "Back", :back %>
+</div>
