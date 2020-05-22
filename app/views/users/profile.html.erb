@@ -20,11 +20,45 @@
           </div>
           <div class="user-image-container">
             <%= cl_image_tag @user.photo.key, class: "user-image"%>
-            <%= link_to user_profile_path do %>
-              <div class="button-edit-user-image">
-                Change
+            <!-- Start modal - edit picture -->
+            <button type="button" class="button-edit-user-image" data-toggle="modal" data-target="#exampleModalCenter">
+              Change
+            </button>
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Change picture</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+                        <label>
+                          <div class="modal-button-edit-pic">
+                            <i class="far fa-image"></i>
+                          </div>
+                          <span style="display:none;">
+                          <%= f.input :photo, as: :file, input_html: {class: "logo-input"} %>
+                          </span>
+                          <%= f.input :current_password,
+                            hint: "we need your current password to confirm your changes",
+                            required: true,
+                            input_html: { autocomplete: "current-password" } %>
+                        </label>
+                      <%= f.button :submit, "Sign up", class: "mt-3 button-vamos primary-style w-100"  %>
+                    <% end %>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary save-changes-image">Save changes</button>
+                  </div>
+                </div>
               </div>
-            <% end %>
+            </div>
+            <!-- End modal - edit picture -->
           </div>
           <div class="container">
             <div class="row my-4">
@@ -70,11 +104,32 @@
             <div class="d-flex justify-content-between">
               <div class="ngo-image-container">
                 <%= cl_image_tag @user.ngo.logo.key, class: "ngo-image"%>
-                <%= link_to user_profile_path do %>
-                  <div class="button-edit-ngo-image">
-                    Change
+                <!-- Start modal - edit picture -->
+                <button type="button" class="button-edit-ngo-image" data-toggle="modal" data-target="#exampleModalCenter">
+                  Change
+                </button>
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
                   </div>
-                <% end %>
+                </div>
+                <!-- End modal - edit picture -->
+
+
               </div>
             </div>
             <div class="container">
