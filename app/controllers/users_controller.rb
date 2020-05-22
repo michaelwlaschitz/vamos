@@ -10,4 +10,10 @@ class UsersController < ApplicationController
     @ngo_bookings = current_user.ngo_bookings
   end
 
+  def application
+    @user = current_user
+    @ngo_bookings = current_user.ngo_bookings
+    @bookings = current_user.bookings.order(created_at: :asc)
+  end
+
 end
