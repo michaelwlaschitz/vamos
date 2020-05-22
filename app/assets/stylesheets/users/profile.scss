@@ -1,3 +1,179 @@
+.button-edit-profile {
+  font-size: 16px;
+  color: $green-vamos;
+  border: 1px solid $green-vamos;
+  border-radius: 7px;
+  text-align: center;
+  padding: 5px 40px;
+  width: 200px;
+  &:hover {
+    background-color: $green-vamos;
+    color: white;
+  }
+}
+
+.profile-page {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  .box-title {
+    height: 70px;
+    text-align: center;
+    padding-top: 25px;
+    font-weight: bold;
+    color: $orange-vamos;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-bottom: 0.5px solid $orange-vamos;
+  }
+  .left-part {
+    width: 30%;
+    -webkit-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+    box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+  }
+  .right-part {
+    width: 60%;
+    -webkit-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+    box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+  }
+}
+
+.left-part {
+  .user-image-container {
+    width: 70%;
+    margin: auto;
+    position: relative;
+    .user-image {
+      margin-top: 20px;
+      border-radius: 50%;
+      width: 100%;
+      -webkit-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+      -moz-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+      box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+    }
+    .button-edit-user-image {
+      position: absolute;
+      font-size: 16px;
+      bottom: 0px;
+      right: 55px;
+      width: 100px;
+      height: 30px;
+      border-radius: 20px;
+      background-color: $green-vamos;
+      color: white;
+      text-align: center;
+      padding-top: 3px;
+      &:hover {
+        background-color: white;
+        border: 1px solid $green-vamos;
+        color: $green-vamos;
+      }
+    }
+  }
+  .detail-title {
+    font-weight: bold;
+  }
+}
+
+.right-part {
+  .ngo-details-content {
+    padding: 20px;
+    .ngo-image-container {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      .ngo-image {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .button-edit-ngo-image {
+        position: absolute;
+        font-size: 16px;
+        bottom: 0px;
+        right: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100px;
+        height: 30px;
+        border-radius: 20px;
+        background-color: $green-vamos;
+        color: white;
+        text-align: center;
+        padding-top: 4px;
+        &:hover {
+          background-color: white;
+          border: 1px solid $green-vamos;
+          color: $green-vamos;
+        }
+      }
+    }
+    .detail-title {
+      font-weight: bold;
+    }
+    .reviews-title {
+      padding-top: 25px;
+      color: $orange-vamos;
+      font-weight: bold;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+    .review {
+      display: flex;
+      justify-content: between;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding-top: 10px;
+      .review-user-image-container {
+        width: 20%;
+        .review-user-image {
+          width: 70px;
+          border-radius: 50%;
+        }
+      }
+      .review-content {
+        padding-bottom: 30px;
+        border-bottom: 1px solid $light-gray;
+        width: 80%;
+        .review-team {
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        .review-text {
+          font-weight: lighter;
+        }
+        .review-project {
+          color: $orange-vamos;
+          font-weight: lighter;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .orange-title {
   color: $orange-vamos;
   // font-weight: lighter;
@@ -80,11 +256,14 @@
 
 // IF USER IS VOLUNTEER
 
-.user-image {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+.content-container-profile {
+  .user-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
 }
+
 
 .team-member-yes-exist-volunteer{  //contour size
   border-radius: 50%;

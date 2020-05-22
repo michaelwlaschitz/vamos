@@ -27,7 +27,7 @@
             <%= f.input :category, collection: ["Seniors", "Children", "Environment", "Social", "Cultural", "Medical"], label:"Category of Project", class: 'form-control' %>
             <div class="d-flex justify-content-between">
               <%= f.input :capacity, collection: 1..30, label: "How many volunteers?",class: 'form-control' %>
-              <%= f.input :hours_per_week, collection: 1..40, label: "Hours/Week for Volunteers",class: 'form-control' %>
+              <%= f.input :start_date, label: "Start date",class: 'form-control' %>
             </div>
 
 
@@ -85,7 +85,7 @@
         <%= f.input :address, placeholder: 'Address', label:false,class: 'form-control' %>
         <%= f.input :category, collection: ["Seniors", "Children", "Environment", "Social", "Cultural", "Medical"], label: "Category of Project", class: 'form-control' %>
         <%= f.input :capacity, collection: 1..30, label: "Number of Volunteers Needed",class: 'form-control' %>
-        <%= f.input :hours_per_week, collection: 1..40, label: "Hours per Week for Volunteers",class: 'form-control' %>
+        <%= f.input :start_date, label: "Start date",class: 'form-control' %>
 
         <div class="d-flex align-items-center">
           <label class="button-upload-file mr-2">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_155727) do
+ActiveRecord::Schema.define(version: 2020_05_21_154909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,13 +65,12 @@ ActiveRecord::Schema.define(version: 2020_03_31_155727) do
   end
 
   create_table "ngos", force: :cascade do |t|
-    t.string "name"
-    t.string "phone"
     t.text "description"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "address"
+    t.string "name"
     t.index ["user_id"], name: "index_ngos_on_user_id"
   end
 
@@ -86,7 +85,10 @@ ActiveRecord::Schema.define(version: 2020_03_31_155727) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
-    t.integer "hours_per_week"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "start_time"
+    t.integer "end_time"
     t.index ["ngo_id"], name: "index_projects_on_ngo_id"
   end
 
