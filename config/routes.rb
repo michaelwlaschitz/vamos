@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
     resources :teams, only: [:new, :create]
 
+  get 'users/application', to: 'users#application', as: :user_application
+
     resources :ngos, only: [:new, :create]
 
     resources :projects, only: [:index, :create, :new, :show] do

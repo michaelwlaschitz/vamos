@@ -1,0 +1,176 @@
+// ngo application container for desktop
+
+.mission-date {
+  text-decoration: underline;
+}
+
+.project-name-booking, .number, .date-application, .numb-hour, .numb-booking {
+  font-weight: lighter
+}
+
+.button-details {
+  color: #f28b3c;
+  width: 30px;
+  border: 1px solid #f28b3c;
+  font-weight: lighter;
+  margin-bottom: 0px;
+  padding: 7px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 5px;
+  a:hover{
+    color: #f28b3c !important;
+    text-decoration: none;
+  }
+}
+
+#accepted-text-m {
+  font-style: bold;
+
+}
+
+#accepted-text-m, #rejected-text-m {
+  text-align: left;
+}
+
+.rejected-text {
+  font-size: 14px;
+}
+
+
+.booking-status-app-desktop {
+    width: 150px;
+    text-align: center;
+    .accept-button-app-desktop {
+      border: 1px solid white;
+      width: 80%;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      background-color: $orange-vamos;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: 2px;
+      .green-color {
+        color: white;
+      }
+    }
+    .reject-button-app-desktop {
+      border: 1px solid $orange-vamos;
+      width: 80%;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      background-color: white;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: 2px;
+      .red-color {
+        color: $orange-vamos;
+      }
+    }
+}
+
+.confirmed-label {
+  font-size: 16px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+
+
+// ngo application container for mobile
+
+.title-mobile {
+  color: #f28b3c;
+  font-size: 28px;
+  padding-left: 5px;
+  margin-top: 0;
+}
+
+.ngo-bookings-mobile {
+  width: 90%;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.ngo-booking {
+  align-items: center;
+  height: 110px;
+  .booking-name-team {
+    width: 70%;
+    height: 150px;
+    .team-info {
+      color: $light-gray;
+      .send-a-message {
+        // background-color: $orange-vamos;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+        color: $orange-vamos;
+        font-size: 30px;
+        padding-left: 5px;
+        padding-top: 2px;
+      }
+    }
+    .team-name {
+      font-weight: lighter;
+    }
+  }
+
+  .booking-status {
+    margin-left: 20px;
+    width: 30%;
+    max-width: 83px;
+    text-align: center;
+    .accept-button {
+      border: 1px solid white;
+      width: 100%;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      background-color: $orange-vamos;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: 2px;
+      .green-color {
+        color: white;
+      }
+    }
+    .reject-button {
+      border: 1px solid $orange-vamos;
+      width: 100%;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      background-color: white;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: 2px;
+      .red-color {
+        color: $orange-vamos;
+      }
+    }
+  }
+}
+
+.project-style {
+  font-size: 16px;
+}
+
+.team-name-ngo {
+  font-weight: lighter;
+}
+
+.line-1 {
+  height: 15px;
+}
+
+.arrow {
+  margin-left: 10px;
+  color: #f28b3c;
+}
