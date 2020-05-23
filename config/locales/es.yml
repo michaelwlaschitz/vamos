@@ -20,6 +20,15 @@ es:
       medical: "Salud"
       seniors: "Mayores"
 
+    modal:
+      login: "Por favor inicia sesión"
+      password: "Contraseña"
+      login_button: "Inicia sesión"
+
+    devise_links:
+      signup: "Regístrate"
+      forgot_password: "Olvidó su contraseña?"
+
 
   activerecord:
     models:
@@ -158,3 +167,19 @@ es:
       motivation: "Escribe unas palabras sobre la motivación de tí y tus amigos para ayudar en ese proyecto.
         Aumenta sus chance de obtener los espacios disponibles."
 
+  devise:
+    registrations:
+      new:
+        title_for_html: "Bienvenido a <span style='color: #fb8500'>Vamos</span> - la plataforma para el voluntariado con tus amigos"
+        first_name: "Nombre*"
+        last_name: "Apellido*"
+        email: "Email*"
+        password: "Contraseña*"
+        password_confirmation: "Confirma Contraseña*"
+        select_picture: "Elige una foto"
+        signup: "Regístrate"
+
+    passwords:
+      new:
+        forgot_password_for_html: "Olvidó su contraseña? <br> No problema!"
+        reset_password: "Restablecer mi contraseña"
