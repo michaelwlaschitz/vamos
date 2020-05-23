@@ -2,7 +2,7 @@
 <%= render 'shared/mobile_navbar' %>
   <div class="content-container">
 <!-- desktop version of application-->
-    <div class="content-container-ngo-bookings-desktop mb-5">
+    <div class="content-container-ngo-bookings-desktop hide-mobile mb-5">
       <div class="container ngo-booking-datas mb-5 mt-5 hide-mobile">
         <div class="row table-titles border-bottom">
           <div class="col-2">
@@ -48,17 +48,17 @@
             <div class="number col-2">
               <h4 class="m-0 team-name-ngo"><%= booking.team.name %></h4>
               <% link_to teams_path(booking.team) %>
-              <h4 style="color:#f28b3c">X people</h4>
+              <h4 style="color:#f28b3c"> <%= booking.team.users.count %> people</h4>
               </a>
             </div>
             <div class="col-1">
-              <h4 class="date-application">5 June</h4>
+              <h4 class="date-application"><%= booking.project.start_date.strftime("%d %B") %> </h4>
             </div>
             <div class="col-1">
-              <h4 class="numb-hour">X hours</h4>
+              <h4 class="numb-hour"><%= (booking.project.end_time - booking.project.start_time) %> hours</h4>
             </div>
             <div class="col-2">
-              <h4 class="numb-booking"><%= booking.created_at.strftime("%m-%d-%Y") %></h4>
+              <h4 class="numb-booking"><%= booking.created_at.strftime("%d %B") %></h4>
             </div>
             <div class="col-1">
               <%= link_to "Details", filter_location_path, class: "button-details w-20 mt-3" %>
@@ -80,14 +80,13 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div>
                   <div class="line-1 d-flex mY-4 pb-0">
-                    <p class="date-style">5 June - </p>
-                    <p class="m-0 team-name-ngo"><%= booking.team.name %></p>
+                    <p class="date-style"><%= booking.project.start_date.strftime("%d/%m ") %>·  </p>
+                    <pre> </pre>
+                    <p class="numb-style"> <%= booking.team.users.count %> people · </p>
+                    <pre> </pre>
+                    <p class="hour-style"> <%= (booking.project.end_time - booking.project.start_time) %> hours</p>
                   </div>
-                  <div class="line-2 d-flex mb-0 pb-0">
-                    <p class="numb-style">X people - </p>
-                    <p class="hour-style">X hours</p>
-                  </div>
-                  <div class="line-3 d-flex mb-6">
+                  <div class="line-3 d-flex mb-6 mt-3">
                     <% booking.team.users.each do |user| %>
                       <div class= "pic"> <%= cl_image_tag user.photo.key, width: 30, height: 30, class: "rounded-circle" %>
                       </div>
@@ -97,6 +96,7 @@
                       <%= link_to "Accept", accept_booking_path(booking), method: :patch, class: "green-color"%>
                     </div>
                   </div>
+                  <p class="m-0 team-name-ngo"><%= booking.team.name %></p>
                 </div>
               </div>
             </div>
@@ -105,8 +105,10 @@
           <div class="booking-status mr-2">
             <% if booking.status == "pending" %>
               <div class="accept-button px-3 my-2">
+                <%= link_to "Accept", accept_booking_path(booking), method: :patch, class: "green-color"%>
               </div>
               <div class="reject-button px-3 my-2">
+                <%= link_to "Reject", reject_booking_path(booking), method: :patch, class: "red-color"%>
               </div>
             <% elsif booking.status == "accepted" %>
               <p id="accepted-text">Accepted</p>

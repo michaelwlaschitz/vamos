@@ -79,7 +79,9 @@
   margin-bottom: 0;
 }
 
-
+.content-container-ngo-bookings-desktop {
+  min-height: 400px;
+}
 
 // ngo application container for mobile
 
@@ -98,9 +100,9 @@
 
 .ngo-booking {
   align-items: center;
-  height: 110px;
+  height: 120px;
   .booking-name-team {
-    width: 70%;
+    width: 90%;
     height: 150px;
     .team-info {
       color: $light-gray;
@@ -121,9 +123,8 @@
   }
 
   .booking-status {
-    margin-left: 20px;
     width: 30%;
-    max-width: 83px;
+    max-width: 80px;
     text-align: center;
     .accept-button {
       border: 1px solid white;
@@ -174,3 +175,4 @@
   margin-left: 10px;
   color: #f28b3c;
 }
+
