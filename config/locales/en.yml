@@ -101,6 +101,8 @@ en:
       sub_title_for_html: "Filter, search, apply with your team <br>for local volunteering."
       find: "Find volunteers >>"
 
+      lukas_for_html: "Lucas, 24 <br>Student "
+
       function1_title: "Find local projects that fit you"
       function1_text: "With Vamos you can filter by category, location and time to find the best opportunity for you."
       function2_title: "Apply with your friends"
@@ -120,6 +122,7 @@ en:
 
       vision_title: "Our Vision"
       vision_text: "We are a young and international team from France, Spain and Austria. Our goal is to empower people to do good in their local environment. The users of Vamos should feel inspired and motivated to help others in need and gain invaluable experience together with their friends."
+
     about_vamos:
       vision_title: "Our Vision"
       vision_text: "We are a young and international team from France, Spain and Austria. Our goal is to empower people to do good in their local environment. The users of Vamos should feel inspired and motivated to help others in need and gain invaluable experience together with their friends."
