@@ -101,7 +101,18 @@ en:
       sub_title_for_html: "Filter, search, apply with your team <br>for local volunteering."
       find: "Find volunteers >>"
 
-      lukas_for_html: "Lucas, 24 <br>Student "
+      team_name_for_html: "Team name: <span style='color: #fb8500'>The VolunDeers</span>"
+
+      lukas_for_html: "<strong>Lucas, 24 </strong>"
+      business_student: "Business Student"
+      sophie_for_html: "<strong>Sophie, 26</strong>"
+      graphic_designer: "Graphic Designer"
+      max_for_html: "<strong>Max, 27 </strong>"
+      event_manager: "Event Manager"
+      lisa_for_html: "<strong>Lisa, 23 </strong>"
+      medical_student: "Medical Student"
+      volunteer_cta_title: "Do volunteering with your team of friends!"
+      volunteer_cta_sub_title: "In Vamos you can easily create a team, invite your friends and join volunteering opportunities together."
 
       function1_title: "Find local projects that fit you"
       function1_text: "With Vamos you can filter by category, location and time to find the best opportunity for you."
@@ -111,7 +122,7 @@ en:
       function3_text: "Find out all the details about the opportunity and engage with the volunteering coordinator via chat."
 
       ngo_cta_title: "Looking for volunteers?"
-      ngo_cta_text_for_hmtl: "Create your first project for free in less than <strong> 3 minutes! </strong>"
+      ngo_cta_text_for_html: "Create your first project for free in less than <strong> 3 minutes! </strong>"
       ngo_cta_button: "Get started"
 
       process_title: "How does it work?"
