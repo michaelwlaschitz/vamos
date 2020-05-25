@@ -2,7 +2,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
   def change
     create_table :projects do |t|
       t.string :title
-      t.integer :start_date
+
       t.string :address
       t.text :description
       t.integer :capacity
