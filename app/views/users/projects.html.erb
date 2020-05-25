@@ -1,0 +1,144 @@
+<!-- Mobile version -->
+<div class="mobile-projects-index">
+  <div class="has-navbar-so-margin">
+    <%= render 'shared/mobile_navbar' %>
+    <div class = "content-container">
+      <div class="mobile-card-container my-3">
+        <h2 class="title-mobile"> Your projects</h2>
+        <% @ngo_projects.each do |project| %>
+          <%= link_to project_path(project) do %>
+            <div class="mobile-project-card my-4">
+
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <% project.photos.each_with_index do |photo, index| %>
+                    <% if index == 0 %>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="<% index %>" class="active"></li>
+                    <% else %>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="<% index %>"></li>
+                    <% end %>
+                  <% end %>
+                </ol>
+                <div class="carousel-inner">
+                  <% project.photos.each_with_index do |photo, index| %>
+                    <% if index == 0 %>
+                      <div class="carousel-item active">
+                        <%= cl_image_tag photo.key, class: "d-block project-image", alt:"Project picture" %>
+                        <%= render "projects/partial_card_icons", project: project %>
+                      </div>
+                    <% else %>
+                      <div class="carousel-item">
+                        <%= cl_image_tag photo.key, class: "d-block project-image", alt:"Project picture" %>
+                        <%= render "projects/partial_card_icons", project: project %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+              <div class="project-text-stuff ml-2">
+                <h5 class="mt-2"><%= link_to project.title, project_path(project), class: "project-title"%></h5>
+                <p class="project-ong"><%= project.ngo.name if project.ngo %></p>
+                <div class="project-elements d-flex justify-content-left">
+                  <div class="element"><i class="far fa-clock"></i><%= project.start_date %></div>
+                  <div class="element"><i class="fas fa-user-friends"></i><%= project.capacity%></div>
+                  <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+
+        <!-- Create your team button -->
+<!--         <div class="desktop-apply-button-showpage apply-button-showpage">
+          <%= submit_tag(t(".apply"), class: "button-vamos primary-style mb-5") %>
+        </div> -->
+        <div id="button-info mb-5" class="d-flex button mt-4">
+          <a class="button-vamos primary-style w-100 mt-1" href="/projects/new">Create Project</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- desktop version -->
+<div class="has-navbar-so-margin">
+<%= render 'shared/mobile_navbar' %>
+<div class="desktop-projects-index">
+  <div class="d-flex">
+    <div class="desktop-card-container">
+    <% @ngo_projects.each do |project| %>
+      <%= link_to project_path(project) do %>
+        <div class="row mx-3 py-4 border-top">
+          <div class = "desktop-project-card">
+            <div>
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <% project.photos.each_with_index do |photo, index| %>
+                    <% if index == 0 %>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="<% index %>" class="active"></li>
+                    <% else %>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="<% index %>"></li>
+                    <% end %>
+                  <% end %>
+                </ol>
+                <div class="carousel-inner">
+                  <% project.photos.each_with_index do |photo, index| %>
+                    <% if index == 0 %>
+                      <div class="carousel-item active">
+                        <%= cl_image_tag photo.key, class: "d-block project-image", alt:"Project picture" %>
+                      </div>
+                    <% else %>
+                      <div class="carousel-item">
+                        <%= cl_image_tag photo.key, class: "d-block project-image", alt:"Project picture" %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+            <div class="project-text-stuff ml-3">
+              <h5><%= link_to project.title, project_path(project), class: "project-title"%></h5>
+              <p class="project-ong my-2"><%= project.ngo.name if project.ngo %></p>
+              <div class="project-elements d-flex">
+                <div class="element mr-3"><i class="far fa-clock"></i><%= project.start_date %></div>
+                <div class="element mr-3"><i class="fas fa-user-friends"></i><%= project.capacity%></div>
+                <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
+              </div>
+              <div class="project-description mt-4">
+                <p class="paragraph-no-margin"><%= project.description %></p>
+              </div>
+            </div>
+          </div>
+          <!-- Create your project button -->
+          <div id="button-info mb-5" class="d-flex button mt-4">
+            <a class="button-vamos primary-style w-100 mt-1" href="/projects/new">Create Project</a>
+          </div>
+
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+    <div class="desktop-img">
+      <div class="image-container">
+        <%= image_tag "volunteer_img_ngo.jpg", class: "filter-image"%>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

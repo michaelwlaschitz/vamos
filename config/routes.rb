@@ -21,7 +21,9 @@ Rails.application.routes.draw do
 
     resources :teams, only: [:new, :create]
 
-  get 'users/application', to: 'users#application', as: :user_application
+  get 'users/applications', to: 'users#applications', as: :user_applications
+  get 'users/projects', to: 'users#projects', as: :user_projects #last modification
+
 
     resources :ngos, only: [:new, :create]
 
