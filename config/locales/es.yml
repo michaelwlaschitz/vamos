@@ -1,5 +1,11 @@
 es:
 
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
   global:
     navbar:
       search: "Buscar projectos"
@@ -79,8 +85,11 @@ es:
       event_manager: "Administrador de evento"
       lisa_for_html: "<strong>Lisa, 23</strong>"
       medical_student: "Estudiante de medicina"
-      volunteer_cta_title: "Haz voluntariado con tu equipo de amigos."
+      volunteer_cta_title_for_html: "Haz voluntariado con<br> tu equipo de amigos."
       volunteer_cta_sub_title: "En Vamos, puede crear fácilmente un equipo, invitar a sus amigos y unirse a las oportunidades de voluntariado juntos."
+      volunteer_cta_button: "Mira oportunidades"
+
+      function_title_mobile: "Como funciona"
 
       function1_title: "Encuentra proyectos locales que se ajusten a ti"
       function1_text: "Con Vamos, puedes filtrar por categoría, ubicación y horas para encontrar la mejor oportunidad para ti"

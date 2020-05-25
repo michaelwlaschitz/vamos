@@ -30,6 +30,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
   global:
     navbar:
       search: "Search projects"
@@ -58,8 +65,6 @@ en:
     devise_links:
       signup: "Sign up"
       forgot_password: "Forgot your password?"
-
-
 
 
   activerecord:
@@ -111,8 +116,11 @@ en:
       event_manager: "Event Manager"
       lisa_for_html: "<strong>Lisa, 23 </strong>"
       medical_student: "Medical Student"
-      volunteer_cta_title: "Do volunteering with your team of friends!"
-      volunteer_cta_sub_title: "In Vamos you can easily create a team, invite your friends and join volunteering opportunities together."
+      volunteer_cta_title_for_html: "Create a team and<br> do good together!"
+      volunteer_cta_sub_title: "In Vamos you can easily invite your friends, apply as a team and chat altogehter with the organization."
+      volunteer_cta_button: "Check opportunities"
+
+      function_title_mobile: "How it works"
 
       function1_title: "Find local projects that fit you"
       function1_text: "With Vamos you can filter by category, location and time to find the best opportunity for you."
@@ -186,6 +194,8 @@ en:
       filter_title: "Filter Volunteering Opportunities"
       location: "Location"
       interest: "Interest"
+
+
     show:
       project: "Projects"
       organization: "Organization"
