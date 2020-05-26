@@ -28,10 +28,7 @@
               <%= cl_image_tag current_user.photo.key, width: 50, height: 50, class: "rounded-circle" %>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to t("global.navbar.conversations"), conversations_path, class: "dropdown-item" %>
               <%= link_to t("global.navbar.profile"), user_profile_path, class: "dropdown-item" %>
-              <%= link_to t("global.navbar.applications"), user_application_path, class: "dropdown-item" %>
-              <%= link_to t("global.navbar.projects"), user_application_path, class: "dropdown-item" %>
               <div class="dropdown-divider"></div>
               <%= link_to t("global.navbar.logout"), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>

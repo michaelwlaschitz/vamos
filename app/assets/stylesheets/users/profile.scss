@@ -256,20 +256,8 @@
 }
 
 
+// USER = VOLUNTEER
 
-
-
-
-
-
-
-
-
-
-
-
-
-// USER = VOLUNTEER (0LD CODE)
 .orange-title {
   color: $orange-vamos;
   // font-weight: lighter;
@@ -279,8 +267,6 @@
   width: 50%;
   max-width: 200px;
 }
-
-// IF USER IS VOLUNTEER
 
 .content-container-profile {
   .user-image {
@@ -295,51 +281,14 @@
   border: 2px solid #fb8500;
 }
 
-@media(min-width: 992px) {
-  .rounded-circle-volunteer {
-    width: 76px;
-    height: 76px;
-  }
-  .rounded-circle {
-    margin-right: 15px;
-    width: 40px;
-    height: 40px;
-  }
-  .user-photo {
-    margin-right: 150px;
-    margin-left: 150px;
-    padding-right: 80px;
-    padding-left: 80px;
-  }
-  .team-name {
-    margin-bottom: 20px;
-  }
-}
-@media(min-width: 768px) and (max-width: 991px) {
-  .rounded-circle-volunteer {
-    width: 66px;
-    height: 66px;
-  }
-  .user-photo {
-    margin-right: 150px;
-    margin-left: 150px;
-  }
-}
-
-@media(max-width: 767px) {
-  .rounded-circle-volunteer {
-  }
-}
-
-
-.create-team-button {
+.sign-out-button {
   border-bottom: 1px solid gray;
   color: gray;
   font-weight: lighter;
   margin-bottom: 0px;
   padding-bottom: 0px;
 }
-.create-team-button-alternative {
+.create-team-button {
   margin-top: 20px;
   padding-top: 5px;
   border: 1px solid $orange-vamos;
@@ -464,21 +413,6 @@
 }
 
 
-@media(min-width: 992px) {
-  .project-card-profile {
-    max-width: 350px;
-    padding-right: 2px;
-  }
-}
-
-@media(min-width: 768px) and (max-width: 991px) {
-  .project-card-profile {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-    max-width: 350px;
-  }
-}
-
 .content-container-profile {
   margin: auto;
   margin-bottom: 30px;
@@ -488,39 +422,12 @@
   display: grid;
 }
 
-@media(min-width: 992px) {
-  .content-container-profile {
-    width: 80%;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
-  }
-}
-@media(min-width: 768px) and (max-width: 991px) {
-  .content-container-profile {
-    width: 80%;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-
-  }
-}
-
 .content-container-profile-team {
   margin: auto;
   margin-bottom: 30px;
   margin-top: 20px;
   width: 90%;
   padding: 0px;
-}
-
-@media(min-width: 992px) {
-  .content-container-profile-team {
-    width: 80%;
-  }
-}
-@media(min-width: 768px) and (max-width: 991px) {
-  .content-container-profile-team {
-    width: 80%;
-  }
 }
 
 .fa-user-friends {
@@ -536,50 +443,6 @@
   display: grid;
 }
 
-@media(min-width: 992px) {
-  .content-container-profile-ngo-project {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-  }
-  .ngo-app-datas {
-    min-height: 500px;
-  }
-}
-
-@media(min-width: 768px) and (max-width: 991px) {
-  .content-container-profile-ngo-project {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-  }
-}
-
-@media(min-width: 575px) and (max-width: 767px) {
-  .content-container-profile-ngo-project {
-    width: 80%;
-  }
-}
-
-
-
-// ngo profile container
-.content-container-ngo-profile {
-  margin: auto;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  width: 90%;
-  padding: 0px;
-  display: block;
-}
-
-@media(min-width: 992px) {
-  .content-container-ngo-profile {
-    display: none;
-  }
-}
-
-
-// ngo infos on the left, display only on desktop
-
 .ngo-datas {
   padding-right: 50px;
   padding-left: 80px;
@@ -590,75 +453,70 @@
 }
 
 @media(min-width: 992px) {
-  .ngo-datas {
-    display: block;
+  .rounded-circle-volunteer {
+    width: 76px;
+    height: 76px;
+  }
+  .rounded-circle {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+  .user-photo {
+    margin-right: 150px;
+    margin-left: 150px;
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+  .team-name {
+    margin-bottom: 20px;
+  }
+  .sign-out-button {
+    display: none;
+  }
+  .project-card-profile {
+    max-width: 350px;
+    padding-right: 2px;
+  }
+  .content-container-profile {
+    width: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+  .content-container-profile-team {
+    width: 80%;
   }
 }
 
-
-//ngo rows, application on desktop
-.table-titles {
-  font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.chat-button {
-  padding-top: 10px;
-  padding-left: 20px;
-  a:hover {
-    color: $black-gray;
+@media(min-width: 768px) and (max-width: 991px) {
+  .rounded-circle-volunteer {
+    width: 66px;
+    height: 66px;
+  }
+  .user-photo {
+    margin-right: 150px;
+    margin-left: 150px;
+  }
+  .sign-out-button {
+    display: none;
+  }
+  .project-card-profile {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    max-width: 350px;
+  }
+  .content-container-profile {
+    width: 80%;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+  .content-container-profile-team {
+    width: 80%;
   }
 }
 
-// ngo profile
-
-.card-ngo-profile {
-  border: 1px solid #e4e4e4;
-  margin-top: 50px;
-  min-width: 250px;
-  max-width: 250px;
-  max-height: 450px;
-  .ngo-info {
-    padding-top: 40px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    position: relative;
-  }
+@media(max-width: 767px) {
 }
 
-.edit-profile-button{
-  color: $green-vamos;
-  text-align: right;
-  font-weight: lighter;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  &:hover {
-    text-decoration: underline;
-  }
-}
 
-.ngo-image-desktop {
-  border-radius: 90px;
-  width: 140px;
-  object-fit: cover;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-.orange-title-desktop {
-  color: $orange-vamos;
-  margin-right: 10px;
-  text-align: center;
-}
-
-.first_name {
-  text-align: center;
-}
-
-#button-info {
-  min-width: 180px;
-}

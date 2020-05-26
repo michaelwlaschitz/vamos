@@ -1,362 +1,30 @@
 <%= render 'shared/mobile_navbar' %>
-<div class="desktop-profile-page">
-  <div class="d-flex justify-content-between">
-    <div></div>
-    <%= link_to edit_user_registration_path do %>
-      <div class="button-edit-profile mb-3">
-        Edit profile
-      </div>
-    <% end %>
-  </div>
 
-  <!-- USER NGO -->
-  <% if current_user.ngo %>
-    <div class="parts-container justify-content-between align-items-start">
-      <div class="left-part">
-        <div class="box-title">
-          PERSONAL DETAILS
-        </div>
-        <div class="user-image-container">
-          <%= cl_image_tag @user.photo.key, class: "user-image"%>
-          <!-- Start modal - edit picture -->
-          <button type="button" class="button-edit-user-image" data-toggle="modal" data-target="#exampleModalCenter">
-            Change
-          </button>
-          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Change picture</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-
-                      <label>
-                        <div class="modal-button-edit-pic">
-                          <i class="far fa-image"></i>
-                        </div>
-                        <span style="display:none;">
-                        <%= f.input :photo, as: :file, input_html: {class: "logo-input"} %>
-                        </span>
-                        <%= f.input :current_password,
-                          hint: "we need your current password to confirm your changes",
-                          required: true,
-                          input_html: { autocomplete: "current-password" } %>
-                      </label>
-                    <%= f.button :submit, "Sign up", class: "mt-3 button-vamos primary-style w-100"  %>
-                  <% end %>
-
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary save-changes-image">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End modal - edit picture -->
-        </div>
-        <div class="container">
-          <div class="row my-4">
-            <div class="col-4 detail-title">
-              Name
-            </div>
-            <div class="col-8">
-              <%= @user.first_name %>
-              <%= @user.last_name  %>
-            </div>
-          </div>
-          <div class="row my-4">
-            <div class="col-4 detail-title">
-              Phone
-            </div>
-            <div class="col-8">
-              <%= @user.phone %>
-            </div>
-          </div>
-          <div class="row my-4">
-            <div class="col-4 detail-title">
-              Email
-            </div>
-            <div class="col-8">
-              <%= @user.email %>
-            </div>
-          </div>
-          <div class="row my-4">
-            <div class="col-4 detail-title">
-              Description
-            </div>
-            <div class="col-8">
-              <%= @user.description %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="right-part">
-        <div class="box-title">
-        NGO DETAILS
-        </div>
-        <div class="ngo-details-content">
-          <div class="d-flex justify-content-between">
-            <div class="ngo-image-container">
-              <%= cl_image_tag @user.ngo.logo.key, class: "ngo-image"%>
-              <!-- Start modal - edit picture -->
-              <button type="button" class="button-edit-ngo-image" data-toggle="modal" data-target="#exampleModalCenter">
-                Change
-              </button>
-              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      ...
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End modal - edit picture -->
-
-
-            </div>
-          </div>
-          <div class="container">
-            <div class="row my-4">
-              <div class="col-3 detail-title">
-                Name
-              </div>
-              <div class="col-9">
-                <%= @user.ngo.name %>
-              </div>
-            </div>
-            <div class="row my-4">
-              <div class="col-3 detail-title">
-                Description
-              </div>
-              <div class="col-9">
-                <%= @user.ngo.description %>
-              </div>
-            </div>
-          </div>
-          <p class="reviews-title"><%= @user.ngo.name %>'s reviews:</p>
-          <div>
-            <div class="reviews-container">
-              <% @ngo_reviews.each do |review| %>
-                <div class="review">
-                  <div class="review-user-image-container">
-                    <%= cl_image_tag review.booking.team.users.first.photo.key, class: "review-user-image" %>
-                  </div>
-                  <div class="review-content">
-                    <p class="review-team"><%= review.booking.team.name %></p>
-                    <p class="review-text paragraph-no-margin"><%= review.content %></p>
-                    <div class="d-flex justify-content-between">
-                      <div></div>
-                      <%= link_to project_path(review.booking.project) do  %>
-                        <p class="review-project paragraph-no-margin"><%= review.booking.project.title %></p>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <!-- USER VOLUNTEER -->
-  <% else %>
-
-  <div class="content-container-profile border-bottom py-3 my-1">
-    <div class="d-flex">
-      <div class="element-1">
-        <%= cl_image_tag @user.photo.key, class: "user-image" %>
-      </div>
-      <div class="element-2 user-other-info">
-        <h5 class="py-1"><%= @user.first_name %> <%= @user.last_name %></h5>
-        <div class="email-user-ngo d-flex align-items-center my-2">
-          <div class="email-logo mr-2">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div class="email mr-3">
-            <p class="paragraph-no-margin"><%= @user.email %> </p>
-          </div>
-        </div>
-        <div class="phone-user d-flex align-items-center">
-          <% if @user.phone.present? %>
-          <div class="element mr-2">
-            <i class="fas fa-phone"></i>
-          </div>
-          <div class="phone-user-ngo mr-3">
-            <p class="paragraph-no-margin"><%= @user.phone %> </p>
-          </div>
-          <% else %>
-          <% end %>
-        </div>
-        <div class="d-flex justify-content-between mt-4">
-          <div></div>
-          <%= link_to "Sign out",  destroy_user_session_path , method: :delete, class: "create-team-button" %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="content-container-profile-team border-bottom pb-4 mt-3 mb-0">
-    <div class=" d-flex justify-content-between align-items-center">
-      <h2 class="orange-title">My teams</h2>
-    </div>
-
-    <% @user.teams.each do |team| %>
-    <div class="team-container">
-      <h5 class="team-name text-center mt-2"><%= team.name %></h5>
-      <div class=" user-photo d-flex justify-content-around mt-2">
-        <% team.users.each do |user| %>
-
-        <div class= "team-member-yes-exist-volunteer text-center mb-3">
-          <div class= "mb-2 mr-3"> <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer" %>
-            <%= user.first_name %>
-          </div>
-        </div>
-        <% end %>
-      </div>
-    </div>
-    <% end %>
-    <%= link_to new_team_path do %>
-    <div class="create-team-button-alternative text-center">
-      <p class="p-size">Create a team</p>
-    </div>
-    <% end %>
-  </div>
-
-  <div class="content-container-profile mt-3">
-    <h2 class="orange-title">My Application</h2>
-  </div>
-  <div class="content-container-profile mt-3">
-
-    <% current_user.bookings.each do |booking| %>
-    <%= link_to project_path(booking.project) do %>
-    <div class="project-card-profile flex-md-row mb-4 mt-3">
-      <div class="project-image" style="background-image: url('<%= cl_image_path booking.project.photos.first.key if booking.project.photos.attached? %>')">
-        <div class="interest-icon border rounded-circle">
-          <% if booking.project.category == "Children" %>
-            <i class="icon fas fa-child"></i>
-          <% elsif booking.project.category == "Social" %>
-            <i class="icon fas fa-user-friends"></i>
-          <% elsif booking.project.category == "Cultural" %>
-            <i class="icon fas fa-music"></i>
-          <% elsif booking.project.category == "Environment" %>
-            <i class="icon fas fa-leaf"></i>
-          <% else booking.project.category == "Elderly Care" %>
-            <i class="icon fab fa-accessible-icon"></i>
-          <% end %>
-        </div>
-        <% if booking.status == "accepted" %>
-        <div class="accepted-button status-button">
-          Accepted
-        </div>
-        <%= link_to new_booking_review_path(booking)  do  %>
-        <div class="review-button">
-          Add a review
-        </div>
-        <% end %>
-        <% elsif booking.status == "rejected" %>
-        <div class="rejected-button status-button">
-          Rejected
-        </div>
-        <% else %>
-        <div class="pending-button status-button">
-          Pending
-        </div>
-        <% end %>
-      </div>
-      <div class="project-text-stuff">
-        <h5 class="project-title"><%= booking.project.title.truncate(33) %></h5>
-        <p class="project-ong"><%= booking.project.ngo.name %></p>
-        <div class="project-elements d-flex justify-content-left">
-          <div class="element"><i class="far fa-clock"></i><%= booking.project.start_date %></div>
-          <div class="element"><i class="fas fa-user-friends"></i><%= booking.project.capacity %></div>
-          <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= booking.project.latitude %>" data-longitude="<%= booking.project.longitude %>">calculating...</span></div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-    <% end %>
-  </div>
-  <% end %>
-</div>
-
-<div class="mobile-profile-page">
-  <div class="has-navbar-so-margin">
+<!-- USER NGO -->
+<% if current_user.ngo %>
+  <!-- DESKTOP VERSION -->
+  <div class="desktop-profile-page">
     <div class="d-flex justify-content-between">
       <div></div>
       <%= link_to edit_user_registration_path do %>
-        <div class="button-edit-profile mb-3 mt-3 mr-3">
+        <div class="button-edit-profile mb-3">
           Edit profile
         </div>
       <% end %>
     </div>
 
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item box-title">
-        <a class="nav-link active" id="personal-details-tab" data-toggle="tab" href="#personal-details" role="tab" aria-controls="personal-details" aria-selected="true">PERSONAL INFO</a>
-      </li>
-      <li class="nav-item box-title">
-        <a class="nav-link" id="ngo-details-tab" data-toggle="tab" href="#ngo-details" role="tab" aria-controls="ngo-details" aria-selected="false">NGO INFO</a>
-      </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="personal-details" role="tabpanel" aria-labelledby="personal-details-tab">
+      <div class="parts-container justify-content-between align-items-start">
         <div class="left-part">
+          <div class="box-title">
+            PERSONAL DETAILS
+          </div>
           <div class="user-image-container">
             <%= cl_image_tag @user.photo.key, class: "user-image"%>
             <!-- Start modal - edit picture -->
             <button type="button" class="button-edit-user-image" data-toggle="modal" data-target="#exampleModalCenter">
               Change
             </button>
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Change picture</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-
-                        <label>
-                          <div class="modal-button-edit-pic">
-                            <i class="far fa-image"></i>
-                          </div>
-                          <span style="display:none;">
-                          <%= f.input :photo, as: :file, input_html: {class: "logo-input"} %>
-                          </span>
-                          <%= f.input :current_password,
-                            hint: "we need your current password to confirm your changes",
-                            required: true,
-                            input_html: { autocomplete: "current-password" } %>
-                        </label>
-                      <%= f.button :submit, "Sign up", class: "mt-3 button-vamos primary-style w-100"  %>
-                    <% end %>
-
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary save-changes-image">Save changes</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <!-- modal removed until we fix bug -->
             <!-- End modal - edit picture -->
           </div>
           <div class="container">
@@ -395,9 +63,10 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="tab-pane fade" id="ngo-details" role="tabpanel" aria-labelledby="ngo-details-tab">
         <div class="right-part">
+          <div class="box-title">
+          NGO DETAILS
+          </div>
           <div class="ngo-details-content">
             <div class="d-flex justify-content-between">
               <div class="ngo-image-container">
@@ -406,49 +75,16 @@
                 <button type="button" class="button-edit-ngo-image" data-toggle="modal" data-target="#exampleModalCenter">
                   Change
                 </button>
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Change picture</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-
-                            <label>
-                              <div class="modal-button-edit-pic">
-                                <i class="far fa-image"></i>
-                              </div>
-                              <span style="display:none;">
-                              <%= f.input :photo, as: :file, input_html: {class: "logo-input"} %>
-                              </span>
-                              <%= f.input :current_password,
-                                hint: "we need your current password to confirm your changes",
-                                required: true,
-                                input_html: { autocomplete: "current-password" } %>
-                            </label>
-                          <%= f.button :submit, "Sign up", class: "mt-3 button-vamos primary-style w-100"  %>
-                        <% end %>
-
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-primary save-changes-image">Save changes</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <!-- Modal removed temporary until bug fix -->
                 <!-- End modal - edit picture -->
               </div>
             </div>
-            <div class="container pr-0">
+            <div class="container">
               <div class="row my-4">
                 <div class="col-3 detail-title">
                   Name
                 </div>
-                <div class="col-8 pr-0">
+                <div class="col-9">
                   <%= @user.ngo.name %>
                 </div>
               </div>
@@ -456,7 +92,7 @@
                 <div class="col-3 detail-title">
                   Description
                 </div>
-                <div class="col-8 pr-0">
+                <div class="col-9">
                   <%= @user.ngo.description %>
                 </div>
               </div>
@@ -486,7 +122,262 @@
           </div>
         </div>
       </div>
+  </div>
+
+  <!-- MOBILE VERSION -->
+  <div class="mobile-profile-page">
+    <div class="has-navbar-so-margin">
+      <div class="d-flex justify-content-between">
+        <div></div>
+        <%= link_to edit_user_registration_path do %>
+          <div class="button-edit-profile mb-3 mt-3 mr-3">
+            Edit profile
+          </div>
+        <% end %>
+      </div>
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item box-title">
+          <a class="nav-link active" id="personal-details-tab" data-toggle="tab" href="#personal-details" role="tab" aria-controls="personal-details" aria-selected="true">PERSONAL INFO</a>
+        </li>
+        <li class="nav-item box-title">
+          <a class="nav-link" id="ngo-details-tab" data-toggle="tab" href="#ngo-details" role="tab" aria-controls="ngo-details" aria-selected="false">NGO INFO</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="personal-details" role="tabpanel" aria-labelledby="personal-details-tab">
+          <div class="left-part">
+            <div class="user-image-container">
+              <%= cl_image_tag @user.photo.key, class: "user-image"%>
+              <!-- Start modal - edit picture -->
+              <button type="button" class="button-edit-user-image" data-toggle="modal" data-target="#exampleModalCenter">
+                Change
+              </button>
+              <!-- Modal removed temporary until bug fix -->
+              <!-- End modal - edit picture -->
+            </div>
+            <div class="container">
+              <div class="row my-4">
+                <div class="col-4 detail-title">
+                  Name
+                </div>
+                <div class="col-8">
+                  <%= @user.first_name %>
+                  <%= @user.last_name  %>
+                </div>
+              </div>
+              <div class="row my-4">
+                <div class="col-4 detail-title">
+                  Phone
+                </div>
+                <div class="col-8">
+                  <%= @user.phone %>
+                </div>
+              </div>
+              <div class="row my-4">
+                <div class="col-4 detail-title">
+                  Email
+                </div>
+                <div class="col-8">
+                  <%= @user.email %>
+                </div>
+              </div>
+              <div class="row my-4">
+                <div class="col-4 detail-title">
+                  Description
+                </div>
+                <div class="col-8">
+                  <%= @user.description %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="ngo-details" role="tabpanel" aria-labelledby="ngo-details-tab">
+          <div class="right-part">
+            <div class="ngo-details-content">
+              <div class="d-flex justify-content-between">
+                <div class="ngo-image-container">
+                  <%= cl_image_tag @user.ngo.logo.key, class: "ngo-image"%>
+                  <!-- Start modal - edit picture -->
+                  <button type="button" class="button-edit-ngo-image" data-toggle="modal" data-target="#exampleModalCenter">
+                    Change
+                  </button>
+                  <!-- Modal removed temporary until bug fix -->
+                  <!-- End modal - edit picture -->
+                </div>
+              </div>
+              <div class="container pr-0">
+                <div class="row my-4">
+                  <div class="col-3 detail-title">
+                    Name
+                  </div>
+                  <div class="col-8 pr-0">
+                    <%= @user.ngo.name %>
+                  </div>
+                </div>
+                <div class="row my-4">
+                  <div class="col-3 detail-title">
+                    Description
+                  </div>
+                  <div class="col-8 pr-0">
+                    <%= @user.ngo.description %>
+                  </div>
+                </div>
+              </div>
+              <p class="reviews-title"><%= @user.ngo.name %>'s reviews:</p>
+              <div>
+                <div class="reviews-container">
+                  <% @ngo_reviews.each do |review| %>
+                    <div class="review">
+                      <div class="review-user-image-container">
+                        <%= cl_image_tag review.booking.team.users.first.photo.key, class: "review-user-image" %>
+                      </div>
+                      <div class="review-content">
+                        <p class="review-team"><%= review.booking.team.name %></p>
+                        <p class="review-text paragraph-no-margin"><%= review.content %></p>
+                        <div class="d-flex justify-content-between">
+                          <div></div>
+                          <%= link_to project_path(review.booking.project) do  %>
+                            <p class="review-project paragraph-no-margin"><%= review.booking.project.title %></p>
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
+  <!-- USER VOLUNTEER -->
+  <% else %>
+    <!-- DESKTOP + MOBILE VERSION -->
+    <div class="d-flex justify-content-between mt-5 mr-5">
+      <div></div>
+      <%= link_to edit_user_registration_path do %>
+        <div class="button-edit-profile mb-3">
+          Edit profile
+        </div>
+      <% end %>
+    </div>
+    <div class="content-container-profile border-bottom py-3 my-1">
+      <div class="d-flex">
+        <div class="element-1">
+          <%= cl_image_tag @user.photo.key, class: "user-image" %>
+        </div>
+        <div class="element-2 user-other-info">
+          <h5 class="py-1"><%= @user.first_name %> <%= @user.last_name %></h5>
+          <div class="email-user-ngo d-flex align-items-center my-2">
+            <div class="email-logo mr-2">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="email mr-3">
+              <p class="paragraph-no-margin"><%= @user.email %> </p>
+            </div>
+          </div>
+          <div class="phone-user d-flex align-items-center">
+            <% if @user.phone.present? %>
+            <div class="element mr-2">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="phone-user-ngo mr-3">
+              <p class="paragraph-no-margin"><%= @user.phone %> </p>
+            </div>
+            <% else %>
+            <% end %>
+          </div>
+          <div class="d-flex justify-content-between mt-4">
+            <div></div>
+            <%= link_to "Sign out",  destroy_user_session_path , method: :delete, class: "sign-out-button" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-container-profile-team border-bottom pb-4 mt-3 mb-0">
+      <div class=" d-flex justify-content-between align-items-center">
+        <h2 class="orange-title">My teams</h2>
+      </div>
+
+      <% @user.teams.each do |team| %>
+      <div class="team-container">
+        <h5 class="team-name text-center mt-2"><%= team.name %></h5>
+        <div class=" user-photo d-flex justify-content-around mt-2">
+          <% team.users.each do |user| %>
+
+          <div class= "team-member-yes-exist-volunteer text-center mb-3">
+            <div class= "mb-2 mr-3"> <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer" %>
+              <%= user.first_name %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+      <%= link_to new_team_path do %>
+      <div class="create-team-button text-center">
+        <p class="p-size">Create a team</p>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="content-container-profile mt-3">
+      <h2 class="orange-title">My Application</h2>
+    </div>
+    <div class="content-container-profile mt-3">
+
+      <% current_user.bookings.each do |booking| %>
+      <%= link_to project_path(booking.project) do %>
+      <div class="project-card-profile flex-md-row mb-4 mt-3">
+        <div class="project-image" style="background-image: url('<%= cl_image_path booking.project.photos.first.key if booking.project.photos.attached? %>')">
+          <div class="interest-icon border rounded-circle">
+            <% if booking.project.category == "Children" %>
+              <i class="icon fas fa-child"></i>
+            <% elsif booking.project.category == "Social" %>
+              <i class="icon fas fa-user-friends"></i>
+            <% elsif booking.project.category == "Cultural" %>
+              <i class="icon fas fa-music"></i>
+            <% elsif booking.project.category == "Environment" %>
+              <i class="icon fas fa-leaf"></i>
+            <% else booking.project.category == "Elderly Care" %>
+              <i class="icon fab fa-accessible-icon"></i>
+            <% end %>
+          </div>
+          <% if booking.status == "accepted" %>
+          <div class="accepted-button status-button">
+            Accepted
+          </div>
+          <%= link_to new_booking_review_path(booking)  do  %>
+          <div class="review-button">
+            Add a review
+          </div>
+          <% end %>
+          <% elsif booking.status == "rejected" %>
+          <div class="rejected-button status-button">
+            Rejected
+          </div>
+          <% else %>
+          <div class="pending-button status-button">
+            Pending
+          </div>
+          <% end %>
+        </div>
+        <div class="project-text-stuff">
+          <h5 class="project-title"><%= booking.project.title.truncate(33) %></h5>
+          <p class="project-ong"><%= booking.project.ngo.name %></p>
+          <div class="project-elements d-flex justify-content-left">
+            <div class="element"><i class="far fa-clock"></i><%= booking.project.start_date %></div>
+            <div class="element"><i class="fas fa-user-friends"></i><%= booking.project.capacity %></div>
+            <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= booking.project.latitude %>" data-longitude="<%= booking.project.longitude %>">calculating...</span></div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  <% end %>
