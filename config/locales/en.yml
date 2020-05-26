@@ -50,6 +50,8 @@ en:
       dashboard: "My Dashboard"
       dashboard2: "Dashboard"
       my_projects: "My Projects"
+      applications: "Applications"
+      user_view: "User View"
 
     interests:
       children: "Children"

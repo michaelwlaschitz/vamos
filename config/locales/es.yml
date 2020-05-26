@@ -35,6 +35,8 @@ es:
       dashboard: "Mi perfil"
       dashboard2: "Mi perfil"
       my_projects: "Mis proyectos"
+      applications: "Aplicaciones"
+      user_view: "Vista de proyectos"
 
     interests:
       children: "Niños"
