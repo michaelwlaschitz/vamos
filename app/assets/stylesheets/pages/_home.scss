@@ -88,10 +88,18 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 
 .usp-description {
   background-color: white;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+.usp-feature-title {
+  max-width: 500px;
+}
+
+.usp-feature-text {
+  max-width: 400px;
 }
 
 .product-description {
@@ -100,7 +108,9 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
 .example-team {
-  margin-top: 100px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-image: linear-gradient(rgba(255,255,255, 0.92),rgba(255,255,255,0.92)), url("landing_page/background_team.jpg");
 }
 
 .usp-info {

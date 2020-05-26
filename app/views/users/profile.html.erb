@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between">
       <div></div>
       <%= link_to edit_user_registration_path do %>
-      <div class="button-edit-profile mb-3">
+      <div class="button-edit-profile mb-3 mr-3">
         <%= t(".edit_profile") %>
       </div>
     <% end %>
@@ -152,7 +152,7 @@
           </div>
           <div class="d-flex justify-content-between mt-4">
             <div></div>
-            <%= link_to "Sign out",  destroy_user_session_path , method: :delete, class: "create-team-button" %>
+            <%= link_to t(".sign_out"), destroy_user_session_path , method: :delete, class: "create-team-button" %>
           </div>
         </div>
       </div>
@@ -160,7 +160,7 @@
 
     <div class="content-container-profile-team border-bottom pb-4 mt-3 mb-0">
       <div class=" d-flex justify-content-between align-items-center">
-        <h2 class="orange-title">My teams</h2>
+        <h2 class="orange-title"><%= t(".my_teams") %> </h2>
       </div>
 
       <% @user.teams.each do |team| %>
@@ -178,15 +178,11 @@
         </div>
       </div>
       <% end %>
-      <%= link_to new_team_path do %>
-      <div class="create-team-button-alternative text-center">
-        <p class="p-size">Create a team</p>
-      </div>
-      <% end %>
+      <%= link_to t(".create_team"), new_team_path, class:"button-vamos primary-style w-100 px-2" %>
     </div>
 
     <div class="content-container-profile mt-3">
-      <h2 class="orange-title">My Application</h2>
+      <h2 class="orange-title"><%= t(".my_applications") %> </h2>
     </div>
     <div class="content-container-profile mt-3">
 
@@ -230,7 +226,8 @@
           <h5 class="project-title"><%= booking.project.title.truncate(33) %></h5>
           <p class="project-ong"><%= booking.project.ngo.name %></p>
           <div class="project-elements d-flex justify-content-left">
-            <div class="element"><i class="far fa-clock"></i><%= booking.project.start_date %></div>
+            <div class="element"><i class="far fa-clock"></i><%= l(booking.project.start_date, format: :short) %></div>
+
             <div class="element"><i class="fas fa-user-friends"></i><%= booking.project.capacity %></div>
             <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= booking.project.latitude %>" data-longitude="<%= booking.project.longitude %>">calculating...</span></div>
           </div>
