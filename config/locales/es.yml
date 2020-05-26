@@ -1,5 +1,11 @@
 es:
 
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
   global:
     navbar:
       search: "Buscar projectos"
@@ -19,6 +25,15 @@ es:
       climate: "Medio Ambiente"
       medical: "Salud"
       seniors: "Mayores"
+
+    modal:
+      login: "Por favor inicia sesión"
+      password: "Contraseña"
+      login_button: "Inicia sesión"
+
+    devise_links:
+      signup: "Regístrate"
+      forgot_password: "Olvidó su contraseña?"
 
 
   activerecord:
@@ -60,6 +75,22 @@ es:
       sub_title_for_html: "Busca y aplica con tu equipo <br>a voluntariados cerca de ti."
       find: "Encuentra voluntarios >>"
 
+      team_name_for_html: "Nombre del equipo: <span style='color: #fb8500'>Las Alpacas</span>"
+
+      lukas_for_html: "<strong>Luca, 24</strong>"
+      business_student: "Estudiante de economia"
+      sophie_for_html: "<strong>Sofia, 26</strong>"
+      graphic_designer: "Diseñadora grafica"
+      max_for_html: "<strong>Max, 27 </strong>"
+      event_manager: "Administrador de evento"
+      lisa_for_html: "<strong>Lisa, 23</strong>"
+      medical_student: "Estudiante de medicina"
+      volunteer_cta_title_for_html: "Haz voluntariado con<br> tu equipo de amigos."
+      volunteer_cta_sub_title: "En Vamos, puede crear fácilmente un equipo, invitar a sus amigos y unirse a las oportunidades de voluntariado juntos."
+      volunteer_cta_button: "Mira oportunidades"
+
+      function_title_mobile: "Como funciona"
+
       function1_title: "Encuentra proyectos locales que se ajusten a ti"
       function1_text: "Con Vamos, puedes filtrar por categoría, ubicación y horas para encontrar la mejor oportunidad para ti"
       function2_title: "Aplica con tus amigos"
@@ -68,7 +99,7 @@ es:
       function3_text: "Conoce todos los detalles sobre la oportunidad e interactúa con el coordinador del voluntariado a través del chat."
 
       ngo_cta_title: "Buscando voluntarios?"
-      ngo_cta_text_for_hmtl: "Crea tu primer proyecto gratis en menos de 3 minutos!"
+      ngo_cta_text_for_html: "Crea tu primer proyecto gratis en menos de <strong> 3 minutos</strong>!"
       ngo_cta_button: "Vamos"
 
       process_title: "Cómo funciona?"
@@ -158,3 +189,19 @@ es:
       motivation: "Escribe unas palabras sobre la motivación de tí y tus amigos para ayudar en ese proyecto.
         Aumenta sus chance de obtener los espacios disponibles."
 
+  devise:
+    registrations:
+      new:
+        title_for_html: "Bienvenido a <span style='color: #fb8500'>Vamos</span> - la plataforma para el voluntariado con tus amigos"
+        first_name: "Nombre*"
+        last_name: "Apellido*"
+        email: "Email*"
+        password: "Contraseña*"
+        password_confirmation: "Confirma Contraseña*"
+        select_picture: "Elige una foto"
+        signup: "Regístrate"
+
+    passwords:
+      new:
+        forgot_password_for_html: "Olvidó su contraseña? <br> No problema!"
+        reset_password: "Restablecer mi contraseña"

@@ -37,12 +37,102 @@
     </div>
   </div>
 
+
+<!-- Example Team Desktop -->
+
+<div class="mb-5 example-team hide-mobile">
+
+  <div class="content-container d-flex align-items-center mt-5 justify-content-around">
+    <div>
+      <h2 class="font-weight-normal mb-4"><%= t(".team_name_for_html") %> </h2>
+      <div class="d-flex">
+        <div class="text-center  mr-4 team-member-card">
+          <%= image_tag "exampleteam/boy1.jpg", class: "avatar-x-large mb-2"%>
+          <h3 class="paragraph-no-margin mb-2"><%= t(".lukas_for_html") %> </h3>
+          <p class="paragraph-no-margin"><%= t(".business_student") %> </p>
+        </div>
+
+        <div class="text-center mr-4 team-member-card">
+          <%= image_tag "exampleteam/girl1.jpg", class: "avatar-x-large mb-2"%>
+          <h3 class="paragraph-no-margin mb-2"><%= t(".sophie_for_html") %> </h3>
+          <p class="paragraph-no-margin"><%= t(".graphic_designer") %> </p>
+        </div>
+
+        <div class="text-center mr-4 team-member-card">
+          <%= image_tag "exampleteam/boy2.jpg", class: "avatar-x-large mb-2"%>
+          <h3 class="paragraph-no-margin mb-2"><%= t(".max_for_html") %> </h3>
+          <p class="paragraph-no-margin"><%= t(".event_manager") %> </p>
+        </div>
+
+        <div class="text-center mr-5 team-member-card">
+          <%= image_tag "exampleteam/girl2.jpg", class: "avatar-x-large mb-2"%>
+          <h3 class="paragraph-no-margin mb-2"><%= t(".lisa_for_html") %> </h3>
+          <p class="paragraph-no-margin"><%= t(".medical_student") %> </p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="team-cta-card large bold"><%= t(".volunteer_cta_title_for_html") %></h1>
+      <p class="team-cta-card-small mt-3"><%= t(".volunteer_cta_sub_title") %></p>
+      <%= link_to t(".volunteer_cta_button"), filter_location_path, class: "button-vamos primary-style w-75 mt-3" %>
+    </div>
+  </div>
+
+</div>
+
+<!-- Example Team Mobile -->
+
+<div class="mb-5 content-container hide-desktop text-center">
+
+  <div>
+      <h1 class="team-cta-card large bold"><%= t(".volunteer_cta_title_for_html") %></h1>
+      <p class="team-cta-card-small mt-3"><%= t(".volunteer_cta_sub_title") %></p>
+      <%= link_to t(".volunteer_cta_button"), filter_location_path, class: "button-vamos primary-style w-75 mt-3" %>
+  </div>
+
+  <h2 class="font-weight-normal mb-3 mt-5"><%= t(".team_name_for_html") %> </h2>
+  <div class="d-flex justify-content-around mb-4 mt-5">
+    <div class="text-center  mr-4 team-member-card">
+      <%= image_tag "exampleteam/boy1.jpg", class: "avatar-x-large mb-2"%>
+      <h3 class="paragraph-no-margin mb-2"><%= t(".lukas_for_html") %> </h3>
+      <p class="paragraph-no-margin"><%= t(".business_student") %> </p>
+    </div>
+
+    <div class="text-center mr-3 team-member-card">
+      <%= image_tag "exampleteam/girl1.jpg", class: "avatar-x-large mb-2"%>
+      <h3 class="paragraph-no-margin mb-2"><%= t(".sophie_for_html") %> </h3>
+      <p class="paragraph-no-margin"><%= t(".graphic_designer") %> </p>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-around">
+    <div class="text-center mr-3 team-member-card">
+      <%= image_tag "exampleteam/boy2.jpg", class: "avatar-x-large mb-2"%>
+      <h3 class="paragraph-no-margin mb-2"><%= t(".max_for_html") %> </h3>
+      <p class="paragraph-no-margin"><%= t(".event_manager") %> </p>
+    </div>
+
+    <div class="text-center mr-3 team-member-card">
+      <%= image_tag "exampleteam/girl2.jpg", class: "avatar-x-large mb-2"%>
+      <h3 class="paragraph-no-margin mb-2"><%= t(".lisa_for_html") %> </h3>
+      <p class="paragraph-no-margin"><%= t(".medical_student") %> </p>
+    </div>
+  </div>
+
+
+</div>
+
+
 <!-- USP Description -->
+<div class="hide-desktop mb-4 mt-5">
+<h1 class="bold large px-4"><%= t(".function_title_mobile") %> </h1>
+<hr style="height:2px;width:50%;text-align:left;margin-left:0;border-width:0;background-color:orange">
+</div>
+  <div class="usp-description d-flex px-4 hide-desktop justify-content-center align-items-center">
 
-  <div class="usp-description d-flex py-5 px-4 hide-desktop justify-content-around align-items-center">
-    <%= image_tag "Screens/index.png", class: "phone-screen hide-mobile ml-5"%>
 
-    <div class="usp-info mr-3">
+    <div class="usp-info">
       <div class="d-flex align-items-center">
         <h2><i class="fas fa-search orange mr-4"></i></h2>
         <div>
@@ -66,8 +156,9 @@
         <p><%= t(".function3_text") %></p>
         </div>
       </div>
-
     </div>
+
+    <%= image_tag "Screens/index.jpg", class: "phone-screen hide-mobile"%>
   </div>
 
 <!-- CTA NGO
@@ -76,7 +167,7 @@
 <div class="d-flex justify-content-center text-center light-gray-background">
   <div>
     <h2 class="bold home-h2-container"><%= t(".ngo_cta_title") %></h2>
-    <p><%= t(".ngo_cta_text_for_hmtl") %></p>
+    <p><%= t(".ngo_cta_text_for_html") %></p>
     <%= link_to t(".ngo_cta_button"), new_ngo_path, class: "button-vamos primary-style mt-2" %>
   </div>
 </div>
@@ -84,10 +175,10 @@
 <!-- App Description
  -->
 <div class="content-container hide-mobile">
-  <div class="product-description mt-5">
-    <h2 clas="orange"><%= t(".process_title") %></h2>
+  <div class="product-description">
+    <h2 class="orange ml-3"><%= t(".process_title") %></h2>
 
-    <div class="d-flex align-items-top mt-5 mb-5 justify-content-center">
+    <div class="d-flex align-items-top mt-5 mb-5 justify-content-around">
 
       <div class="feature-info text-center">
         <h2><i class="fas fa-filter orange mb-2"></i></h2>

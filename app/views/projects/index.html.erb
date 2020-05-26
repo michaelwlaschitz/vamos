@@ -50,7 +50,10 @@
                 <h5 class="mt-2"><%= link_to project.title, project_path(project), class: "project-title"%></h5>
                 <p class="project-ong"><%= project.ngo.name if project.ngo %></p>
                 <div class="project-elements d-flex justify-content-left">
-                  <div class="element"><i class="far fa-clock"></i><%= project.start_date %></div>
+                  <div class="element"><i class="far fa-clock"></i><%= l(project.start_date, format: :short) %></div>
+                  <%=  %>
+
+
                   <div class="element"><i class="fas fa-user-friends"></i><%= project.capacity%></div>
                   <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
                 </div>
@@ -202,7 +205,7 @@
               <h5><%= link_to project.title, project_path(project), class: "project-title"%></h5>
               <p class="project-ong my-2"><%= project.ngo.name if project.ngo %></p>
               <div class="project-elements d-flex">
-                <div class="element mr-3"><i class="far fa-clock"></i><%= project.start_date %></div>
+                <div class="element mr-3"><i class="far fa-clock"></i><%= l(project.start_date, format: :short) %></div>
                 <div class="element mr-3"><i class="fas fa-user-friends"></i><%= project.capacity%></div>
                 <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
               </div>

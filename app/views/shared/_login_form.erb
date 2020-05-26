@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Please Log in</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><%= t("global.modal.login")%></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -23,12 +23,12 @@
             <%= f.input :password,
                 required: false,
                 label: false,
-                placeholder: "Password",
+                placeholder: t("global.modal.password"),
                 input_html: { class: "mb-4",autocomplete: "current-password" } %>
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>
           <div class="button-modal modal-footer">
-            <%= f.button :submit, "Log in", class: "button-vamos primary-style my-3 w-100" %>
+            <%= f.button :submit, t("global.modal.login_button"), class: "button-vamos primary-style my-3 w-100" %>
           </div>
         <% end %>
         <div class="my-4">
