@@ -21,6 +21,8 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, format: { with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }, presence: true, uniqueness: true
 
+  attr_accessor :current_password
+
   def ngo_manager?
     ngo.present?
   end
