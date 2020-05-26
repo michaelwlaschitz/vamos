@@ -5,7 +5,7 @@
       <div></div>
       <%= link_to edit_user_registration_path do %>
       <div class="button-edit-profile mb-3">
-        Edit profile
+        <%= t(".edit_profile") %>
       </div>
     <% end %>
     </div>
@@ -16,20 +16,20 @@
       <div class="d-flex justify-content-between align-items-start">
         <div class="left-part">
           <div class="box-title">
-            PERSONAL DETAILS
+            <%= t(".personal_info") %>
           </div>
           <div class="user-image-container">
             <%= cl_image_tag @user.photo.key, class: "user-image"%>
             <%= link_to user_profile_path do %>
               <div class="button-edit-user-image">
-                Change
+                <%= t(".change") %>
               </div>
             <% end %>
           </div>
           <div class="container">
             <div class="row my-4">
               <div class="col-4 detail-title">
-                Name
+                <%= t(".name") %>
               </div>
               <div class="col-8">
                 <%= @user.first_name %>
@@ -38,7 +38,7 @@
             </div>
             <div class="row my-4">
               <div class="col-4 detail-title">
-                Phone
+                <%= t(".phone") %>
               </div>
               <div class="col-8">
                 <%= @user.phone %>
@@ -54,7 +54,7 @@
             </div>
             <div class="row my-4">
               <div class="col-4 detail-title">
-                Description
+                <%= t(".description") %>:
               </div>
               <div class="col-8">
                 <%= @user.description %>
@@ -64,7 +64,7 @@
         </div>
         <div class="right-part">
           <div class="box-title">
-          NGO DETAILS
+          <%= t(".ngo_info") %>
           </div>
           <div class="ngo-details-content">
             <div class="d-flex justify-content-between">
@@ -72,7 +72,7 @@
                 <%= cl_image_tag @user.ngo.logo.key, class: "ngo-image"%>
                 <%= link_to user_profile_path do %>
                   <div class="button-edit-ngo-image">
-                    Change
+                    <%= t(".change") %>
                   </div>
                 <% end %>
               </div>
@@ -80,7 +80,7 @@
             <div class="container">
               <div class="row my-4">
                 <div class="col-3 detail-title">
-                  Name:
+                  <%= t(".name") %>:
                 </div>
                 <div class="col-9">
                   <%= @user.ngo.name %>
@@ -88,14 +88,14 @@
               </div>
               <div class="row my-4">
                 <div class="col-3 detail-title">
-                  Description:
+                  <%= t(".description") %>:
                 </div>
                 <div class="col-9">
                   <%= @user.ngo.description %>
                 </div>
               </div>
             </div>
-            <p class="reviews-title"><%= @user.ngo.name %>'s reviews:</p>
+            <p class="reviews-title"><%= t('.reviews', count: @ngo_reviews.count) %>:</p>
             <div>
               <div class="reviews-container">
                 <% @ngo_reviews.each do |review| %>

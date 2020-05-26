@@ -17,6 +17,7 @@ es:
       logout: "Salir"
       explore: "Explorar"
       dashboard: "Panel de Control"
+      my_projects: "Mis proyectos"
 
     interests:
       children: "Niños"
@@ -205,3 +206,20 @@ es:
       new:
         forgot_password_for_html: "Olvidó su contraseña? <br> No problema!"
         reset_password: "Restablecer mi contraseña"
+
+  users:
+    projects:
+      your_projects: "Tus proyectos"
+      create_project_button: "Crea un proyecto nuevo"
+
+    profile:
+      edit_profile: "Editar perfil"
+      change: "Cambiar"
+      personal_info: "INFO PERSONAL"
+      ngo_info: "INFO ORGANIZACIÒN"
+      name: "Nombre"
+      description: "Descripción"
+      phone: "Teléfono"
+      reviews:
+        zero: "There are no reviews for your organization yet!"
+        other: "Reseñas de usuarios para su organización (%{count})"

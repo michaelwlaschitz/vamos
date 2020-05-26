@@ -48,6 +48,7 @@ en:
       logout: "Logout"
       explore: "Explore"
       dashboard: "My Dashboard"
+      my_projects: "My Projects"
 
     interests:
       children: "Children"
@@ -240,3 +241,20 @@ en:
       new:
         forgot_password_for_html: "Forgot your password? <br> No problemo!"
         reset_password: "Reset my password per mail"
+
+  users:
+    projects:
+      your_projects: "Your projects"
+      create_project_button: "Create New Project"
+
+    profile:
+      edit_profile: "Edit profile"
+      change: "Change"
+      personal_info: "PERSONAL INFO"
+      ngo_info: "ORGANIZATION INFO"
+      name: "Name"
+      description: "Description"
+      phone: "Phone"
+      reviews:
+        zero: "There are no reviews for your organization yet!"
+        other: 'User Reviews for your organization (%{count})'
