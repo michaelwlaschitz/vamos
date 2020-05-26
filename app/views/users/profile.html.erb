@@ -8,7 +8,7 @@
       <div></div>
       <%= link_to edit_user_registration_path do %>
         <div class="button-edit-profile mb-3">
-          Edit profile
+          <%= t(".edit_profile") %>
         </div>
       <% end %>
     </div>
@@ -16,13 +16,13 @@
       <div class="parts-container justify-content-between align-items-start">
         <div class="left-part">
           <div class="box-title">
-            PERSONAL DETAILS
+            <%= t(".personal_info") %>
           </div>
           <div class="user-image-container">
             <%= cl_image_tag @user.photo.key, class: "user-image"%>
             <!-- Start modal - edit picture -->
             <button type="button" class="button-edit-user-image" data-toggle="modal" data-target="#exampleModalCenter">
-              Change
+              <%= t(".change") %>
             </button>
             <!-- modal removed until we fix bug -->
             <!-- End modal - edit picture -->
@@ -30,7 +30,7 @@
           <div class="container">
             <div class="row my-4">
               <div class="col-4 detail-title">
-                Name
+                <%= t(".name") %>
               </div>
               <div class="col-8">
                 <%= @user.first_name %>
@@ -39,7 +39,7 @@
             </div>
             <div class="row my-4">
               <div class="col-4 detail-title">
-                Phone
+                <%= t(".phone") %>
               </div>
               <div class="col-8">
                 <%= @user.phone %>
@@ -55,7 +55,7 @@
             </div>
             <div class="row my-4">
               <div class="col-4 detail-title">
-                Description
+                <%= t(".description") %>:
               </div>
               <div class="col-8">
                 <%= @user.description %>
@@ -65,7 +65,7 @@
         </div>
         <div class="right-part">
           <div class="box-title">
-          NGO DETAILS
+          <%= t(".ngo_info") %>
           </div>
           <div class="ngo-details-content">
             <div class="d-flex justify-content-between">
@@ -73,7 +73,7 @@
                 <%= cl_image_tag @user.ngo.logo.key, class: "ngo-image"%>
                 <!-- Start modal - edit picture -->
                 <button type="button" class="button-edit-ngo-image" data-toggle="modal" data-target="#exampleModalCenter">
-                  Change
+                  <%= t(".change") %>
                 </button>
                 <!-- Modal removed temporary until bug fix -->
                 <!-- End modal - edit picture -->
@@ -82,7 +82,7 @@
             <div class="container">
               <div class="row my-4">
                 <div class="col-3 detail-title">
-                  Name
+                  <%= t(".name") %>:
                 </div>
                 <div class="col-9">
                   <%= @user.ngo.name %>
@@ -90,14 +90,14 @@
               </div>
               <div class="row my-4">
                 <div class="col-3 detail-title">
-                  Description
+                  <%= t(".description") %>:
                 </div>
                 <div class="col-9">
                   <%= @user.ngo.description %>
                 </div>
               </div>
             </div>
-            <p class="reviews-title"><%= @user.ngo.name %>'s reviews:</p>
+            <p class="reviews-title"><%= t('.reviews', count: @ngo_reviews.count) %>:</p>
             <div>
               <div class="reviews-container">
                 <% @ngo_reviews.each do |review| %>
@@ -293,7 +293,7 @@
           </div>
           <div class="d-flex justify-content-between mt-4">
             <div></div>
-            <%= link_to "Sign out",  destroy_user_session_path , method: :delete, class: "sign-out-button" %>
+            <%= link_to t(".sign_out"),  destroy_user_session_path , method: :delete, class: "sign-out-button" %>
           </div>
         </div>
       </div>
@@ -301,7 +301,7 @@
 
     <div class="content-container-profile-team border-bottom pb-4 mt-3 mb-0">
       <div class=" d-flex justify-content-between align-items-center">
-        <h2 class="orange-title">My teams</h2>
+        <h2 class="orange-title"><%= t(".my_teams") %> </h2>
       </div>
 
       <% @user.teams.each do |team| %>
@@ -321,13 +321,13 @@
       <% end %>
       <%= link_to new_team_path do %>
       <div class="create-team-button text-center">
-        <p class="p-size">Create a team</p>
+        <p class="p-size"><%= link_to t(".create_team"), new_team_path, class: "orange-color" %></p>
       </div>
       <% end %>
     </div>
 
     <div class="content-container-profile mt-3">
-      <h2 class="orange-title">My Application</h2>
+      <h2 class="orange-title"><%= t(".my_applications") %> </h2>
     </div>
     <div class="content-container-profile mt-3">
 
@@ -371,7 +371,8 @@
           <h5 class="project-title"><%= booking.project.title.truncate(33) %></h5>
           <p class="project-ong"><%= booking.project.ngo.name %></p>
           <div class="project-elements d-flex justify-content-left">
-            <div class="element"><i class="far fa-clock"></i><%= booking.project.start_date %></div>
+            <div class="element"><i class="far fa-clock"></i><%= l(booking.project.start_date, format: :short) %></div>
+
             <div class="element"><i class="fas fa-user-friends"></i><%= booking.project.capacity %></div>
             <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= booking.project.latitude %>" data-longitude="<%= booking.project.longitude %>">calculating...</span></div>
           </div>

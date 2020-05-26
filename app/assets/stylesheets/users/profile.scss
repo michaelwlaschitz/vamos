@@ -255,12 +255,12 @@
   }
 }
 
-
 // USER = VOLUNTEER
 
 .orange-title {
   color: $orange-vamos;
-  // font-weight: lighter;
+  margin-right: 10px;
+  text-align: center;
 }
 
 .element-1, .element-2 {
@@ -282,12 +282,13 @@
 }
 
 .sign-out-button {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid $orange-vamos;
   color: gray;
-  font-weight: lighter;
+  font-weight: bold;
   margin-bottom: 0px;
   padding-bottom: 0px;
 }
+
 .create-team-button {
   margin-top: 20px;
   padding-top: 5px;
@@ -297,6 +298,9 @@
   width: 330px;
   height: 40px;
   font-weight: lighter;
+  .orange-color {
+    color: $orange-vamos;
+  }
   .p-size {
     font-size: 20px;
   }
@@ -359,7 +363,6 @@
   box-shadow: 1px 2px 3px gray;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
   .project-image {
     background-size: cover;
     width: 100%;
@@ -381,7 +384,6 @@
     justify-content: center;
     align-items: center;
   }
-
   .project-text-stuff {
     padding-left: 5px;
     .project-title {
@@ -408,10 +410,10 @@
     }
   }
 }
+
 .project-text-stuff:hover {
   text-decoration: none;
 }
-
 
 .content-container-profile {
   margin: auto;
@@ -514,9 +516,3 @@
     width: 80%;
   }
 }
-
-@media(max-width: 767px) {
-}
-
-
-

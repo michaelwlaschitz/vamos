@@ -73,7 +73,7 @@
           <div class="element mr-2"><i class="far fa-clock"></i>
           </div>
           <div class="mr-3">
-            <p><%= @project.start_date%> </p>
+            <p><%= l(@project.start_date, format: :short)%> </p>
           </div>
           <div class="element mr-2"><i class="fas fa-map-marker-alt"></i>
           </div>
@@ -105,7 +105,7 @@
 
       <!-- Reviews -->
 
-        <div class="mt-3">
+        <div class="mt-4">
           <h2><%= t(".reviews_for", name: @project.ngo.name) %> </h2>
         </div>
         <div class="reviews my-3 align-items-center">
@@ -136,13 +136,6 @@
         <div class="name_tel">
           <div class= "name">
             <h2 class="h2-less-margin"><%= @project.ngo.name %></h2>
-          </div>
-          <div class="phone d-flex mt-2">
-            <div class="element mr-2"><i class="fas fa-phone"></i>
-            </div>
-            <div class="mr-3">
-              <p class="paragraph-no-margin"><%= @project.ngo.user.phone %> </p>
-            </div>
           </div>
           <div class="address d-flex mt-1 mb-3">
             <div class="element mr-2"><i class="fas fa-map-marker-alt"></i>

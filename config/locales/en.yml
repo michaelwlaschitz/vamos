@@ -30,6 +30,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
   global:
     navbar:
       search: "Search projects"
@@ -41,6 +48,10 @@ en:
       logout: "Logout"
       explore: "Explore"
       dashboard: "My Dashboard"
+      dashboard2: "Dashboard"
+      my_projects: "My Projects"
+      applications: "Applications"
+      user_view: "User View"
 
     interests:
       children: "Children"
@@ -49,6 +60,15 @@ en:
       climate: "Climate"
       medical: "Medical"
       seniors: "Seniors"
+
+    modal:
+      login: "Please log in"
+      password: "Password"
+      login_button: "Log in"
+
+    devise_links:
+      signup: "Sign up"
+      forgot_password: "Forgot your password?"
 
 
   activerecord:
@@ -67,6 +87,10 @@ en:
         capacity:
         category:
         description:
+        start_date:
+        end_date:
+        start_time:
+        end_time:
       ngo:
         name: "Organization Name"
         phone:
@@ -90,6 +114,22 @@ en:
       sub_title_for_html: "Filter, search, apply with your team <br>for local volunteering."
       find: "Find volunteers >>"
 
+      team_name_for_html: "Team name: <span style='color: #fb8500'>The VolunDeers</span>"
+
+      lukas_for_html: "<strong>Lucas, 24 </strong>"
+      business_student: "Business Student"
+      sophie_for_html: "<strong>Sophie, 26</strong>"
+      graphic_designer: "Graphic Designer"
+      max_for_html: "<strong>Max, 27 </strong>"
+      event_manager: "Event Manager"
+      lisa_for_html: "<strong>Lisa, 23 </strong>"
+      medical_student: "Medical Student"
+      volunteer_cta_title_for_html: "Create a team and<br> do good together!"
+      volunteer_cta_sub_title: "In Vamos you can easily invite your friends, apply as a team and chat altogehter with the organization."
+      volunteer_cta_button: "Check opportunities"
+
+      function_title: "Vamos brings volunteering to you"
+
       function1_title: "Find local projects that fit you"
       function1_text: "With Vamos you can filter by category, location and time to find the best opportunity for you."
       function2_title: "Apply with your friends"
@@ -98,10 +138,10 @@ en:
       function3_text: "Find out all the details about the opportunity and engage with the volunteering coordinator via chat."
 
       ngo_cta_title: "Looking for volunteers?"
-      ngo_cta_text_for_hmtl: "Create your first project for free in less than <strong> 3 minutes! </strong>"
+      ngo_cta_text_for_html: "Create your first project for free in less than <strong> 3 minutes! </strong>"
       ngo_cta_button: "Get started"
 
-      process_title: "How does it work?"
+      process_title: "4 Steps to your first volunteering"
       process_step1: "Filter by location, cause and time investment."
       process_step2: "Read detailled info about volunteering opportunties."
       process_step3: "Create your team and apply."
@@ -109,6 +149,7 @@ en:
 
       vision_title: "Our Vision"
       vision_text: "We are a young and international team from France, Spain and Austria. Our goal is to empower people to do good in their local environment. The users of Vamos should feel inspired and motivated to help others in need and gain invaluable experience together with their friends."
+
     about_vamos:
       vision_title: "Our Vision"
       vision_text: "We are a young and international team from France, Spain and Austria. Our goal is to empower people to do good in their local environment. The users of Vamos should feel inspired and motivated to help others in need and gain invaluable experience together with their friends."
@@ -161,6 +202,8 @@ en:
       filter_title: "Filter Volunteering Opportunities"
       location: "Location"
       interest: "Interest"
+
+
     show:
       project: "Projects"
       organization: "Organization"
@@ -174,7 +217,7 @@ en:
   teams:
     new:
       title_for_html: "<span style='color: #fb8500'>Create</span> your Volunteering Team"
-      team_name: "Choose a team name"
+      team_name: "Choose a team name (max 20 characters)"
       invite_friends: "Invite your frieds to the team"
       create_team: "Create team"
 
@@ -188,3 +231,41 @@ en:
       send_application: "Send application"
       apply: "Apply with a new team"
       motivation: "Write some words about why you and your friends want to volunteer for this project. This increases your chance to get the available spots."
+
+  devise:
+    registrations:
+      new:
+        title_for_html: "Welcome to <span style='color: #fb8500'>Vamos</span> - the Plattorm for Volunteering with your friends"
+        first_name: "First Name*"
+        last_name: "Last Name*"
+        email: "Email*"
+        password: "Password*"
+        password_confirmation: "Password Confirmation*"
+        select_picture: "Select Picture"
+        signup: "Sign up"
+
+    passwords:
+      new:
+        forgot_password_for_html: "Forgot your password? <br> No problemo!"
+        reset_password: "Reset my password per mail"
+
+  users:
+    projects:
+      your_projects: "Your projects"
+      create_project_button: "Create New Project"
+
+    profile:
+      sign_out: "Sign out"
+      my_teams: "My teams"
+      my_applications: "My applications"
+      create_team: "Create a team"
+      edit_profile: "Edit profile"
+      change: "Change"
+      personal_info: "PERSONAL INFO"
+      ngo_info: "NGO INFO"
+      name: "Name"
+      description: "Description"
+      phone: "Phone"
+      reviews:
+        zero: "There are no reviews for your organization yet!"
+        other: 'User Reviews for your organization (%{count})'

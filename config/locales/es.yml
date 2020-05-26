@@ -1,5 +1,27 @@
 es:
 
+  date:
+    abbr_month_names:
+    -
+    - En
+    - Feb
+    - Mar
+    - Abr
+    - May
+    - Jun
+    - Jul
+    - Agt
+    - Sept
+    - Oct
+    - Nov
+    - Dic
+
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
+
   global:
     navbar:
       search: "Buscar projectos"
@@ -10,7 +32,11 @@ es:
       login: "Inicia sesión"
       logout: "Salir"
       explore: "Explorar"
-      dashboard: "Panel de Control"
+      dashboard: "Mi perfil"
+      dashboard2: "Mi perfil"
+      my_projects: "Mis proyectos"
+      applications: "Aplicaciones"
+      user_view: "Vista de proyectos"
 
     interests:
       children: "Niños"
@@ -19,6 +45,15 @@ es:
       climate: "Medio Ambiente"
       medical: "Salud"
       seniors: "Mayores"
+
+    modal:
+      login: "Por favor inicia sesión"
+      password: "Contraseña"
+      login_button: "Inicia sesión"
+
+    devise_links:
+      signup: "Regístrate"
+      forgot_password: "Olvidó su contraseña?"
 
 
   activerecord:
@@ -36,13 +71,18 @@ es:
         capacity: "Capacidad de voluntarios"
         category: "Categoría"
         description: "Descripción"
+        start_date: "Fecha de inicio"
+        end_date: "Fecha de finalización"
+        start_time: "Hora de inicio"
+        end_time: "Hora de finalización"
+
       ngo:
         name: "Nombre"
         phone: "Número de teléfono"
         description: "Descripción"
         address: "Dirección"
       review:
-        rating: "Reseñas"
+        rating: "Ranking"
         content: "Comentario"
       team:
         name: "Nombre de Equipo"
@@ -56,9 +96,25 @@ es:
 
   pages:
     home:
-      title_for_html: "<strong>Ayuda en projectos locales <br>con tus amigos.</strong>"
-      sub_title_for_html: "Busca y aplica con tu equipo <br>a voluntariados cerca de ti."
+      title_for_html: "<strong>Voluntariados <br>con tus amigos.</strong>"
+      sub_title_for_html: "Busca y aplica a voluntariados<br> con tu equipo cerca de ti."
       find: "Encuentra voluntarios >>"
+
+      team_name_for_html: "Nombre del equipo: <span style='color: #fb8500'>Las Alpacas</span>"
+
+      lukas_for_html: "<strong>Luca, 24</strong>"
+      business_student: "Estudiante de economia"
+      sophie_for_html: "<strong>Sofia, 26</strong>"
+      graphic_designer: "Diseñadora grafica"
+      max_for_html: "<strong>Max, 27 </strong>"
+      event_manager: "Administrador de evento"
+      lisa_for_html: "<strong>Lisa, 23</strong>"
+      medical_student: "Estudiante de medicina"
+      volunteer_cta_title_for_html: "Forma un equipo<br>y trabaja juntos."
+      volunteer_cta_sub_title: "En Vamos, puede crear fácilmente un equipo, invitar a sus amigos y unirse a las oportunidades de voluntariado juntos."
+      volunteer_cta_button: "Mira oportunidades"
+
+      function_title: "Vamos te trae voluntariados a ti"
 
       function1_title: "Encuentra proyectos locales que se ajusten a ti"
       function1_text: "Con Vamos, puedes filtrar por categoría, ubicación y horas para encontrar la mejor oportunidad para ti"
@@ -68,10 +124,10 @@ es:
       function3_text: "Conoce todos los detalles sobre la oportunidad e interactúa con el coordinador del voluntariado a través del chat."
 
       ngo_cta_title: "Buscando voluntarios?"
-      ngo_cta_text_for_hmtl: "Crea tu primer proyecto gratis en menos de 3 minutos!"
+      ngo_cta_text_for_html: "Crea tu primer proyecto gratis en menos de <strong> 3 minutos</strong>!"
       ngo_cta_button: "Vamos"
 
-      process_title: "Cómo funciona?"
+      process_title: "4 pasos a tu primer voluntariado"
       process_step1: "Filtra por ubicación, categoría y horas para encontrar las mejores oportunidades para ti."
       process_step2: "Encuentra información detallada sobre oportunidades de voluntariado."
       process_step3: "Crea tu equipo invitando a tus amigos y aplica a oportunidades en unos pocos clicks."
@@ -93,7 +149,7 @@ es:
 
     filter_interests:
       select_causes_for_html: "¿Qué <span style='color: #fb8500'>causas</span> te interesan más?"
-      
+
   ngos:
     home:
       title_for_html: "<strong>Encuentra voluntarios a largo <br>plazo para su organización</strong>"
@@ -126,7 +182,7 @@ es:
         zero: "Desafortunadamente, todavía no tenemos proyectos en su área. ¿Sabes algo que debería estar allí? ¡Háganos saber por chat o correo!"
         one: "¡Encontramos una oportunidad, pero hay más por venir!"
         other: "Hay %{count} oportunidades cerca de usted"
-        
+
       filter: "Fitrar"
       filter_title: "Fitrar por oportunidades"
       location: "Ubicación"
@@ -143,7 +199,7 @@ es:
   teams:
     new:
       title_for_html: "<span style='color: #fb8500'>Crea</span> tu equipo de voluntariados"
-      team_name: "Elige un nombre para tu equipo"
+      team_name: "Elige un nombre para tu equipo (20 caracteres máx"
       invite_friends: "Invita amigos a tu equipo"
       create_team: "Crea tu equipo"
   bookings:
@@ -158,3 +214,40 @@ es:
       motivation: "Escribe unas palabras sobre la motivación de tí y tus amigos para ayudar en ese proyecto.
         Aumenta sus chance de obtener los espacios disponibles."
 
+  devise:
+    registrations:
+      new:
+        title_for_html: "Bienvenido a <span style='color: #fb8500'>Vamos</span> - la plataforma para el voluntariado con tus amigos"
+        first_name: "Nombre*"
+        last_name: "Apellido*"
+        email: "Email*"
+        password: "Contraseña*"
+        password_confirmation: "Confirma Contraseña*"
+        select_picture: "Elige una foto"
+        signup: "Regístrate"
+
+    passwords:
+      new:
+        forgot_password_for_html: "Olvidó su contraseña? <br> No problema!"
+        reset_password: "Restablecer mi contraseña"
+
+  users:
+    projects:
+      your_projects: "Tus proyectos"
+      create_project_button: "Crea un proyecto nuevo"
+
+    profile:
+      sign_out: "Salir"
+      my_teams: "Mis equipos"
+      my_applications: "Mis aplicaciones"
+      create_team: "Crea un equipo"
+      edit_profile: "Editar perfil"
+      change: "Cambiar"
+      personal_info: "INFO PERSONAL"
+      ngo_info: "INFO ONG"
+      name: "Nombre"
+      description: "Descripción"
+      phone: "Teléfono"
+      reviews:
+        zero: "There are no reviews for your organization yet!"
+        other: "Reseñas de usuarios para su organización (%{count})"

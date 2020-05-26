@@ -1,7 +1,7 @@
 <%= render 'shared/logo_top_left' %>
 
 <div class="content-container signup-forms">
-  <h2 class="mb-4"> Welcome to Vamos - the Plattorm for Social Volunteering</h2>
+  <h2 class="mb-4"> <%= t(".title_for_html") %> </h2>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
@@ -10,35 +10,35 @@
                   required: true,
                   autofocus: true,
                   label: false,
-                  placeholder: "First Name*",
+                  placeholder: t(".first_name"),
                   input_html: { class: "mb-4",autocomplete: "first-name" }%>
       <%= f.input :last_name,
                   required: true,
                   autofocus: true,
                   label: false,
-                  placeholder: "Last Name*",
+                  placeholder: t(".last_name"),
                   input_html: { class: "mb-4",autocomplete: "last-name" }%>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
                   label: false,
-                  placeholder: "Email*",
+                  placeholder: t(".email"),
                   input_html: { class: "mb-4",autocomplete: "email" }%>
       <%= f.input :password,
                   required: true,
                   label: false,
-                  placeholder: "Password*",
+                  placeholder: t(".password"),
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :password_confirmation,
                   label: false,
-                  placeholder: "Password Confirmation*",
+                  placeholder: t(".password_confirmation"),
                   required: true,
                   input_html: { class: "my-4",autocomplete: "new-password" } %>
 
       <div class="d-flex align-items-center">
         <label class="button-upload-file mr-2">
-        Select Picture
+        <%= t(".select_picture") %>
         <span style="display:none;">
           <%= f.input :photo, as: :file, input_html: {class: "logo-input"} %>
         </span>
@@ -49,7 +49,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign up", class: "mt-3 button-vamos primary-style w-100"  %>
+      <%= f.button :submit, t(".signup"), class: "mt-3 button-vamos primary-style w-100"  %>
     </div>
   <% end %>
   <div class="mt-3">

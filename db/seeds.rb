@@ -268,7 +268,7 @@ puts "Seeding projects done"
 puts "Seeding teams"
 
 team1 = Team.create!(name: "The French Force")
-team2 = Team.create!(name: "International Allstars")
+team2 = Team.create!(name: "Allstars")
 
 puts "Seeding teams done"
 puts "Seeding team memberships"

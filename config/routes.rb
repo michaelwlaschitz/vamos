@@ -21,28 +21,33 @@ Rails.application.routes.draw do
 
     resources :teams, only: [:new, :create]
 
-  get 'users/application', to: 'users#application', as: :user_application
+    get 'users/applications', to: 'users#applications', as: :user_applications
+    get 'users/projects', to: 'users#projects', as: :user_projects #last modification
+
 
     resources :ngos, only: [:new, :create]
 
     resources :projects, only: [:index, :create, :new, :show] do
     resources :bookings, only: [:new, :create]
     get 'bookings/:booking_id/confirmation', to: 'bookings#confirmation', as: :booking_confirmation
-  end
-  end
-
-
-
-  resources :bookings, only: [] do
-    resources :reviews, only: [:new, :create]
-  end
-
-  resources :bookings, only: [] do
-    member do
-          patch "/accept", to: "bookings#accept"
-          patch "/reject", to: "bookings#reject"
     end
+
+    resources :bookings, only: [] do
+      resources :reviews, only: [:new, :create]
+    end
+
+    resources :bookings, only: [] do
+      member do
+        patch "/accept", to: "bookings#accept"
+        patch "/reject", to: "bookings#reject"
+      end
+    end
+
   end
+
+
+
+
 
 
 

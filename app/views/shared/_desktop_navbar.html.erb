@@ -13,22 +13,44 @@
       <ul class="navbar-nav navbar-right">
 
         <% if user_signed_in? %>
-          <li id="search-projects" class="no-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/projects', action: 'index') %>">
+
+        <% if current_user.ngo %>
+
+          <li id="user-view" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/projects', action: 'index') %>">
+            <%= link_to t("global.navbar.user_view"), projects_path, class: "nav-link" %>
+            <%# By using links, we ensure that default_url_options are actually used!  %>
+          </li>
+
+          <li id="applications" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/users', action: 'applications') %>">
+            <%= link_to t("global.navbar.applications"), user_applications_path, class: "nav-link" %>
+          </li>
+
+        <% else %>
+
+          <li id="search-projects" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/projects', action: 'index') %>">
             <%= link_to t("global.navbar.search"), projects_path, class: "nav-link" %>
             <%# By using links, we ensure that default_url_options are actually used!  %>
           </li>
-          <li id="find-volunteers" class="no-signed nav-item <%= 'active' if current_page?(controller: '/ngos', action: 'new') %>">
-            <%= link_to t("global.navbar.find"), ngos_home_path, class: "nav-link" %>
+
+          <li id="dashboard" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/users', action: 'profile') %>">
+            <%= link_to t("global.navbar.dashboard"), user_profile_path, class: "nav-link" %>
           </li>
-          <li id="about-vamos" class="no-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/pages', action: 'about_vamos') %>">
-            <%= link_to t("global.navbar.about"), about_vamos_path, class: "nav-link" %>
+
+        <% end %>
+
+          <li id="messages" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/conversations', action: 'index') %>">
+            <%= link_to t("global.navbar.conversations"), conversations_path, class: "nav-link" %>
           </li>
+
           <li id="logedin" class="yes-signed nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= cl_image_tag current_user.photo.key, width: 50, height: 50, class: "rounded-circle" %>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to t("global.navbar.profile"), user_profile_path, class: "dropdown-item" %>
+              <% if current_user.ngo %>
+              <%= link_to t("global.navbar.my_projects"), user_projects_path, class: "dropdown-item" %>
+              <% end %>
               <div class="dropdown-divider"></div>
               <%= link_to t("global.navbar.logout"), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
