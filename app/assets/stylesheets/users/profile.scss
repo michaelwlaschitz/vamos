@@ -159,21 +159,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .orange-title {
   color: $orange-vamos;
   // font-weight: lighter;
@@ -188,413 +173,6 @@
   max-width: 200px;
 }
 
-// IF USER IS NGO
-
-.ngo-user-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-
-.ngo-image {
-  border-radius: 5px;
-  width: 140px;
-  object-fit: cover;
-}
-.title-bigger{
-  font-size: 22px;
-}
-
-#accepted-text {
-  color: $orange-vamos;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.create-project {
-  color: gray;
-  border: 1px solid $orange-vamos;
-  border-radius: 10px;
-  height: 40px;
-  width: 350px;
-  padding-top: 6px;
-  text-align: center;
-  font-weight: lighter;
-  font-size: 18px;
-  background-color: #F28A28;
-  color: white;
-}
-
-@media(min-width: 992px) {
-  .create-project {
-  }
-}
-
-@media(min-width: 575px) and (max-width: 767px) {
-  .create-project {
-    position: fixed;
-    bottom: 100px;
-    background-color: white;
-    display: flex;
-  }
-}
-
-
-#title-ngo-side {
-  font-size: 20px;
-}
-
-.big-size {
-  font-size: 20px;
-}
-
-// IF USER IS VOLUNTEER
-
-.content-container-profile {
-  .user-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-  }
-}
-
-
-.team-member-yes-exist-volunteer{  //contour size
-  border-radius: 50%;
-}
-
-@media(min-width: 992px) {
-  .team-member-yes-exist-volunteer {
-    width: 80px;
-    height: 80px;
-  }
-}
-@media(min-width: 768px) and (max-width: 991px) {
-  .team-member-yes-exist-volunteer {
-    width: 70px;
-    height: 70px;
-  }
-}
-
-.rounded-circle-volunteer {  //imagz size
-  border-radius: 50%;
-}
-
-@media(min-width: 992px) {
-  .rounded-circle-volunteer {
-    width: 76px;
-    height: 76px;
-    border: 2px solid #fb8500;
-  }
-}
-@media(min-width: 768px) and (max-width: 991px) {
-  .rounded-circle-volunteer {
-    width: 66px;
-    height: 66px;
-    border: 2px solid #fb8500;
-  }
-}
-
-@media(max-width: 767px) {
-  .rounded-circle-volunteer {
-    border: 2px solid #fb8500;
-
-  }
-}
-
-
-.rounded-circle {
-
-} //user photo for ngos
-
-@media(min-width: 992px) {
-  .rounded-circle {
-    margin-right: 15px;
-    width: 40px;
-    height: 40px;
-  }
-}
-
-
-.team-member-no-exist {
-  border-radius: 50%;
-  border: 2px solid gray;
-}
-
-
-.create-team-button {
-  border-bottom: 1px solid gray;
-  color: gray;
-  font-weight: lighter;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-}
-.create-team-button-alternative {
-  margin-top: 20px;
-  padding-top: 5px;
-  border: 1px solid $orange-vamos;
-  border-radius: 10px;
-  color: $orange-vamos;
-  width: 330px;
-  height: 40px;
-  font-weight: lighter;
-  .p-size {
-    font-size: 20px;
-  }
-}
-
-.user-photo {
-
-}
-
-@media(min-width: 992px) {
-  .user-photo {
-    margin-right: 150px;
-    margin-left: 150px;
-    padding-right: 80px;
-    padding-left: 80px;
-  }
-}
-@media(min-width: 768px) and (max-width: 991px) {
-  .user-photo {
-    margin-right: 150px;
-    margin-left: 150px;
-  }
-}
-
-.team-name {
-  font-weight: lighter;
-}
-
-@media(min-width: 992px) {
-  .team-name {
-    margin-bottom: 20px;
-  }
-}
-
-
-.status-button {
-  width: 100px;
-  text-align: center;
-  padding: 5px 5px;
-  box-shadow: 5px;
-  font-size: 16px;
-  // position: absolute; best solution to have the button fits the card in every screen
-  left: 230px;
-  bottom: 135px;
-  border-radius: 5px;
-  opacity: 0.9;
-  color: $white;
-  // text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-}
-
-.accepted-button {
-    background-color: $orange-vamos;
-}
-
-.rejected-button {
-  background-color: $black-gray;
-}
-
-.pending-button {
-  background-color: $black-gray;
-}
-
-.review-button {
-  width: 120px;
-  text-align: center;
-  padding: 5px 5px;
-  box-shadow: 5px;
-  font-size: 16px;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 138px;
-  border-radius: 5px;
-  opacity: 0.9;
-  background-color: white;
-  color: $orange-vamos;
-}
-
-.project.card {
-  background-color: white;
-}
-
-
-.project-card-profile {  // add to rename the cards to not have the same effects on the projects index page
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  box-shadow: 1px 2px 3px gray;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
-  .project-image {
-    background-size: cover;
-    width: 100%;
-    height: 180px;
-    position: relative;
-  }
-  .interest-icon {
-    background-color: white;
-    text-align: center;
-    padding: 7px;
-    box-shadow: 5px;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    position: absolute;
-    left: 3px;
-    bottom: 3px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .project-text-stuff {
-    padding-left: 5px;
-    .project-title {
-      margin: 0px 0px 0px;
-      font-size: 22px;
-      margin-bottom: 4px;
-      margin-top: 4px;
-    }
-    .project-ong {
-      margin-bottom: 5px;
-      font-size: 16px;
-      color: $light-gray;
-      font-weight: lighter;
-    }
-    .project-elements {
-      color: gray;
-      font-weight: lighter;
-      .element {
-        margin-right: 30px;
-      }
-      a {
-      text-decoration: none;
-      }
-    }
-  }
-}
-.project-text-stuff:hover {
-  text-decoration: none;
-}
-
-
-@media(min-width: 992px) {
-  .project-card-profile {
-    max-width: 350px;
-    padding-right: 2px;
-  }
-}
-
-@media(min-width: 768px) and (max-width: 991px) {
-  .project-card-profile {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-    max-width: 350px;
-  }
-}
-
-.content-container-profile {
-  margin: auto;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  width: 90%;
-  padding: 0px;
-  display: grid;
-}
-
-@media(min-width: 992px) {
-  .content-container-profile {
-    width: 80%;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
-  }
-}
-@media(min-width: 768px) and (max-width: 991px) {
-  .content-container-profile {
-    width: 80%;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-
-  }
-}
-
-.content-container-profile-team {
-  margin: auto;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  width: 90%;
-  padding: 0px;
-}
-
-@media(min-width: 992px) {
-  .content-container-profile-team {
-    width: 80%;
-  }
-}
-@media(min-width: 768px) and (max-width: 991px) {
-  .content-container-profile-team {
-    width: 80%;
-  }
-}
-
-.fa-user-friends {
-  margin-left: 5px;
-}
-
-.content-container-profile-ngo-project.ngo-app-datas {
-  margin: auto;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  width: 90%;
-  padding: 0px;
-  display: grid;
-}
-
-@media(min-width: 992px) {
-  .content-container-profile-ngo-project {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-  }
-  .ngo-app-datas {
-    min-height: 500px;
-  }
-}
-
-@media(min-width: 768px) and (max-width: 991px) {
-  .content-container-profile-ngo-project {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-  }
-}
-
-@media(min-width: 575px) and (max-width: 767px) {
-  .content-container-profile-ngo-project {
-    width: 80%;
-  }
-}
-
-
-
-// ngo profile container
-.content-container-ngo-profile {
-  margin: auto;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  width: 90%;
-  padding: 0px;
-  display: block;
-}
-
-@media(min-width: 992px) {
-  .content-container-ngo-profile {
-    display: none;
-  }
-}
-
-
 // ngo infos on the left, display only on desktop
 
 .ngo-datas {
@@ -604,12 +182,6 @@
   display: none;
   height: 400px;
   width: 250px;
-}
-
-@media(min-width: 992px) {
-  .ngo-datas {
-    display: block;
-  }
 }
 
 
@@ -678,4 +250,386 @@
 
 #button-info {
   min-width: 180px;
+}
+
+// IF USER IS NGO
+
+.ngo-user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.ngo-image {
+  border-radius: 5px;
+  width: 140px;
+  object-fit: cover;
+}
+
+.title-bigger{
+  font-size: 22px;
+}
+
+#accepted-text {
+  color: $orange-vamos;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.create-project {
+  color: gray;
+  border: 1px solid $orange-vamos;
+  border-radius: 10px;
+  height: 40px;
+  width: 350px;
+  padding-top: 6px;
+  text-align: center;
+  font-weight: lighter;
+  font-size: 18px;
+  background-color: #F28A28;
+  color: white;
+}
+
+// ngo profile container
+.content-container-ngo-profile {
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  width: 90%;
+  padding: 0px;
+  display: block;
+}
+
+#title-ngo-side {
+  font-size: 20px;
+}
+
+.big-size {
+  font-size: 20px;
+}
+
+// IF USER IS VOLUNTEER
+
+.content-container-profile {
+  .user-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+}
+
+.team-member-yes-exist-volunteer{  //contour size
+  border-radius: 50%;
+}
+
+.rounded-circle-volunteer {  //imagz size
+  border-radius: 50%;
+}
+
+.rounded-circle {
+
+} //user photo for ngos
+
+
+.team-member-no-exist {
+  border-radius: 50%;
+  border: 2px solid gray;
+}
+
+
+.create-team-button {
+  border-bottom: 1px solid $orange-vamos;
+  color: gray;
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+.create-team-button-alternative {
+  margin-top: 20px;
+  padding-top: 5px;
+  border: 1px solid $orange-vamos;
+  border-radius: 10px;
+  color: $orange-vamos;
+  width: 330px;
+  height: 40px;
+  font-weight: lighter;
+  .p-size {
+    font-size: 20px;
+  }
+}
+
+.user-photo {
+
+}
+
+
+.team-name {
+  font-weight: lighter;
+}
+
+.status-button {
+  width: 100px;
+  text-align: center;
+  padding: 5px 5px;
+  box-shadow: 5px;
+  font-size: 16px;
+  // position: absolute; best solution to have the button fits the card in every screen
+  left: 230px;
+  bottom: 135px;
+  border-radius: 5px;
+  opacity: 0.9;
+  color: $white;
+  // text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.accepted-button {
+    background-color: $orange-vamos;
+}
+
+.rejected-button {
+  background-color: $black-gray;
+}
+
+.pending-button {
+  background-color: $black-gray;
+}
+
+.review-button {
+  width: 120px;
+  text-align: center;
+  padding: 5px 5px;
+  box-shadow: 5px;
+  font-size: 16px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 138px;
+  border-radius: 5px;
+  opacity: 0.9;
+  background-color: white;
+  color: $orange-vamos;
+}
+
+.project.card {
+  background-color: white;
+}
+
+.project-card-profile {  // add to rename the cards to not have the same effects on the projects index page
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 1px 2px 3px gray;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  .project-image {
+    background-size: cover;
+    width: 100%;
+    height: 180px;
+    position: relative;
+  }
+  .interest-icon {
+    background-color: white;
+    text-align: center;
+    padding: 7px;
+    box-shadow: 5px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    position: absolute;
+    left: 3px;
+    bottom: 3px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project-text-stuff {
+    padding-left: 5px;
+    .project-title {
+      margin: 0px 0px 0px;
+      font-size: 22px;
+      margin-bottom: 4px;
+      margin-top: 4px;
+    }
+    .project-ong {
+      margin-bottom: 5px;
+      font-size: 16px;
+      color: $light-gray;
+      font-weight: lighter;
+    }
+    .project-elements {
+      color: gray;
+      font-weight: lighter;
+      .element {
+        margin-right: 30px;
+      }
+      a {
+      text-decoration: none;
+      }
+    }
+  }
+}
+
+.project-text-stuff:hover {
+  text-decoration: none;
+}
+
+.content-container-profile {
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  width: 90%;
+  padding: 0px;
+  display: grid;
+}
+
+.content-container-profile-team {
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  width: 90%;
+  padding: 0px;
+}
+
+
+.fa-user-friends {
+  margin-left: 5px;
+}
+
+.content-container-profile-ngo-project.ngo-app-datas {
+  margin: auto;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  width: 90%;
+  padding: 0px;
+  display: grid;
+}
+
+@media(min-width: 992px) {
+
+  .team-member-yes-exist-volunteer {
+    width: 80px;
+    height: 80px;
+  }
+
+  .rounded-circle {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .user-photo {
+    margin-right: 150px;
+    margin-left: 150px;
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+
+  .team-name {
+    margin-bottom: 20px;
+  }
+
+  .rounded-circle-volunteer {
+    width: 76px;
+    height: 76px;
+    border: 2px solid #fb8500;
+  }
+
+  .project-card-profile {
+    max-width: 350px;
+    padding-right: 2px;
+  }
+
+  .content-container-profile {
+    width: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .content-container-profile-ngo-project {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .ngo-app-datas {
+    min-height: 500px;
+  }
+
+  .content-container-ngo-profile {
+    display: none;
+  }
+  .ngo-datas {
+    display: block;
+  }
+  .content-container-profile-team {
+    width: 80%;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+
+  .team-member-yes-exist-volunteer {
+    width: 70px;
+    height: 70px;
+  }
+
+  .rounded-circle-volunteer {
+    width: 66px;
+    height: 66px;
+    border: 2px solid #fb8500;
+  }
+
+  .content-container-profile-team {
+    width: 80%;
+  }
+
+  .content-container-profile-ngo-project {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .content-container-profile {
+    width: 80%;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .project-card-profile {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    max-width: 350px;
+  }
+
+  .user-photo {
+    margin-right: 150px;
+    margin-left: 150px;
+  }
+}
+
+@media(min-width: 575px) and (max-width: 767px) {
+  .content-container-profile-ngo-project {
+    width: 80%;
+  }
+
+  .create-project {
+    position: fixed;
+    bottom: 100px;
+    background-color: white;
+    display: flex;
+  }
+  .rounded-circle-volunteer {
+    border: 2px solid #fb8500;
+  }
+  .profile-page {
+  width: 100%;
+  }
+}
+
+@media(max-width: 574px) {
+  .rounded-circle-volunteer {
+    border: 2px solid #fb8500;
+  }
+  .profile-page {
+  width: 100%;
+}
 }

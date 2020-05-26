@@ -48,6 +48,7 @@ en:
       logout: "Logout"
       explore: "Explore"
       dashboard: "My Dashboard"
+      dashboard2: "Dashboard"
       my_projects: "My Projects"
 
     interests:
@@ -84,6 +85,10 @@ en:
         capacity:
         category:
         description:
+        start_date:
+        end_date:
+        start_time:
+        end_time:
       ngo:
         name: "Organization Name"
         phone:
@@ -248,6 +253,10 @@ en:
       create_project_button: "Create New Project"
 
     profile:
+      sign_out: "Sign out"
+      my_teams: "My teams"
+      my_applications: "My applications"
+      create_team: "Create a team"
       edit_profile: "Edit profile"
       change: "Change"
       personal_info: "PERSONAL INFO"

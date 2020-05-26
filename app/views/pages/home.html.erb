@@ -1,16 +1,16 @@
 <body>
   <div class="banner home-background" style="background-image: linear-gradient(rgba(0,0,0, 0.3),rgba(0,0,0,0.4)), url('<%= image_path "Volunteering/Volunteering5.jpg"%>'); background-repeat: no-repeat;">
-    <div class='container-fluid home-container py-4'>
+    <div class='home-container py-4'>
       <% if user_signed_in? %>
       <div class="d-flex justify-content-between align-items-center navbar-home">
         <div class="position-static">
           <%= render 'shared/logo_top_left' %>
         </div>
         <div class="hide-desktop">
-          <h3 class="paragraph-no-margin mt-2"> <%= link_to t("global.navbar.dashboard"), user_profile_path, class: "white mr-4 hide-desktop" %> </h3>
+          <h3 class="paragraph-no-margin mt-2"> <%= link_to t("global.navbar.dashboard"), user_profile_path, class: "white hide-desktop" %> </h3>
         </div>
       </div>
-
+      <%= render 'shared/languages_bottom_left' %>
       <% else %>
       <div class="d-flex justify-content-between align-items-center navbar-home">
         <div class="position-static">
@@ -20,6 +20,8 @@
           <h3 class="paragraph-no-margin"> <%= link_to t("global.navbar.login"), "", data: {toggle: "modal", target: ".bd-example-modal-lg"}, class: "nav-link text-homepage mr-2" %> </h3>
         </div>
       </div>
+
+      <%= render 'shared/languages_bottom_left' %>
       <% end %>
 
       <div class="d-flex">
@@ -31,7 +33,7 @@
 
           <%= link_to "Vamos!", filter_location_path, class: "button-vamos primary-style w-100 mt-3" %>
 
-          <h3 class="text-right mt-4 "><%= link_to t(".find"), new_ngo_path, class: "white hide-desktop"%></h3>
+          <h3 class="mt-4 text-right"><%= link_to t(".find"), new_ngo_path, class: "white hide-desktop"%></h3>
         </div>
       </div>
     </div>

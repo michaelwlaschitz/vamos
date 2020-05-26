@@ -1,10 +1,26 @@
 es:
 
   date:
+    abbr_month_names:
+    -
+    - En
+    - Feb
+    - Mar
+    - Abr
+    - May
+    - Jun
+    - Jul
+    - Agt
+    - Sept
+    - Oct
+    - Nov
+    - Dic
+
     formats:
       default: "%Y-%m-%d"
       short: "%b %d"
       long: "%B %d, %Y"
+
 
   global:
     navbar:
@@ -16,7 +32,8 @@ es:
       login: "Inicia sesión"
       logout: "Salir"
       explore: "Explorar"
-      dashboard: "Panel de Control"
+      dashboard: "Mi perfil"
+      dashboard2: "Mi perfil"
       my_projects: "Mis proyectos"
 
     interests:
@@ -52,13 +69,18 @@ es:
         capacity: "Capacidad de voluntarios"
         category: "Categoría"
         description: "Descripción"
+        start_date: "Fecha de inicio"
+        end_date: "Fecha de finalización"
+        start_time: "Hora de inicio"
+        end_time: "Hora de finalización"
+
       ngo:
         name: "Nombre"
         phone: "Número de teléfono"
         description: "Descripción"
         address: "Dirección"
       review:
-        rating: "Reseñas"
+        rating: "Ranking"
         content: "Comentario"
       team:
         name: "Nombre de Equipo"
@@ -72,8 +94,8 @@ es:
 
   pages:
     home:
-      title_for_html: "<strong>Ayuda en projectos locales <br>con tus amigos.</strong>"
-      sub_title_for_html: "Busca y aplica con tu equipo <br>a voluntariados cerca de ti."
+      title_for_html: "<strong>Voluntariados <br>con tus amigos.</strong>"
+      sub_title_for_html: "Busca y aplica a voluntariados<br> con tu equipo cerca de ti."
       find: "Encuentra voluntarios >>"
 
       team_name_for_html: "Nombre del equipo: <span style='color: #fb8500'>Las Alpacas</span>"
@@ -86,7 +108,7 @@ es:
       event_manager: "Administrador de evento"
       lisa_for_html: "<strong>Lisa, 23</strong>"
       medical_student: "Estudiante de medicina"
-      volunteer_cta_title_for_html: "Haz voluntariado con<br> tu equipo de amigos."
+      volunteer_cta_title_for_html: "Forma un equipo<br>y trabaja juntos."
       volunteer_cta_sub_title: "En Vamos, puede crear fácilmente un equipo, invitar a sus amigos y unirse a las oportunidades de voluntariado juntos."
       volunteer_cta_button: "Mira oportunidades"
 
@@ -213,6 +235,10 @@ es:
       create_project_button: "Crea un proyecto nuevo"
 
     profile:
+      sign_out: "Salir"
+      my_teams: "Mis equipos"
+      my_applications: "Mis aplicaciones"
+      create_team: "Crea un equipo"
       edit_profile: "Editar perfil"
       change: "Cambiar"
       personal_info: "INFO PERSONAL"

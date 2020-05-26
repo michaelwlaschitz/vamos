@@ -21,10 +21,8 @@
             <%= link_to t("global.navbar.find"), ngos_home_path, class: "nav-link" %>
           </li>
           <li id="about-vamos" class="no-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/pages', action: 'about_vamos') %>">
-            <%= link_to t("global.navbar.conversations"), conversations_path, class: "dropdown-item" %>
+            <%= link_to t("global.navbar.conversations"), conversations_path, class: "nav-link" %>
           </li>
-
-
 
           <li id="logedin" class="yes-signed nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
