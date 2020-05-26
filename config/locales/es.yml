@@ -90,7 +90,7 @@ es:
       volunteer_cta_sub_title: "En Vamos, puede crear fácilmente un equipo, invitar a sus amigos y unirse a las oportunidades de voluntariado juntos."
       volunteer_cta_button: "Mira oportunidades"
 
-      function_title_mobile: "Como funciona"
+      function_title: "Vamos te trae voluntariados a ti"
 
       function1_title: "Encuentra proyectos locales que se ajusten a ti"
       function1_text: "Con Vamos, puedes filtrar por categoría, ubicación y horas para encontrar la mejor oportunidad para ti"
@@ -103,7 +103,7 @@ es:
       ngo_cta_text_for_html: "Crea tu primer proyecto gratis en menos de <strong> 3 minutos</strong>!"
       ngo_cta_button: "Vamos"
 
-      process_title: "Cómo funciona?"
+      process_title: "4 pasos a tu primer voluntariado"
       process_step1: "Filtra por ubicación, categoría y horas para encontrar las mejores oportunidades para ti."
       process_step2: "Encuentra información detallada sobre oportunidades de voluntariado."
       process_step3: "Crea tu equipo invitando a tus amigos y aplica a oportunidades en unos pocos clicks."
@@ -216,7 +216,7 @@ es:
       edit_profile: "Editar perfil"
       change: "Cambiar"
       personal_info: "INFO PERSONAL"
-      ngo_info: "INFO ORGANIZACIÒN"
+      ngo_info: "INFO ONG"
       name: "Nombre"
       description: "Descripción"
       phone: "Teléfono"

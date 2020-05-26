@@ -121,7 +121,7 @@ en:
       volunteer_cta_sub_title: "In Vamos you can easily invite your friends, apply as a team and chat altogehter with the organization."
       volunteer_cta_button: "Check opportunities"
 
-      function_title_mobile: "How it works"
+      function_title: "Vamos brings volunteering to you"
 
       function1_title: "Find local projects that fit you"
       function1_text: "With Vamos you can filter by category, location and time to find the best opportunity for you."
@@ -134,7 +134,7 @@ en:
       ngo_cta_text_for_html: "Create your first project for free in less than <strong> 3 minutes! </strong>"
       ngo_cta_button: "Get started"
 
-      process_title: "How does it work?"
+      process_title: "4 Steps to your first volunteering"
       process_step1: "Filter by location, cause and time investment."
       process_step2: "Read detailled info about volunteering opportunties."
       process_step3: "Create your team and apply."
@@ -251,7 +251,7 @@ en:
       edit_profile: "Edit profile"
       change: "Change"
       personal_info: "PERSONAL INFO"
-      ngo_info: "ORGANIZATION INFO"
+      ngo_info: "NGO INFO"
       name: "Name"
       description: "Description"
       phone: "Phone"
