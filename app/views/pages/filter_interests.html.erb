@@ -7,7 +7,7 @@
 
       <div class="filter-content">
         <div class="form-group">
-          <%= form_tag(filter_time_path, :method => "get", local: true) do %>
+          <%= form_tag(projects_path, :method => "get", local: true) do %>
             <% hidden_field_tag(:address, params[:address]) %>
             <%= render "projects/partial_filter_boxes_interest" %>
             <% if %>

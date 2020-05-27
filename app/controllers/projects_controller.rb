@@ -48,21 +48,21 @@ class ProjectsController < ApplicationController
 
     @projects = @projects.where('category IN (?)', params[:categories]) unless params[:categories]&.reject(&:blank?).blank?
 
-    param1 = "1 - 4 h/week"
-    param2 = "5 - 9 h/week"
-    param3 = "10+ h/week"
+    # param1 = "1 - 4 h/week"
+    # param2 = "5 - 9 h/week"
+    # param3 = "10+ h/week"
 
-    if params[:time]&.reject(&:blank?).blank?
-      @count = @projects.count(:all)
-    else
-      filtered_projects = []
-      # commented this so that it does not break after removing hours_per_week, not sure how to fix it for now
-      # filtered_projects += @projects.where(hours_per_week: 1..4) if params[:time].include?(param1)
-      # filtered_projects += @projects.where(hours_per_week: 5..9) if params[:time].include?(param2)
-      # filtered_projects += @projects.where(hours_per_week: 10..100) if params[:time].include?(param3)
-      @projects = filtered_projects
-      @count = @projects.count
-    end
+    # if params[:time]&.reject(&:blank?).blank?
+    #   @count = @projects.count(:all)
+    # else
+    #   filtered_projects = []
+    #   # commented this so that it does not break after removing hours_per_week, not sure how to fix it for now
+    #   # filtered_projects += @projects.where(hours_per_week: 1..4) if params[:time].include?(param1)
+    #   # filtered_projects += @projects.where(hours_per_week: 5..9) if params[:time].include?(param2)
+    #   # filtered_projects += @projects.where(hours_per_week: 10..100) if params[:time].include?(param3)
+    #   @projects = filtered_projects
+    #   @count = @projects.count
+    # end
   end
 
   def project_params
