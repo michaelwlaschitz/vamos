@@ -44,10 +44,10 @@
 
           <li id="logedin" class="yes-signed nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <% facebook_avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+              <% facebook_avatar_url = current_user.facebook_picture_url %>
               <% if facebook_avatar_url %>
                 <%= image_tag facebook_avatar_url, width: 50, height: 50, class: "rounded-circle"%>
-              <% else %>
+              <% elsif %>
                 <%= cl_image_tag current_user.photo.key, width: 50, height: 50, class: "rounded-circle" %>
               <% end %>
             </a>
