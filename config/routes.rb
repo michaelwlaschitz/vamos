@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
     resources :projects, only: [:index, :create, :new, :show] do
       resources :bookings, only: [:new, :create]
-      get 'bookings/:booking_id/confirmation', to: 'bookings#confirmation', as: :booking_confirmation
     end
+
+    get 'bookings/:booking_id/confirmation', to: 'bookings#confirmation', as: :booking_confirmation
 
     root to: 'pages#home'
     get 'ngos/home', to: 'ngos#home', as: :ngos_home

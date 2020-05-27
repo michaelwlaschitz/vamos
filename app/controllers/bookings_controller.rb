@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
       @message.user = current_user
       @message.save
       # create a new message from the form to start the conversation
-      redirect_to project_booking_confirmation_path(@booking) #the button for team-creation and for Contacting the NGO now is the same.
+      redirect_to booking_confirmation_path(@booking) #the button for team-creation and for Contacting the NGO now is the same.
     else
       render :new
     end
