@@ -22,6 +22,7 @@ gem 'webpacker'
 
 gem 'rails-i18n'
 
+gem 'omniauth-facebook'
 
 gem 'devise'
 gem 'devise-i18n'
