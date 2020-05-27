@@ -2,12 +2,14 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
-  # Maker user omiauthable
-  devise :omniauthable, omniauth_providers: [:facebook]
 
   after_create :set_default_avatar
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :invitable, invite_for: 0
         # devise invitable comes from new gem and allows as to invite users.
+
+  # Devise omniauthable makes user facebook omiauthable
+  devise :omniauthable, omniauth_providers: [:facebook]
+
   has_many :reviews
   has_one :ngo
   has_many :ngo_reviews, through: :ngo, source: :reviews
