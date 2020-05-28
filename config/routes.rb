@@ -28,8 +28,8 @@ Rails.application.routes.draw do
     resources :ngos, only: [:new, :create]
 
     resources :projects, only: [:index, :create, :new, :show] do
-    resources :bookings, only: [:new, :create]
-    get 'bookings/:booking_id/confirmation', to: 'bookings#confirmation', as: :booking_confirmation
+      resources :bookings, only: [:new, :create]
+      get 'bookings/:booking_id/confirmation', to: 'bookings#confirmation', as: :booking_confirmation
     end
 
     resources :bookings, only: [] do
