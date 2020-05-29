@@ -269,3 +269,11 @@ en:
       reviews:
         zero: "There are no reviews for your organization yet!"
         other: 'User Reviews for your organization (%{count})'
+
+    applications:
+      status: "Status"
+      project_name: "Project Name"
+      team_name: "Team Name"
+      date: "Date"
+      hours: "Hours"
+      application_date: "Application Date"

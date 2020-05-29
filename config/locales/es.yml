@@ -251,3 +251,11 @@ es:
       reviews:
         zero: "There are no reviews for your organization yet!"
         other: "Reseñas de usuarios para su organización (%{count})"
+
+    applications:
+      status: "Status"
+      project_name: "Proyecto"
+      team_name: "Nombre del equipo"
+      date: "Fecha"
+      hours: "Hora"
+      application_date: "Fecha de aplicación"

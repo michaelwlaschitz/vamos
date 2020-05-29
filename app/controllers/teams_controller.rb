@@ -19,6 +19,11 @@ class TeamsController < ApplicationController
   end
   private
 
+  def show
+    @team = Team.find(params[:id])
+    @ngo_bookings = current_user.ngo_bookings.where(team_id: @team.ids)
+  end
+
   def team_params
     params.require(:team).permit(:name)
   end
