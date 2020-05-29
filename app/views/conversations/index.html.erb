@@ -1,29 +1,36 @@
 <div class="has-navbar-so-margin">
   <%= render 'shared/mobile_navbar' %>
 
-<div class="content-container-chat">
-  <h2 class="border-bottom mb-3 mt-3 py-1"> <%= t(".inbox") %></h2>
-  <% @conversations.each do |conversation| %>
-  <%= link_to conversation_path(conversation), class: "dark-gray" do %>
+  <div class="content-container-chat">
+    <h2 class="border-bottom mb-3 mt-3 py-1 orange"> <%= t(".inbox") %></h2>
+    <% @conversations.each do |conversation| %>
+    <%= link_to conversation_path(conversation), class: "dark-gray" do %>
 
-  <div class="d-flex mb-3 border-bottom">
+    <div class="d-flex mb-3 border-bottom">
 
-    <!--   Avatars -->
+      <!--   Avatars -->
 
-    <div class="conversation-avatars mr-3">
-      <div class="ngo-avatar">
-        <%= cl_image_tag conversation.ngo.user.photo.key, class: "avatar" %>
+      <div class="conversation-avatars mr-3">
+        <div class="ngo-avatar">
+          <% if current_user.ngo %>
+          <%= cl_image_tag conversation.team.users.first.photo.key, class: "avatar" %>
+          <% else %>
+          <%= cl_image_tag conversation.ngo.user.photo.key, class: "avatar" %>
+          <% end %>
+        </div>
       </div>
-    </div>
 
-    <div class="conversation-content w-100">
+      <div class="conversation-content w-100">
 
-    <!--   Users in chat & project name on desktop-->
+        <!--   Users in chat & project name on desktop-->
 
-      <div id="desktop-show-project-chat">
-        <div class="d-flex justify-content-between align-items-center">
-          <p class="style-project"><strong>Project: </strong><%= conversation.project.title%></p>
+        <div id="desktop-show-project-chat">
+          <div class="d-flex justify-content-between align-items-center">
             <div class="">
+              <div class="conversation-users font-weight-bold">
+                <%= conversation.ngo.user.first_name %>,
+                <%= conversation.team.name%>
+              </div>
               <% if conversation.messages.last.present? && conversation.messages.last.read == false && conversation.messages.last.user_id != current_user.id %>
               <i class="fas fa-circle orange smaller-text mb-2"></i>
               <% end %>
@@ -32,67 +39,70 @@
               <% if conversation.messages.last.present?%>
               <p class="paragraph-no-margin date-message-text ml-1">
                 <%=conversation.messages.last.message_day  %>
-              <i class="fas fa-chevron-right"></i> </p>
+                <i class="fas fa-chevron-right"></i> </p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <div></div>
+            <!--   Date and time according to screen-->
+
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <% if conversation.messages.last.present? && conversation.messages.last.read == false && conversation.messages.last.user_id != current_user.id %>
+                <i class="fas fa-circle orange smaller-text mb-2"></i>
+                <% end %>
+              </div>
+              <div>
+                <% if conversation.messages.last.present?%>
+                  <p class="paragraph-no-margin date-message-text-2 ml-1">
+                    <%=conversation.messages.last.message_day  %>
+                    <i class="fas fa-chevron-right"></i>
+                  </p>
+                <% end %>
+              </div>
+
+            </div>
+          </div>
+
+            <!--   Messages -->
+
+          <div class="font-weight-light mb-4">
+            <div class="d-flex justify-content-between">
+              <div class="line-text-status d-flex justify-content-between align-items-center">
+                <% if conversation.messages.last.present? && conversation.messages.last.read == false %>
+                  <p class="paragraph-no-margin">
+                  <span class="font-weight-bold"><%= conversation.messages.last.user.first_name %></span>
+                  <%=conversation.messages.last.body.truncate(70)%></p>
+                <% elsif conversation.messages.last.present? %>
+                  <%=conversation.messages.last.body.truncate(70)%>
+                <% else %>
+                  <p class="paragraph-no-margin font-italic"> No messages yet - Feel free to ask any questions!</p>
+                <% end %>
+              </div>
+              <div id="mobile-show-status-right" style="font-weight:400;">
+                  <%=conversation.booking.status.capitalize%>
+              </div>
+            </div>
+
+            <div id="mobile-show-chat">
+              <%if conversation.booking.status == "pending"%>
+                <p style="color:#F28A28"><strong><%= conversation.booking.status.capitalize%></strong></p>
+              <%elsif conversation.booking.status == "rejected"%>
+                <p style="color:black"><strong><%= conversation.booking.status.capitalize%></strong></p>
+              <% else %>
+                <p style="color:green"><strong><%= conversation.booking.status.capitalize%></strong></p>
               <% end %>
             </div>
-        </div>
-      </div>
-      <div class="d-flex justify-content-between align-items-center mb-1">
-        <div class="conversation-users font-weight-bold">
-          <%= conversation.ngo.user.first_name %>,
-          <%= conversation.team.name%>
-        </div>
-
-    <!--   Date and time according to screen-->
-
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <% if conversation.messages.last.present? && conversation.messages.last.read == false && conversation.messages.last.user_id != current_user.id %>
-            <i class="fas fa-circle orange smaller-text mb-2"></i>
-            <% end %>
-          </div>
-          <div>
-            <% if conversation.messages.last.present?%>
-            <p class="paragraph-no-margin date-message-text-2 ml-1">
-              <%=conversation.messages.last.message_day  %>
-            <i class="fas fa-chevron-right"></i> </p>
-            <% end %>
-          </div>
-          <div id="mobile-show-status-right">
-            <%=conversation.booking.status.capitalize%>
+            <div class="d-flex justify-content-between">
+              <div></div>
+              <p class="style-project"><%= conversation.project.title%></p>
+            </div>
           </div>
         </div>
       </div>
-
-  <!--   Messages -->
-
-      <div class="font-weight-light mb-4">
-
-        <div class="line-text-status d-flex justify-content-between align-items-center">
-          <% if conversation.messages.last.present? && conversation.messages.last.read == false %>
-          <p class="paragraph-no-margin">
-           <span class="font-weight-bold"><%= conversation.messages.last.user.first_name %></span>
-          <%=conversation.messages.last.body.truncate(70)%></p>
-          <% elsif conversation.messages.last.present? %>
-          <%=conversation.messages.last.body.truncate(70)%>
-          <% else %>
-          <p class="paragraph-no-margin font-italic"> No messages yet - Feel free to ask any questions!</p>
-          <% end %>
-        </div>
-        <div id="mobile-show-chat">
-          <%if conversation.booking.status == "pending"%>
-            <p style="color:#F28A28"><strong><%= conversation.booking.status.capitalize%></strong></p>
-          <%elsif conversation.booking.status == "rejected"%>
-            <p style="color:black"><strong><%= conversation.booking.status.capitalize%></strong></p>
-          <% else %>
-            <p style="color:green"><strong><%= conversation.booking.status.capitalize%></strong></p>
-          <% end %>
-        </div>
-      </div>
-    </div>
+    <% end %>
+  <% end %>
   </div>
-<% end %>
-<% end %>
-</div>
-
 </div>
