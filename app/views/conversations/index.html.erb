@@ -2,7 +2,7 @@
   <%= render 'shared/mobile_navbar' %>
 
   <div class="content-container-chat">
-    <h2 class="border-bottom mb-3 mt-3 py-1"> <%= t(".inbox") %></h2>
+    <h2 class="border-bottom mb-3 mt-3 py-1 orange"> <%= t(".inbox") %></h2>
     <% @conversations.each do |conversation| %>
     <%= link_to conversation_path(conversation), class: "dark-gray" do %>
 
@@ -62,33 +62,37 @@
                   </p>
                 <% end %>
               </div>
-              <div id="mobile-show-status-right">
-                <%=conversation.booking.status.capitalize%>
-              </div>
+
             </div>
           </div>
 
             <!--   Messages -->
 
           <div class="font-weight-light mb-4">
-            <div class="line-text-status d-flex justify-content-between align-items-center">
-              <% if conversation.messages.last.present? && conversation.messages.last.read == false %>
-              <p class="paragraph-no-margin">
-               <span class="font-weight-bold"><%= conversation.messages.last.user.first_name %></span>
-               <%=conversation.messages.last.body.truncate(70)%></p>
-               <% elsif conversation.messages.last.present? %>
-               <%=conversation.messages.last.body.truncate(70)%>
-               <% else %>
-               <p class="paragraph-no-margin font-italic"> No messages yet - Feel free to ask any questions!</p>
-               <% end %>
-             </div>
-             <div id="mobile-show-chat">
+            <div class="d-flex justify-content-between">
+              <div class="line-text-status d-flex justify-content-between align-items-center">
+                <% if conversation.messages.last.present? && conversation.messages.last.read == false %>
+                  <p class="paragraph-no-margin">
+                  <span class="font-weight-bold"><%= conversation.messages.last.user.first_name %></span>
+                  <%=conversation.messages.last.body.truncate(70)%></p>
+                <% elsif conversation.messages.last.present? %>
+                  <%=conversation.messages.last.body.truncate(70)%>
+                <% else %>
+                  <p class="paragraph-no-margin font-italic"> No messages yet - Feel free to ask any questions!</p>
+                <% end %>
+              </div>
+              <div id="mobile-show-status-right" style="font-weight:400;">
+                  <%=conversation.booking.status.capitalize%>
+              </div>
+            </div>
+
+            <div id="mobile-show-chat">
               <%if conversation.booking.status == "pending"%>
-              <p style="color:#F28A28"><strong><%= conversation.booking.status.capitalize%></strong></p>
+                <p style="color:#F28A28"><strong><%= conversation.booking.status.capitalize%></strong></p>
               <%elsif conversation.booking.status == "rejected"%>
-              <p style="color:black"><strong><%= conversation.booking.status.capitalize%></strong></p>
+                <p style="color:black"><strong><%= conversation.booking.status.capitalize%></strong></p>
               <% else %>
-              <p style="color:green"><strong><%= conversation.booking.status.capitalize%></strong></p>
+                <p style="color:green"><strong><%= conversation.booking.status.capitalize%></strong></p>
               <% end %>
             </div>
             <div class="d-flex justify-content-between">
