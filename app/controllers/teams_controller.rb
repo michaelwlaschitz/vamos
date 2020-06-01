@@ -12,7 +12,7 @@ class TeamsController < ApplicationController
     if @new_team.save
       TeamMembership.create(user: current_user, team: @new_team)
       add_users_to_team()
-      redirect_to new_project_booking_path(@project), notice: "Your team has been successfully created !"
+      redirect_to new_project_application_path(@project), notice: "Your team has been successfully created !"
     else
       render 'new'
     end

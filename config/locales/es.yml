@@ -202,7 +202,7 @@ es:
       team_name: "Elige un nombre para tu equipo (20 caracteres máx"
       invite_friends: "Invita amigos a tu equipo"
       create_team: "Crea tu equipo"
-  bookings:
+  applications:
     new:
       application_overview: "Resumen de aplicación"
       project: "Proyecto"

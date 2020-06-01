@@ -2,8 +2,8 @@
 <%= render 'shared/mobile_navbar' %>
   <div class="content-container">
 <!-- desktop version of application-->
-    <div class="content-container-ngo-bookings-desktop hide-mobile mb-5">
-      <div class="container ngo-booking-datas mb-5 mt-5 hide-mobile">
+    <div class="content-container-ngo-applications-desktop hide-mobile mb-5">
+      <div class="container ngo-application-datas mb-5 mt-5 hide-mobile">
         <div class="row table-titles border-bottom">
           <div class="col-2">
             <h4 class="status-table">Status</h4>
@@ -24,41 +24,41 @@
             <h4 class="date-table">Booked date</h4>
           </div>
         </div>
-        <% @ngo_bookings.each do |booking| %>
+        <% @ngo_applications.each do |application| %>
           <div class="row border-bottom my-4 pb-3">
-            <div class="booking-result col-2">
-              <div class="booking-status-app-desktop">
-              <% if booking.status == "pending" %>
+            <div class="application-result col-2">
+              <div class="application-status-app-desktop">
+              <% if application.status == "pending" %>
                 <div class="accept-button-app-desktop px-3 mb-2">
-                  <%= link_to "Accept", accept_booking_path(booking), method: :patch, class: "green-color"%>
+                  <%= link_to "Accept", accept_application_path(application), method: :patch, class: "green-color"%>
                 </div>
                 <div class="reject-button-app-desktop px-3 mb-2">
-                  <%= link_to "Reject", reject_booking_path(booking), method: :patch, class: "red-color"%>
+                  <%= link_to "Reject", reject_application_path(application), method: :patch, class: "red-color"%>
                 </div>
-              <% elsif booking.status == "accepted" %>
+              <% elsif application.status == "accepted" %>
                 <h4 id="accepted-text-m">Accepted</h4>
-              <% elsif booking.status == "rejected" %>
+              <% elsif application.status == "rejected" %>
                 <h4 id="rejected-text-m">Declined</h4>
               <% end %>
               </div>
             </div>
             <div class="col-3">
-               <h4 class="project-name-booking"><%= booking.project.title %></h4>
+               <h4 class="project-name-application"><%= application.project.title %></h4>
             </div>
             <div class="number col-2">
-              <h4 class="m-0 team-name-ngo"><%= booking.team.name %></h4>
-              <% link_to teams_path(booking.team) %>
-              <h4 style="color:#f28b3c"> <%= booking.team.users.count %> people</h4>
+              <h4 class="m-0 team-name-ngo"><%= application.team.name %></h4>
+              <% link_to teams_path(application.team) %>
+              <h4 style="color:#f28b3c"> <%= application.team.users.count %> people</h4>
               </a>
             </div>
             <div class="col-1">
-              <h4 class="date-application"><%= booking.project.start_date.strftime("%d %B") %> </h4>
+              <h4 class="date-application"><%= application.project.start_date.strftime("%d %B") %> </h4>
             </div>
             <div class="col-1">
-              <h4 class="numb-hour"><%= (booking.project.end_time - booking.project.start_time) %> hours</h4>
+              <h4 class="numb-hour"><%= (application.project.end_time - application.project.start_time) %> hours</h4>
             </div>
             <div class="col-2">
-              <h4 class="numb-booking"><%= booking.created_at.strftime("%d %B") %></h4>
+              <h4 class="numb-application"><%= application.created_at.strftime("%d %B") %></h4>
             </div>
             <div class="col-1">
               <%= link_to "Details", filter_location_path, class: "button-details w-20 mt-3" %>
@@ -68,51 +68,51 @@
       </div>
     </div>  <!-- don't touch end -->
             <!-- mobile version of application-->
-    <div class="ngo-bookings-mobile hide-desktop">
+    <div class="ngo-applications-mobile hide-desktop">
       <div class="title-mobile my-4 py-1">
         Applications
       </div>
-      <% @ngo_bookings.each do |booking| %>
-        <div class="ngo-booking d-flex my-4 py-1 border-bottom">
-          <div class="booking-name-team">
-            <h3 class="project-style"><%= booking.project.title %></h3>
+      <% @ngo_applications.each do |application| %>
+        <div class="ngo-application d-flex my-4 py-1 border-bottom">
+          <div class="application-name-team">
+            <h3 class="project-style"><%= application.project.title %></h3>
             <div class="team-info">
               <div class="d-flex justify-content-between align-items-center">
                 <div>
                   <div class="line-1 d-flex mY-4 pb-0">
-                    <p class="date-style"><%= booking.project.start_date.strftime("%d/%m ") %>·  </p>
+                    <p class="date-style"><%= application.project.start_date.strftime("%d/%m ") %>·  </p>
                     <pre> </pre>
-                    <p class="numb-style"> <%= booking.team.users.count %> people · </p>
+                    <p class="numb-style"> <%= application.team.users.count %> people · </p>
                     <pre> </pre>
-                    <p class="hour-style"> <%= (booking.project.end_time - booking.project.start_time) %> hours</p>
+                    <p class="hour-style"> <%= (application.project.end_time - application.project.start_time) %> hours</p>
                   </div>
                   <div class="line-3 d-flex mb-6 mt-3">
-                    <% booking.team.users.each do |user| %>
+                    <% application.team.users.each do |user| %>
                       <div class= "pic"> <%= cl_image_tag user.photo.key, width: 30, height: 30, class: "rounded-circle" %>
                       </div>
                     <% end %>
                     <div class= "arrow">
                       <i class="fas fa-chevron-right"></i>
-                      <%= link_to "Accept", accept_booking_path(booking), method: :patch, class: "green-color"%>
+                      <%= link_to "Accept", accept_application_path(application), method: :patch, class: "green-color"%>
                     </div>
                   </div>
-                  <p class="m-0 team-name-ngo"><%= booking.team.name %></p>
+                  <p class="m-0 team-name-ngo"><%= application.team.name %></p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="booking-status mr-2">
-            <% if booking.status == "pending" %>
+          <div class="application-status mr-2">
+            <% if application.status == "pending" %>
               <div class="accept-button px-3 my-2">
-                <%= link_to "Accept", accept_booking_path(booking), method: :patch, class: "green-color"%>
+                <%= link_to "Accept", accept_application_path(application), method: :patch, class: "green-color"%>
               </div>
               <div class="reject-button px-3 my-2">
-                <%= link_to "Reject", reject_booking_path(booking), method: :patch, class: "red-color"%>
+                <%= link_to "Reject", reject_application_path(application), method: :patch, class: "red-color"%>
               </div>
-            <% elsif booking.status == "accepted" %>
+            <% elsif application.status == "accepted" %>
               <p id="accepted-text">Accepted</p>
-            <% elsif booking.status == "rejected" %>
+            <% elsif application.status == "rejected" %>
               <p style="font-size: 18px">Declined</p>
             <% end %>
           </div>

@@ -59,7 +59,7 @@
             <% end %>
           </div>
           <div id="mobile-show-status-right">
-            <%=conversation.booking.status.capitalize%>
+            <%=conversation.application.status.capitalize%>
           </div>
         </div>
       </div>
@@ -80,12 +80,12 @@
           <% end %>
         </div>
         <div id="mobile-show-chat">
-          <%if conversation.booking.status == "pending"%>
-            <p style="color:#F28A28"><strong><%= conversation.booking.status.capitalize%></strong></p>
-          <%elsif conversation.booking.status == "rejected"%>
-            <p style="color:black"><strong><%= conversation.booking.status.capitalize%></strong></p>
+          <%if conversation.application.status == "pending"%>
+            <p style="color:#F28A28"><strong><%= conversation.application.status.capitalize%></strong></p>
+          <%elsif conversation.application.status == "rejected"%>
+            <p style="color:black"><strong><%= conversation.application.status.capitalize%></strong></p>
           <% else %>
-            <p style="color:green"><strong><%= conversation.booking.status.capitalize%></strong></p>
+            <p style="color:green"><strong><%= conversation.application.status.capitalize%></strong></p>
           <% end %>
         </div>
       </div>

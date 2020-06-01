@@ -3,7 +3,7 @@ require 'open-uri'
 
 puts "Creating users"
 Review.destroy_all
-Booking.destroy_all
+Application.destroy_all
 TeamMembership.destroy_all
 Team.destroy_all
 Project.destroy_all
@@ -284,71 +284,71 @@ team_membership3 = TeamMembership.create!(user_id: user16.id, team_id: team2.id)
 team_membership4 = TeamMembership.create!(user_id: user18.id, team_id: team2.id)
 
 puts "Seeding team done"
-puts "Seeding bookings"
+puts "Seeding applications"
 
-booking1 = Booking.create!(status: "pending", project_id: project1.id, team_id: team1.id)
-booking2 = Booking.create!(status: "pending", project_id: project2.id, team_id: team1.id)
-booking3 = Booking.create!(status: "pending", project_id: project3.id, team_id: team1.id)
-booking4 = Booking.create!(status: "pending", project_id: project4.id, team_id: team1.id)
-booking5 = Booking.create!(status: "pending", project_id: project1.id, team_id: team2.id)
-booking6 = Booking.create!(status: "pending", project_id: project2.id, team_id: team2.id)
-booking7 = Booking.create!(status: "pending", project_id: project3.id, team_id: team2.id)
+application1 = Application.create!(status: "pending", project_id: project1.id, team_id: team1.id)
+application2 = Application.create!(status: "pending", project_id: project2.id, team_id: team1.id)
+application3 = Application.create!(status: "pending", project_id: project3.id, team_id: team1.id)
+application4 = Application.create!(status: "pending", project_id: project4.id, team_id: team1.id)
+application5 = Application.create!(status: "pending", project_id: project1.id, team_id: team2.id)
+application6 = Application.create!(status: "pending", project_id: project2.id, team_id: team2.id)
+application7 = Application.create!(status: "pending", project_id: project3.id, team_id: team2.id)
 
-puts "Seeding bookings done"
+puts "Seeding applications done"
 puts "Seeding reviews"
 
-review1 = Review.create!(rating: 4, content: "Amazing experience", user_id: user12.id, booking_id: booking1.id)
+review1 = Review.create!(rating: 4, content: "Amazing experience", user_id: user12.id, application_id: application1.id)
 review1.save!
 
-review2 = Review.create!(rating: 5, content: "I highly recommend", user_id: user11.id, booking_id: booking1.id)
+review2 = Review.create!(rating: 5, content: "I highly recommend", user_id: user11.id, application_id: application1.id)
 review2.save!
 
-review3 = Review.create!(rating: 5, content: "Best experience ever", user_id: user17.id, booking_id: booking2.id)
+review3 = Review.create!(rating: 5, content: "Best experience ever", user_id: user17.id, application_id: application2.id)
 review3.save!
 
-review4 = Review.create!(rating: 5, content: "So much fun and met amazing people", user_id: user13.id, booking_id: booking2.id)
+review4 = Review.create!(rating: 5, content: "So much fun and met amazing people", user_id: user13.id, application_id: application2.id)
 review4.save!
 
-review5 = Review.create!(rating: 4, content: "Good experience, feel useful", user_id: user13.id, booking_id: booking3.id)
+review5 = Review.create!(rating: 4, content: "Good experience, feel useful", user_id: user13.id, application_id: application3.id)
 review5.save!
 
-review6 = Review.create!(rating: 4, content: "I'll do it again", user_id: user11.id, booking_id: booking3.id)
+review6 = Review.create!(rating: 4, content: "I'll do it again", user_id: user11.id, application_id: application3.id)
 review6.save!
 
-review7 = Review.create!(rating: 4, content: "first experience and it was better than I expected", user_id: user12.id, booking_id: booking4.id)
+review7 = Review.create!(rating: 4, content: "first experience and it was better than I expected", user_id: user12.id, application_id: application4.id)
 review7.save!
 
-review8 = Review.create!(rating: 4, content: "I want to do more!", user_id: user17.id, booking_id: booking4.id)
+review8 = Review.create!(rating: 4, content: "I want to do more!", user_id: user17.id, application_id: application4.id)
 review8.save!
 
-review9 =  Review.create!(rating: 3, content: "Good experience", user_id: user14.id, booking_id: booking5.id)
+review9 =  Review.create!(rating: 3, content: "Good experience", user_id: user14.id, application_id: application5.id)
 review9.save!
 
-review10 = Review.create!(rating: 4, content: "Great experience with this organization", user_id: user15.id, booking_id: booking5.id)
+review10 = Review.create!(rating: 4, content: "Great experience with this organization", user_id: user15.id, application_id: application5.id)
 review10.save!
 
-review11 = Review.create!(rating: 5, content: "Don't hesitate, totally worth it", user_id: user16.id, booking_id: booking6.id)
+review11 = Review.create!(rating: 5, content: "Don't hesitate, totally worth it", user_id: user16.id, application_id: application6.id)
 review11.save!
 
-review12 = Review.create!(rating: 4, content: "I learnt so much and it was fun!", user_id: user18.id, booking_id: booking6.id)
+review12 = Review.create!(rating: 4, content: "I learnt so much and it was fun!", user_id: user18.id, application_id: application6.id)
 review12.save!
 
-review13 = Review.create!(rating: 3, content: "I liked the experience", user_id: user14.id, booking_id: booking7.id)
+review13 = Review.create!(rating: 3, content: "I liked the experience", user_id: user14.id, application_id: application7.id)
 review13.save!
 
-review14 = Review.create!(rating: 4, content: "the organization helps a lot, I met wonderful people!", user_id: user16.id, booking_id: booking7.id)
+review14 = Review.create!(rating: 4, content: "the organization helps a lot, I met wonderful people!", user_id: user16.id, application_id: application7.id)
 review14.save!
 
 puts "Seeding reviews done"
 puts "Seeding conversations"
 
-conversation1 = Conversation.create!(booking_id: booking1.id)
-conversation2 = Conversation.create!(booking_id: booking2.id)
-conversation3 = Conversation.create!(booking_id: booking3.id)
-conversation4 = Conversation.create!(booking_id: booking4.id)
-conversation5 = Conversation.create!(booking_id: booking5.id)
-conversation6 = Conversation.create!(booking_id: booking6.id)
-conversation7 = Conversation.create!(booking_id: booking7.id)
+conversation1 = Conversation.create!(application_id: application1.id)
+conversation2 = Conversation.create!(application_id: application2.id)
+conversation3 = Conversation.create!(application_id: application3.id)
+conversation4 = Conversation.create!(application_id: application4.id)
+conversation5 = Conversation.create!(application_id: application5.id)
+conversation6 = Conversation.create!(application_id: application6.id)
+conversation7 = Conversation.create!(application_id: application7.id)
 
 puts "Seeding conversations done"
 puts "Seeding messages"

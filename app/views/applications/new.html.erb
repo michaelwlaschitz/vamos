@@ -2,7 +2,7 @@
 <%= cl_image_tag photo.key, class: "image-small-height"%>
 <% end %>
 
-<div class="content-container-booking-new">
+<div class="content-container-application-new">
 
   <h2 class="h2-less-margin mb-3"><%= t(".application_overview") %></h2>
 
@@ -10,7 +10,7 @@
   <h3><strong><%= t(".organization") %>:</strong> <%= @project.ngo.name %></h3>
 
     <div class="form-group">
-      <%= simple_form_for ([@project, @booking])  do |f| %>
+      <%= simple_form_for ([@project, @application])  do |f| %>
         <h3 class="mt-4"><%= t(".selected_team") %></h3>
         <div class="mb-2">
           <%= f.association :team, label: false, input_html: {class: " form-control mt-2"}, collection: current_user.teams, selected: current_user.teams.last%>

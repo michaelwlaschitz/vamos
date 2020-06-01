@@ -4,7 +4,7 @@
   text-decoration: underline;
 }
 
-.project-name-booking, .number, .date-application, .numb-hour, .numb-booking {
+.project-name-application, .number, .date-application, .numb-hour, .numb-application {
   font-weight: lighter
 }
 
@@ -38,7 +38,7 @@
 }
 
 
-.booking-status-app-desktop {
+.application-status-app-desktop {
     width: 150px;
     text-align: center;
     .accept-button-app-desktop {
@@ -79,7 +79,7 @@
   margin-bottom: 0;
 }
 
-.content-container-ngo-bookings-desktop {
+.content-container-ngo-applications-desktop {
   min-height: 400px;
 }
 
@@ -92,16 +92,16 @@
   margin-top: 0;
 }
 
-.ngo-bookings-mobile {
+.ngo-applications-mobile {
   width: 90%;
   margin-right: 10px;
   margin-left: 10px;
 }
 
-.ngo-booking {
+.ngo-application {
   align-items: center;
   height: 120px;
-  .booking-name-team {
+  .application-name-team {
     width: 90%;
     height: 150px;
     .team-info {
@@ -122,7 +122,7 @@
     }
   }
 
-  .booking-status {
+  .application-status {
     width: 30%;
     max-width: 80px;
     text-align: center;
