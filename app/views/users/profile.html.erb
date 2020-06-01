@@ -231,15 +231,15 @@
                   <% @ngo_reviews.each do |review| %>
                     <div class="review">
                       <div class="review-user-image-container">
-                        <%= cl_image_tag review.booking.team.users.first.photo.key, class: "review-user-image" %>
+                        <%= cl_image_tag review.application.team.users.first.photo.key, class: "review-user-image" %>
                       </div>
                       <div class="review-content">
-                        <p class="review-team"><%= review.booking.team.name %></p>
+                        <p class="review-team"><%= review.application.team.name %></p>
                         <p class="review-text paragraph-no-margin"><%= review.content %></p>
                         <div class="d-flex justify-content-between">
                           <div></div>
-                          <%= link_to project_path(review.booking.project) do  %>
-                            <p class="review-project paragraph-no-margin"><%= review.booking.project.title %></p>
+                          <%= link_to project_path(review.application.project) do  %>
+                            <p class="review-project paragraph-no-margin"><%= review.application.project.title %></p>
                           <% end %>
                         </div>
                       </div>

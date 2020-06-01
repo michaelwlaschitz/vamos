@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /es|de/ do
 
     resources :projects, only: [:index, :create, :new, :show] do
-      resources :bookings, only: [:new, :create]
+      resources :applications, only: [:new, :create]
     end
 
-    get 'bookings/:booking_id/confirmation', to: 'bookings#confirmation', as: :booking_confirmation
+    get 'applications/:application_id/confirmation', to: 'applications#confirmation', as: :application_confirmation
 
     root to: 'pages#home'
     get 'ngos/home', to: 'ngos#home', as: :ngos_home
