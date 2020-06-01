@@ -83,14 +83,21 @@
         </div>
 
        <!-- Apply button -->
-
-        <%= form_tag(new_team_path, :method => "get") do %>
-          <%= hidden_field_tag(:id, params["id"]) %>
+        <% if current_user.teams.any? %>
+          <%= form_tag(new_project_booking_path(@project), :method => "get") do %>
           <div class="desktop-apply-button-showpage apply-button-showpage">
           <%= submit_tag(t(".apply"), class: "button-vamos primary-style mb-5") %>
           </div>
-        <% end %>
+          <% end %>
 
+        <% else %>
+          <%= form_tag(new_team_path, :method => "get") do %>
+            <%= hidden_field_tag(:id, params["id"]) %>
+            <div class="desktop-apply-button-showpage apply-button-showpage">
+            <%= submit_tag(t(".apply"), class: "button-vamos primary-style mb-5") %>
+            </div>
+          <% end %>
+        <% end %>
 
 
       <!-- Map -->

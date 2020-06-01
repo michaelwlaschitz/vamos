@@ -6,22 +6,23 @@
       <div class="container ngo-booking-datas mb-5 mt-5 hide-mobile">
         <div class="row table-titles border-bottom">
           <div class="col-2">
-            <h4 class="status-table">Status</h4>
+            <h4 class="status-table"><%= t(".status") %></h4>
+
           </div>
           <div class="col-3">
-            <h4 class="project-name-table">Project Name</h4>
+            <h4 class="project-name-table"><%= t(".project_name") %></h4>
           </div>
           <div class="col-2">
-            <h4 class="team-name-table">Team Name</h4>
+            <h4 class="team-name-table"><%= t(".team_name") %></h4>
           </div>
           <div class="col-1">
-            <h4 class="date-table">Starting date</h4>
+            <h4 class="date-table"><%= t(".date") %></h4>
           </div>
           <div class="col-1">
-            <h4 class="houre-table">Hour</h4>
+            <h4 class="houre-table"><%= t(".hours") %></h4>
           </div>
           <div class="col-2">
-            <h4 class="date-table">Booked date</h4>
+            <h4 class="date-table"><%= t(".application_date") %></h4>
           </div>
         </div>
         <% @ngo_bookings.each do |booking| %>
@@ -61,7 +62,8 @@
               <h4 class="numb-booking"><%= booking.created_at.strftime("%d %B") %></h4>
             </div>
             <div class="col-1">
-              <%= link_to "Details", filter_location_path, class: "button-details w-20 mt-3" %>
+
+              <%= link_to "Details", project_booking_path(booking.project.id), class: "button-details w-20 mt-3" %>
             </div>
           </div>
         <% end %>
