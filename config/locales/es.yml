@@ -97,8 +97,8 @@ es:
 
   pages:
     home:
-      title_for_html: "<strong>Voluntariados <br>con tus amigos.</strong>"
-      sub_title_for_html: "Busca y aplica a voluntariados con tu equipo cerca de ti."
+      title_for_html: "<strong>Voluntariados con<br> amigos en Barcelona.</strong>"
+      sub_title_for_html: "Busca y aplica a voluntariados con tu equipo para ayudar la ciudad."
       find: "Encuentra voluntarios >>"
 
       team_name_for_html: "Nombre del equipo: <span style='color: #fb8500'>Las Alpacas</span>"
@@ -114,6 +114,9 @@ es:
       volunteer_cta_title_for_html: "Forma un equipo<br>y trabaja juntos."
       volunteer_cta_sub_title: "En Vamos, puede crear fácilmente un equipo, invitar a sus amigos y unirse a las oportunidades de voluntariado juntos."
       volunteer_cta_button: "Mira oportunidades"
+
+      city_title_for_html: "Haz el bien en tu ciudad. <br>Apoya proyectos cerca de ti en Barcelona."
+      city_cta: "Mira proyectos"
 
       function_title: "Vamos te trae voluntariados a ti"
 

@@ -111,8 +111,8 @@ en:
 
   pages:
     home:
-      title_for_html: "<strong>Take your friends. <br> Do good around you.</strong>"
-      sub_title_for_html: "Filter, search, apply with your team <br>for local volunteering."
+      title_for_html: "<strong>Do good with your <br>friends in Barcelona.</strong>"
+      sub_title_for_html: "Filter, search, apply with your team <br>for volunteering in the city."
       find: "Find volunteers >>"
 
       team_name_for_html: "Team name: <span style='color: #fb8500'>The VolunDeers</span>"
@@ -127,7 +127,10 @@ en:
       medical_student: "Medical Student"
       volunteer_cta_title_for_html: "Create a team and<br> do good together!"
       volunteer_cta_sub_title: "In Vamos you can easily invite your friends, apply as a team and chat altogehter with the organization."
-      volunteer_cta_button: "Check opportunities"
+      volunteer_cta_button: "Get started"
+
+      city_title_for_html: "Do good in your city. <br>Support projects around you in Barcelona."
+      city_cta: "Check out projects"
 
       function_title: "Vamos brings volunteering to you"
 
