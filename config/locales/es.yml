@@ -98,7 +98,7 @@ es:
   pages:
     home:
       title_for_html: "<strong>Voluntariados <br>con tus amigos.</strong>"
-      sub_title_for_html: "Busca y aplica a voluntariados<br> con tu equipo cerca de ti."
+      sub_title_for_html: "Busca y aplica a voluntariados con tu equipo cerca de ti."
       find: "Encuentra voluntarios >>"
 
       team_name_for_html: "Nombre del equipo: <span style='color: #fb8500'>Las Alpacas</span>"
