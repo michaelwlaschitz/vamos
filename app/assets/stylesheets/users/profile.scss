@@ -1,3 +1,80 @@
+// USER = NGO
+.desktop-profile-page {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  .parts-container {
+    display: flex;
+    .left-part {
+      width: 30%;
+      -webkit-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+      -moz-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+      box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+      .user-image-container {
+        width: 70%;
+        margin: auto;
+        .user-image {
+          width: 100%;
+        }
+        .button-edit-user-image {
+          right: 55px;
+        }
+      }
+    }
+    .right-part {
+      width: 60%;
+      -webkit-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+      -moz-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+      box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
+      .ngo-details-content {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
+
+.mobile-profile-page {
+  min-height: calc(100vh - 80px);
+  .nav-link {
+    color: gray;
+    &.active {
+      color: $orange-vamos;
+    }
+  }
+  .left-part {
+    .user-image-container {
+      width: 150px;
+      margin: 20px auto;
+      .user-image {
+        width: 100%;
+      }
+      .button-edit-user-image {
+        right: 30px;
+      }
+    }
+  }
+  .right-part {
+    .ngo-details-content {
+      padding-left: 10px;
+      padding-right: 10px;
+      .ngo-image-container {
+        margin: auto;
+
+        .ngo-image {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+    }
+    .review {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
 .button-edit-profile {
   font-size: 16px;
   color: $green-vamos;
@@ -12,43 +89,23 @@
   }
 }
 
-.profile-page {
-  width: 80%;
-  margin: auto;
-  margin-top: 30px;
-  .box-title {
-    height: 70px;
-    text-align: center;
-    padding-top: 25px;
-    font-weight: bold;
-    color: $orange-vamos;
-    font-size: 18px;
-    letter-spacing: 1px;
-    border-bottom: 0.5px solid $orange-vamos;
-  }
-  .left-part {
-    width: 30%;
-    -webkit-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
-    -moz-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
-    box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
-  }
-  .right-part {
-    width: 60%;
-    -webkit-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
-    -moz-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
-    box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
-  }
+.box-title {
+  height: 70px;
+  text-align: center;
+  padding-top: 25px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: $orange-vamos;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-bottom: 0.5px solid $orange-vamos;
 }
 
 .left-part {
   .user-image-container {
-    width: 70%;
-    margin: auto;
     position: relative;
     .user-image {
-      margin-top: 20px;
       border-radius: 50%;
-      width: 100%;
       -webkit-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
       -moz-box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
       box-shadow: 0px 0px 22px -22px rgba(0,0,0,1);
@@ -57,18 +114,19 @@
       position: absolute;
       font-size: 16px;
       bottom: 0px;
-      right: 55px;
+
       width: 100px;
       height: 30px;
-      border-radius: 20px;
-      background-color: $green-vamos;
-      color: white;
+      border-radius: 15px;
+      background-color: white;
+      border: 1px solid $green-vamos;
+      color: $green-vamos;
       text-align: center;
       padding-top: 3px;
       &:hover {
-        background-color: white;
-        border: 1px solid $green-vamos;
-        color: $green-vamos;
+
+        background-color: $green-vamos;
+        color: white;
       }
     }
   }
@@ -79,14 +137,13 @@
 
 .right-part {
   .ngo-details-content {
-    padding: 20px;
     .ngo-image-container {
       position: relative;
+      display: flex;
+      align-items: center;
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
       .ngo-image {
         max-width: 100%;
         max-height: 100%;
@@ -100,15 +157,15 @@
         margin-right: auto;
         width: 100px;
         height: 30px;
-        border-radius: 20px;
-        background-color: $green-vamos;
-        color: white;
+        border-radius: 15px;
+        background-color: white;
+        border: 1px solid $green-vamos;
+        color: $green-vamos;
         text-align: center;
-        padding-top: 4px;
+        padding-top: 3px;
         &:hover {
-          background-color: white;
-          border: 1px solid $green-vamos;
-          color: $green-vamos;
+          background-color: $green-vamos;
+          color: white;
         }
       }
     }
@@ -130,6 +187,7 @@
       padding-top: 10px;
       .review-user-image-container {
         width: 20%;
+        min-width: 100px;
         .review-user-image {
           width: 70px;
           border-radius: 50%;
@@ -158,157 +216,57 @@
   }
 }
 
+.modal-button-edit-pic {
+  width:100px;
+  height:100px;
+  font-size:50px;
+  padding-left:25px;
+  margin-left:180px;
+  padding-top:15px;
+  cursor:pointer;
+  border:1px solid #ADB5BD;
+  color:#ADB5BD;
+  border-radius:10px;
+  &:hover {
+    border:1px solid gray;
+    color:gray;
+  }
+}
+
+@media(min-width: 992px) {
+  .mobile-profile-page {
+    display: none;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+  .desktop-profile-page {
+    display: none;
+  }
+  .mobile-profile-page {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media(max-width: 767px) {
+  .desktop-profile-page {
+    display: none;
+  }
+}
+
+// USER = VOLUNTEER
 
 .orange-title {
   color: $orange-vamos;
-  // font-weight: lighter;
-}
-
-.white-title {
-  color: white;
+  margin-right: 10px;
+  text-align: center;
 }
 
 .element-1, .element-2 {
   width: 50%;
   max-width: 200px;
 }
-
-// ngo infos on the left, display only on desktop
-
-.ngo-datas {
-  padding-right: 50px;
-  padding-left: 80px;
-  box-shadow: 5px;
-  display: none;
-  height: 400px;
-  width: 250px;
-}
-
-
-//ngo rows, application on desktop
-.table-titles {
-  font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.chat-button {
-  padding-top: 10px;
-  padding-left: 20px;
-  a:hover {
-    color: $black-gray;
-  }
-}
-
-// ngo profile
-
-.card-ngo-profile {
-  border: 1px solid #e4e4e4;
-  margin-top: 50px;
-  min-width: 250px;
-  max-width: 250px;
-  max-height: 450px;
-  .ngo-info {
-    padding-top: 40px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    position: relative;
-  }
-}
-
-.edit-profile-button{
-  color: $green-vamos;
-  text-align: right;
-  font-weight: lighter;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-.ngo-image-desktop {
-  border-radius: 90px;
-  width: 140px;
-  object-fit: cover;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.orange-title-desktop {
-  color: $orange-vamos;
-  margin-right: 10px;
-  text-align: center;
-}
-
-.first_name {
-  text-align: center;
-}
-
-#button-info {
-  min-width: 180px;
-}
-
-// IF USER IS NGO
-
-.ngo-user-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-
-.ngo-image {
-  border-radius: 5px;
-  width: 140px;
-  object-fit: cover;
-}
-
-.title-bigger{
-  font-size: 22px;
-}
-
-#accepted-text {
-  color: $orange-vamos;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.create-project {
-  color: gray;
-  border: 1px solid $orange-vamos;
-  border-radius: 10px;
-  height: 40px;
-  width: 350px;
-  padding-top: 6px;
-  text-align: center;
-  font-weight: lighter;
-  font-size: 18px;
-  background-color: #F28A28;
-  color: white;
-}
-
-// ngo profile container
-.content-container-ngo-profile {
-  margin: auto;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  width: 90%;
-  padding: 0px;
-  display: block;
-}
-
-#title-ngo-side {
-  font-size: 20px;
-}
-
-.big-size {
-  font-size: 20px;
-}
-
-// IF USER IS VOLUNTEER
 
 .content-container-profile {
   .user-image {
@@ -318,33 +276,20 @@
   }
 }
 
-.team-member-yes-exist-volunteer{  //contour size
-  border-radius: 50%;
-}
-
 .rounded-circle-volunteer {  //imagz size
   border-radius: 50%;
+  border: 2px solid #fb8500;
 }
 
-.rounded-circle {
-
-} //user photo for ngos
-
-
-.team-member-no-exist {
-  border-radius: 50%;
-  border: 2px solid gray;
-}
-
-
-.create-team-button {
+.sign-out-button {
   border-bottom: 1px solid $orange-vamos;
   color: gray;
   font-weight: bold;
   margin-bottom: 0px;
   padding-bottom: 0px;
 }
-.create-team-button-alternative {
+
+.create-team-button {
   margin-top: 20px;
   padding-top: 5px;
   border: 1px solid $orange-vamos;
@@ -353,15 +298,13 @@
   width: 330px;
   height: 40px;
   font-weight: lighter;
+  .orange-color {
+    color: $orange-vamos;
+  }
   .p-size {
     font-size: 20px;
   }
 }
-
-.user-photo {
-
-}
-
 
 .team-name {
   font-weight: lighter;
@@ -420,7 +363,6 @@
   box-shadow: 1px 2px 3px gray;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
   .project-image {
     background-size: cover;
     width: 100%;
@@ -442,7 +384,6 @@
     justify-content: center;
     align-items: center;
   }
-
   .project-text-stuff {
     padding-left: 5px;
     .project-title {
@@ -491,7 +432,6 @@
   padding: 0px;
 }
 
-
 .fa-user-friends {
   margin-left: 5px;
 }
@@ -505,61 +445,45 @@
   display: grid;
 }
 
+.ngo-datas {
+  padding-right: 50px;
+  padding-left: 80px;
+  box-shadow: 5px;
+  display: none;
+  height: 400px;
+  width: 250px;
+}
+
 @media(min-width: 992px) {
-
-  .team-member-yes-exist-volunteer {
-    width: 80px;
-    height: 80px;
+  .rounded-circle-volunteer {
+    width: 76px;
+    height: 76px;
   }
-
   .rounded-circle {
     margin-right: 15px;
     width: 40px;
     height: 40px;
   }
-
   .user-photo {
     margin-right: 150px;
     margin-left: 150px;
     padding-right: 80px;
     padding-left: 80px;
   }
-
   .team-name {
     margin-bottom: 20px;
   }
-
-  .rounded-circle-volunteer {
-    width: 76px;
-    height: 76px;
-    border: 2px solid #fb8500;
+  .sign-out-button {
+    display: none;
   }
-
   .project-card-profile {
     max-width: 350px;
     padding-right: 2px;
   }
-
   .content-container-profile {
     width: 80%;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
-  }
-
-  .content-container-profile-ngo-project {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-  }
-
-  .ngo-app-datas {
-    min-height: 500px;
-  }
-
-  .content-container-ngo-profile {
-    display: none;
-  }
-  .ngo-datas {
-    display: block;
   }
   .content-container-profile-team {
     width: 80%;
@@ -567,69 +491,28 @@
 }
 
 @media(min-width: 768px) and (max-width: 991px) {
-
-  .team-member-yes-exist-volunteer {
-    width: 70px;
-    height: 70px;
-  }
-
   .rounded-circle-volunteer {
     width: 66px;
     height: 66px;
-    border: 2px solid #fb8500;
   }
-
-  .content-container-profile-team {
-    width: 80%;
+  .user-photo {
+    margin-right: 150px;
+    margin-left: 150px;
   }
-
-  .content-container-profile-ngo-project {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+  .sign-out-button {
+    display: none;
   }
-
-  .content-container-profile {
-    width: 80%;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-  }
-
   .project-card-profile {
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     max-width: 350px;
   }
-
-  .user-photo {
-    margin-right: 150px;
-    margin-left: 150px;
-  }
-}
-
-@media(min-width: 575px) and (max-width: 767px) {
-  .content-container-profile-ngo-project {
+  .content-container-profile {
     width: 80%;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
   }
-
-  .create-project {
-    position: fixed;
-    bottom: 100px;
-    background-color: white;
-    display: flex;
-  }
-  .rounded-circle-volunteer {
-    border: 2px solid #fb8500;
-  }
-  .profile-page {
-  width: 100%;
-  }
-}
-
-@media(max-width: 574px) {
-  .rounded-circle-volunteer {
-    border: 2px solid #fb8500;
-  }
-  .profile-page {
-  width: 100%;
+  .content-container-profile-team {
+    width: 80%;
   }
 }

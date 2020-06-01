@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users, controllers: {
-        sessions: 'users/sessions'
+        sessions: 'users/sessions', omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
   scope "(:locale)", locale: /es|de/ do
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     get 'time', to: 'pages#filter_time', as: :filter_time
     get 'users/profile', to: 'users#profile', as: :user_profile
     get 'apply', to: 'pages#apply', as: :application
+    get 'privacy-policy-vamos', to: 'pages#privacy_policy_vamos', as: :privacy_policy_vamos
 
     resources :conversations, only: [:index, :show, :create] do
       resources :messages, only: [:create]

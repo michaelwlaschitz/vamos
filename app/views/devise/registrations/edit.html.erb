@@ -50,15 +50,18 @@
       <% end %>
 
       <%= f.input :password,
+                  label: "Set new password",
                   hint: "leave it blank if you don't want to change it",
                   required: false,
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :password_confirmation,
                   required: false,
+                  label: "Confirm new password",
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :current_password,
                   hint: "we need your current password to confirm your changes",
                   required: true,
+                  label: "Save changes with current password",
                   input_html: { autocomplete: "current-password" } %>
     </div>
 
