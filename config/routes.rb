@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
 
   devise_for :users, controllers: {
-        sessions: 'users/sessions'
+        sessions: 'users/sessions', omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
   scope "(:locale)", locale: /es|de/ do
+
+    resources :projects, only: [:index, :create, :new, :show] do
+      resources :bookings, only: [:new, :create]
+    end
+
+    get 'bookings/:booking_id/confirmation', to: 'bookings#confirmation', as: :booking_confirmation
+
     root to: 'pages#home'
     get 'ngos/home', to: 'ngos#home', as: :ngos_home
     get 'about-vamos', to: 'pages#about_vamos', as: :about_vamos
@@ -14,6 +21,7 @@ Rails.application.routes.draw do
     get 'time', to: 'pages#filter_time', as: :filter_time
     get 'users/profile', to: 'users#profile', as: :user_profile
     get 'apply', to: 'pages#apply', as: :application
+    get 'privacy-policy-vamos', to: 'pages#privacy_policy_vamos', as: :privacy_policy_vamos
 
     resources :conversations, only: [:index, :show, :create] do
       resources :messages, only: [:create]
@@ -26,11 +34,6 @@ Rails.application.routes.draw do
 
 
     resources :ngos, only: [:new, :create]
-
-    resources :projects, only: [:index, :create, :new, :show] do
-    resources :applications, only: [:new, :create]
-    get 'applications/:application_id/confirmation', to: 'applications#confirmation', as: :application_confirmation
-    end
 
     resources :applications, only: [] do
       resources :reviews, only: [:new, :create]

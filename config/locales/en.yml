@@ -52,6 +52,7 @@ en:
       my_projects: "My Projects"
       applications: "Applications"
       user_view: "User View"
+      privacy_policy: "Privacy Policy"
 
     interests:
       children: "Children"
@@ -195,7 +196,7 @@ en:
   projects:
     index:
       projects:
-        zero: "Unfortunately, we don't have projects in your area yet. You know some that should be there? Let us know via chat or mail!"
+        zero: "Unfortunately, we don't have projects in your area yet."
         one: 'We found one opportunity, but there are more to come!'
         other: 'There are %{count} opportunities near you.'
       filter: "Filter"
@@ -269,3 +270,11 @@ en:
       reviews:
         zero: "There are no reviews for your organization yet!"
         other: 'User Reviews for your organization (%{count})'
+
+    applications:
+      status: "Status"
+      project_name: "Project Name"
+      team_name: "Team Name"
+      date: "Date"
+      hours: "Hours"
+      application_date: "Application Date"

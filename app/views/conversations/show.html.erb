@@ -7,7 +7,8 @@
             <i class='fas fa-chevron-left hide-desktop'></i>
           </div>
         <% end %>
-        <div class="conversation-application-status mt-2"><%= @conversation.application.status.capitalize %></div>
+        <div class="conversation-application-status mt-2"><%= @conversation.application.status.capitalize %>
+        </div>
       </div>
       <div>
         <% if current_user.ngo %>
@@ -16,7 +17,22 @@
           <h3 class="text-center">Chat with <%= @conversation.ngo.user.first_name %> from <%= @conversation.ngo.name %> 🙌🏼  </h3>
         <% end %>
       </div>
-      <div></div>
+      <div>
+        <% if @conversation.booking.status == "pending" %>
+          <% if current_user.ngo %>
+            <div class="conversation-booking-accept-button">
+              <%= link_to "Accept", accept_booking_path(@conversation.booking), method: :patch, class: "green-color"%>
+            </div>
+            <div class="conversation-booking-reject-button">
+              <%= link_to "Reject", reject_booking_path(@conversation.booking), method: :patch, class: "red-color"%>
+            </div>
+          <% else %>
+            <div class="conversation-booking-status mt-2"><%= @conversation.booking.status.capitalize %></div>
+          <% end %>
+        <% else %>
+          <div class="conversation-booking-status mt-2"><%= @conversation.booking.status.capitalize %></div>
+        <% end %>
+      </div>
     </div>
 
   <!--   End of Top Bar Flexbox -->
@@ -56,12 +72,8 @@
       </div>
     </div>
     <%= simple_form_for ([@conversation, @message]), wrapper: :inline_form, html: { class: "form-inline chat-textbox border-top" } do |f| %>
-    <%= f.input :body, label: false, placeholder: "Write your message"%>
-    <%= f.submit "Send", class: "button-send-message" %>
-  <%end%>
+      <%= f.input :body, label: false, placeholder: "Write your message"%>
+      <%= f.submit "Send", class: "button-send-message" %>
+    <%end%>
   </div>
-
-
-
-
 </div>

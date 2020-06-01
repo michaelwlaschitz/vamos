@@ -44,7 +44,12 @@
 
           <li id="logedin" class="yes-signed nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= cl_image_tag current_user.photo.key, width: 50, height: 50, class: "rounded-circle" %>
+              <% facebook_avatar_url = current_user.facebook_picture_url %>
+              <% if facebook_avatar_url %>
+                <%= image_tag facebook_avatar_url, width: 50, height: 50, class: "rounded-circle"%>
+              <% elsif %>
+                <%= cl_image_tag current_user.photo.key, width: 50, height: 50, class: "rounded-circle" %>
+              <% end %>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to t("global.navbar.profile"), user_profile_path, class: "dropdown-item" %>
