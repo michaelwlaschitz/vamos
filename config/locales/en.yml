@@ -222,7 +222,7 @@ en:
       invite_friends: "Invite your frieds to the team"
       create_team: "Create team"
 
-  bookings:
+  applications:
     new:
       application_overview: "Application Overview"
       project: "Project"

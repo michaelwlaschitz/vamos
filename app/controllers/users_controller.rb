@@ -2,19 +2,19 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def dashboard
-    @bookings = current_user.bookings.order(created_at: :asc)
+    @applications = current_user.applications.order(created_at: :asc)
   end
 
   def profile
     @user = current_user
-    @ngo_bookings = current_user.ngo_bookings
+    @ngo_applications = current_user.ngo_applications
     @ngo_reviews = current_user.ngo_reviews
   end
 
   def applications
     @user = current_user
-    @ngo_bookings = current_user.ngo_bookings
-    @bookings = current_user.bookings.order(created_at: :asc)
+    @ngo_applications = current_user.ngo_applications
+    @applications = current_user.applications.order(created_at: :asc)
   end
 
   def projects

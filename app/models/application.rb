@@ -1,4 +1,4 @@
-class Booking < ApplicationRecord
+class Application < ApplicationRecord
   belongs_to :project
   belongs_to :team
   has_many :reviews

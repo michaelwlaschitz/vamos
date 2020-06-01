@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-  has_many :bookings
+  has_many :applications
   has_many :team_memberships
   has_many :users, through: :team_memberships
   has_one_attached :photo

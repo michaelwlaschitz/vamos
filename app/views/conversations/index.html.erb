@@ -1,15 +1,11 @@
 <div class="has-navbar-so-margin">
   <%= render 'shared/mobile_navbar' %>
-
   <div class="content-container-chat">
     <h2 class="border-bottom mb-3 mt-3 py-1 orange"> <%= t(".inbox") %></h2>
     <% @conversations.each do |conversation| %>
     <%= link_to conversation_path(conversation), class: "dark-gray" do %>
-
     <div class="d-flex mb-3 border-bottom">
-
       <!--   Avatars -->
-
       <div class="conversation-avatars mr-3">
         <div class="ngo-avatar">
           <% if current_user.ngo %>
@@ -19,11 +15,8 @@
           <% end %>
         </div>
       </div>
-
       <div class="conversation-content w-100">
-
         <!--   Users in chat & project name on desktop-->
-
         <div id="desktop-show-project-chat">
           <div class="d-flex justify-content-between align-items-center">
             <div class="">
@@ -47,7 +40,6 @@
           <div class="d-flex justify-content-between align-items-center mb-1">
             <div></div>
             <!--   Date and time according to screen-->
-
             <div class="d-flex justify-content-between align-items-center">
               <div>
                 <% if conversation.messages.last.present? && conversation.messages.last.read == false && conversation.messages.last.user_id != current_user.id %>
@@ -62,12 +54,9 @@
                   </p>
                 <% end %>
               </div>
-
             </div>
           </div>
-
             <!--   Messages -->
-
           <div class="font-weight-light mb-4">
             <div class="d-flex justify-content-between">
               <div class="line-text-status d-flex justify-content-between align-items-center">
@@ -85,7 +74,6 @@
                   <%=conversation.booking.status.capitalize%>
               </div>
             </div>
-
             <div id="mobile-show-chat">
               <%if conversation.booking.status == "pending"%>
                 <p style="color:#F28A28"><strong><%= conversation.booking.status.capitalize%></strong></p>

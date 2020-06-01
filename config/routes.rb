@@ -35,14 +35,14 @@ Rails.application.routes.draw do
 
     resources :ngos, only: [:new, :create]
 
-    resources :bookings, only: [] do
+    resources :applications, only: [] do
       resources :reviews, only: [:new, :create]
     end
 
-    resources :bookings, only: [] do
+    resources :applications, only: [] do
       member do
-        patch "/accept", to: "bookings#accept"
-        patch "/reject", to: "bookings#reject"
+        patch "/accept", to: "applications#accept"
+        patch "/reject", to: "applications#reject"
       end
     end
 
