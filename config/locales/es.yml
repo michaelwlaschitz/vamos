@@ -143,6 +143,7 @@ es:
       quote: "Ningún acto de bondad, por pequeño que sea, es desperdiciado."
       team_title: "Fundadores de Vamos"
       team_advisors: "Asesores de Vamos"
+      team_members: "Equipo de Vamos"
 
     filter_location:
       title_for_html: "<span style='color: #fb8500'>Dónde en Barcelona</span> quieres ayudar con tus amigos?"

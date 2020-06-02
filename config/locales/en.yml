@@ -158,6 +158,7 @@ en:
       team_title: "Vamos Founders"
       team_advisors: "Vamos Advisors"
       role_florian: "Digital Strategist"
+      team_members: "Vamos Team Members"
 
     filter_location:
       title_for_html: "<span style='color: #fb8500'>Where in Barcelona</span> do you want to help with your friends?"
