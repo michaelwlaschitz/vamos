@@ -21,8 +21,8 @@
             <%# By using links, we ensure that default_url_options are actually used!  %>
           </li>
 
-          <li id="applications" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/users', action: 'applications') %>">
-            <%= link_to t("global.navbar.applications"), user_applications_path, class: "nav-link" %>
+          <li id="applications" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/applications', action: 'index') %>">
+            <%= link_to t("global.navbar.applications"), applications_path, class: "nav-link" %>
           </li>
 
         <% else %>

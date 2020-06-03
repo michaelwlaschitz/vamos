@@ -274,10 +274,23 @@ en:
         zero: "There are no reviews for your organization yet!"
         other: 'User Reviews for your organization (%{count})'
 
-    applications:
+  applications:
+    index:
       status: "Status"
       project_name: "Project Name"
       team_name: "Team Name"
       date: "Date"
       hours: "Hours"
       application_date: "Application Date"
+      accept: "Accept"
+      accepted: "Accepted"
+      reject: "Reject"
+      rejected: "Rejected"
+    show:
+      application_overview: "Application Overview for"
+      team_name: "Team Name"
+      accept: "Accept"
+      accepted: "Accepted"
+      reject: "Reject"
+      rejected: "Rejected"
+      send_message: "Send message"

@@ -1,12 +1,51 @@
-<h1>Test</h1>
+<div class="content-container-application-show mt-5">
+  <h1><%= t(".application_overview") %> "<span class="orange"><%= @application.project.title %></span>"</h1>
+  <h2 class= "mt-5"><%= @team.name %></h2>
 
-<div class=" user-photo d-flex justify-content-around mt-2">
-  <% @team.users.each do |user| %>
+  <div class="d-flex justify-content-around mt-5">
+    <% @team.users.each do |user| %>
 
-  <div class= "team-member-yes-exist-volunteer text-center mb-3">
-    <div class= "mb-2 mr-3"> <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer" %>
-      <%= user.first_name %>
+    <div class= "text-center mb-3 mr-5">
+      <div class="mb-2">
+        <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "avatar-x-large" %>
+      </div>
+
+      <div class="name-width">
+        <div>
+        <%= user.first_name %>
+        </div>
+
+        <div>
+          <%= user.last_name %>
+        </div>
+      </div>
+
     </div>
+    <% end %>
+
+    <div>
+      <div class="speech-bubble">
+        <p> <%= @application.conversation.messages.first.body %></p>
+      </div>
+      <div class="mt-4">
+        <%= link_to t(".send_message"), conversation_path(@application.conversation), class: "message-button"%>
+      </div>
+    </div>
+
+    <div class="application-status-app-desktop ml-5">
+      <% if @application.status == "pending" %>
+        <div class="accept-button-app-desktop px-3 mb-2">
+          <%= link_to t(".accept"), accept_application_path(@application), method: :patch, class: "green-color"%>
+        </div>
+        <div class="reject-button-app-desktop px-3 mb-2">
+          <%= link_to t(".reject"), reject_application_path(@application), method: :patch, class: "red-color"%>
+        </div>
+      <% elsif @application.status == "accepted" %>
+        <h4 id="accepted-text-m"><%= t(".accepted") %></h4>
+      <% elsif @application.status == "rejected" %>
+        <h4 id="rejected-text-m"><%= t(".rejected") %></h4>
+      <% end %>
+    </div>
+
   </div>
-  <% end %>
 </div>

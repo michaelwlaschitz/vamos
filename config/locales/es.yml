@@ -256,10 +256,24 @@ es:
         zero: "There are no reviews for your organization yet!"
         other: "Reseñas de usuarios para su organización (%{count})"
 
-    applications:
+  applications:
+    index:
       status: "Status"
       project_name: "Proyecto"
       team_name: "Nombre del equipo"
       date: "Fecha"
       hours: "Hora"
       application_date: "Fecha de aplicación"
+      accept: "Acceptar"
+      reject: "Rechazar"
+      accepted: "Acceptado"
+      rejected: "Rechezado"
+
+    show:
+      application_overview: "Resumen de la aplicación para"
+      team_name: "Nombre del equipo"
+      accept: "Acceptar"
+      reject: "Rechazar"
+      accepted: "Acceptado"
+      rejected: "Rechezado"
+      send_message: "Enviar mensaje"

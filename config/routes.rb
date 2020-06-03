@@ -20,7 +20,6 @@ Rails.application.routes.draw do
     get "dashboard", to: "users#dashboard", as: :user_dashboard
     get 'time', to: 'pages#filter_time', as: :filter_time
     get 'users/profile', to: 'users#profile', as: :user_profile
-    get 'apply', to: 'pages#apply', as: :application
     get 'privacy-policy-vamos', to: 'pages#privacy_policy_vamos', as: :privacy_policy_vamos
 
     resources :conversations, only: [:index, :show, :create] do
@@ -29,13 +28,11 @@ Rails.application.routes.draw do
 
     resources :teams, only: [:new, :create]
 
-    get 'users/applications', to: 'users#applications', as: :user_applications
     get 'users/projects', to: 'users#projects', as: :user_projects #last modification
-
 
     resources :ngos, only: [:new, :create]
 
-    resources :applications, only: [] do
+    resources :applications, only: [:index, :show] do
       resources :reviews, only: [:new, :create]
     end
 

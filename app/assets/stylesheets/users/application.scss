@@ -18,10 +18,10 @@
   padding-right: 15px;
   padding-left: 15px;
   border-radius: 5px;
-  a:hover{
-    color: #f28b3c !important;
-    text-decoration: none;
-  }
+}
+
+.button-details:hover  {
+  color: $orange-vamos;
 }
 
 #accepted-text-m {
