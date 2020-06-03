@@ -19,7 +19,12 @@
             <%= t(".personal_info") %>
           </div>
           <div class="user-image-container">
-            <%= cl_image_tag @user.photo.key, class: "user-image"%>
+            <% facebook_avatar_url = current_user.facebook_picture_url %>
+              <% if facebook_avatar_url %>
+                <%= image_tag facebook_avatar_url, class: "user-image"%>
+              <% elsif %>
+                <%= cl_image_tag @user.photo.key, class: "user-image" %>
+              <% end %>
             <!-- Start modal - edit picture -->
             <button type="button" class="button-edit-user-image" data-toggle="modal" data-target="#exampleModalCenter">
               <%= t(".change") %>
@@ -268,7 +273,12 @@
     <div class="content-container-profile border-bottom py-3 my-1">
       <div class="d-flex">
         <div class="element-1">
-          <%= cl_image_tag @user.photo.key, class: "user-image" %>
+          <% facebook_avatar_url = current_user.facebook_picture_url %>
+              <% if facebook_avatar_url %>
+                <%= image_tag facebook_avatar_url, class: "user-image"%>
+              <% elsif %>
+                <%= cl_image_tag @user.photo.key, class: "user-image" %>
+              <% end %>
         </div>
         <div class="element-2 user-other-info">
           <h5 class="py-1"><%= @user.first_name %> <%= @user.last_name %></h5>
