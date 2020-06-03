@@ -33,4 +33,3 @@ replaceDistances();
 addActiveClass();
 
 logoFileName();
-
