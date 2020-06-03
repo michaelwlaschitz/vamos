@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BookingsControllerTest < ActionDispatch::IntegrationTest
+class ApplicationsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

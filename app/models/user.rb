@@ -15,11 +15,11 @@ class User < ApplicationRecord
   has_many :ngo_reviews, through: :ngo, source: :reviews
   has_many :team_memberships
   has_many :teams, through: :team_memberships
-  has_many :bookings, through: :teams
-  has_many :ngo_bookings, through: :ngo, source: :bookings
+  has_many :applications, through: :teams
+  has_many :ngo_applications, through: :ngo, source: :applications
 
-  has_many :ngo_conversations, through: :ngo_bookings, source: :conversation
-  has_many :team_conversations, through: :bookings, source: :conversation
+  has_many :ngo_conversations, through: :ngo_applications, source: :conversation
+  has_many :team_conversations, through: :applications, source: :conversation
 
   has_one_attached :photo
 

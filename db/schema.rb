@@ -36,21 +36,21 @@ ActiveRecord::Schema.define(version: 2020_05_27_111417) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "bookings", force: :cascade do |t|
+  create_table "applications", force: :cascade do |t|
     t.string "status"
     t.bigint "project_id"
     t.bigint "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_bookings_on_project_id"
-    t.index ["team_id"], name: "index_bookings_on_team_id"
+    t.index ["project_id"], name: "index_applications_on_project_id"
+    t.index ["team_id"], name: "index_applications_on_team_id"
   end
 
   create_table "conversations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "booking_id"
-    t.index ["booking_id"], name: "index_conversations_on_booking_id"
+    t.bigint "application_id"
+    t.index ["application_id"], name: "index_conversations_on_application_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -96,10 +96,10 @@ ActiveRecord::Schema.define(version: 2020_05_27_111417) do
     t.integer "rating"
     t.text "content"
     t.bigint "user_id"
-    t.bigint "booking_id"
+    t.bigint "application_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+    t.index ["application_id"], name: "index_reviews_on_application_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -152,13 +152,13 @@ ActiveRecord::Schema.define(version: 2020_05_27_111417) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "projects"
-  add_foreign_key "bookings", "teams"
+  add_foreign_key "applications", "projects"
+  add_foreign_key "applications", "teams"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "ngos", "users"
   add_foreign_key "projects", "ngos"
-  add_foreign_key "reviews", "bookings"
+  add_foreign_key "reviews", "applications"
   add_foreign_key "reviews", "users"
   add_foreign_key "team_memberships", "teams"
   add_foreign_key "team_memberships", "users"

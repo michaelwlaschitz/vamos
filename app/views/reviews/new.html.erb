@@ -1,7 +1,7 @@
 <div class="has-navbar-so-margin">
   <%= render 'shared/mobile_navbar' %>
 
-  <% @booking.project.photos.each do |photo|%>
+  <% @application.project.photos.each do |photo|%>
   <div>
     <%= cl_image_tag photo.key, class: "project-image-show" %>
   </div>
@@ -11,12 +11,12 @@
     <div class="simple-form">
 
         <h1>
-          Write a review for <span style="color: #fb8500">"<%= @booking.project.title %>"</span>
+          Write a review for <span style="color: #fb8500">"<%= @application.project.title %>"</span>
         </h1>
 
     <!-- Form -->
         <div class = "form pt-3">
-          <%= simple_form_for [@booking, @review] do |f|  %>
+          <%= simple_form_for [@application, @review] do |f|  %>
           <% if @review.errors.any? %>
           <div class="errors-container">
             <ul>

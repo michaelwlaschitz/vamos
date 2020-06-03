@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   }
 
   scope "(:locale)", locale: /es|de/ do
+
+    resources :projects, only: [:index, :create, :new, :show] do
+      resources :applications, only: [:new, :create]
+    end
+
+    get 'applications/:application_id/confirmation', to: 'applications#confirmation', as: :application_confirmation
+
     root to: 'pages#home'
     get 'ngos/home', to: 'ngos#home', as: :ngos_home
     get 'about-vamos', to: 'pages#about_vamos', as: :about_vamos
@@ -28,19 +35,14 @@ Rails.application.routes.draw do
 
     resources :ngos, only: [:new, :create]
 
-    resources :projects, only: [:index, :create, :new, :show] do
-    resources :bookings, only: [:new, :create]
-    get 'bookings/:booking_id/confirmation', to: 'bookings#confirmation', as: :booking_confirmation
-    end
-
-    resources :bookings, only: [] do
+    resources :applications, only: [] do
       resources :reviews, only: [:new, :create]
     end
 
-    resources :bookings, only: [] do
+    resources :applications, only: [] do
       member do
-        patch "/accept", to: "bookings#accept"
-        patch "/reject", to: "bookings#reject"
+        patch "/accept", to: "applications#accept"
+        patch "/reject", to: "applications#reject"
       end
     end
 
