@@ -278,3 +278,21 @@ es:
       accepted: "Acceptado"
       rejected: "Rechezado"
       send_message: "Enviar mensaje"
+
+    confirmation:
+      send_message: "Enviar mensaje"
+      more_opportunities: "Ver más oportunidades"
+      question: "¿Preguntas?"
+      contact: "es el referent"
+      application_msg: "Tu solicitud ha sido enviada!"
+      msg_part_1: "Parece que"
+      msg_part_2: "no todos los miembros de tu equipo tienen una cuenta"
+      msg_part_3: "con vamos Pero no te preocupes, les enviamos un"
+      msg_part_4: "correo electrónico"
+      msg_part_5: "que pueden"
+      msg_part_6: "inscribirse rápidamente"
+      msg_part_7: "Cuando todos los perfiles estén registrados, la solicitud se enviará a la ONG."
+
+
+
+
