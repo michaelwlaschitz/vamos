@@ -213,7 +213,9 @@ en:
       project: "Projects"
       organization: "Organization"
       apply: "Apply with your team"
-      reviews_for: "Reviews for projects of %{name}"
+      reviews_for:
+        zero: "There are no reviews for this organization yet!"
+        other: 'Reviews for %{name}:'
 
   conversations:
     index:
@@ -225,17 +227,6 @@ en:
       team_name: "Choose a team name (max 20 characters)"
       invite_friends: "Invite your frieds to the team"
       create_team: "Create team"
-
-  applications:
-    new:
-      application_overview: "Application Overview"
-      project: "Project"
-      organization: "Organizations"
-      selected_team: "Selected team"
-      application_message: "Application Message"
-      send_application: "Send application"
-      apply: "Apply with a new team"
-      motivation: "Write some words about why you and your friends want to volunteer for this project. This increases your chance to get the available spots."
 
   devise:
     registrations:
@@ -276,6 +267,17 @@ en:
         other: 'User Reviews for your organization (%{count})'
 
   applications:
+
+    new:
+      application_overview: "Application Overview"
+      project: "Project"
+      organization: "Organizations"
+      selected_team: "Selected team"
+      application_message: "Application Message"
+      send_application: "Send application"
+      apply: "Apply with a new team"
+      motivation: "Write some words about why you and your friends want to volunteer for this project. This increases your chance to get the available spots."
+
     index:
       status: "Status"
       project_name: "Project Name"
@@ -287,6 +289,7 @@ en:
       accepted: "Accepted"
       reject: "Reject"
       rejected: "Rejected"
+
     show:
       application_overview: "Application Overview for"
       team_name: "Team Name"
@@ -295,3 +298,13 @@ en:
       reject: "Reject"
       rejected: "Rejected"
       send_message: "Send message"
+
+    confirmation:
+      team_name_for_html: "<span class='orange'>%{name}</span>, last step!"
+      info_text_for_html: "It looks like <strong>not all of your team members have an account</strong> with Vamos. But don't worry, we sent them an <strong>email</strong> so that they can <strong> quickly sign up</strong>.<br> <br>
+      When all the profiles are registered, the application will be sent to the NGO."
+      with: "with"
+      questions: "Have questions about the opportunity?"
+      send_message: "Send message"
+      application_sent_text: ", your application has been sent!"
+      your_contact_text: "is your contact from"

@@ -196,7 +196,9 @@ es:
       project: "Proyecto"
       organization: "Organización"
       apply: "Aplica con tu equipo"
-      reviews_for: "Reseñas para proyectos de %{name}"
+      reviews_for:
+        zero: "Todavía no hay reseñas para esta organización!"
+        other: "Reseñas para proyectos de %{name}"
 
   conversations:
     index:
@@ -207,17 +209,6 @@ es:
       team_name: "Elige un nombre para tu equipo (20 caracteres máx"
       invite_friends: "Invita amigos a tu equipo"
       create_team: "Crea tu equipo"
-  applications:
-    new:
-      application_overview: "Resumen de aplicación"
-      project: "Proyecto"
-      organization: "Organización"
-      selected_team: "Equipo elegido"
-      application_message: "Mensaje de aplicación"
-      send_application: "Envié la aplicación"
-      apply: "Aplica con un equipo nuevo"
-      motivation: "Escribe unas palabras sobre la motivación de tí y tus amigos para ayudar en ese proyecto.
-        Aumenta sus chance de obtener los espacios disponibles."
 
   devise:
     registrations:
@@ -254,8 +245,8 @@ es:
       description: "Descripción"
       phone: "Teléfono"
       reviews:
-        zero: "There are no reviews for your organization yet!"
-        other: "Reseñas de usuarios para su organización (%{count})"
+        zero: "Todavía no hay reseñas para esta organización!"
+        other: "Reseñas de para %{name}:"
 
   applications:
     index:
@@ -270,6 +261,17 @@ es:
       accepted: "Acceptado"
       rejected: "Rechezado"
 
+    new:
+      application_overview: "Resumen de aplicación"
+      project: "Proyecto"
+      organization: "Organización"
+      selected_team: "Equipo elegido"
+      application_message: "Mensaje de aplicación"
+      send_application: "Envié la aplicación"
+      apply: "Aplica con un equipo nuevo"
+      motivation: "Escribe unas palabras sobre la motivación de tí y tus amigos para ayudar en ese proyecto.
+        Aumenta sus chance de obtener los espacios disponibles."
+
     show:
       application_overview: "Resumen de la aplicación para"
       team_name: "Nombre del equipo"
@@ -278,3 +280,14 @@ es:
       accepted: "Acceptado"
       rejected: "Rechezado"
       send_message: "Enviar mensaje"
+
+    confirmation:
+      team_name_for_html: "<span class='orange'>%{name}</span>, último paso!"
+      info_text_for_html: "Parece que <strong>no todos de tus amigos tienen una cuenta</strong> con Vamos. No te preocupes, les enviamos un <strong>email para</strong> que puedan <strong>registrarse</strong> rápidamente. <br> <br>
+      Cuando todos los perfiles están registrados, la solicitud se enviará a la organizacíon."
+      with: "con"
+      questions: "Tienes más preguntas sobre la oportunidad?"
+      send_message: "Envia mensaje"
+      application_sent_text: ", tu aplication está enviada!"
+      your_contact_text: "es tu contacto de"
+
