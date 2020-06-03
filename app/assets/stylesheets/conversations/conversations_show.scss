@@ -47,14 +47,16 @@
 }
 
 .button-send-message {
-  color: $orange-vamos;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $orange-vamos;
+  color: white;
   text-align: center;
   font-family: 'Roboto Slab';
-  font-size: 18px;
-  margin-right: 12px;
-  padding:6px 10px;
+  font-size: 22px;
+  padding-left: 2px;
   border: none;
-  width: 10%;
 }
 
 .chat-textbox {
@@ -66,7 +68,7 @@
   .message_body {
     flex-grow: 1;
     textarea{
-      width: 90%;
+      width: 95%;
       border: none;
       resize: none;
       margin-left: 5px;
