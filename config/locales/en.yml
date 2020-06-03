@@ -43,7 +43,7 @@ en:
       find: "Find volunteers"
       about: "About Vamos"
       profile: "Profile"
-      messages: "Messajes"
+      messages: "Messages"
       login: "Login"
       logout: "Logout"
       explore: "Explore"
@@ -58,7 +58,7 @@ en:
       children: "Children"
       social: "Social"
       cultural: "Cultural"
-      climate: "Climate"
+      climate: "Environment"
       medical: "Medical"
       seniors: "Seniors"
 
@@ -112,7 +112,7 @@ en:
   pages:
     home:
       title_for_html: "<strong>Do good with your <br>friends in Barcelona.</strong>"
-      sub_title_for_html: "Filter, search, apply with your team <br>for volunteering in the city."
+      sub_title_for_html: "Filter, search, and apply with your team <br>to volunteering opportunties in your community."
       find: "Find volunteers >>"
 
       team_name_for_html: "Team name: <span style='color: #fb8500'>The VolunDeers</span>"
@@ -126,18 +126,18 @@ en:
       lisa_for_html: "<strong>Lisa, 23 </strong>"
       medical_student: "Medical Student"
       volunteer_cta_title_for_html: "Create a team and<br> do good together!"
-      volunteer_cta_sub_title: "In Vamos you can easily invite your friends, apply as a team and chat altogehter with the organization."
+      volunteer_cta_sub_title: "With Vamos you can easily invite your friends, apply as a team and chat with organizations."
       volunteer_cta_button: "Get started"
 
-      city_title_for_html: "Do good in your city. <br>Support projects around you in Barcelona."
+      city_title_for_html: "Do good in your community. <br>Support projects around you in Barcelona."
       city_cta: "Check out projects"
 
       function_title: "Vamos brings volunteering to you"
 
       function1_title: "Find local projects that fit you"
-      function1_text: "With Vamos you can filter by category, location and time to find the best opportunity for you."
+      function1_text: "Vamos allows you to filter by category, location and time to find the best opportunity for you."
       function2_title: "Apply with your friends"
-      function2_text: "At Vamos you can sign up for volunteering together with your friends and with a few click send an application as a team."
+      function2_text: "With Vamos you can find volunteering opportunties with your friends, and with just a few click send an application as a team."
       function3_title: "Chat with the project owner"
       function3_text: "Find out all the details about the opportunity and engage with the volunteering coordinator via chat."
 
@@ -145,9 +145,9 @@ en:
       ngo_cta_text_for_html: "Create your first project for free in less than <strong> 3 minutes! </strong>"
       ngo_cta_button: "Get started"
 
-      process_title: "4 Steps to your first volunteering"
+      process_title: "4 Steps to finding your first volunteering andventure"
       process_step1: "Filter by location, cause and time investment."
-      process_step2: "Read detailled info about volunteering opportunties."
+      process_step2: "Read detailed info about volunteering opportunties."
       process_step3: "Create your team and apply."
       process_step4: "Chat with the project owner and confirm your spot."
 
@@ -156,7 +156,7 @@ en:
 
     about_vamos:
       vision_title: "Our Vision"
-      vision_text: "We are a young and international team from France, Spain and Austria. Our goal is to empower people to do good in their local environment. The users of Vamos should feel inspired and motivated to help others in need and gain invaluable experience together with their friends."
+      vision_text: "We are a young and international team from France, Spain and Austria. Our goal is to empower people to do good in their communities. The users of Vamos should feel inspired and motivated to help others in need and gain invaluable experience together with their friends."
       quote: "No act of kindness, no matter how small, is ever wasted."
       team_title: "Vamos Founders"
       team_advisors: "Vamos Advisors"
