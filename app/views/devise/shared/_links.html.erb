@@ -16,6 +16,25 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: "dark-gray" %><br />
+    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: "dark-gray fb-login-button" %><br />
   <% end %>
 <% end %>
+
+<!-- Facebook SDK -->
+<% if Rails.env.production? %>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '548312872532590', // development_id = 275824156803028 , production_id = 548312872532590
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v7.0'
+      });
+    };
+  </script>
+
+  <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+<% end %>
+
+
+

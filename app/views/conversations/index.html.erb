@@ -19,14 +19,9 @@
         <!--   Users in chat & project name on desktop-->
         <div id="desktop-show-project-chat">
           <div class="d-flex justify-content-between align-items-center">
-            <div class="">
-              <div class="conversation-users font-weight-bold">
-                <%= conversation.ngo.user.first_name %>,
-                <%= conversation.team.name%>
-              </div>
-              <% if conversation.messages.last.present? && conversation.messages.last.read == false && conversation.messages.last.user_id != current_user.id %>
-              <i class="fas fa-circle orange smaller-text mb-2"></i>
-              <% end %>
+            <div class="conversation-users font-weight-bold">
+              <%= conversation.ngo.user.first_name %>,
+              <%= conversation.team.name%>
             </div>
             <div>
               <% if conversation.messages.last.present?%>
@@ -42,11 +37,6 @@
             <!--   Date and time according to screen-->
             <div class="d-flex justify-content-between align-items-center">
               <div>
-                <% if conversation.messages.last.present? && conversation.messages.last.read == false && conversation.messages.last.user_id != current_user.id %>
-                <i class="fas fa-circle orange smaller-text mb-2"></i>
-                <% end %>
-              </div>
-              <div>
                 <% if conversation.messages.last.present?%>
                   <p class="paragraph-no-margin date-message-text-2 ml-1">
                     <%=conversation.messages.last.message_day  %>
@@ -60,15 +50,24 @@
           <div class="font-weight-light mb-4">
             <div class="d-flex justify-content-between">
               <div class="line-text-status d-flex justify-content-between align-items-center">
-                <% if conversation.messages.last.present? && conversation.messages.last.read == false %>
-                  <p class="paragraph-no-margin">
-                  <span class="font-weight-bold"><%= conversation.messages.last.user.first_name %></span>
-                  <%=conversation.messages.last.body.truncate(70)%></p>
-                <% elsif conversation.messages.last.present? %>
-                  <%=conversation.messages.last.body.truncate(70)%>
-                <% else %>
-                  <p class="paragraph-no-margin font-italic"> No messages yet - Feel free to ask any questions!</p>
-                <% end %>
+                <div>
+                  <% if conversation.messages.last.present? && conversation.messages.last.read == false && conversation.messages.last.user_id != current_user.id %>
+                    <i class="fas fa-circle orange smaller-text mb-2 mr-2"></i>
+                  <% elsif conversation.messages.last.present? %>
+                    <i class="far fa-circle smaller-text mb-2 mr-2" style="color:gray;"></i>
+                  <% end %>
+                </div>
+                <div>
+                  <% if conversation.messages.last.present? && conversation.messages.last.read == false %>
+                    <p class="paragraph-no-margin">
+                    <span class="font-weight-bold"><%= conversation.messages.last.user.first_name %></span>
+                    <%=conversation.messages.last.body.truncate(70)%></p>
+                  <% elsif conversation.messages.last.present? %>
+                    <%=conversation.messages.last.body.truncate(70)%>
+                  <% else %>
+                    <p class="paragraph-no-margin font-italic"> No messages yet - Feel free to ask any questions!</p>
+                  <% end %>
+                </div>
               </div>
               <div id="mobile-show-status-right" style="font-weight:400;">
                   <%=conversation.application.status.capitalize%>

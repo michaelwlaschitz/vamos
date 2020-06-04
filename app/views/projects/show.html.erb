@@ -83,15 +83,25 @@
         </div>
 
        <!-- Apply button -->
-        <% if current_user.teams.any? %>
-          <%= form_tag(new_project_application_path(@project), :method => "get") do %>
-          <div class="desktop-apply-button-showpage apply-button-showpage">
-          <%= submit_tag(t(".apply"), class: "button-vamos primary-style mb-5") %>
-          </div>
+
+        <% if user_signed_in? %>
+          <% if current_user.teams.any? %>
+            <%= form_tag(new_project_application_path(@project), :method => "get") do %>
+            <div class="desktop-apply-button-showpage apply-button-showpage">
+            <%= submit_tag(t(".apply"), class: "button-vamos primary-style mb-5") %>
+            </div>
+            <% end %>
+          <% else %>
+            <%= form_tag(new_team_path, :method => "get") do %>
+              <%= hidden_field_tag(:id, params["id"]) %>
+              <div class="desktop-apply-button-showpage apply-button-showpage">
+              <%= submit_tag(t(".apply"), class: "button-vamos primary-style mb-5") %>
+              </div>
+              <% end %>
           <% end %>
 
         <% else %>
-          <%= form_tag(new_team_path, :method => "get") do %>
+            <%= form_tag(new_team_path, :method => "get") do %>
             <%= hidden_field_tag(:id, params["id"]) %>
             <div class="desktop-apply-button-showpage apply-button-showpage">
             <%= submit_tag(t(".apply"), class: "button-vamos primary-style mb-5") %>
@@ -113,7 +123,7 @@
       <!-- Reviews -->
 
         <div class="mt-4">
-          <h2><%= t(".reviews_for", name: @project.ngo.name) %> </h2>
+          <h2><%= t(".reviews_for", count: @reviews.count, name: @project.ngo.name) %> </h2>
         </div>
         <div class="reviews my-3 align-items-center">
           <% @reviews.each do |review| %>

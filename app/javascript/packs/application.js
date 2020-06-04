@@ -19,6 +19,8 @@ import { logoFileName } from '../functions/fetch_logo_file_name';
 
 import { initSelect2 } from '../plugins/init_select2';
 
+import { submitEnter } from '../functions/submit_message';
+
 initSelect2();
 
 initAutocompleteLocation();
@@ -33,3 +35,5 @@ replaceDistances();
 addActiveClass();
 
 logoFileName();
+
+submitEnter();

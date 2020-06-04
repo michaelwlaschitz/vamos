@@ -1,5 +1,22 @@
-<div class="text-center-mobile">
-  <%= image_tag "team-work.jpg", id: "team-image-mobile" %>
+<div class="progress-bar-container progress-bar-container-step-1">
+  <div class="progress-bar-area">
+    <div class="progress" id="steps-progress">
+      <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="progress-step first-step text-center">
+      <p><%= t(".step_1") %></p>
+      <i class="fas fa-circle progress-icon" style="position:absolute;color:white;"></i>
+      <i class="far fa-circle progress-icon" style="color:#fb8500;font-size: 51px;position:relative;bottom:0px;left:0px;"></i>
+    </div>
+    <div class="progress-step second-step text-center">
+      <p><%= t(".step_2") %></p>
+      <i class="fas fa-circle progress-icon"></i>
+    </div>
+    <div class="progress-step third-step text-center">
+      <p><%= t(".step_3") %></p>
+      <i class="fas fa-circle progress-icon"></i>
+    </div>
+  </div>
 </div>
 
 <div class="content-container-create-team">
@@ -24,7 +41,7 @@
           <%= team_fields.hidden_field "id", :value => params[:id] %>
           <%= team_fields.input :name, label: false, placeholder: "The Treegantics"%>
 
-          <h3><%= t(".invite_friends") %></h3>
+          <h3 class="mt-4"><%= t(".invite_friends") %></h3>
           <%= team_fields.simple_fields_for :team_memberships do |tm| %>
           <%= render 'team_membership_fields' , f: tm %>
           <% end %>

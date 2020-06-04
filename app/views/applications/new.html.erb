@@ -1,36 +1,64 @@
-<% @project.photos.each do |photo| %>
-<%= cl_image_tag photo.key, class: "image-small-height"%>
-<% end %>
+<div class="progress-bar-container progress-bar-container-step-2">
+  <div class="progress-bar-area">
+    <div class="progress" id="steps-progress">
+      <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="progress-step first-step text-center">
+      <p><%= t(".step_1") %></p>
+      <i class="fas fa-circle progress-icon" style="position:absolute;color:white;"></i>
+      <i class="fas fa-check-circle progress-icon" style="position:relative;bottom:0px;left:0px;"></i>
+    </div>
+    <div class="progress-step second-step text-center">
+      <p><%= t(".step_2") %></p>
+      <i class="fas fa-circle progress-icon" style="position:absolute;color:white;"></i>
+      <i class="far fa-circle progress-icon" style="position:relative;bottom:0px;left:0px;"></i>
+    </div>
+    <div class="progress-step third-step text-center">
+      <p><%= t(".step_3") %></p>
+      <i class="fas fa-circle progress-icon"></i>
+    </div>
+  </div>
+</div>
 
 <div class="content-container-application-new">
+  <div class="d-flex justify-content-between">
+    <div class="form-style-desktop">
+      <div class="title">
+        <h2><%= t(".new_application_overview") %> </h2>
+      </div>
+      <h3><strong><%= t(".project") %>:</strong> <%= @project.title %></h3>
+      <h3><strong><%= t(".organization") %>:</strong> <%= @project.ngo.name %></h3>
 
-  <h2 class="h2-less-margin mb-3"><%= t(".application_overview") %></h2>
+      <div class="form-group simple-form">
+        <%= simple_form_for ([@project, @application])  do |f| %>
+          <h3 class="mt-4"><%= t(".selected_team") %></h3>
+          <div class="mb-2">
+            <%= f.association :team, label: false, input_html: {class: " form-control mt-2"}, collection: current_user.teams, selected: current_user.teams.last%>
+          </div>
 
-  <h3><strong><%= t(".project") %>:</strong> <%= @project.title %></h3>
-  <h3><strong><%= t(".organization") %>:</strong> <%= @project.ngo.name %></h3>
+          <div class="mb-4">
+            <h3><%= t(".application_message") %></h3>
+            <%= f.simple_fields_for :message do |message_fields| %>
+              <%= message_fields.input :body, as: :text, placeholder: t(".motivation"), label: false, input_html: {rows: 5} %>
+            <% end %>
+          </div>
 
-    <div class="form-group">
-      <%= simple_form_for ([@project, @application])  do |f| %>
-        <h3 class="mt-4"><%= t(".selected_team") %></h3>
-        <div class="mb-2">
-          <%= f.association :team, label: false, input_html: {class: " form-control mt-2"}, collection: current_user.teams, selected: current_user.teams.last%>
-        </div>
-
-      <div class="mb-4">
-        <h3><%= t(".application_message") %></h3>
-        <%= f.simple_fields_for :message do |message_fields| %>
-        <%= message_fields.input :body, as: :text, placeholder: t(".motivation"), label: false, input_html: {rows: 5} %>
+          <%= f.submit t(".send_application"), class: "button-vamos primary-style w-100 mt-0"%>
         <% end %>
       </div>
 
-      <%= f.submit t(".send_application"), class: "button-vamos primary-style w-100 mt-0"%>
+      <%= form_tag(new_team_path, :method => "get") do %>
+        <%= hidden_field_tag(:id, params[:project_id]) %>
+        <%= button_tag :type => "submit", :class => "border-0 mb-5" do %>
+          <%= t(".apply") %><i class="mt-2 far fa-arrow-alt-circle-right orange ml-2"></i>
+        <% end %>
       <% end %>
     </div>
 
-    <%= form_tag(new_team_path, :method => "get") do %>
-      <%= hidden_field_tag(:id, params[:project_id]) %>
-      <%= button_tag :type => "submit", :class => "border-0 mb-5" do %>
-      <%= t(".apply") %><i class="mt-2 far fa-arrow-alt-circle-right orange ml-2"></i>
-    <% end %>
-<% end %>
+    <div class="picture-style-desktop">
+      <div class="text-center-desktop">
+        <%= cl_image_tag @project.photos.first.key, id: "team-image-desktop" %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -11,12 +11,6 @@ class UsersController < ApplicationController
     @ngo_reviews = current_user.ngo_reviews
   end
 
-  def applications
-    @user = current_user
-    @ngo_applications = current_user.ngo_applications
-    @applications = current_user.applications.order(created_at: :asc)
-  end
-
   def projects
     @user = current_user
     @ngo_projects = current_user.ngo.projects

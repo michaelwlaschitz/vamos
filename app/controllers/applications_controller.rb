@@ -28,6 +28,18 @@ class ApplicationsController < ApplicationController
     end
   end
 
+   def index
+    @user = current_user
+    @ngo_applications = current_user.ngo_applications
+    @applications = current_user.applications.order(created_at: :asc)
+  end
+
+  def show
+    @application = Application.find(params[:id])
+    @team = @application.team
+  end
+
+
   def confirmation
     @application = Application.find(params[:application_id])
   end

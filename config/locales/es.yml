@@ -97,9 +97,9 @@ es:
 
   pages:
     home:
-      title_for_html: "<strong>Voluntariados <br>con tus amigos.</strong>"
-      sub_title_for_html: "Busca y aplica a voluntariados<br> con tu equipo cerca de ti."
-      find: "Encuentra voluntarios >>"
+      title_for_html: "<strong>Voluntariados con<br> amigos, en Barcelona.</strong>"
+      sub_title_for_html: "Busca y aplica a voluntariados con tu equipo para ayudar a tu comunidad."
+      find: "Busca voluntarios >>"
 
       team_name_for_html: "Nombre del equipo: <span style='color: #fb8500'>Las Alpacas</span>"
 
@@ -108,45 +108,49 @@ es:
       sophie_for_html: "<strong>Sofia, 26</strong>"
       graphic_designer: "Diseñadora grafica"
       max_for_html: "<strong>Max, 27 </strong>"
-      event_manager: "Administrador de evento"
+      event_manager: "Administrador de eventos"
       lisa_for_html: "<strong>Lisa, 23</strong>"
       medical_student: "Estudiante de medicina"
-      volunteer_cta_title_for_html: "Forma un equipo<br>y trabaja juntos."
-      volunteer_cta_sub_title: "En Vamos, puede crear fácilmente un equipo, invitar a sus amigos y unirse a las oportunidades de voluntariado juntos."
-      volunteer_cta_button: "Mira oportunidades"
+      volunteer_cta_title_for_html: "Crea tu equipo <br>y trabajen juntos!"
+      volunteer_cta_sub_title: "Con Vamos, puedes crear fácilmente un equipo, invitar a tus amigos y juntos aplicar a las oportunidades de voluntariado."
+      volunteer_cta_button: "Busca oportunidades"
 
-      function_title: "Vamos te trae voluntariados a ti"
+      city_title_for_html: "Haz el bien en tu comunidad. <br>Apoya proyectos cerca de ti en Barcelona."
+      city_cta: "Busca proyectos"
 
-      function1_title: "Encuentra proyectos locales que se ajusten a ti"
+      function_title: "Vamos trae voluntariados a ti"
+
+      function1_title: "Descubre proyectos locales que encajen contigo"
       function1_text: "Con Vamos, puedes filtrar por categoría, ubicación y horas para encontrar la mejor oportunidad para ti"
       function2_title: "Aplica con tus amigos"
-      function2_text: "En Vamos, puedes inscribirte para ser voluntario junto con tus amigos y, con unos pocos clics, enviar una solicitud en equipo."
+      function2_text: "Con Vamos, puedes inscribirte junto con tus amigos, y en unos pocos clics enviar una solicitud en equipo."
       function3_title: "Chatear con el coordinador del proyecto"
-      function3_text: "Conoce todos los detalles sobre la oportunidad e interactúa con el coordinador del voluntariado a través del chat."
+      function3_text: "Conoce todos los detalles sobre la oportunidad e interactúa con el coordinador del voluntariado."
 
       ngo_cta_title: "Buscando voluntarios?"
       ngo_cta_text_for_html: "Crea tu primer proyecto gratis en menos de <strong> 3 minutos</strong>!"
       ngo_cta_button: "Vamos"
 
-      process_title: "4 pasos a tu primer voluntariado"
+      process_title: "4 pasos para llegar a tu primer adventura de voluntariado"
       process_step1: "Filtra por ubicación, categoría y horas para encontrar las mejores oportunidades para ti."
       process_step2: "Encuentra información detallada sobre oportunidades de voluntariado."
       process_step3: "Crea tu equipo invitando a tus amigos y aplica a oportunidades en unos pocos clicks."
-      process_step4: "Chatea con el coordinador del proyecto y confirma tu participación."
+      process_step4: "Chatea con el coordinador del proyecto y confirme su participación."
 
       vision_title: "Nuestra Visión"
-      vision_text: "Somos un equipo joven e internacional de Francia, España y Austria. Nuestro objetivo es empoderar a las personas con la capacidad de hacer buenas acciones en su entorno local. Los usuarios de Vamos pueden sentirse inspirados y motivados para ayudar a causas o personas con necesidades y así tener una experiencia incalculable junto a sus amigos."
+      vision_text: "Somos un equipo joven e internacional de Francia, España y Austria. Nuestro objetivo es empoderar a las personas con la capacidad de hacer buenas acciones en su comunidad. Los usuarios de Vamos pueden sentirse inspirados y motivados para ayudar a causas o personas con necesidades y así tener una experiencia inolvidable junto a sus amigos."
 
     about_vamos:
       vision_title: "Nuestra Visión"
-      vision_text: "Somos un equipo joven e internacional de Francia, España y Austria. Nuestro objetivo es empoderar a las personas con la capacidad de hacer buenas acciones en su entorno local. Los usuarios de Vamos pueden sentirse inspirados y motivados para ayudar a causas o personas con necesidades y así tener una experiencia incalculable junto a sus amigos."
+      vision_text: "Somos un equipo joven e internacional de Francia, España y Austria. Nuestro objetivo es empoderar a las personas con la capacidad de hacer buenas acciones en su comunidad. Los usuarios de Vamos pueden sentirse inspirados y motivados para ayudar a causas o personas con necesidades y así tener una experiencia inolvidable junto a sus amigos."
       quote: "Ningún acto de bondad, por pequeño que sea, es desperdiciado."
       team_title: "Fundadores de Vamos"
       team_advisors: "Asesores de Vamos"
+      team_members: "Equipo de Vamos"
 
     filter_location:
       title_for_html: "<span style='color: #fb8500'>Dónde en Barcelona</span> quieres ayudar con tus amigos?"
-      type_address: "Escriba tu dirección"
+      type_address: "Escribe tu dirección"
 
     filter_interests:
       select_causes_for_html: "¿Qué <span style='color: #fb8500'>causas</span> te interesan más?"
@@ -180,7 +184,7 @@ es:
   projects:
     index:
       projects:
-        zero: "Desafortunadamente, todavía no tenemos proyectos en su área."
+        zero: "Desafortunadamente, todavía no tenemos proyectos en tu área."
         one: "¡Encontramos una oportunidad, pero hay más por venir!"
         other: "Hay %{count} oportunidades cerca de usted"
 
@@ -192,7 +196,9 @@ es:
       project: "Proyecto"
       organization: "Organización"
       apply: "Aplica con tu equipo"
-      reviews_for: "Reseñas para proyectos de %{name}"
+      reviews_for:
+        zero: "Todavía no hay reseñas para esta organización!"
+        other: "Reseñas para proyectos de %{name}"
 
   conversations:
     index:
@@ -203,17 +209,9 @@ es:
       team_name: "Elige un nombre para tu equipo (20 caracteres máx"
       invite_friends: "Invita amigos a tu equipo"
       create_team: "Crea tu equipo"
-  applications:
-    new:
-      application_overview: "Resumen de aplicación"
-      project: "Proyecto"
-      organization: "Organización"
-      selected_team: "Equipo elegido"
-      application_message: "Mensaje de aplicación"
-      send_application: "Envié la aplicación"
-      apply: "Aplica con un equipo nuevo"
-      motivation: "Escribe unas palabras sobre la motivación de tí y tus amigos para ayudar en ese proyecto.
-        Aumenta sus chance de obtener los espacios disponibles."
+      step_1: "Create Equipo"
+      step_2: "Aplica"
+      step_3: "Chatea y Confirma"
 
   devise:
     registrations:
@@ -250,13 +248,57 @@ es:
       description: "Descripción"
       phone: "Teléfono"
       reviews:
-        zero: "There are no reviews for your organization yet!"
-        other: "Reseñas de usuarios para su organización (%{count})"
+        zero: "Todavía no hay reseñas para esta organización!"
+        other: "Reseñas de para %{name}:"
 
-    applications:
+  applications:
+    index:
       status: "Status"
       project_name: "Proyecto"
       team_name: "Nombre del equipo"
       date: "Fecha"
       hours: "Hora"
       application_date: "Fecha de aplicación"
+      accept: "Acceptar"
+      reject: "Rechazar"
+      accepted: "Acceptado"
+      rejected: "Rechezado"
+
+    new:
+      new_application_overview_for_html: "<span style='color: #fb8500'>Aplicación</span>"
+      application_overview: "Resumen de aplicación"
+      project: "Proyecto"
+      organization: "Organización"
+      selected_team: "Equipo elegido"
+      application_message: "Mensaje de aplicación"
+      send_application: "Envié la aplicación"
+      apply: "Aplica con un equipo nuevo"
+      motivation: "Escribe unas palabras sobre la motivación de tí y tus amigos para ayudar en ese proyecto.
+        Aumenta sus chance de obtener los espacios disponibles."
+      step_1: "Crea Equipo"
+      step_2: "Aplica"
+      step_3: "Chatea y Confirma"
+
+    show:
+      application_overview: "Resumen de la aplicación para"
+      team_name: "Nombre del equipo"
+      accept: "Acceptar"
+      reject: "Rechazar"
+      accepted: "Acceptado"
+      rejected: "Rechezado"
+      send_message: "Enviar mensaje"
+
+    confirmation:
+      team_name_for_html: "<span class='orange'>%{name}</span>, último paso!"
+      info_text_for_html: "Parece que <strong>no todos de tus amigos tienen una cuenta</strong> con Vamos. No te preocupes, les enviamos un <strong>email para</strong> que puedan <strong>registrarse</strong> rápidamente. <br> <br>
+      Cuando todos los perfiles están registrados, la solicitud se enviará a la organizacíon."
+      with: "con"
+      send_message: "Envia mensaje"
+      application_sent_text: ", tu aplication está enviada!"
+      your_contact_text: "es tu contacto de"
+      more_opportunities: "Ver más oportunidades"
+      question: "Tienes más preguntas sobre la oportunidad?"
+      step_1: "Create Equipo"
+      step_2: "Aplica"
+      step_3: "Chatea y Confirma"
+

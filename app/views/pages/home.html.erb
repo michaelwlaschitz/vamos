@@ -42,7 +42,7 @@
 
 <!-- Example Team Desktop -->
 
-<div class="mb-5 example-team hide-mobile" style="background-image: linear-gradient(rgba(255,255,255, 0.92),rgba(255,255,255,0.92)), url('<%= image_path "landing_page/background_team.jpg"%>'); background-repeat: no-repeat;">
+<div class="example-team hide-mobile" style="background-image: linear-gradient(rgba(255,255,255, 0.92),rgba(255,255,255,0.92)), url('<%= image_path "landing_page/background_team.jpg"%>'); background-repeat: no-repeat;">
 
   <div class="content-container d-flex align-items-center mt-5 justify-content-around">
     <div>
@@ -77,7 +77,7 @@
     <div>
       <h1 class="team-cta-card large bold"><%= t(".volunteer_cta_title_for_html") %></h1>
       <p class="team-cta-card-small mt-3 usp-feature-text"><%= t(".volunteer_cta_sub_title") %></p>
-      <%= link_to t(".volunteer_cta_button"), filter_location_path, class: "button-vamos primary-style w-75 mt-3" %>
+      <%= link_to t(".volunteer_cta_button"), filter_location_path, class: "button-vamos primary-style w-100 mt-3" %>
     </div>
   </div>
 
@@ -90,7 +90,7 @@
   <div>
       <h1 class="team-cta-card large bold"><%= t(".volunteer_cta_title_for_html") %></h1>
       <p class="team-cta-card-small mt-3"><%= t(".volunteer_cta_sub_title") %></p>
-      <%= link_to t(".volunteer_cta_button"), filter_location_path, class: "button-vamos primary-style w-75 mt-3" %>
+      <%= link_to t(".volunteer_cta_button"), filter_location_path, class: "button-vamos primary-style w-100 mt-3" %>
   </div>
 
   <h2 class="font-weight-normal mb-3 mt-5"><%= t(".team_name_for_html") %> </h2>
@@ -122,6 +122,15 @@
     </div>
   </div>
 
+
+</div>
+
+<!-- Barcelona    -->
+
+<div class="banner city-home" style="background-image: linear-gradient(rgba(255,255,255, 0.03),rgba(255,255,255,0.03)), url('<%= image_path "landing_page/barcelona.jpg"%>'); background-size: cover; background-position: center">
+<h1 class="pl-4 slogan-home-city bold"><%= t(".city_title_for_html") %> </h1>
+
+<%= link_to t(".city_cta"), filter_location_path, class: "button-vamos primary-style mt-3 ml-4" %>
 
 </div>
 
