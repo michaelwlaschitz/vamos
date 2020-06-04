@@ -37,4 +37,3 @@ addActiveClass();
 logoFileName();
 
 submitEnter();
-
