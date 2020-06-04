@@ -17,20 +17,36 @@
   </div>
 
   <% if @application.team.users.any? {|user| user.first_name == nil} == false %>
-    <div class="d-flex mt-3">
+    <div class="d-flex justify-content-between mt-3">
       <%= cl_image_tag @application.project.ngo.user.photo.key, class: "contact-avatar" %>
       <div class="ml-3">
+
         <h3><%= @application.project.ngo.user.first_name %> <%= t(".your_contact_text") %> <%= @application.project.ngo.name %> </h3>
-        <h3 class="m-0"><%= t(".questions") %></h3>
+        <h3 class="m-0"><%= t(".question") %></h3>
+      </div>
+      <div class="button hide-mobile"> <!-- done -->
+        
         <%= link_to conversation_path(@application.conversation) do  %>
           <h3 class="enter-chat-button">
             <%= t(".send_message") %>
           </h3>
         <% end %>
       </div>
-
     </div>
-
+    <div class="button go-back">
+      <%= link_to projects_path(@projects) do  %>
+        <h3 class="opportunities-chat-button">
+          <%= t('.more_opportunities') %>
+        </h3>
+      <% end %>
+    </div>
+    <div class="button-1 hide-desktop">
+      <%= link_to conversation_path(@application.conversation) do  %>
+        <h3 class="enter-chat-button-mobile">
+          <%= t(".send_message") %>
+        </h3>
+      <% end %>
+    </div>
   <% end %>
 
 </div>
