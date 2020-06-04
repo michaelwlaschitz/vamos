@@ -264,7 +264,7 @@ es:
       accept: "Acceptar"
       reject: "Rechazar"
       accepted: "Acceptado"
-      rejected: "Rechezado"
+      rejected: "Rechazado"
 
     new:
       new_application_overview_for_html: "<span style='color: #fb8500'>Aplicación</span>"
@@ -275,8 +275,8 @@ es:
       application_message: "Mensaje de aplicación"
       send_application: "Envia la aplicación"
       apply: "Aplica con un equipo nuevo"
-      motivation: "Escribe unas palabras sobre la motivación de tí y tus amigos para ayudar en ese proyecto.
-        Aumenta sus chance de obtener los espacios disponibles."
+      motivation: "Escribe unas palabras sobre tu motivación y de tus amigos para ayudar en ese proyecto.
+        Aumenta tus oportunidades de obtener los espacios disponibles."
       step_1: "Crea Equipo"
       step_2: "Aplica"
       step_3: "Chatea y Confirma"
@@ -287,7 +287,7 @@ es:
       accept: "Acceptar"
       reject: "Rechazar"
       accepted: "Acceptado"
-      rejected: "Rechezado"
+      rejected: "Rechazado"
       send_message: "Enviar mensaje"
 
     confirmation:

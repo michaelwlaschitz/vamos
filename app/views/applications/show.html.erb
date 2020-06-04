@@ -35,10 +35,10 @@
     <div class="application-status-app-desktop ml-5">
       <% if @application.status == "pending" %>
         <div class="accept-button-app-desktop px-3 mb-2">
-          <%= link_to t(".accept"), accept_application_path(@application), method: :patch, class: "green-color"%>
+          <%= link_to t(".accept"), accept_applications_application_path(@application), method: :patch, class: "green-color"%>
         </div>
         <div class="reject-button-app-desktop px-3 mb-2">
-          <%= link_to t(".reject"), reject_application_path(@application), method: :patch, class: "red-color"%>
+          <%= link_to t(".reject"), reject_applications_application_path(@application), method: :patch, class: "red-color"%>
         </div>
       <% elsif @application.status == t(".accepted") %>
         <h4 id="accepted-text-m"><%= t(".accepted") %></h4>

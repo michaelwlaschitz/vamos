@@ -44,18 +44,34 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:application_id])
   end
 
-  def accept
+  def accept_applications
     @application = Application.find(params[:id])
     @application.status = "accepted"
     @application.save
-    redirect_to user_profile_path
+    redirect_to applications_path
   end
 
-  def reject
+  def reject_applications
     @application = Application.find(params[:id])
     @application.status = "rejected"
     @application.save
-    redirect_to user_profile_path
+    redirect_to applications_path
+  end
+
+  def accept_conversation
+    @application = Application.find(params[:id])
+    @application.status = "accepted"
+    @application.save
+    @conversation = @application.conversation
+    redirect_to conversation_path(@conversation)
+  end
+
+  def reject_conversation
+    @application = Application.find(params[:id])
+    @application.status = "rejected"
+    @application.save
+    @conversation = @application.conversation
+    redirect_to conversation_path(@conversation)
   end
 
   private

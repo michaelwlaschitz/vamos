@@ -321,14 +321,9 @@
           <% team.users.each do |user| %>
 
           <div class= "team-member-yes-exist-volunteer text-center mb-3">
-            <div class="d-flex justify-content-center">
-              <div class="mr-3 mb-2">
-                <div class="mb-2"> <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer" %>
-                </div>
-                <div>
-               <p> <%= user.first_name %></p>
-                </div>
-              </div>
+
+            <div class= "mb-2 mr-3 team-members-profile-pictures"> <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer" %>
+              <%= user.first_name %>
             </div>
 
           </div>
@@ -337,7 +332,7 @@
       </div>
       <% end %>
       <%= link_to new_team_path do %>
-      <div class="create-team-button text-center">
+      <div class="create-team-button text-center" style="display: none;">
         <p class="p-size"><%= link_to t(".create_team"), new_team_path, class: "orange-color" %></p>
       </div>
       <% end %>
