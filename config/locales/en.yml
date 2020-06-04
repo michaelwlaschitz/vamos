@@ -112,7 +112,7 @@ en:
   pages:
     home:
       title_for_html: "<strong>Do good with your <br>friends in Barcelona.</strong>"
-      sub_title_for_html: "Filter, search, and apply with your team <br>to volunteering opportunties in your community."
+      sub_title_for_html: "Filter, search, and apply with your team for local volunteering."
       find: "Find volunteers >>"
 
       team_name_for_html: "Team name: <span style='color: #fb8500'>The VolunDeers</span>"
@@ -284,7 +284,7 @@ en:
       step_1: "Create Team"
       step_2: "Apply"
       step_3: "Chat and Confirm"
-  
+
     index:
       status: "Status"
       project_name: "Project Name"
