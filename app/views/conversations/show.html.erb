@@ -21,10 +21,10 @@
         <% if @conversation.application.status == "pending" %>
           <% if current_user.ngo %>
             <div class="conversation-application-accept-button">
-              <%= link_to "Accept", accept_application_path(@conversation.application), method: :patch, class: "green-color"%>
+              <%= link_to "Accept", accept_conversation_application_path(@conversation.application), method: :patch, class: "green-color"%>
             </div>
             <div class="conversation-application-reject-button">
-              <%= link_to "Reject", reject_application_path(@conversation.application), method: :patch, class: "red-color"%>
+              <%= link_to "Reject", reject_conversation_application_path(@conversation.application), method: :patch, class: "red-color"%>
             </div>
           <% else %>
             <div class="conversation-application-status mt-2"><%= @conversation.application.status.capitalize %></div>
