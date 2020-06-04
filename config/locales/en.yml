@@ -228,6 +228,7 @@ en:
 
   applications:
     new:
+      new_application_overview: "<span style='color: #fb8500'>Application</span>"
       application_overview: "Application Overview"
       project: "Project"
       organization: "Organizations"

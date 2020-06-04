@@ -3,6 +3,7 @@
   object-fit: cover;
   object-position: center;
   margin-left: 100px;
+  margin-right: 0px;
   height: calc(100vh - 80px);
   width: 780px;
 }
@@ -24,10 +25,14 @@
 
 .content-container-create-team {
   margin: auto;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
   margin-top: 20px;
   width: 90%;
   padding: 0px;
+}
+
+.title {
+  margin-bottom: 50px;
 }
 
 
@@ -40,15 +45,12 @@
   }
   .form-style-desktop {
     width: 100%;
-    margin-top: 100px;
+    margin-top: 30px;
   }
   .simple-form {
     width: 500px;
   }
 
-  .title {
-    margin-bottom: 40px;
-  }
   .content-container-create-team {
     margin-top: 0;
     margin-bottom: 0;
