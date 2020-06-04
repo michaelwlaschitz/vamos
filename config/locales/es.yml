@@ -207,8 +207,13 @@ es:
       team_name: "Elige un nombre para tu equipo (20 caracteres máx"
       invite_friends: "Invita amigos a tu equipo"
       create_team: "Crea tu equipo"
+      step_1: "Create Equipo"
+      step_2: "Aplica"
+      step_3: "Chatea y Confirma"
+
   applications:
     new:
+      new_application_overview_for_html: "<span style='color: #fb8500'>Aplicación</span>"
       application_overview: "Resumen de aplicación"
       project: "Proyecto"
       organization: "Organización"
@@ -218,6 +223,13 @@ es:
       apply: "Aplica con un equipo nuevo"
       motivation: "Escribe unas palabras sobre la motivación de tí y tus amigos para ayudar en ese proyecto.
         Aumenta sus chance de obtener los espacios disponibles."
+      step_1: "Crea Equipo"
+      step_2: "Aplica"
+      step_3: "Chatea y Confirma"
+    confirmation:
+      step_1: "Create Equipo"
+      step_2: "Aplica"
+      step_3: "Chatea y Confirma"
 
   devise:
     registrations:
