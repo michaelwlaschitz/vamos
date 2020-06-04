@@ -31,10 +31,10 @@
               <div class="application-status-app-desktop">
               <% if application.status == "pending" %>
                 <div class="accept-button-app-desktop px-3 mb-2">
-                  <%= link_to t(".accept"), accept_application_path(application), method: :patch, class: "green-color"%>
+                  <%= link_to t(".accept"), accept_applications_application_path(application), method: :patch, class: "green-color"%>
                 </div>
                 <div class="reject-button-app-desktop px-3 mb-2">
-                  <%= link_to t(".reject"), reject_application_path(application), method: :patch, class: "red-color"%>
+                  <%= link_to t(".reject"), reject_applications_application_path(application), method: :patch, class: "red-color"%>
                 </div>
               <% elsif application.status == "accepted" %>
                 <h4 id="accepted-text-m"><%= t(".accepted") %></h4>
@@ -94,7 +94,7 @@
                     <% end %>
                     <div class= "arrow">
                       <i class="fas fa-chevron-right"></i>
-                      <%= link_to "Accept", accept_application_path(application), method: :patch, class: "green-color"%>
+                      <%= link_to "Accept", accept_applications_application_path(application), method: :patch, class: "green-color"%>
                     </div>
                   </div>
                   <p class="m-0 team-name-ngo"><%= application.team.name %></p>
@@ -106,10 +106,10 @@
           <div class="application-status mr-2">
             <% if application.status == "pending" %>
               <div class="accept-button px-3 my-2">
-                <%= link_to "Accept", accept_application_path(application), method: :patch, class: "green-color"%>
+                <%= link_to "Accept", accept_applications_application_path(application), method: :patch, class: "green-color"%>
               </div>
               <div class="reject-button px-3 my-2">
-                <%= link_to "Reject", reject_application_path(application), method: :patch, class: "red-color"%>
+                <%= link_to "Reject", reject_applications_application_path(application), method: :patch, class: "red-color"%>
               </div>
             <% elsif application.status == "accepted" %>
               <p id="accepted-text">Accepted</p>

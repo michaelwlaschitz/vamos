@@ -38,8 +38,10 @@ Rails.application.routes.draw do
 
     resources :applications, only: [] do
       member do
-        patch "/accept", to: "applications#accept"
-        patch "/reject", to: "applications#reject"
+        patch "/accept_applications", to: "applications#accept_applications", as: :accept_applications
+        patch "/reject_applications", to: "applications#reject_applications", as: :reject_applications
+        patch "/accept_conversation", to: "applications#accept_conversation", as: :accept_conversation
+        patch "/reject_conversation", to: "applications#reject_conversation", as: :reject_conversation
       end
     end
 
