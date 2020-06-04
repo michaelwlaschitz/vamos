@@ -3,10 +3,10 @@
   <div class="confirmation-message pt-3">
     <% if @application.team.users.any? {|user| user.first_name == nil} %>
       <h2 class="text-center mb-4 mt-3"><span class="orange"><%= @application.team.name %></span>, last step!</h2>
-      <p>It looks like <strong>not all of your team members have an account</strong> with Vamos. But don't worry, we sent them an <strong>email</strong> so that they can <strong> quickly sign up</strong>.</p>
-      <p>When all the profiles are registered, the application will be sent to the NGO.</p>
+      <p><%= t(".msg_part_1") %> <strong><%= t(".msg_part_1") %> <%= t(".msg_part_2") %> </strong> <%= t(".msg_part_3") %> <strong><%= t(".msg_part_4") %></strong><%= t(".msg_part_5") %> <strong> <%= t(".msg_part_6") %></strong>.</p>
+      <p><%= t(".msg_part_1") %> </p>
     <% else %>
-      <h2 class="text-center"><span class="orange"><%= @application.team.name %></span>, your application has been sent!</h2>
+      <h2 class="text-center"><span class="orange"><%= @application.team.name %></span>, <%=t(".application_msg") %></h2>
     <% end %>
 
   </div>
@@ -18,20 +18,34 @@
   </div>
 
   <% if @application.team.users.any? {|user| user.first_name == nil} == false %>
-    <div class="d-flex mt-3">
+    <div class="d-flex justify-content-between mt-3">
       <%= cl_image_tag @application.project.ngo.user.photo.key, class: "contact-avatar" %>
       <div class="ml-3">
-        <h3><%= @application.project.ngo.user.first_name %> is your contact from <%= @application.project.ngo.name %> </h3>
-        <h3 class="m-0">Questions?</h3>
+        <h3><%= @application.project.ngo.user.first_name %> <%= t(".contact") %> <%= @application.project.ngo.name %> </h3>
+        <h3 class="m-0"><%= t(".question") %></h3>
+      </div>
+      <div class="button hide-mobile"> <!-- done -->
         <%= link_to conversation_path(@application.conversation) do  %>
           <h3 class="enter-chat-button">
-            Send a message
+            <%= t(".send_message") %>
           </h3>
         <% end %>
       </div>
-
     </div>
-
+    <div class="button go-back">
+      <%= link_to projects_path(@projects) do  %>
+        <h3 class="opportunities-chat-button">
+          <%= t('.more_opportunities') %>
+        </h3>
+      <% end %>
+    </div>
+    <div class="button-1 hide-desktop">
+      <%= link_to conversation_path(@application.conversation) do  %>
+        <h3 class="enter-chat-button-mobile">
+          <%= t(".send_message") %>
+        </h3>
+      <% end %>
+    </div>
   <% end %>
 
 </div>
