@@ -3,7 +3,7 @@ window.$ = window.JQuery = JQuery;
 
 import "bootstrap";
 
-import { initAutocompleteLocation, initAutocompleteProjectAddress, initAutocompleteNgoAddress, initAutocompleteFilterDesktop } from '../plugins/init_autocomplete';
+import { initAutocompleteLocation, initAutocompleteProjectAddress, initAutocompleteNgoAddress, initAutocompleteFilterDesktop, initAutocompleteFilterMobile } from '../plugins/init_autocomplete';
 
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 
@@ -27,6 +27,7 @@ initAutocompleteLocation();
 initAutocompleteProjectAddress();
 initAutocompleteNgoAddress();
 initAutocompleteFilterDesktop();
+initAutocompleteFilterMobile
 
 initMapbox();
 initMapModal();

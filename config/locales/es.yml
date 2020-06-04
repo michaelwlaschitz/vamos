@@ -51,6 +51,8 @@ es:
       login: "Por favor inicia sesión"
       password: "Contraseña"
       login_button: "Inicia sesión"
+      save_filter: "Guardar filtro"
+      type_address: "Escribe tu dirección"
 
     devise_links:
       signup: "Regístrate"

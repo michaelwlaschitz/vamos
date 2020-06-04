@@ -7,6 +7,13 @@ const initAutocompleteLocation = () => {
   }
 };
 
+const initAutocompleteFilterMobile = () => {
+  const addressInput = document.getElementById('filter-mobile-location');
+  if (addressInput) {
+    places({ container: addressInput });
+  }
+};
+
 const initAutocompleteFilterDesktop = () => {
   const addressInput = document.getElementById('filter-desktop-location');
   if (addressInput) {
@@ -29,4 +36,4 @@ const initAutocompleteNgoAddress = () => {
 };
 
 
-export { initAutocompleteLocation, initAutocompleteProjectAddress, initAutocompleteNgoAddress, initAutocompleteFilterDesktop };
+export { initAutocompleteLocation, initAutocompleteProjectAddress, initAutocompleteNgoAddress, initAutocompleteFilterDesktop, initAutocompleteFilterMobile };

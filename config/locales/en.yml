@@ -58,7 +58,7 @@ en:
       children: "Children"
       social: "Social"
       cultural: "Cultural"
-      climate: "Environment"
+      climate: "Climate"
       medical: "Medical"
       seniors: "Seniors"
 
@@ -66,6 +66,8 @@ en:
       login: "Please log in"
       password: "Password"
       login_button: "Log in"
+      save_filter: "Save filter"
+      type_address: "Type your address"
 
     devise_links:
       signup: "Sign up"
