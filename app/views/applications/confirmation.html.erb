@@ -2,16 +2,15 @@
   <%= render 'shared/mobile_navbar' %>
   <div class="confirmation-message pt-3">
     <% if @application.team.users.any? {|user| user.first_name == nil} %>
-      <h2 class="text-center mb-4 mt-3"><span class="orange"><%= @application.team.name %></span>, last step!</h2>
-      <p><%= t(".msg_part_1") %> <strong><%= t(".msg_part_1") %> <%= t(".msg_part_2") %> </strong> <%= t(".msg_part_3") %> <strong><%= t(".msg_part_4") %></strong><%= t(".msg_part_5") %> <strong> <%= t(".msg_part_6") %></strong>.</p>
-      <p><%= t(".msg_part_1") %> </p>
+      <h2 class="text-center mb-4 mt-3"><%= t(".team_name_for_html", name: @application.team.name) %></h2>
+      <p><%= t(".info_text_for_html") %></p>
     <% else %>
-      <h2 class="text-center"><span class="orange"><%= @application.team.name %></span>, <%=t(".application_msg") %></h2>
+      <h2 class="text-center"><span class="orange"><%= @application.team.name %></span><%= t(".application_sent_text") %></h2>
     <% end %>
 
   </div>
   <div>
-    <h3 class="mt-5 mb-3"><%= @application.project.title %> with <%= @application.project.ngo.name %></h3>
+    <h3 class="mt-5 mb-3"><%= @application.project.title %> <%= t(".with") %> <%= @application.project.ngo.name %></h3>
   </div>
   <div class="confirmation-picture mb-5">
     <%= cl_image_tag @application.project.photos.first.key %>
@@ -21,10 +20,12 @@
     <div class="d-flex justify-content-between mt-3">
       <%= cl_image_tag @application.project.ngo.user.photo.key, class: "contact-avatar" %>
       <div class="ml-3">
-        <h3><%= @application.project.ngo.user.first_name %> <%= t(".contact") %> <%= @application.project.ngo.name %> </h3>
+
+        <h3><%= @application.project.ngo.user.first_name %> <%= t(".your_contact_text") %> <%= @application.project.ngo.name %> </h3>
         <h3 class="m-0"><%= t(".question") %></h3>
       </div>
       <div class="button hide-mobile"> <!-- done -->
+        
         <%= link_to conversation_path(@application.conversation) do  %>
           <h3 class="enter-chat-button">
             <%= t(".send_message") %>
