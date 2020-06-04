@@ -49,7 +49,7 @@
         <h3 class="m-0"><%= t(".question") %></h3>
       </div>
       <div class="button hide-mobile"> <!-- done -->
-        
+
         <%= link_to conversation_path(@application.conversation) do  %>
           <h3 class="enter-chat-button">
             <%= t(".send_message") %>
@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="button go-back">
-      <%= link_to projects_path(@projects) do  %>
+      <%= link_to projects_path do  %>
         <h3 class="opportunities-chat-button">
           <%= t('.more_opportunities') %>
         </h3>
