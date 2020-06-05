@@ -54,7 +54,7 @@ class ProjectsController < ApplicationController
 
     # if params[:time]&.reject(&:blank?).blank?
     #   @count = @projects.count(:all)
-    # else
+    # elses
     #   filtered_projects = []
     #   # commented this so that it does not break after removing hours_per_week, not sure how to fix it for now
     #   # filtered_projects += @projects.where(hours_per_week: 1..4) if params[:time].include?(param1)
