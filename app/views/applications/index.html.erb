@@ -36,9 +36,9 @@
                 <div class="reject-button-app-desktop px-3 mb-2">
                   <%= link_to t(".reject"), reject_applications_application_path(application), method: :patch, class: "red-color"%>
                 </div>
-              <% elsif application.status == "accepted" %>
+              <% elsif application.status == t(".accepted") %>
                 <h4 id="accepted-text-m"><%= t(".accepted") %></h4>
-              <% elsif application.status == "rejected" %>
+              <% elsif application.status == t(".rejected") %>
                 <h4 id="rejected-text-m"><%= t(".rejected") %> </h4>
               <% end %>
               </div>
@@ -111,10 +111,10 @@
               <div class="reject-button px-3 my-2">
                 <%= link_to "Reject", reject_applications_application_path(application), method: :patch, class: "red-color"%>
               </div>
-            <% elsif application.status == "accepted" %>
-              <p id="accepted-text">Accepted</p>
-            <% elsif application.status == "rejected" %>
-              <p style="font-size: 18px">Declined</p>
+            <% elsif application.status == t(".accepted") %>
+              <p id="accepted-text"> <%= t(".accepted") %></p>
+            <% elsif application.status == t(".rejected") %>
+              <p style="font-size: 18px"><%= t(".rejected") %></p>
             <% end %>
           </div>
         </div>

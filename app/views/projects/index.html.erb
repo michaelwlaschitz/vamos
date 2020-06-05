@@ -3,7 +3,7 @@
   <div class="has-navbar-so-margin">
     <%= render 'shared/mobile_navbar' %>
     <div class = "content-container">
-      <p class="opportunities-counter"> <%= t('.projects', count: @projects.count) %> </p>
+      <p class="opportunities-counter"> <%= t(".projects", count: @projects.count(:all)) %> </p>
       <div class="filters d-flex justify-content-left">
         <div style="font-size: 16px" class="filter py-1 px-5" data-toggle="modal" data-target="#filterModalMobile"><%= t("Fitrar")%> </div>
       </div>
@@ -95,8 +95,8 @@
         </div>
         <div class="modal-body">
           <h2 class="mb-2"><%= t(".location")%></h2>
-          <%= form_with url: "/projects", method: :get, local: true do |f| %>
-          <%= f.text_field :address, placeholder: 'Location', label:false %>
+          <%= form_tag(projects_path, :method => "get", local: true) do %>
+          <%= text_field_tag :address, nil, placeholder: t("global.modal.type_address"), id: 'filter-mobile-location' %>
           <h2 class="mt-4"><%= t(".interest")%></h2>
 
               <div class="buttons filter-buttons">
@@ -139,7 +139,7 @@
         </div>
         <div class = "content-container">
         <div class="modal-footer"></div>
-        <%= f.submit "Save filter", class: "button-vamos primary-style mt-0 w-100" %>
+         <%= submit_tag(t("global.modal.save_filter"), class: "button-vamos primary-style mt-0 w-100") %>
         <% end %>
         </div>
       </div>
@@ -156,7 +156,7 @@
   <div class="d-flex">
     <div class="desktop-card-container">
         <div class="opportunities-filter p-3">
-          <p class="opportunities-counter"> <%= t('.projects', count: @projects.count) %></p>
+          <p class="opportunities-counter"> <%= t('.projects', count: @projects.count(:all)) %></p>
           <div class="filters d-flex justify-content-left">
             <div style="font-size: 16px" class="filter py-1 px-5" data-toggle="modal" data-target="#filterModalDesktop">
               <%= t(".filter") %>
@@ -238,8 +238,8 @@
           </div>
           <div class="modal-body">
             <h2 class="mb-2"><%= t(".location")%></h2>
-            <%= form_with url: "/projects", method: :get, local: true do |f| %>
-            <%= f.text_field :address, placeholder: 'Location', label:false, id:"filter-desktop-location" %>
+            <%= form_tag(projects_path, :method => "get", local: true) do %>
+            <%= text_field_tag :address, nil, placeholder: t("global.modal.type_address"), id: 'filter-desktop-location' %>
             <h2 class="mt-4"><%= t(".interest")%></h2>
 
                 <div class="buttons filter-buttons">
@@ -280,7 +280,7 @@
           <div class="content-container">
             <div class="modal-footer">
               </div>
-              <%= f.submit "Save filter", class: "button-vamos primary-style mt-0 mb-2 w-100" %>
+              <%= submit_tag t("global.modal.save_filter"), class: "button-vamos primary-style mt-0 mb-2 w-100" %>
               <% end %>
               </div>
             </div>

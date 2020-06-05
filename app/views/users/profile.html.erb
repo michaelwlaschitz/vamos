@@ -321,9 +321,11 @@
           <% team.users.each do |user| %>
 
           <div class= "team-member-yes-exist-volunteer text-center mb-3">
+
             <div class= "mb-2 mr-3 team-members-profile-pictures"> <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer" %>
               <%= user.first_name %>
             </div>
+
           </div>
           <% end %>
         </div>
