@@ -1,7 +1,7 @@
 class Message < ApplicationRecord
   belongs_to :conversation
   belongs_to :user
-  validates :body, length: { minimum: 100 }
+  validates_presence_of :body
 
 
   def message_full_time
