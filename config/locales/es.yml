@@ -265,7 +265,7 @@ es:
       reject: "Rechazar"
       accepted: "Acceptado"
       rejected: "Rechazado"
-      details: "Más info"
+      details: "Info"
 
     new:
       new_application_overview_for_html: "<span style='color: #fb8500'>Aplicación</span>"
