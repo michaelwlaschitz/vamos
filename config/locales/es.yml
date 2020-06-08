@@ -202,6 +202,26 @@ es:
         zero: "Todavía no hay reseñas para esta organización!"
         other: "Reseñas para proyectos de %{name}"
 
+    new:
+      create: "Crea"
+      your: "tu proyecto"
+      subheading: "Una buena descripción aumenta la visibilidad de tu proyecto"
+      project_name: "Nombre del proyecto"
+      description: "Descripción"
+      address: "Dirección"
+      category: "Categoría del proyecto"
+      categories: ["Niños", "Social", "Cultural", "Medio Ambiente", "Salud", "Mayores"]
+      how_many: "Cuantos Volunatios"
+      start: "Fecha de inicio"
+      pictures: "Añadir Fotos"
+      back: "Atras"
+
+  reviews:
+    new:
+      write_a: "Escribe una evaluacion para el proyecto: "
+      tell_us: "Cuentanos de tu experiencia"
+      add: "Añade tu evaluacion"
+
   conversations:
     index:
       inbox: "Mensajes"
@@ -227,10 +247,24 @@ es:
         select_picture: "Elige una foto"
         signup: "Regístrate"
 
+      edit:
+        edit_user: "Actualizar Usuario"
+        set_new: "Establecer nueva contraseña"
+        hint1: "déjelo en blanco si no desea cambiar su contraseña"
+        confirm: "Confirmar nueva contraseña"
+        save: "Confirmar cambios con su contraseña antigua"
+        hint2: "necesitamos su contraseña actual para confirmar sus cambios"
+        update: "Actualizar"
+        cancel: "Cancelar mi cuenta"
+
     passwords:
       new:
         forgot_password_for_html: "Olvidó su contraseña? <br> No problema!"
         reset_password: "Restablecer mi contraseña"
+
+    sessions:
+      new:
+        password: "Contraseña"
 
   users:
     projects:
@@ -250,8 +284,12 @@ es:
       description: "Descripción"
       phone: "Teléfono"
       reviews:
-        zero: "Todavía no hay reseñas para esta organización!"
-        other: "Reseñas para esta organización (%{count}):"
+        zero: "Todavía no hay evaluaciones para esta organización!"
+        other: "Evaluaciones para esta organización (%{count}):"
+      accepted: "Aceptado"
+      add_a_review: "Añadir evaluacion"
+      rejected: "Rechazado"
+      pending: "Pendiente"
 
   applications:
     index:

@@ -7,8 +7,8 @@
     <!-- form start -->
         <div class="form-group">
 
-          <h2 class="mb-4">Create <span style="color: #fb8500">your project </span></h2>
-          <p>A nice description increase the visibility of your project</p>
+          <h2 class="mb-4"><%= t(".create") %> <span style="color: #fb8500"><%= t(".your") %> </span></h2>
+          <p><%= t(".subheading") %> </p>
       <!-- Form -->
 
           <%= simple_form_for @project do |f|  %>
@@ -21,19 +21,19 @@
             </ul>
           </div>
          <% end %>
-            <%= f.input :title, placeholder: 'Project name', label:false, class: 'form-control-project' %>
-            <%= f.input :description, placeholder: 'Description', label:false,class: 'form-control-project' %>
-            <%= f.input :address, placeholder: 'Address', label:false,class: 'form-control-project' %>
-            <%= f.input :category, collection: ["Seniors", "Children", "Environment", "Social", "Cultural", "Medical"], label:"Category of Project", class: 'form-control' %>
+            <%= f.input :title, placeholder: t(".project_name"), label:false, class: 'form-control-project' %>
+            <%= f.input :description, placeholder: t(".description"), label:false,class: 'form-control-project' %>
+            <%= f.input :address, placeholder: t(".address"), label:false,class: 'form-control-project' %>
+            <%= f.input :category, collection: t(".categories"), label:t(".category"), class: 'form-control' %>
             <div class="d-flex align-items-end justify-content-between">
-              <%= f.input :capacity, collection: 1..30, label: "How many volunteers?",class: 'form-control' %>
-              <%= f.input :start_date, label: "Start date",class: 'form-control' %>
+              <%= f.input :capacity, collection: 1..30, label: t(".how_many"),class: 'form-control' %>
+              <%= f.input :start_date, label: t(".start"),class: 'form-control' %>
             </div>
 
 
           <div class="d-flex align-items-center">
             <label class="button-upload-file mr-2">
-            Select Pictures
+            <%= t(".pictures") %>
             <span style="display:none;">
             <%= f.input :photos, as: :file, input_html: { multiple: true, class: "logo-input"} %>
             </span>
@@ -43,9 +43,9 @@
           </div>
           <div class="d-flex justify-content-between">
             <div id="back">
-              <%= link_to "Back to dashboard",user_profile_path, class: "orange mt-10"%>
+              <%= link_to t(".back"),user_profile_path, class: "orange mt-10"%>
             </div>
-            <%= f.submit "Create", class: "button-vamos primary-style w-50 mt-3 ml-10"%>
+            <%= f.submit t(".create") , class: "button-vamos primary-style w-50 mt-3 ml-10"%>
           </div>
           <% end %>
         </div>

@@ -219,6 +219,27 @@ en:
         zero: "There are no reviews for this organization yet!"
         other: 'Reviews for this organization (%{count}):'
 
+    new:
+      create: "Create"
+      your: "your project"
+      subheading: "A nice description increase the visibility of your project"
+      project_name: "Project name"
+      description: "Description"
+      address: "Address"
+      category: "Category of Project"
+      categories: ["Seniors", "Children", "Environment", "Social", "Cultural", "Medical"]
+      how_many: "How many volunteers?"
+      start: "Start date"
+      pictures: "Select Pictures"
+      back: "Back to Dashboard"
+
+  reviews:
+    new:
+      write_a: "Write a review for"
+      tell_us: "Tell us how it went"
+      add: "Add your review"
+
+
   conversations:
     index:
       inbox: "Inbox"
@@ -245,10 +266,24 @@ en:
         select_picture: "Select Picture"
         signup: "Sign up"
 
+      edit:
+        edit_user: "Edit User"
+        set_new: "Set new password"
+        hint1: "leave it blank if you don't want to change it"
+        confirm: "Confirm new password"
+        save: "Save changes with old password"
+        hint2: "we need your current password to confirm your changes"
+        update: "Update"
+        cancel: "Cancel my account"
+
     passwords:
       new:
         forgot_password_for_html: "Forgot your password? <br> No problemo!"
         reset_password: "Reset my password per mail"
+
+    sessions:
+      new:
+        password: "Password"
 
   users:
     projects:
@@ -270,6 +305,11 @@ en:
       reviews:
         zero: "There are no reviews for your organization yet!"
         other: 'User Reviews for your organization (%{count})'
+      accepted: "Accepted"
+      add_a_review: "Add a review"
+      rejected: "Rejected"
+      pending: "Pending"
+
 
   applications:
 
