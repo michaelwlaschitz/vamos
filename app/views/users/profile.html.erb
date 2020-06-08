@@ -261,6 +261,8 @@
 
 <!-- USER VOLUNTEER -->
 <% else %>
+
+
 <!-- DESKTOP + MOBILE VERSION -->
 <div class="d-flex justify-content-between mt-5 mr-5">
   <div></div>
@@ -289,23 +291,22 @@
         <div class="email mr-3">
           <p class="paragraph-no-margin"><%= @user.email %> </p>
         </div>
-      </div>
-      <div class="phone-user d-flex align-items-center">
-        <% if @user.phone.present? %>
-        <div class="element mr-2">
-          <i class="fas fa-phone"></i>
+        <div class="phone-user d-flex align-items-center">
+          <% if @user.phone.present? %>
+          <div class="element mr-2">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="phone-user-ngo mr-3">
+            <p class="paragraph-no-margin"><%= @user.phone %> </p>
+          </div>
+          <% else %>
+          <% end %>
         </div>
-        <div class="phone-user-ngo mr-3">
-          <p class="paragraph-no-margin"><%= @user.phone %> </p>
+        <div class="d-flex justify-content-between mt-4">
+          <div></div>
+          <%= link_to t(".sign_out"),  destroy_user_session_path , method: :delete, class: "sign-out-button" %>
         </div>
-        <% else %>
-        <% end %>
       </div>
-      <div class="d-flex justify-content-between mt-4">
-        <div></div>
-        <%= link_to t(".sign_out"),  destroy_user_session_path , method: :delete, class: "sign-out-button" %>
-      </div>
-    </div>
   </div>
 </div>
 

@@ -25,7 +25,7 @@
             <%= f.input :description, placeholder: t(".description"), label:false,class: 'form-control-project' %>
             <%= f.input :address, placeholder: t(".address"), label:false,class: 'form-control-project' %>
             <%= f.input :category, collection: t(".categories"), label:t(".category"), class: 'form-control' %>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex align-items-end justify-content-between">
               <%= f.input :capacity, collection: 1..30, label: t(".how_many"),class: 'form-control' %>
               <%= f.input :start_date, label: t(".start"),class: 'form-control' %>
             </div>
