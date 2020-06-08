@@ -12,7 +12,7 @@
         <%= f.input :password,
                     required: false,
                     label: false,
-                    placeholder: "Password",
+                    placeholder: t(".password"),
                     input_html: { class: "mb-4",autocomplete: "current-password" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>

@@ -247,10 +247,24 @@ es:
         select_picture: "Elige una foto"
         signup: "Regístrate"
 
+      edit:
+        edit_user: "Actualizar Usuario"
+        set_new: "Establecer nueva contraseña"
+        hint1: "déjelo en blanco si no desea cambiar su contraseña"
+        confirm: "Confirmar nueva contraseña"
+        save: "Confirmar cambios con su contraseña antigua"
+        hint2: "necesitamos su contraseña actual para confirmar sus cambios"
+        update: "Actualizar"
+        cancel: "Cancelar mi cuenta"
+
     passwords:
       new:
         forgot_password_for_html: "Olvidó su contraseña? <br> No problema!"
         reset_password: "Restablecer mi contraseña"
+
+    sessions:
+      new:
+        password: "Contraseña"
 
   users:
     projects:
