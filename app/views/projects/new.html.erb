@@ -25,7 +25,7 @@
             <%= f.input :description, placeholder: 'Description', label:false,class: 'form-control-project' %>
             <%= f.input :address, placeholder: 'Address', label:false,class: 'form-control-project' %>
             <%= f.input :category, collection: ["Seniors", "Children", "Environment", "Social", "Cultural", "Medical"], label:"Category of Project", class: 'form-control' %>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex align-items-end justify-content-between">
               <%= f.input :capacity, collection: 1..30, label: "How many volunteers?",class: 'form-control' %>
               <%= f.input :start_date, label: "Start date",class: 'form-control' %>
             </div>

@@ -114,7 +114,13 @@
                   <p class="project-ong my-2"><%= project.ngo.name if project.ngo %></p>
                   <div class="project-elements d-flex">
                     <div class="element mr-3"><i class="far fa-clock"></i><%= project.start_date.strftime("%d %B") %></div>
-                    <div class="element mr-3"><i class="fas fa-user-friends"></i><%= project.capacity%> spot left</div>
+                    <div class="element mr-3"><i class="fas fa-user-friends"></i>
+                      <% if project.capacity == 1 %>
+                        <%= project.capacity%> spot left
+                      <% else %>
+                        <%= project.capacity%> spots left
+                      <% end %>
+                    </div>
                     <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
                   </div>
                   <div class="project-description mt-4">
