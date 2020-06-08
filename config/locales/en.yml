@@ -298,6 +298,7 @@ en:
       accepted: "Accepted"
       reject: "Reject"
       rejected: "Rejected"
+      details: "More info"
 
     show:
       application_overview: "Application Overview for"
