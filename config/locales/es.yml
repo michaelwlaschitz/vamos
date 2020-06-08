@@ -202,6 +202,20 @@ es:
         zero: "Todavía no hay reseñas para esta organización!"
         other: "Reseñas para proyectos de %{name}"
 
+    new:
+      create: "Crea"
+      your: "tu proyecto"
+      subheading: "Una buena descripción aumenta la visibilidad de tu proyecto"
+      project_name: "Nombre del proyecto"
+      description: "Descripción"
+      address: "Dirección"
+      category: "Categoría del proyecto"
+      categories: ["Niños", "Social", "Cultural", "Medio Ambiente", "Salud", "Mayores"]
+      how_many: "Cuantos Volunatios"
+      start: "Fecha de inicio"
+      pictures: "Añadir Fotos"
+      back: "Atras"
+
   conversations:
     index:
       inbox: "Mensajes"

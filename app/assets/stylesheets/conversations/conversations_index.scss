@@ -15,6 +15,7 @@
   width: 90%;
   padding: 0px;
   height: calc(100vh - 250px);
+  overflow: scroll;
   max-width: 700px;
   a:hover {
     color: $black-gray;

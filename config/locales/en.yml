@@ -219,6 +219,21 @@ en:
         zero: "There are no reviews for this organization yet!"
         other: 'Reviews for this organization (%{count}):'
 
+    new:
+      create: "Create"
+      your: "your project"
+      subheading: "A nice description increase the visibility of your project"
+      project_name: "Project name"
+      description: "Description"
+      address: "Address"
+      category: "Category of Project"
+      categories: ["Seniors", "Children", "Environment", "Social", "Cultural", "Medical"]
+      how_many: "How many volunteers?"
+      start: "Start date"
+      pictures: "Select Pictures"
+      back: "Back to Dashboard"
+
+
   conversations:
     index:
       inbox: "Inbox"
