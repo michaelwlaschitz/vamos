@@ -1,6 +1,5 @@
 <!-- MOBILE INDEX PAGE -->
 <div class="mobile-projects-index">
-  <h1>Project</h1>
   <div class="has-navbar-so-margin">
     <%= render 'shared/mobile_navbar' %>
     <div class = "content-container">
@@ -48,15 +47,21 @@
                 </a>
               </div>
               <div class="project-text-stuff ml-2">
-                <h5 class="mt-2"><%= link_to project.title, project_path(project), class: "project-title"%></h5>
-                <p class="project-ong"><%= project.ngo.name if project.ngo %></p>
+                <h5 class="mt-2 mb-1"><%= link_to project.title, project_path(project), class: "project-title"%></h5>
+                <p class="project-ong mb-3"><%= project.ngo.name if project.ngo %></p>
                 <div class="project-elements d-flex justify-content-left">
                   <div class="element"><i class="far fa-clock"></i><%= l(project.start_date, format: :short) %></div>
                   <%=  %>
 
+                  <% if project.capacity < 1 %>
+                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_zero") %></div>
+                  <% elsif project.capacity < 6 %>
+                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_low", name: project.capacity) %></div>
+                  <% else %>
+                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_high", name: project.capacity) %> </div>
+                  <% end %>
 
-                  <div class="element"><i class="fas fa-user-friends"></i><%= project.capacity%></div>
-                  <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
+                  <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calc.</span></div>
                 </div>
               </div>
             </div>
@@ -208,8 +213,16 @@
               <p class="project-ong my-2"><%= project.ngo.name if project.ngo %></p>
               <div class="project-elements d-flex">
                 <div class="element mr-3"><i class="far fa-clock"></i><%= l(project.start_date, format: :short) %></div>
-                <div class="element mr-3"><i class="fas fa-user-friends"></i><%= project.capacity%></div>
-                <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
+
+                 <% if project.capacity < 1 %>
+                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_zero") %></div>
+                  <% elsif project.capacity < 6 %>
+                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_low", name: project.capacity) %></div>
+                  <% else %>
+                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_high", name: project.capacity) %> </div>
+                  <% end %>
+
+                <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calc...</span></div>
               </div>
               <div class="project-description mt-4">
                 <p class="paragraph-no-margin"><%= project.description %></p>

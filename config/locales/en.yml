@@ -209,6 +209,9 @@ en:
       filter_title: "Filter Volunteering Opportunities"
       location: "Location"
       interest: "Interest"
+      spots_zero: "This activity is full"
+      spots_low: "Only %{name} spots left"
+      spots_high: "%{name} spots left"
 
 
     show:
@@ -218,6 +221,9 @@ en:
       reviews_for:
         zero: "There are no reviews for this organization yet!"
         other: 'Reviews for this organization (%{count}):'
+      spots_zero: "This activity is full"
+      spots_low: "Only %{name} spots left"
+      spots_high: "%{name} spots left"
 
     new:
       create: "Create"
