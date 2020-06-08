@@ -339,9 +339,9 @@
     </div>
 
     <div class="content-container-profile mt-3">
-      <h2 class="orange-title"><%= t(".my_applications") %> </h2>
-    </div>
-    <div class="content-container-profile mt-3">
+      <div class="mt-3">
+        <h2 class="orange-title-left"><%= t(".my_applications") %> </h2>
+      </div>
 
       <% current_user.applications.each do |application| %>
       <%= link_to project_path(application.project) do %>
