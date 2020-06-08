@@ -11,7 +11,7 @@
     <div class="simple-form">
 
         <h1>
-          Write a review for <span style="color: #fb8500">"<%= @application.project.title %>"</span>
+          <%= t(".write_a") %> <span style="color: #fb8500">"<%= @application.project.title %>"</span>
         </h1>
 
     <!-- Form -->
@@ -26,9 +26,9 @@
             </ul>
           </div>
           <% end %>
-          <%= f.input :content, label: "Tell us how it went:", class: 'form-control' %>
+          <%= f.input :content, label: t(".tell_us"), class: 'form-control' %>
           <%= f.input :rating, as: :select, collection: [0, 1, 2, 3, 4, 5] %>
-          <%= f.submit "Add your review", class: "mt-1 button-vamos primary-style w-100"%>
+          <%= f.submit t(".add"), class: "mt-1 button-vamos primary-style w-100"%>
           <% end %>
         </div>
     </div>
