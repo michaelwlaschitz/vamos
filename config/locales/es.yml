@@ -216,6 +216,12 @@ es:
       pictures: "Añadir Fotos"
       back: "Atras"
 
+  reviews:
+    new:
+      write_a: "Escribe una evaluacion para el proyecto: "
+      tell_us: "Cuentanos de tu experiencia"
+      add: "Añade tu evaluacion"
+
   conversations:
     index:
       inbox: "Mensajes"
@@ -264,8 +270,12 @@ es:
       description: "Descripción"
       phone: "Teléfono"
       reviews:
-        zero: "Todavía no hay reseñas para esta organización!"
-        other: "Reseñas para esta organización (%{count}):"
+        zero: "Todavía no hay evaluaciones para esta organización!"
+        other: "Evaluaciones para esta organización (%{count}):"
+      accepted: "Aceptado"
+      add_a_review: "Añadir evaluacion"
+      rejected: "Rechazado"
+      pending: "Pendiente"
 
   applications:
     index:

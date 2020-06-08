@@ -362,20 +362,20 @@
           </div>
           <% if application.status == "accepted" %>
           <div class="accepted-button status-button">
-            Accepted
+            <%= t(".accepted") %>
           </div>
           <%= link_to new_application_review_path(application)  do  %>
           <div class="review-button">
-            Add a review
+            <%= t(".add_a_review") %>
           </div>
           <% end %>
           <% elsif application.status == "rejected" %>
           <div class="rejected-button status-button">
-            Rejected
+            <%= t(".rejected") %>
           </div>
           <% else %>
           <div class="pending-button status-button">
-            Pending
+            <%= t(".pending") %>
           </div>
           <% end %>
         </div>

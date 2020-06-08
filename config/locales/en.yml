@@ -233,6 +233,12 @@ en:
       pictures: "Select Pictures"
       back: "Back to Dashboard"
 
+  reviews:
+    new:
+      write_a: "Write a review for"
+      tell_us: "Tell us how it went"
+      add: "Add your review"
+
 
   conversations:
     index:
@@ -285,6 +291,11 @@ en:
       reviews:
         zero: "There are no reviews for your organization yet!"
         other: 'User Reviews for your organization (%{count})'
+      accepted: "Accepted"
+      add_a_review: "Add a review"
+      rejected: "Rejected"
+      pending: "Pending"
+
 
   applications:
 
