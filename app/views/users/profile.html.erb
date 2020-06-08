@@ -338,10 +338,13 @@
       <% end %>
     </div>
 
+<!--     applications  -->
+
     <div class="content-container-profile mt-3">
-      <div class="mt-3">
-        <h2 class="orange-title-left"><%= t(".my_applications") %> </h2>
-      </div>
+          <h2 class="orange-title-left"><%= t(".my_applications") %> </h2>
+    </div>
+
+    <div class="content-container-profile mt-3">
 
       <% current_user.applications.each do |application| %>
       <%= link_to project_path(application.project) do %>
@@ -362,16 +365,16 @@
           </div>
           <% if application.status == "accepted" %>
           <div class="accepted-button status-button">
-            <%= t(".accepted") %>
+            <%= t(".accepted") %> <i class="fas fa-check"></i>
           </div>
           <%= link_to new_application_review_path(application)  do  %>
           <div class="review-button">
-            <%= t(".add_a_review") %>
+            <p class="paragraph-no-margin"> <%= t(".add_a_review") %></p>
           </div>
           <% end %>
           <% elsif application.status == "rejected" %>
           <div class="rejected-button status-button">
-            <%= t(".rejected") %>
+            <%= t(".rejected") %> <i class="fas fa-times"></i>
           </div>
           <% else %>
           <div class="pending-button status-button">
