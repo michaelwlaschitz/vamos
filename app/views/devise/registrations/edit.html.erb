@@ -21,7 +21,7 @@
         <% end %>
       <% end %>
 
-      <h2 class="orange-title">Edit User</h2>
+      <h2 class="orange-title"><%= t(".edit_user") %></h2>
 
       <%= f.input :first_name,
                   required: true,
@@ -50,27 +50,27 @@
       <% end %>
 
       <%= f.input :password,
-                  label: "Set new password",
-                  hint: "leave it blank if you don't want to change it",
+                  label: t(".set_new"),
+                  hint: t(".hint1"),
                   required: false,
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :password_confirmation,
                   required: false,
-                  label: "Confirm new password",
+                  label: t(".confirm"),
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :current_password,
-                  hint: "we need your current password to confirm your changes",
+                  hint: t(".hint2"),
                   required: true,
-                  label: "Save changes with current password",
+                  label: t(".save"),
                   input_html: { autocomplete: "current-password" } %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Update", class: "button-vamos primary-style" %>
+      <%= f.button :submit, t(".update"), class: "button-vamos primary-style" %>
     </div>
   <% end %>
 
-  <p class="mt-5"><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :deletes, class: "dark-gray" %></p>
+  <p class="mt-5"><%= link_to t(".cancel"), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :deletes, class: "dark-gray" %></p>
 
   <%= link_to "Back", :back %>
 </div>

@@ -266,10 +266,24 @@ en:
         select_picture: "Select Picture"
         signup: "Sign up"
 
+      edit:
+        edit_user: "Edit User"
+        set_new: "Set new password"
+        hint1: "leave it blank if you don't want to change it"
+        confirm: "Confirm new password"
+        save: "Save changes with old password"
+        hint2: "we need your current password to confirm your changes"
+        update: "Update"
+        cancel: "Cancel my account"
+
     passwords:
       new:
         forgot_password_for_html: "Forgot your password? <br> No problemo!"
         reset_password: "Reset my password per mail"
+
+    sessions:
+      new:
+        password: "Password"
 
   users:
     projects:
