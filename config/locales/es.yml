@@ -251,7 +251,7 @@ es:
       phone: "Teléfono"
       reviews:
         zero: "Todavía no hay reseñas para esta organización!"
-        other: "Reseñas de para %{name}:"
+        other: "Reseñas para esta organización (%{count}):"
 
   applications:
     index:
