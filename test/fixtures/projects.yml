@@ -1,0 +1,11 @@
+Project1:
+  title: "Teaching children in Gracia"
+  address: "Carrer de Sant Agustí, 14, 08012 Barcelona, Spain"
+  description: "We need 7-10 people that support our school in teaching young children English skills as well as spending time with them in the afternoon."
+  capacity: 10
+  category: "Children"
+  start_date: Date.today
+  end_date: Date.today
+  start_time: 9
+  end_time: 15
+
