@@ -36,9 +36,9 @@
                 <div class="reject-button-app-desktop px-3 mb-2">
                   <%= link_to t(".reject"), reject_applications_application_path(application), method: :patch, class: "red-color"%>
                 </div>
-              <% elsif application.status == t(".accepted") %>
+              <% elsif application.status == "accepted" %>
                 <h4 id="accepted-text-m"><%= t(".accepted") %></h4>
-              <% elsif application.status == t(".rejected") %>
+              <% elsif application.status == "rejected" %>
                 <h4 id="rejected-text-m"><%= t(".rejected") %> </h4>
               <% end %>
               </div>
@@ -62,7 +62,7 @@
               <h4 class="numb-application"><%= application.created_at.strftime("%d %B") %></h4>
             </div>
             <div class="col-1">
-              <%= link_to "Details", application_path(application.id), class: "button-details w-20 mt-3" %>
+              <%= link_to t(".details"), application_path(application.id), class: "button-details w-20 mt-3" %>
             </div>
           </div>
         <% end %>
@@ -94,7 +94,7 @@
                     <% end %>
                     <div class= "arrow">
                       <i class="fas fa-chevron-right"></i>
-                      <%= link_to "Accept", accept_applications_application_path(application), method: :patch, class: "green-color"%>
+                      <%= link_to t(".accept"), accept_applications_application_path(application), method: :patch, class: "green-color"%>
                     </div>
                   </div>
                   <p class="m-0 team-name-ngo"><%= application.team.name %></p>
@@ -106,14 +106,14 @@
           <div class="application-status mr-2">
             <% if application.status == "pending" %>
               <div class="accept-button px-3 my-2">
-                <%= link_to "Accept", accept_applications_application_path(application), method: :patch, class: "green-color"%>
+                <%= link_to t(".accept"), accept_applications_application_path(application), method: :patch, class: "green-color"%>
               </div>
               <div class="reject-button px-3 my-2">
-                <%= link_to "Reject", reject_applications_application_path(application), method: :patch, class: "red-color"%>
+                <%= link_to t(".reject"), reject_applications_application_path(application), method: :patch, class: "red-color"%>
               </div>
-            <% elsif application.status == t(".accepted") %>
+            <% elsif application.status == "accepted" %>
               <p id="accepted-text"> <%= t(".accepted") %></p>
-            <% elsif application.status == t(".rejected") %>
+            <% elsif application.status == "rejected" %>
               <p style="font-size: 18px"><%= t(".rejected") %></p>
             <% end %>
           </div>
