@@ -88,8 +88,10 @@
   }
 }
 
-@media(min-width: 575px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .progress-bar-container {
-    width: 50px;
+    .progress-bar-area {
+      width: 300px;
+    }
   }
 }
