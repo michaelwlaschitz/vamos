@@ -65,10 +65,15 @@
           <p><%= @project.description %> </p>
         </div>
         <div class="elements-container d-flex mt-3">
-          <div class="element mr-2"><i class="fas fa-user-friends"></i>
-          </div>
           <div class="mr-3">
-            <p><%= @project.capacity %> </p>
+             <% if @project.capacity < 1 %>
+            <div class="element"><i class="fas fa-user-friends"></i> <%= t(".spots_zero") %></div>
+            <% elsif @project.capacity < 6 %>
+            <div class="element"><i class="fas fa-user-friends"></i> <%= t(".spots_low", name: @project.capacity) %></div>
+            <% else %>
+            <div class="element"><i class="fas fa-user-friends"></i> <%= t(".spots_high", name: @project.capacity) %> </div>
+            <% end %>
+
           </div>
           <div class="element mr-2"><i class="far fa-clock"></i>
           </div>

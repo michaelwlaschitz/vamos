@@ -3,9 +3,7 @@ class Project < ApplicationRecord
   has_many :applications
   has_many :reviews, through: :applications
   has_many_attached :photos
-
   validates :photos, presence: true
-
   validates :title, length: { maximum: 40 }, presence: true
   validates :start_date, presence: true
   validates :address, presence: true

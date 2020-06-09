@@ -37,9 +37,9 @@
                   <%= link_to t(".reject"), reject_applications_application_path(application), method: :patch, class: "red-color"%>
                 </div>
               <% elsif application.status == "accepted" %>
-                <h4 id="accepted-text-m"><%= t(".accepted") %></h4>
+                <h4 class="accepted-text"><%= t(".accepted") %> <i class="fas fa-check"></i></h4>
               <% elsif application.status == "rejected" %>
-                <h4 id="rejected-text-m"><%= t(".rejected") %> </h4>
+                <h4 class="rejected-text"><%= t(".rejected") %> <i class="fas fa-times"></i> </h4>
               <% end %>
               </div>
             </div>
@@ -112,9 +112,9 @@
                 <%= link_to t(".reject"), reject_applications_application_path(application), method: :patch, class: "red-color"%>
               </div>
             <% elsif application.status == "accepted" %>
-              <p id="accepted-text"> <%= t(".accepted") %></p>
+              <p class="accepted-text"> <%= t(".accepted") %> <i class="fas fa-check"></i></p>
             <% elsif application.status == "rejected" %>
-              <p style="font-size: 18px"><%= t(".rejected") %></p>
+              <p class="rejected-text"><%= t(".rejected") %> <i class="fas fa-times"></i></p>
             <% end %>
           </div>
         </div>

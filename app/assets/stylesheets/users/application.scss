@@ -24,17 +24,18 @@
   color: $orange-vamos;
 }
 
-#accepted-text-m {
+.accepted-text {
   font-style: bold;
-
+  color: $green-vamos;
 }
 
-#accepted-text-m, #rejected-text-m {
+.accepted-text, .rejected-text {
   text-align: left;
 }
 
 .rejected-text {
   font-size: 14px;
+  font-style: bold;
 }
 
 

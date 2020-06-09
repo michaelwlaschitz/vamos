@@ -71,6 +71,20 @@
         </h3>
       <% end %>
     </div>
+  <% else %>
+    <div class="d-flex justify-content-between mt-3">
+      <%= cl_image_tag @application.project.ngo.user.photo.key, class: "contact-avatar" %>
+      <div class="ml-3">
+        <h3><%= @application.project.ngo.user.first_name %> <%= t(".your_contact_text") %> <%= @application.project.ngo.name %> </h3>
+        <h3 class="m-0"><%= t(".question") %></h3>
+      </div>
+      <div class="button go-back">
+      <%= link_to projects_path do  %>
+        <h3 class="opportunities-chat-button">
+          <%= t('.more_opportunities') %>
+        </h3>
+      <% end %>
+      </div>
+    </div>
   <% end %>
-
 </div>
