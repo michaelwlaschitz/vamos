@@ -1,201 +1,193 @@
 // LOGO TOP LEFT
 .navbar-home {
-  img {
-    width: 40px;
-  }
+	img {
+		width: 40px;
+	}
 }
 
 .logo-top-left {
-  position: absolute;
-  top: 15px;
-  left: 20px;
-  z-index: 10;
-  img {
-    width: 40px;
-  }
+	position: absolute;
+	top: 15px;
+	left: 20px;
+	z-index: 10;
+	img {
+		width: 40px;
+	}
 }
 
 .language-bottom-left {
-  position: absolute;
-  bottom: 15px;
-  left: 20px;
-  z-index: 10;
+	position: absolute;
+	bottom: 15px;
+	left: 20px;
+	z-index: 10;
 }
 
 .logo-top-right {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  z-index: 10;
-    img {
-    width: 40px;
-  }
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	z-index: 10;
+	img {
+		width: 40px;
+	}
+}
+
+.nav-bar-text {
+	font-weight: bold;
 }
 
 // MOBILE NAVBAR
 
 .has-navbar-so-margin {
-  margin-bottom: 90px;
+	margin-bottom: 90px;
 }
 
 .mobile-navbar {
-  background-color: white;
-  z-index: 1000;
-  height: 65px;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  border-top: 1px solid #D3D3D3;
-  a:hover {
-    color: gray;
-  }
-  .nav-element {
-    height: 46px;
-    text-align: center;
-    .nav-icon {
-      font-size: 24px;
-      color: gray;
-
-    }
-    .nav-icon-tag {
-      font-size: 12px;
-      font-weight: lighter;
-      color: $light-gray;
-    }
-    &.active .nav-icon, &.active .nav-icon-tag {
-      color: $orange-vamos;
-    }
-  }
-  .nav-logo img {
-    width: 38px;
-  }
+	background-color: white;
+	z-index: 1000;
+	height: 65px;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	border-top: 1px solid #d3d3d3;
+	a:hover {
+		color: gray;
+	}
+	.nav-element {
+		height: 46px;
+		text-align: center;
+		.nav-icon {
+			font-size: 24px;
+			color: gray;
+		}
+		.nav-icon-tag {
+			font-size: 12px;
+			font-weight: lighter;
+			color: $light-gray;
+		}
+		&.active .nav-icon,
+		&.active .nav-icon-tag {
+			color: $orange-vamos;
+		}
+	}
+	.nav-logo img {
+		width: 38px;
+	}
 }
 
 // DESKTOP NAVBAR
 
 .desktop-navbar {
-  justify-content: space-between;
-  border-bottom: 1px solid #DEE2E6;
-  .navbar-collapse {
-    display: flex;
-    justify-content: space-between;
-    .navbar-nav {
-      align-items: center !important;
-      .nav-item {
-        font-size: 14px;
-        border-radius: 30px;
-        text-align: center;
-        padding: 1px 6px 1px 6px;
-        widows: 100px;
-        .nav-link {
-          color: #212121 !important;
-        }
-        &:hover {
-          background-color: #F7F7F7;
-        }
-      }
-    }
-  }
+	justify-content: space-between;
+	border-bottom: 1px solid #dee2e6;
+	.navbar-collapse {
+		display: flex;
+		justify-content: space-between;
+		.navbar-nav {
+			align-items: center !important;
+			.nav-item {
+				font-size: 14px;
+				border-radius: 30px;
+				text-align: center;
+				padding: 1px 6px 1px 6px;
+				widows: 100px;
+				.nav-link {
+					color: #212121 !important;
+				}
+				&:hover {
+					background-color: #f7f7f7;
+				}
+			}
+		}
+	}
 }
 
 .yes-signed#search-projects {
-  width: 160px;
-  max-height: 40px;
+	width: 160px;
+	max-height: 40px;
 }
 .yes-signed#find-volunteers {
-  max-height: 40px;
-  width: 160px;
+	max-height: 40px;
+	width: 160px;
 }
 .yes-signed#about-vamos {
-  max-height: 40px;
-  width: 160px;
+	max-height: 40px;
+	width: 160px;
 }
 
 .yes-signed#applications {
-  max-height: 40px;
-  width: 160px;
+	max-height: 40px;
+	width: 160px;
 }
 
 .yes-signed#user-view {
-  max-height: 40px;
-  width: 160px;
+	max-height: 40px;
+	width: 160px;
 }
 
 .yes-signed#dashboard {
-  max-height: 40px;
-  width: 160px;
+	max-height: 40px;
+	width: 160px;
 }
 
 .yes-signed#messages {
-  max-height: 40px;
-  width: 160px;
+	max-height: 40px;
+	width: 160px;
 }
 
 #logedin {
-  width: 70px;
-  &:hover {
-    background-color: white;
-  }
+	width: 70px;
+	&:hover {
+		background-color: white;
+	}
 }
 
 .no-signed#search-projects {
-  width: 300px;
+	width: 300px;
 }
 
 #login {
-  -webkit-box-shadow: 1px 1px 13px -2px rgba(168,165,168,0.58);
-  -moz-box-shadow: 1px 1px 13px -2px rgba(168,165,168,0.58);
-  box-shadow: 1px 1px 13px -2px rgba(168,165,168,0.58);
-  &:hover {
-    -webkit-box-shadow: 1px 1px 14px 2px rgba(168,165,168,0.58);
-    -moz-box-shadow: 1px 1px 14px 2px rgba(168,165,168,0.58);
-    box-shadow: 1px 1px 14px 2px rgba(168,165,168,0.58);
-  }
+	-webkit-box-shadow: 1px 1px 13px -2px rgba(168, 165, 168, 0.58);
+	-moz-box-shadow: 1px 1px 13px -2px rgba(168, 165, 168, 0.58);
+	box-shadow: 1px 1px 13px -2px rgba(168, 165, 168, 0.58);
+	&:hover {
+		-webkit-box-shadow: 1px 1px 14px 2px rgba(168, 165, 168, 0.58);
+		-moz-box-shadow: 1px 1px 14px 2px rgba(168, 165, 168, 0.58);
+		box-shadow: 1px 1px 14px 2px rgba(168, 165, 168, 0.58);
+	}
 }
-
-
-
 
 .dropdown-toggle::after {
-    content: none;
+	content: none;
 }
 
-
-@media(min-width: 992px) {
-  .mobile-navbar {
-    display: none !important; //probably because of the positioning, I can't do it without this, lmk if you find solution.
-  }
-  .has-navbar-so-margin {
-    margin-bottom: 0px;
-  }
-  .logo-top-left {
-    display: none;
-  }
+@media (min-width: 992px) {
+	.mobile-navbar {
+		display: none !important; //probably because of the positioning, I can't do it without this, lmk if you find solution.
+	}
+	.has-navbar-so-margin {
+		margin-bottom: 0px;
+	}
+	.logo-top-left {
+		display: none;
+	}
 }
 
-@media(min-width: 768px) and (max-width: 991px) {
-  .mobile-navbar {
-    display: none !important;
-  }
-  .has-navbar-so-margin {
-    margin-bottom: 0px;
-  }
-  .logo-top-left {
-    display: none;
-  }
+@media (min-width: 768px) and (max-width: 991px) {
+	.mobile-navbar {
+		display: none !important;
+	}
+	.has-navbar-so-margin {
+		margin-bottom: 0px;
+	}
+	.logo-top-left {
+		display: none;
+	}
 }
 
-@media(max-width: 767px) {
-  .desktop-navbar {
-    display: none;
-  }
+@media (max-width: 767px) {
+	.desktop-navbar {
+		display: none;
+	}
 }
-
-
-
-
-
-
-
-
