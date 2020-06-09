@@ -263,6 +263,11 @@
   text-align: center;
 }
 
+.orange-title-left {
+  color: $orange-vamos;
+  margin-right: 10px;
+}
+
 .element-1, .element-2 {
   width: 50%;
   max-width: 200px;
@@ -279,6 +284,7 @@
 .rounded-circle-volunteer {  //imagz size
   border-radius: 50%;
   border: 2px solid #fb8500;
+  object-fit: cover;
 }
 
 .sign-out-button {
