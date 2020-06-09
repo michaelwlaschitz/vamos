@@ -194,6 +194,12 @@ es:
       filter_title: "Fitrar por oportunidades"
       location: "Ubicación"
       interest: "Interés"
+      spots_zero: "Esta actividad está llena"
+      spots_low: "Solo %{name} lugares abiertos"
+      spots_high: "%{name} lugares abiertos"
+
+
+
     show:
       project: "Proyecto"
       organization: "Organización"
@@ -201,6 +207,9 @@ es:
       reviews_for:
         zero: "Todavía no hay reseñas para esta organización!"
         other: "Reseñas para proyectos de %{name}"
+      spots_zero: "This activity is full"
+      spots_low: "Only %{name} spots left"
+      spots_high: "%{name} spots left"
 
     new:
       create: "Crea"

@@ -2,40 +2,169 @@
 
 <!-- USER NGO -->
 <% if current_user.ngo %>
-  <!-- DESKTOP VERSION -->
-  <div class="desktop-profile-page">
+<!-- DESKTOP VERSION -->
+<div class="desktop-profile-page">
+  <div class="d-flex justify-content-between">
+    <div></div>
+    <%= link_to edit_user_registration_path do %>
+    <div class="button-edit-profile mb-3">
+      <%= t(".edit_profile") %>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="parts-container justify-content-between align-items-start">
+    <div class="left-part">
+      <div class="box-title">
+        <%= t(".personal_info") %>
+      </div>
+      <div class="user-image-container">
+        <% facebook_avatar_url = current_user.facebook_picture_url %>
+        <% if facebook_avatar_url %>
+        <%= image_tag facebook_avatar_url, class: "user-image"%>
+        <% elsif %>
+        <%= cl_image_tag @user.photo.key, class: "user-image" %>
+        <% end %>
+        <!-- Start modal - edit picture -->
+        <button type="button" class="button-edit-user-image" data-toggle="modal" data-target="#exampleModalCenter">
+          <%= t(".change") %>
+        </button>
+        <!-- modal removed until we fix bug -->
+        <!-- End modal - edit picture -->
+      </div>
+      <div class="container">
+        <div class="row my-4">
+          <div class="col-4 detail-title">
+            <%= t(".name") %>
+          </div>
+          <div class="col-8">
+            <%= @user.first_name %>
+            <%= @user.last_name  %>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col-4 detail-title">
+            <%= t(".phone") %>
+          </div>
+          <div class="col-8">
+            <%= @user.phone %>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col-4 detail-title">
+            Email
+          </div>
+          <div class="col-8">
+            <%= @user.email %>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col-4 detail-title">
+            <%= t(".description") %>:
+          </div>
+          <div class="col-8">
+            <%= @user.description %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-part">
+      <div class="box-title">
+        <%= t(".ngo_info") %>
+      </div>
+      <div class="ngo-details-content">
+        <div class="d-flex justify-content-between">
+          <div class="ngo-image-container">
+            <%= cl_image_tag @user.ngo.logo.key, class: "ngo-image"%>
+            <!-- Start modal - edit picture -->
+            <button type="button" class="button-edit-ngo-image" data-toggle="modal" data-target="#exampleModalCenter">
+              <%= t(".change") %>
+            </button>
+            <!-- Modal removed temporary until bug fix -->
+            <!-- End modal - edit picture -->
+          </div>
+        </div>
+        <div class="container">
+          <div class="row my-4">
+            <div class="col-3 detail-title">
+              <%= t(".name") %>:
+            </div>
+            <div class="col-9">
+              <%= @user.ngo.name %>
+            </div>
+          </div>
+          <div class="row my-4">
+            <div class="col-3 detail-title">
+              <%= t(".description") %>:
+            </div>
+            <div class="col-9">
+              <%= @user.ngo.description %>
+            </div>
+          </div>
+        </div>
+        <p class="reviews-title"><%= t('.reviews', count: @ngo_reviews.count) %>:</p>
+        <div>
+          <div class="reviews-container">
+            <% @ngo_reviews.each do |review| %>
+            <div class="review">
+              <div class="review-user-image-container">
+                <%= cl_image_tag review.application.team.users.first.photo.key, class: "review-user-image" %>
+              </div>
+              <div class="review-content">
+                <p class="review-team"><%= review.application.team.name %></p>
+                <p class="review-text paragraph-no-margin"><%= review.content %></p>
+                <div class="d-flex justify-content-between">
+                  <div></div>
+                  <%= link_to project_path(review.application.project) do  %>
+                  <p class="review-project paragraph-no-margin"><%= review.application.project.title %></p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE VERSION -->
+<div class="mobile-profile-page">
+  <div class="has-navbar-so-margin">
     <div class="d-flex justify-content-between">
       <div></div>
       <%= link_to edit_user_registration_path do %>
-        <div class="button-edit-profile mb-3">
-          <%= t(".edit_profile") %>
-        </div>
+      <div class="button-edit-profile mb-3 mt-3 mr-3">
+        Edit profile
+      </div>
       <% end %>
     </div>
 
-      <div class="parts-container justify-content-between align-items-start">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item box-title">
+        <a class="nav-link active" id="personal-details-tab" data-toggle="tab" href="#personal-details" role="tab" aria-controls="personal-details" aria-selected="true">PERSONAL INFO</a>
+      </li>
+      <li class="nav-item box-title">
+        <a class="nav-link" id="ngo-details-tab" data-toggle="tab" href="#ngo-details" role="tab" aria-controls="ngo-details" aria-selected="false">NGO INFO</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="personal-details" role="tabpanel" aria-labelledby="personal-details-tab">
         <div class="left-part">
-          <div class="box-title">
-            <%= t(".personal_info") %>
-          </div>
           <div class="user-image-container">
-            <% facebook_avatar_url = current_user.facebook_picture_url %>
-              <% if facebook_avatar_url %>
-                <%= image_tag facebook_avatar_url, class: "user-image"%>
-              <% elsif %>
-                <%= cl_image_tag @user.photo.key, class: "user-image" %>
-              <% end %>
+            <%= cl_image_tag @user.photo.key, class: "user-image"%>
             <!-- Start modal - edit picture -->
             <button type="button" class="button-edit-user-image" data-toggle="modal" data-target="#exampleModalCenter">
-              <%= t(".change") %>
+              Change
             </button>
-            <!-- modal removed until we fix bug -->
+            <!-- Modal removed temporary until bug fix -->
             <!-- End modal - edit picture -->
           </div>
           <div class="container">
             <div class="row my-4">
               <div class="col-4 detail-title">
-                <%= t(".name") %>
+                Name
               </div>
               <div class="col-8">
                 <%= @user.first_name %>
@@ -44,7 +173,7 @@
             </div>
             <div class="row my-4">
               <div class="col-4 detail-title">
-                <%= t(".phone") %>
+                Phone
               </div>
               <div class="col-8">
                 <%= @user.phone %>
@@ -60,7 +189,7 @@
             </div>
             <div class="row my-4">
               <div class="col-4 detail-title">
-                <%= t(".description") %>:
+                Description
               </div>
               <div class="col-8">
                 <%= @user.description %>
@@ -68,189 +197,59 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="tab-pane fade" id="ngo-details" role="tabpanel" aria-labelledby="ngo-details-tab">
         <div class="right-part">
-          <div class="box-title">
-          <%= t(".ngo_info") %>
-          </div>
           <div class="ngo-details-content">
             <div class="d-flex justify-content-between">
               <div class="ngo-image-container">
                 <%= cl_image_tag @user.ngo.logo.key, class: "ngo-image"%>
                 <!-- Start modal - edit picture -->
                 <button type="button" class="button-edit-ngo-image" data-toggle="modal" data-target="#exampleModalCenter">
-                  <%= t(".change") %>
+                  Change
                 </button>
                 <!-- Modal removed temporary until bug fix -->
                 <!-- End modal - edit picture -->
               </div>
             </div>
-            <div class="container">
+            <div class="container pr-0">
               <div class="row my-4">
                 <div class="col-3 detail-title">
-                  <%= t(".name") %>:
+                  Name
                 </div>
-                <div class="col-9">
+                <div class="col-8 pr-0">
                   <%= @user.ngo.name %>
                 </div>
               </div>
               <div class="row my-4">
                 <div class="col-3 detail-title">
-                  <%= t(".description") %>:
+                  Description
                 </div>
-                <div class="col-9">
+                <div class="col-8 pr-0">
                   <%= @user.ngo.description %>
                 </div>
               </div>
             </div>
-            <p class="reviews-title"><%= t('.reviews', count: @ngo_reviews.count) %>:</p>
+            <p class="reviews-title"><%= @user.ngo.name %>'s reviews:</p>
             <div>
               <div class="reviews-container">
                 <% @ngo_reviews.each do |review| %>
-                  <div class="review">
-                    <div class="review-user-image-container">
-                      <%= cl_image_tag review.application.team.users.first.photo.key, class: "review-user-image" %>
-                    </div>
-                    <div class="review-content">
-                      <p class="review-team"><%= review.application.team.name %></p>
-                      <p class="review-text paragraph-no-margin"><%= review.content %></p>
-                      <div class="d-flex justify-content-between">
-                        <div></div>
-                        <%= link_to project_path(review.application.project) do  %>
-                          <p class="review-project paragraph-no-margin"><%= review.application.project.title %></p>
-                        <% end %>
-                      </div>
+                <div class="review">
+                  <div class="review-user-image-container">
+                    <%= cl_image_tag review.application.team.users.first.photo.key, class: "review-user-image" %>
+                  </div>
+                  <div class="review-content">
+                    <p class="review-team"><%= review.application.team.name %></p>
+                    <p class="review-text paragraph-no-margin"><%= review.content %></p>
+                    <div class="d-flex justify-content-between">
+                      <div></div>
+                      <%= link_to project_path(review.application.project) do  %>
+                      <p class="review-project paragraph-no-margin"><%= review.application.project.title %></p>
+                      <% end %>
                     </div>
                   </div>
+                </div>
                 <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-
-  <!-- MOBILE VERSION -->
-  <div class="mobile-profile-page">
-    <div class="has-navbar-so-margin">
-      <div class="d-flex justify-content-between">
-        <div></div>
-        <%= link_to edit_user_registration_path do %>
-          <div class="button-edit-profile mb-3 mt-3 mr-3">
-            Edit profile
-          </div>
-        <% end %>
-      </div>
-
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item box-title">
-          <a class="nav-link active" id="personal-details-tab" data-toggle="tab" href="#personal-details" role="tab" aria-controls="personal-details" aria-selected="true">PERSONAL INFO</a>
-        </li>
-        <li class="nav-item box-title">
-          <a class="nav-link" id="ngo-details-tab" data-toggle="tab" href="#ngo-details" role="tab" aria-controls="ngo-details" aria-selected="false">NGO INFO</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="personal-details" role="tabpanel" aria-labelledby="personal-details-tab">
-          <div class="left-part">
-            <div class="user-image-container">
-              <%= cl_image_tag @user.photo.key, class: "user-image"%>
-              <!-- Start modal - edit picture -->
-              <button type="button" class="button-edit-user-image" data-toggle="modal" data-target="#exampleModalCenter">
-                Change
-              </button>
-              <!-- Modal removed temporary until bug fix -->
-              <!-- End modal - edit picture -->
-            </div>
-            <div class="container">
-              <div class="row my-4">
-                <div class="col-4 detail-title">
-                  Name
-                </div>
-                <div class="col-8">
-                  <%= @user.first_name %>
-                  <%= @user.last_name  %>
-                </div>
-              </div>
-              <div class="row my-4">
-                <div class="col-4 detail-title">
-                  Phone
-                </div>
-                <div class="col-8">
-                  <%= @user.phone %>
-                </div>
-              </div>
-              <div class="row my-4">
-                <div class="col-4 detail-title">
-                  Email
-                </div>
-                <div class="col-8">
-                  <%= @user.email %>
-                </div>
-              </div>
-              <div class="row my-4">
-                <div class="col-4 detail-title">
-                  Description
-                </div>
-                <div class="col-8">
-                  <%= @user.description %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tab-pane fade" id="ngo-details" role="tabpanel" aria-labelledby="ngo-details-tab">
-          <div class="right-part">
-            <div class="ngo-details-content">
-              <div class="d-flex justify-content-between">
-                <div class="ngo-image-container">
-                  <%= cl_image_tag @user.ngo.logo.key, class: "ngo-image"%>
-                  <!-- Start modal - edit picture -->
-                  <button type="button" class="button-edit-ngo-image" data-toggle="modal" data-target="#exampleModalCenter">
-                    Change
-                  </button>
-                  <!-- Modal removed temporary until bug fix -->
-                  <!-- End modal - edit picture -->
-                </div>
-              </div>
-              <div class="container pr-0">
-                <div class="row my-4">
-                  <div class="col-3 detail-title">
-                    Name
-                  </div>
-                  <div class="col-8 pr-0">
-                    <%= @user.ngo.name %>
-                  </div>
-                </div>
-                <div class="row my-4">
-                  <div class="col-3 detail-title">
-                    Description
-                  </div>
-                  <div class="col-8 pr-0">
-                    <%= @user.ngo.description %>
-                  </div>
-                </div>
-              </div>
-              <p class="reviews-title"><%= @user.ngo.name %>'s reviews:</p>
-              <div>
-                <div class="reviews-container">
-                  <% @ngo_reviews.each do |review| %>
-                    <div class="review">
-                      <div class="review-user-image-container">
-                        <%= cl_image_tag review.application.team.users.first.photo.key, class: "review-user-image" %>
-                      </div>
-                      <div class="review-content">
-                        <p class="review-team"><%= review.application.team.name %></p>
-                        <p class="review-text paragraph-no-margin"><%= review.content %></p>
-                        <div class="d-flex justify-content-between">
-                          <div></div>
-                          <%= link_to project_path(review.application.project) do  %>
-                            <p class="review-project paragraph-no-margin"><%= review.application.project.title %></p>
-                          <% end %>
-                        </div>
-                      </div>
-                    </div>
-                  <% end %>
-                </div>
               </div>
             </div>
           </div>
@@ -258,37 +257,39 @@
       </div>
     </div>
   </div>
+</div>
 
 <!-- USER VOLUNTEER -->
 <% else %>
-  <!-- DESKTOP + MOBILE VERSION -->
-  <div class="d-flex justify-content-between mt-5 mr-5">
-    <div></div>
-    <%= link_to edit_user_registration_path do %>
-      <div class="button-edit-profile mb-3">
-        Edit profile
-      </div>
-    <% end %>
+
+
+<!-- DESKTOP + MOBILE VERSION -->
+<div class="d-flex justify-content-between mt-5 mr-5">
+  <div></div>
+  <%= link_to edit_user_registration_path do %>
+  <div class="button-edit-profile mb-3">
+    <%= t(".edit_profile") %>
   </div>
-  <div class="content-container-profile border-bottom py-3 my-1">
-    <div class="d-flex">
-      <div class="element-1">
-        <% facebook_avatar_url = current_user.facebook_picture_url %>
-            <% if facebook_avatar_url %>
-              <%= image_tag facebook_avatar_url, class: "user-image"%>
-            <% elsif %>
-              <%= cl_image_tag @user.photo.key, class: "user-image" %>
-            <% end %>
-      </div>
-      <div class="element-2 user-other-info">
-        <h5 class="py-1"><%= @user.first_name %> <%= @user.last_name %></h5>
-        <div class="email-user-ngo d-flex align-items-center my-2">
-          <div class="email-logo mr-2">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div class="email mr-3">
-            <p class="paragraph-no-margin"><%= @user.email %> </p>
-          </div>
+  <% end %>
+</div>
+<div class="content-container-profile border-bottom py-3 my-1">
+  <div class="d-flex">
+    <div class="element-1">
+      <% facebook_avatar_url = current_user.facebook_picture_url %>
+      <% if facebook_avatar_url %>
+      <%= image_tag facebook_avatar_url, class: "user-image"%>
+      <% elsif %>
+      <%= cl_image_tag @user.photo.key, class: "user-image" %>
+      <% end %>
+    </div>
+    <div class="element-2 user-other-info">
+      <h5 class="py-1"><%= @user.first_name %> <%= @user.last_name %></h5>
+      <div class="email-user-ngo d-flex align-items-center my-2">
+        <div class="email-logo mr-2">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="email mr-3">
+          <p class="paragraph-no-margin"><%= @user.email %> </p>
         </div>
         <div class="phone-user d-flex align-items-center">
           <% if @user.phone.present? %>
@@ -306,85 +307,93 @@
           <%= link_to t(".sign_out"),  destroy_user_session_path , method: :delete, class: "sign-out-button" %>
         </div>
       </div>
-    </div>
+  </div>
+</div>
+
+<div class="content-container-profile-team border-bottom pb-4 mt-3 mb-0">
+  <div class=" d-flex justify-content-between align-items-center">
+    <h2 class="orange-title"><%= t(".my_teams") %> </h2>
   </div>
 
-  <div class="content-container-profile-team border-bottom pb-4 mt-3 mb-0">
-    <div class=" d-flex justify-content-between align-items-center">
-      <h2 class="orange-title"><%= t(".my_teams") %> </h2>
-    </div>
-    <% @user.teams.each do |team| %>
-      <div class="team-container">
-        <h5 class="team-name text-center mt-2"><%= team.name %></h5>
-        <div class=" user-photo d-flex justify-content-around mt-2">
-          <% team.users.each do |user| %>
-            <div class= "team-member-yes-exist-volunteer text-center mb-3">
-              <div class= "mb-2 mr-3 team-members-profile-pictures"> <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer mb-2" %>
-                <%= user.first_name %>
-              </div>
-            </div>
-          <% end %>
+  <% @user.teams.each do |team| %>
+  <div class="team-container">
+    <h5 class="team-name text-center mt-2"><%= team.name %></h5>
+    <div class=" user-photo d-flex justify-content-around mt-2">
+      <% team.users.each do |user| %>
+
+      <div class= "team-member-yes-exist-volunteer text-center mb-3">
+        <div class= "mb-2 mr-3 team-members-profile-pictures"> <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer mb-2" %>
+
+          <%= user.first_name %>
         </div>
-      </div>
-    <% end %>
-    <%= link_to new_team_path do %>
-      <div class="create-team-button text-center" style="display: none;">
-        <p class="p-size"><%= link_to t(".create_team"), new_team_path, class: "orange-color" %></p>
-      </div>
-    <% end %>
-  </div>
 
-  <div class="content-container-profile mt-3">
-    <h2 class="orange-title text-left"><%= t(".my_applications") %> </h2>
+      </div>
+      <% end %>
+    </div>
   </div>
-  <div class="content-container-profile mt-3">
-    <% current_user.applications.each do |application| %>
-      <div class="project-card-profile flex-md-row mb-4 mt-3">
-        <%= link_to project_path(application.project) do %>
-          <div class="project-image" style="background-image: url('<%= cl_image_path application.project.photos.first.key if application.project.photos.attached? %>')">
-            <div class="interest-icon border rounded-circle">
-              <% if application.project.category == "Children" %>
-                <i class="icon fas fa-child"></i>
-              <% elsif application.project.category == "Social" %>
-                <i class="icon fas fa-user-friends"></i>
-              <% elsif application.project.category == "Cultural" %>
-                <i class="icon fas fa-music"></i>
-              <% elsif application.project.category == "Environment" %>
-                <i class="icon fas fa-leaf"></i>
-              <% else application.project.category == "Elderly Care" %>
-                <i class="icon fab fa-accessible-icon"></i>
-              <% end %>
-            </div>
-            <% if application.status == "accepted" %>
-              <div class="accepted-button status-button">
-                Accepted
-              </div>
-              <%= link_to new_application_review_path(application)  do  %>
-                <div class="review-button">
-                  Add a review
-                </div>
-              <% end %>
-            <% elsif application.status == "rejected" %>
-              <div class="rejected-button status-button">
-                Rejected
-              </div>
-            <% else %>
-              <div class="pending-button status-button">
-                Pending
-              </div>
-            <% end %>
-          </div>
-          <div class="project-text-stuff">
-            <h5 class="project-title"><%= application.project.title.truncate(33) %></h5>
-            <p class="project-ong"><%= application.project.ngo.name %></p>
-            <div class="project-elements d-flex justify-content-left">
-              <div class="element"><i class="far fa-clock"></i><%= l(application.project.start_date, format: :short) %></div>
-              <div class="element"><i class="fas fa-user-friends"></i><%= application.project.capacity %></div>
-              <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= application.project.latitude %>" data-longitude="<%= application.project.longitude %>">calculating...</span></div>
-            </div>
-          </div>
+  <% end %>
+  <%= link_to new_team_path do %>
+  <div class="create-team-button text-center" style="display: none;">
+    <p class="p-size"><%= link_to t(".create_team"), new_team_path, class: "orange-color" %></p>
+  </div>
+  <% end %>
+</div>
+
+<!--     applications  -->
+
+<div class="content-container-profile mt-3">
+  <h2 class="orange-title-left"><%= t(".my_applications") %> </h2>
+</div>
+
+<div class="content-container-profile mt-3">
+
+  <% current_user.applications.each do |application| %>
+  <%= link_to project_path(application.project) do %>
+  <div class="project-card-profile flex-md-row mb-4 mt-3">
+    <div class="project-image" style="background-image: url('<%= cl_image_path application.project.photos.first.key if application.project.photos.attached? %>')">
+      <div class="interest-icon border rounded-circle">
+        <% if application.project.category == "Children" %>
+        <i class="icon fas fa-child"></i>
+        <% elsif application.project.category == "Social" %>
+        <i class="icon fas fa-user-friends"></i>
+        <% elsif application.project.category == "Cultural" %>
+        <i class="icon fas fa-music"></i>
+        <% elsif application.project.category == "Environment" %>
+        <i class="icon fas fa-leaf"></i>
+        <% else application.project.category == "Elderly Care" %>
+        <i class="icon fab fa-accessible-icon"></i>
         <% end %>
       </div>
-    <% end %>
+      <% if application.status == "accepted" %>
+      <div class="accepted-button status-button">
+        <%= t(".accepted") %> <i class="fas fa-check"></i>
+      </div>
+      <%= link_to new_application_review_path(application)  do  %>
+      <div class="review-button">
+        <p class="paragraph-no-margin"> <%= t(".add_a_review") %></p>
+      </div>
+      <% end %>
+      <% elsif application.status == "rejected" %>
+      <div class="rejected-button status-button">
+        <%= t(".rejected") %> <i class="fas fa-times"></i>
+      </div>
+      <% else %>
+      <div class="pending-button status-button">
+        <%= t(".pending") %>
+      </div>
+      <% end %>
+    </div>
+    <div class="project-text-stuff">
+      <h5 class="project-title"><%= application.project.title.truncate(33) %></h5>
+      <p class="project-ong"><%= application.project.ngo.name %></p>
+      <div class="project-elements d-flex justify-content-left">
+        <div class="element"><i class="far fa-clock"></i><%= l(application.project.start_date, format: :short) %></div>
+        <div class="element"><i class="fas fa-user-friends"></i><%= application.project.capacity %></div>
+        <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= application.project.latitude %>" data-longitude="<%= application.project.longitude %>">calculating...</span></div>
+      </div>
+    </div>
   </div>
+  <% end %>
+  <% end %>
+</div>
 <% end %>
