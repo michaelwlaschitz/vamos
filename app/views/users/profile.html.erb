@@ -272,6 +272,7 @@
   </div>
   <% end %>
 </div>
+
 <div class="content-container-profile border-bottom py-3 my-1">
   <div class="d-flex">
     <div class="element-1">
@@ -307,6 +308,7 @@
           <%= link_to t(".sign_out"),  destroy_user_session_path , method: :delete, class: "sign-out-button" %>
         </div>
       </div>
+    </div>
   </div>
 </div>
 
@@ -315,85 +317,85 @@
     <h2 class="orange-title"><%= t(".my_teams") %> </h2>
   </div>
 
-  <% @user.teams.each do |team| %>
-  <div class="team-container">
-    <h5 class="team-name text-center mt-2"><%= team.name %></h5>
-    <div class=" user-photo d-flex justify-content-around mt-2">
-      <% team.users.each do |user| %>
+    <% @user.teams.each do |team| %>
+    <div class="team-container">
+      <h5 class="team-name text-center mt-2"><%= team.name %></h5>
+      <div class=" user-photo d-flex justify-content-around mt-2">
+        <% team.users.each do |user| %>
 
-      <div class= "team-member-yes-exist-volunteer text-center mb-3">
-        <div class= "mb-2 mr-3 team-members-profile-pictures"> <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer mb-2" %>
+        <div class= "team-member-yes-exist-volunteer text-center mb-3">
+          <div class= "mb-2 mr-3 team-members-profile-pictures"> <%= cl_image_tag user.photo.key, width: 60, height: 60, class: "rounded-circle-volunteer mb-2" %>
 
-          <%= user.first_name %>
+            <%= user.first_name %>
+          </div>
+
         </div>
-
-      </div>
-      <% end %>
-    </div>
-  </div>
-  <% end %>
-  <%= link_to new_team_path do %>
-  <div class="create-team-button text-center" style="display: none;">
-    <p class="p-size"><%= link_to t(".create_team"), new_team_path, class: "orange-color" %></p>
-  </div>
-  <% end %>
-</div>
-
-<!--     applications  -->
-
-<div class="content-container-profile mt-3">
-  <h2 class="orange-title-left"><%= t(".my_applications") %> </h2>
-</div>
-
-<div class="content-container-profile mt-3">
-
-  <% current_user.applications.each do |application| %>
-  <%= link_to project_path(application.project) do %>
-  <div class="project-card-profile flex-md-row mb-4 mt-3">
-    <div class="project-image" style="background-image: url('<%= cl_image_path application.project.photos.first.key if application.project.photos.attached? %>')">
-      <div class="interest-icon border rounded-circle">
-        <% if application.project.category == "Children" %>
-        <i class="icon fas fa-child"></i>
-        <% elsif application.project.category == "Social" %>
-        <i class="icon fas fa-user-friends"></i>
-        <% elsif application.project.category == "Cultural" %>
-        <i class="icon fas fa-music"></i>
-        <% elsif application.project.category == "Environment" %>
-        <i class="icon fas fa-leaf"></i>
-        <% else application.project.category == "Elderly Care" %>
-        <i class="icon fab fa-accessible-icon"></i>
         <% end %>
       </div>
-      <% if application.status == "accepted" %>
-      <div class="accepted-button status-button">
-        <%= t(".accepted") %> <i class="fas fa-check"></i>
-      </div>
-      <%= link_to new_application_review_path(application)  do  %>
-      <div class="review-button">
-        <p class="paragraph-no-margin"> <%= t(".add_a_review") %></p>
-      </div>
-      <% end %>
-      <% elsif application.status == "rejected" %>
-      <div class="rejected-button status-button">
-        <%= t(".rejected") %> <i class="fas fa-times"></i>
-      </div>
-      <% else %>
-      <div class="pending-button status-button">
-        <%= t(".pending") %>
-      </div>
-      <% end %>
     </div>
-    <div class="project-text-stuff">
-      <h5 class="project-title"><%= application.project.title.truncate(33) %></h5>
-      <p class="project-ong"><%= application.project.ngo.name %></p>
-      <div class="project-elements d-flex justify-content-left">
-        <div class="element"><i class="far fa-clock"></i><%= l(application.project.start_date, format: :short) %></div>
-        <div class="element"><i class="fas fa-user-friends"></i><%= application.project.capacity %></div>
-        <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= application.project.latitude %>" data-longitude="<%= application.project.longitude %>">calculating...</span></div>
+    <% end %>
+    <%= link_to new_team_path do %>
+    <div class="create-team-button text-center" style="display: none;">
+      <p class="p-size"><%= link_to t(".create_team"), new_team_path, class: "orange-color" %></p>
+    </div>
+    <% end %>
+  </div>
+
+  <!--     applications  -->
+
+  <div class="content-container-profile mt-3">
+    <h2 class="orange-title-left"><%= t(".my_applications") %> </h2>
+  </div>
+
+  <div class="content-container-profile mt-3">
+
+    <% current_user.applications.each do |application| %>
+    <%= link_to project_path(application.project) do %>
+    <div class="project-card-profile flex-md-row mb-4 mt-3">
+      <div class="project-image" style="background-image: url('<%= cl_image_path application.project.photos.first.key if application.project.photos.attached? %>')">
+        <div class="interest-icon border rounded-circle">
+          <% if application.project.category == "Children" %>
+          <i class="icon fas fa-child"></i>
+          <% elsif application.project.category == "Social" %>
+          <i class="icon fas fa-user-friends"></i>
+          <% elsif application.project.category == "Cultural" %>
+          <i class="icon fas fa-music"></i>
+          <% elsif application.project.category == "Environment" %>
+          <i class="icon fas fa-leaf"></i>
+          <% else application.project.category == "Elderly Care" %>
+          <i class="icon fab fa-accessible-icon"></i>
+          <% end %>
+        </div>
+        <% if application.status == "accepted" %>
+        <div class="accepted-button status-button">
+          <%= t(".accepted") %> <i class="fas fa-check"></i>
+        </div>
+        <%= link_to new_application_review_path(application)  do  %>
+        <div class="review-button">
+          <p class="paragraph-no-margin"> <%= t(".add_a_review") %></p>
+        </div>
+        <% end %>
+        <% elsif application.status == "rejected" %>
+        <div class="rejected-button status-button">
+          <%= t(".rejected") %> <i class="fas fa-times"></i>
+        </div>
+        <% else %>
+        <div class="pending-button status-button">
+          <%= t(".pending") %>
+        </div>
+        <% end %>
+      </div>
+      <div class="project-text-stuff">
+        <h5 class="project-title"><%= application.project.title.truncate(33) %></h5>
+        <p class="project-ong"><%= application.project.ngo.name %></p>
+        <div class="project-elements d-flex justify-content-left">
+          <div class="element"><i class="far fa-clock"></i><%= l(application.project.start_date, format: :short) %></div>
+          <div class="element"><i class="fas fa-user-friends"></i><%= application.project.capacity %></div>
+          <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= application.project.latitude %>" data-longitude="<%= application.project.longitude %>">calculating...</span></div>
+        </div>
       </div>
     </div>
+    <% end %>
+    <% end %>
   </div>
   <% end %>
-  <% end %>
-</div>
-<% end %>
