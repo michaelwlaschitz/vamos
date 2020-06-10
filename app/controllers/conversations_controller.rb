@@ -1,10 +1,11 @@
 class ConversationsController < ApplicationController
   def index
     if current_user.ngo_manager?
-      @conversations = current_user.ngo_conversations
+      @conversations = current_user.ngo_conversations.order(updated_at: :desc)
     else
-      @conversations = current_user.team_conversations
+      @conversations = current_user.team_conversations.order(updated_at: :desc)
     end
+    
   end
 
   def show
