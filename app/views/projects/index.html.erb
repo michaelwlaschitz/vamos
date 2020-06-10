@@ -104,35 +104,32 @@
           <%= form_tag(projects_path, :method => "get", local: true) do %>
           <%= text_field_tag :address, nil, placeholder: t("global.modal.type_address"), id: 'filter-mobile-location' %>
           <h2 class="mt-4"><%= t(".interest")%></h2>
-
-              <div class="buttons filter-buttons">
-                <% categories = {
-                  t(".children") => "fas fa-child",
-                  t(".social") => "fas fa-user-friends mr-0",
-                  t(".cultural") => "fas fa-music",
-                  t(".climate") => "fas fa-leaf",
-                  t(".medical") => "fas fa-briefcase-medical",
-                  t(".seniors") => "fab fa-accessible-icon",
-                  } %>
-                <% categories.each do |category, logo| %>
-                <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="mobile_categories_<%= category %>" <%= "checked" if params[:categories]&.include?(category) %> >
-                <label id="mobile-button" class="category-button button <%= "active" if params[:categories]&.include?(category) %>" for="mobile_categories_<%= category %>">
-                  <div>
-                    <div class="interest-icon">
-                      <i class="<%= logo %>"></i>
-                    </div>
-                    <%= category%>
-                  </div>
-                </label>
-                <% end %>
+          <div class="buttons filter-buttons">
+            <% categories = {
+              t(".children") => "fas fa-child",
+              t(".social") => "fas fa-user-friends mr-0",
+              t(".cultural") => "fas fa-music",
+              t(".climate") => "fas fa-leaf",
+              t(".medical") => "fas fa-briefcase-medical",
+              t(".seniors") => "fab fa-accessible-icon",
+              } %>
+            <% categories.each do |category, logo| %>
+            <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="mobile_categories_<%= category %>" <%= "checked" if params[:categories]&.include?(category) %> >
+            <label id="mobile-button" class="category-button button <%= "active" if params[:categories]&.include?(category) %>" for="mobile_categories_<%= category %>">
+              <div>
+                <div class="interest-icon">
+                  <i class="<%= logo %>"></i>
+                </div>
+                <%= category%>
               </div>
-
+            </label>
+            <% end %>
+          </div>
         </div>
         <div class = "content-container text-center">
-        <div class="modal-footer">
-        </div>
-         <%= submit_tag(t("global.modal.save_filter"), class: "button-vamos primary-style mt-0 w-100") %>
-        <% end %>
+          <div class="modal-footer"></div>
+          <%= submit_tag(t("global.modal.save_filter"), class: "button-vamos primary-style mt-0 w-100") %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -159,7 +156,7 @@
       <%= link_to project_path(project) do %>
         <div class="row mx-3 py-4 border-top">
           <div class = "desktop-project-card">
-            <div>
+            <div class="desktop-carousel-container">
               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <% project.photos.each_with_index do |photo, index| %>
@@ -174,11 +171,11 @@
                   <% project.photos.each_with_index do |photo, index| %>
                     <% if index == 0 %>
                       <div class="carousel-item active">
-                        <%= cl_image_tag photo.key, class: "d-block project-image", alt:"Project picture" %>
+                        <%= cl_image_tag photo.key, class: "d-block project-image" %>
                       </div>
                     <% else %>
                       <div class="carousel-item">
-                        <%= cl_image_tag photo.key, class: "d-block project-image", alt:"Project picture" %>
+                        <%= cl_image_tag photo.key, class: "d-block project-image" %>
                       </div>
                     <% end %>
                   <% end %>

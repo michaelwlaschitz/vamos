@@ -34,17 +34,18 @@
 }
 
 #map_button {
-    position: fixed;
-    bottom: 80px;
-    right: 40px;
-    background-color: white;
-    height: 50px;
-    width: 50px;
-    color: $orange-vamos;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  background-color: white;
+  height: 50px;
+  width: 50px;
+  color: $orange-vamos;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $orange-vamos;
 } //map button for the index page
 
 #map {
