@@ -258,6 +258,7 @@ es:
 
       edit:
         edit_user: "Actualizar Usuario"
+        edit_ngo: "Actualizar ONG"
         set_new: "Establecer nueva contraseña"
         hint1: "déjelo en blanco si no desea cambiar su contraseña"
         confirm: "Confirmar nueva contraseña"
@@ -265,6 +266,8 @@ es:
         hint2: "necesitamos su contraseña actual para confirmar sus cambios"
         update: "Actualizar"
         cancel: "Cancelar mi cuenta"
+        select_picture: "Elige una foto"
+        edit_picture: "Cambiar foto"
 
     passwords:
       new:
