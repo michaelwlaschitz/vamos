@@ -159,7 +159,7 @@ es:
 
   ngos:
     home:
-      title_for_html: "<strong>Encuentra voluntarios a largo <br>plazo para su organización</strong>"
+      title_for_html: "<strong>Encuentra voluntarios <br>a largo plazo</strong>"
       sub_title_for_html: "Crea tu primer proyecto gratis <br>con unos pocos clics!"
       usp_title: "Los Beneficios de Vamos"
       usp_sub_title: "Vamos ayuda a las ONG a encontrar voluntarios a largo plazo a través de una plataforma focalizada en la generación joven."
@@ -195,8 +195,8 @@ es:
       location: "Ubicación"
       interest: "Interés"
       spots_zero: "Esta actividad está llena"
-      spots_low: "Solo %{name} lugares abiertos"
-      spots_high: "%{name} lugares abiertos"
+      spots_low: "Solo %{name} plazas"
+      spots_high: "%{name} plazas"
 
 
 
@@ -207,9 +207,9 @@ es:
       reviews_for:
         zero: "Todavía no hay reseñas para esta organización!"
         other: "Reseñas para proyectos de %{name}"
-      spots_zero: "This activity is full"
-      spots_low: "Only %{name} spots left"
-      spots_high: "%{name} spots left"
+      spots_zero: "Esta actividad está llena"
+      spots_low: "Solo %{name} plazas"
+      spots_high: "%{name} plazas"
 
     new:
       create: "Crea"

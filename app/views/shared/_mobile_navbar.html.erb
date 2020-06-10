@@ -31,11 +31,11 @@
 
     <div class="nav-logo">
       <%= link_to root_path, class: "navbar-brand" do %>
-        <%= image_tag "final_logo.png"%>
+        <%= image_tag "final_logo.png", style: "width: 130px" %>
       <% end %>
     </div>
     <div class="nav-element">
-      <%= link_to t("global.navbar.login"), data: {toggle: "modal", target: ".bd-example-modal-lg"}, class: "nav-link" do %>
+      <%= link_to t("global.navbar.login"), data: {toggle: "modal", target: ".bd-example-modal-lg"}, class: "nav-link mb-2" do %>
         <div>
           <i class="far fa-user nav-icon"></i>
           <p class="nav-icon-tag">SIGN IN</p>
