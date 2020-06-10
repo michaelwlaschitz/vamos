@@ -17,18 +17,20 @@
       </div>
       <div>
         <% if @conversation.application.status == "pending" %>
-          <% if current_user.ngo %>
+          <% if current_user.ngo && @conversation.project.ngo == current_user.ngo %>
             <div class="conversation-application-accept-button">
-              <%= link_to "Accept", accept_conversation_application_path(@conversation.application), method: :patch, class: "green-color"%>
+              <%= link_to t(".accept"), accept_conversation_application_path(@conversation.application), method: :patch, class: "green-color"%>
             </div>
             <div class="conversation-application-reject-button">
-              <%= link_to "Reject", reject_conversation_application_path(@conversation.application), method: :patch, class: "red-color"%>
+              <%= link_to t(".reject"), reject_conversation_application_path(@conversation.application), method: :patch, class: "red-color"%>
             </div>
           <% else %>
-            <div class="conversation-application-status mt-2"><%= @conversation.application.status.capitalize %></div>
+            <div class="conversation-application-status mt-2"><%= t(".pending") %></div>
           <% end %>
-        <% else %>
-          <div class="conversation-application-status mt-2"><%= @conversation.application.status.capitalize %></div>
+        <% elsif @conversation.application.status == "accepted" %>
+          <div class="conversation-application-status mt-2"><%= t(".accepted") %></div>
+        <% elsif @conversation.application.status == "rejected" %>
+          <div class="conversation-application-status mt-2"><%= t(".rejected") %></div>
         <% end %>
       </div>
     </div>

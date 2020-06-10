@@ -107,12 +107,12 @@
 
               <div class="buttons filter-buttons">
                 <% categories = {
-                  "Children" => "fas fa-child",
-                  "Social" => "fas fa-user-friends mr-0",
-                  "Cultural" => "fas fa-music",
-                  "Climate" => "fas fa-leaf",
-                  "Medical" => "fas fa-briefcase-medical",
-                  "Seniors" => "fab fa-accessible-icon",
+                  t(".children") => "fas fa-child",
+                  t(".social") => "fas fa-user-friends mr-0",
+                  t(".cultural") => "fas fa-music",
+                  t(".climate") => "fas fa-leaf",
+                  t(".medical") => "fas fa-briefcase-medical",
+                  t(".seniors") => "fab fa-accessible-icon",
                   } %>
                 <% categories.each do |category, logo| %>
                 <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="mobile_categories_<%= category %>" <%= "checked" if params[:categories]&.include?(category) %> >
@@ -244,12 +244,12 @@
 
                 <div class="buttons filter-buttons">
                   <% categories = {
-                    "Children" => "fas fa-child",
-                    "Social" => "fas fa-user-friends mr-0",
-                    "Cultural" => "fas fa-music",
-                    "Climate" => "fas fa-leaf",
-                    "Medical" => "fas fa-briefcase-medical",
-                    "Seniors" => "fab fa-accessible-icon",
+                    t(".children") => "fas fa-child",
+                    t(".social") => "fas fa-user-friends mr-0",
+                    t(".cultural") => "fas fa-music",
+                    t(".climate") => "fas fa-leaf",
+                    t(".medical") => "fas fa-briefcase-medical",
+                    t(".seniors") => "fab fa-accessible-icon",
                     } %>
                   <% categories.each do |category, logo| %>
                   <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="desktop_categories_<%= category %>" <%= "checked" if params[:categories]&.include?(category) %> >

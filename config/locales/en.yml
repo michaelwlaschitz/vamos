@@ -209,6 +209,12 @@ en:
       filter_title: "Filter Volunteering Opportunities"
       location: "Location"
       interest: "Interest"
+      children: "Children"
+      social: "Social"
+      cultural: "Cultural"
+      climate: "Environment"
+      medical: "Medical"
+      seniors: "Seniors"
       spots_zero: "This activity is full"
       spots_low: "Only %{name} spots left"
       spots_high: "%{name} spots left"
@@ -239,6 +245,11 @@ en:
       pictures: "Select Pictures"
       back: "Back to Dashboard"
 
+    info_window:
+      spots_zero: "This activity is full"
+      spots_low: "Only %{name} spots left"
+      spots_high: "%{name} spots left"
+
   reviews:
     new:
       write_a: "Write a review for"
@@ -249,6 +260,13 @@ en:
   conversations:
     index:
       inbox: "Inbox"
+
+    show:
+      accept: "Accept"
+      accepted: "Accepted"
+      reject: "Reject"
+      rejected: "Rejected"
+      pending: "Pending"
 
   teams:
     new:
@@ -310,7 +328,7 @@ en:
       phone: "Phone"
       reviews:
         zero: "There are no reviews for your organization yet!"
-        other: 'User Reviews for your organization (%{count})'
+        other: 'Reviews for your organization (%{count})'
       accepted: "Accepted"
       add_a_review: "Add a review"
       rejected: "Rejected"
@@ -318,7 +336,6 @@ en:
 
 
   applications:
-
     new:
       new_application_overview_for_html: "<span style='color: #fb8500'>Application</span>"
       application_overview: "Application Overview"

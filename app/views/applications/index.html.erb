@@ -92,10 +92,6 @@
                       <div class= "pic"> <%= cl_image_tag user.photo.key, width: 30, height: 30, class: "rounded-circle" %>
                       </div>
                     <% end %>
-                    <div class= "arrow">
-                      <i class="fas fa-chevron-right"></i>
-                      <%= link_to t(".accept"), accept_applications_application_path(application), method: :patch, class: "green-color"%>
-                    </div>
                   </div>
                   <p class="m-0 team-name-ngo"><%= application.team.name %></p>
                 </div>

@@ -188,17 +188,21 @@ es:
       projects:
         zero: "Desafortunadamente, todavía no tenemos proyectos en tu área."
         one: "¡Encontramos una oportunidad, pero hay más por venir!"
-        other: "Hay %{count} oportunidades cerca de usted"
+        other: "Hay %{count} oportunidades cerca de ti"
 
-      filter: "Fitrar"
-      filter_title: "Fitrar por oportunidades"
+      filter: "Filtrar"
+      filter_title: "Filtrar por oportunidades"
       location: "Ubicación"
-      interest: "Interés"
+      interest: "Intereses"
+      children: "Niños"
+      social: "Social"
+      cultural: "Cultural"
+      climate: "Medio Ambiente"
+      medical: "Salud"
+      seniors: "Mayores"
       spots_zero: "Esta actividad está llena"
-      spots_low: "Solo %{name} lugares abiertos"
-      spots_high: "%{name} lugares abiertos"
-
-
+      spots_low: "Solo %{name} plazas libres"
+      spots_high: "%{name} plazas libres"
 
     show:
       project: "Proyecto"
@@ -225,6 +229,11 @@ es:
       pictures: "Añadir Fotos"
       back: "Atras"
 
+    info_window:
+      spots_zero: "Esta actividad está llena"
+      spots_low: "Solo %{name} lugares abiertos"
+      spots_high: "%{name} lugares abiertos"
+
   reviews:
     new:
       write_a: "Escribe una evaluacion para el proyecto: "
@@ -234,6 +243,14 @@ es:
   conversations:
     index:
       inbox: "Mensajes"
+
+    show:
+      accept: "Aceptar"
+      accepted: "Aceptado"
+      reject: "Rechazar"
+      rejected: "Rechazado"
+      pending: "Pendiente"
+
   teams:
     new:
       title_for_html: "<span style='color: #fb8500'>Crea</span> tu equipo de voluntariados"
