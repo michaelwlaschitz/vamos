@@ -53,12 +53,26 @@
                   <div class="element"><i class="far fa-clock"></i><%= l(project.start_date, format: :short) %></div>
                   <%=  %>
 
+                <% spots_taken_count = 0 %>
+                <% project.applications.each do |application| %>
+                      <% application_status = application.status %>
+                      <% if application_status == "accepted" %>
+                        <% team_id = application.team_id %>
+                        <% team = Team.find(team_id) %>
+                        <% total_members = team.team_memberships.count %>
+                        <% total_members %>
+                        <% spots_taken_count += total_members %>
+                      <% end %>
+                <% end %>
+                <% spots_left = project.capacity - spots_taken_count %>
+                <% spots_left %>
+
                   <% if project.capacity < 1 %>
                   <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_zero") %></div>
                   <% elsif project.capacity < 6 %>
-                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_low", name: project.capacity) %></div>
+                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_low", name: spots_left) %></div>
                   <% else %>
-                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_high", name: project.capacity) %> </div>
+                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_high", name: spots_left) %> </div>
                   <% end %>
 
                   <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calc.</span></div>
@@ -198,13 +212,27 @@
               <p class="project-ong my-2"><%= project.ngo.name if project.ngo %></p>
               <div class="project-elements d-flex">
                 <div class="element mr-3"><i class="far fa-clock"></i><%= l(project.start_date, format: :short) %></div>
+                
+                <% spots_taken_count = 0 %>
+                <% project.applications.each do |application| %>
+                      <% application_status = application.status %>
+                      <% if application_status == "accepted" %>
+                        <% team_id = application.team_id %>
+                        <% team = Team.find(team_id) %>
+                        <% total_members = team.team_memberships.count %>
+                        <% total_members %>
+                        <% spots_taken_count += total_members %>
+                      <% end %>
+                <% end %>
+                <% spots_left = project.capacity - spots_taken_count %>
+                <% spots_left %>
 
                  <% if project.capacity < 1 %>
                   <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_zero") %></div>
                   <% elsif project.capacity < 6 %>
-                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_low", name: project.capacity) %></div>
+                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_low", name: spots_left) %></div>
                   <% else %>
-                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_high", name: project.capacity) %> </div>
+                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_high", name: spots_left) %> </div>
                   <% end %>
 
                 <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calc...</span></div>
