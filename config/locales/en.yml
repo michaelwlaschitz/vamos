@@ -238,6 +238,9 @@ en:
       pictures: "Select Pictures"
       back: "Back to Dashboard"
 
+    _info_window:
+      full: "Full"
+
   reviews:
     new:
       write_a: "Write a review for"

@@ -2,7 +2,9 @@
   <%= render 'shared/mobile_navbar' %>
   <div class="content-container-chat">
     <h2 style="font-weight:normal;font-size:28px;" class="border-bottom mb-3 mt-3 py-1 orange"> <%= t(".inbox") %></h2>
-    <% @conversations.each do |conversation| %>
+    <%# Sort conversations by comparing time the messajes were updated at %>
+    <% sorted_convos = @conversations.sort { |conv1, conv2|  conv2.messages[-1][:updated_at] <=> conv1.messages[-1][:updated_at] } %>
+    <% sorted_convos.each do |conversation| %>
     <%= link_to conversation_path(conversation), class: "dark-gray" do %>
     <div class="d-flex mb-3 border-bottom">
       <!--   Avatars -->

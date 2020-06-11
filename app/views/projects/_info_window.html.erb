@@ -11,9 +11,28 @@
   <div class="project-ngo">
     <p class="project-ong"><%= project.ngo.name if project.ngo %></p>
   </div>
+
+      <% spots_taken_count = 0 %>
+        <% project.applications.each do |application| %>
+              <% application_status = application.status %>
+              <% if application_status == "accepted" %>
+                <% team_id = application.team_id %>
+                <% team = Team.find(team_id) %>
+                <% total_members = team.team_memberships.count %>
+                <% total_members %>
+                <% spots_taken_count += total_members %>
+              <% end %>
+        <% end %>
+      <% spots_left = project.capacity - spots_taken_count %>
+      <% spots_left %>
+
   <div class="project-elements d-flex justify-content-between">
     <div><i class="far fa-clock"></i><%= l(project.start_date, format: :short) %></div>
-    <div><i class="fas fa-user-friends"></i><%= project.capacity%></div>
+    <% if spots_left < 1 %>
+      <div><i class="fas fa-user-friends"></i>0</div>
+    <% else %>
+      <div><i class="fas fa-user-friends"></i><%= spots_left%></div>
+    <% end %>
     <div><i class="fas fa-map-marker-alt"></i> 0.5km</div>
   </div>
 </div>
