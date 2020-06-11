@@ -1,7 +1,7 @@
 <div class="has-navbar-so-margin">
   <%= render 'shared/mobile_navbar' %>
   <div class="content-container-chat">
-    <h2 class="border-bottom mb-3 mt-3 py-1 orange"> <%= t(".inbox") %></h2>
+    <h2 style="font-weight:normal;font-size:28px;" class="border-bottom mb-3 mt-3 py-1 orange"> <%= t(".inbox") %></h2>
     <% @conversations.each do |conversation| %>
     <%= link_to conversation_path(conversation), class: "dark-gray" do %>
     <div class="d-flex mb-3 border-bottom">

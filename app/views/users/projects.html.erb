@@ -4,7 +4,7 @@
     <%= render 'shared/mobile_navbar' %>
     <div class = "content-container">
       <div class="mobile-card-container my-3">
-        <h2 class="title-mobile"> <%= t(".your_projects") %> </h2>
+        <h2 style="font-weight:normal;font-size:28px;" class="title-mobile"> <%= t(".your_projects") %> </h2>
         <% @ngo_projects.each do |project| %>
           <%= link_to project_path(project) do %>
             <div class="mobile-project-card my-4">

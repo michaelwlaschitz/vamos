@@ -1,6 +1,44 @@
 <div class="mobile-navbar d-flex justify-content-around align-items-center">
 
-  <% if user_signed_in? %>
+  <% if user_signed_in? && current_user.ngo %>
+
+    <div class="nav-element <%= "active" if current_page?(user_profile_path) %>">
+      <%= link_to user_profile_path do %>
+        <div>
+          <i class="far fa-user nav-icon"></i>
+          <p class="nav-icon-tag"><%= t("global.navbar.profile") %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="nav-element <%= "active" if current_page?(applications_path) %>">
+      <%= link_to applications_path do %>
+        <div>
+          <i class="far fa-check-square nav-icon"></i>
+          <p class="nav-icon-tag"><%= t("global.navbar.applications") %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="nav-element <%= "active" if current_page?(user_projects_path) %>">
+      <%= link_to user_projects_path do %>
+        <div>
+          <i class="fas fa-list nav-icon"></i>
+          <p class="nav-icon-tag"><%= t("global.navbar.my_projects") %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="nav-element <%= "active" if current_page?(conversations_path) %>">
+      <%= link_to conversations_path do %>
+        <div>
+          <i class="far fa-comment-alt nav-icon"></i>
+          <p class="nav-icon-tag"><%= t("global.navbar.messages") %></p>
+        </div>
+      <% end %>
+    </div>
+
+  <% elsif user_signed_in?%>
 
     <div class="nav-element <%= "active" if current_page?(controller: "projects", action: "index") %>">
       <%= link_to projects_path do %>
@@ -14,7 +52,7 @@
       <%= link_to user_profile_path do %>
         <div>
           <i class="far fa-user nav-icon"></i>
-          <p class="nav-icon-tag"><%= t("global.navbar.dashboard2") %></p>
+          <p class="nav-icon-tag"><%= t("global.navbar.profile") %></p>
         </div>
       <% end %>
     </div>
