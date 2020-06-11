@@ -64,14 +64,30 @@
         <div class="mt-2">
           <p><%= @project.description %> </p>
         </div>
+
+        <% spots_taken_count = 0 %>
+          <% @project.applications.each do |application| %>
+                <% application_status = application.status %>
+                <% if application_status == "accepted" %>
+                  <% team_id = application.team_id %>
+                  <% team = Team.find(team_id) %>
+                  <% total_members = team.team_memberships.count %>
+                  <% total_members %>
+                  <% spots_taken_count += total_members %>
+                <% end %>
+          <% end %>
+        <% spots_left = @project.capacity - spots_taken_count %>
+        <% spots_left %>
+
+
         <div class="elements-container d-flex mt-3">
           <div class="mr-3">
              <% if @project.capacity < 1 %>
             <div class="element"><i class="fas fa-user-friends"></i> <%= t(".spots_zero") %></div>
             <% elsif @project.capacity < 6 %>
-            <div class="element"><i class="fas fa-user-friends"></i> <%= t(".spots_low", name: @project.capacity) %></div>
+            <div class="element"><i class="fas fa-user-friends"></i> <%= t(".spots_low", name: spots_left) %></div>
             <% else %>
-            <div class="element"><i class="fas fa-user-friends"></i> <%= t(".spots_high", name: @project.capacity) %> </div>
+            <div class="element"><i class="fas fa-user-friends"></i> <%= t(".spots_high", name: spots_left) %> </div>
             <% end %>
 
           </div>

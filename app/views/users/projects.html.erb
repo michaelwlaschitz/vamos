@@ -46,9 +46,28 @@
               <div class="project-text-stuff ml-2">
                 <h5 class="mt-2"><%= link_to project.title, project_path(project), class: "project-title"%></h5>
                 <p class="project-ong"><%= project.ngo.name if project.ngo %></p>
+
+                <% spots_taken_count = 0 %>
+                <% project.applications.each do |application| %>
+                      <% application_status = application.status %>
+                      <% if application_status == "accepted" %>
+                        <% team_id = application.team_id %>
+                        <% team = Team.find(team_id) %>
+                        <% total_members = team.team_memberships.count %>
+                        <% total_members %>
+                        <% spots_taken_count += total_members %>
+                      <% end %>
+                <% end %>
+                <% spots_left = project.capacity - spots_taken_count %>
+                <% spots_left %>
+
                 <div class="project-elements d-flex justify-content-left">
                   <div class="element"><i class="far fa-clock"></i><%= project.start_date.strftime("%d %B") %></div>
-                  <div class="element"><i class="fas fa-user-friends"></i><%= project.capacity%> spots</div>
+                  <% if spots_left > 0 %>
+                    <div class="element"><i class="fas fa-user-friends"></i><%= spots_left%> spots</div>
+                  <% else %>
+                    <div class="element"><i class="fas fa-user-friends"></i> Full</div>
+                  <% end %>
                   <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
                 </div>
               </div>
@@ -112,13 +131,30 @@
                 <div class="project-text-stuff ml-3">
                   <h5><%= link_to project.title, project_path(project), class: "project-title"%></h5>
                   <p class="project-ong my-2"><%= project.ngo.name if project.ngo %></p>
+
+                  <% spots_taken_count = 0 %>
+                  <% project.applications.each do |application| %>
+                    <% application_status = application.status %>
+                    <% if application_status == "accepted" %>
+                      <% team_id = application.team_id %>
+                      <% team = Team.find(team_id) %>
+                      <% total_members = team.team_memberships.count %>
+                      <% total_members %>
+                      <% spots_taken_count += total_members %>
+                    <% end %>
+                  <% end %>
+                  <% spots_left = project.capacity - spots_taken_count %>
+                  <% spots_left %>
+                  
                   <div class="project-elements d-flex">
                     <div class="element mr-3"><i class="far fa-clock"></i><%= project.start_date.strftime("%d %B") %></div>
                     <div class="element mr-3"><i class="fas fa-user-friends"></i>
-                      <% if project.capacity == 1 %>
-                        <%= project.capacity%> spot left
+                      <% if spots_left == 0 %>
+                        <%= %> Full
+                      <% elsif spots_left == 1 %>
+                        <%= spots_left%> spot left
                       <% else %>
-                        <%= project.capacity%> spots left
+                        <%= spots_left%> spots left
                       <% end %>
                     </div>
                     <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calculating...</span></div>
