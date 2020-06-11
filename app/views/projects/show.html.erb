@@ -82,9 +82,9 @@
 
         <div class="elements-container d-flex mt-3">
           <div class="mr-3">
-             <% if @project.capacity < 1 %>
+             <% if spots_left < 1 %>
             <div class="element"><i class="fas fa-user-friends"></i> <%= t(".spots_zero") %></div>
-            <% elsif @project.capacity < 6 %>
+            <% elsif spots_left < 6 %>
             <div class="element"><i class="fas fa-user-friends"></i> <%= t(".spots_low", name: spots_left) %></div>
             <% else %>
             <div class="element"><i class="fas fa-user-friends"></i> <%= t(".spots_high", name: spots_left) %> </div>

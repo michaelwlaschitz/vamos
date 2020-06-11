@@ -28,7 +28,11 @@
 
   <div class="project-elements d-flex justify-content-between">
     <div><i class="far fa-clock"></i><%= l(project.start_date, format: :short) %></div>
-    <div><i class="fas fa-user-friends"></i><%= spots_left%></div>
+    <% if spots_left < 1 %>
+      <div><i class="fas fa-user-friends"></i>0</div>
+    <% else %>
+      <div><i class="fas fa-user-friends"></i><%= spots_left%></div>
+    <% end %>
     <div><i class="fas fa-map-marker-alt"></i> 0.5km</div>
   </div>
 </div>

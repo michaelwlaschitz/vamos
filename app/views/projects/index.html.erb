@@ -67,9 +67,9 @@
                 <% spots_left = project.capacity - spots_taken_count %>
                 <% spots_left %>
 
-                  <% if project.capacity < 1 %>
-                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_zero") %></div>
-                  <% elsif project.capacity < 6 %>
+                  <% if spots_left < 1 %>
+                  <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_zero") %> </div>
+                  <% elsif spots_left < 6 %>
                   <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_low", name: spots_left) %></div>
                   <% else %>
                   <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_high", name: spots_left) %> </div>
@@ -227,9 +227,9 @@
                 <% spots_left = project.capacity - spots_taken_count %>
                 <% spots_left %>
 
-                 <% if project.capacity < 1 %>
+                 <% if spots_left < 1 %>
                   <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_zero") %></div>
-                  <% elsif project.capacity < 6 %>
+                  <% elsif spots_left < 6 %>
                   <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_low", name: spots_left) %></div>
                   <% else %>
                   <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_high", name: spots_left) %> </div>
