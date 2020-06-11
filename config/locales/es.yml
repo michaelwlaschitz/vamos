@@ -225,6 +225,9 @@ es:
       pictures: "Añadir Fotos"
       back: "Atras"
 
+    _info_window:
+      full: "Completo"
+
   reviews:
     new:
       write_a: "Escribe una evaluacion para el proyecto: "
