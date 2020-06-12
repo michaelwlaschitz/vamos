@@ -3,7 +3,6 @@ class Message < ApplicationRecord
   belongs_to :user
   validates_presence_of :body
 
-
   def message_full_time
   created_at.strftime("%m/%d/%y at %H:%M")
   end
