@@ -364,6 +364,11 @@ message8 = Message.create!(body: "Perfect, see you then!", conversation_id: conv
 message9 = Message.create!(body: "Awesome, here my phone number in case you can't find it - +34650494", conversation_id: conversation1.id , user_id: user1.id , read: false)
 
 message10 = Message.create!(body: "We are 4 guys looking forward to jointly work for your organization and do some good!", conversation_id: conversation2.id , user_id: user11.id , read: true)
+message10 = Message.create!(body: "We are 4 guys looking forward to jointly work for your organization and do some good!", conversation_id: conversation3.id , user_id: user11.id , read: true)
+message10 = Message.create!(body: "We are 4 guys looking forward to jointly work for your organization and do some good!", conversation_id: conversation4.id , user_id: user11.id , read: true)
+message10 = Message.create!(body: "We are 4 guys looking forward to jointly work for your organization and do some good!", conversation_id: conversation5.id , user_id: user11.id , read: true)
+message10 = Message.create!(body: "We are 4 guys looking forward to jointly work for your organization and do some good!", conversation_id: conversation6.id , user_id: user11.id , read: true)
+message10 = Message.create!(body: "We are 4 guys looking forward to jointly work for your organization and do some good!", conversation_id: conversation7.id , user_id: user11.id , read: true)
 
 puts "Seeding messages done"
 
