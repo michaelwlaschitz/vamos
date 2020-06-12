@@ -16,7 +16,13 @@
   font-size: 26px;
 }
 
-#map_button {
-  border: 1px solid $orange-vamos;
+.desktop-carousel-container {
+  width: 350px;
+  height: 200px;
+}
+
+// Had to set this to 0 so that it does not interfere with map modal
+.carousel-control-prev, .carousel-control-next {
+  z-index: 100;
 }
 

@@ -41,7 +41,7 @@
   </div>
 
   <% if @application.team.users.any? {|user| user.first_name == nil} == false %>
-    <div class="d-flex justify-content-between mt-3">
+    <div class="d-flex justify-content-between mt-1">
       <%= cl_image_tag @application.project.ngo.user.photo.key, class: "contact-avatar" %>
       <div class="ml-3">
 
@@ -57,17 +57,18 @@
         <% end %>
       </div>
     </div>
-    <div class="button go-back">
-      <%= link_to projects_path do  %>
-        <h3 class="opportunities-chat-button">
-          <%= t('.more_opportunities') %>
-        </h3>
-      <% end %>
-    </div>
+
     <div class="button-1 hide-desktop">
       <%= link_to conversation_path(@application.conversation) do  %>
         <h3 class="enter-chat-button-mobile">
           <%= t(".send_message") %>
+        </h3>
+      <% end %>
+    </div>
+    <div class="button go-back mt-2">
+      <%= link_to projects_path do  %>
+        <h3 class="opportunities-chat-button">
+          <%= t('.more_opportunities') %>
         </h3>
       <% end %>
     </div>
@@ -79,11 +80,11 @@
         <h3 class="m-0"><%= t(".question") %></h3>
       </div>
       <div class="button go-back">
-      <%= link_to projects_path do  %>
-        <h3 class="opportunities-chat-button">
-          <%= t('.more_opportunities') %>
-        </h3>
-      <% end %>
+        <%= link_to projects_path do  %>
+          <h3 class="opportunities-chat-button">
+            <%= t('.more_opportunities') %>
+          </h3>
+        <% end %>
       </div>
     </div>
   <% end %>

@@ -5,36 +5,24 @@
       <%= cl_image_tag project.photos.first.key%>
     <% end %>
   </div>
-  <div class="project-title">
-    <h5><%= project.title %></h5>
-  </div>
-  <div class="project-ngo">
-    <p class="project-ong"><%= project.ngo.name if project.ngo %></p>
-  </div>
 
-      <% spots_taken_count = 0 %>
-        <% project.applications.each do |application| %>
-              <% application_status = application.status %>
-              <% if application_status == "accepted" %>
-                <% team_id = application.team_id %>
-                <% team = Team.find(team_id) %>
-                <% total_members = team.team_memberships.count %>
-                <% total_members %>
-                <% spots_taken_count += total_members %>
-              <% end %>
-        <% end %>
-      <% spots_left = project.capacity - spots_taken_count %>
-      <% spots_left %>
+  <div class="project-text-stuff ml-2">
+    <h3 class="mt-2 mb-1"><%= link_to project.title, project_path(project), class: "project-title"%></h3>
+    <p class="project-ong mb-3"><%= project.ngo.name if project.ngo %></p>
+    <div class="project-elements d-flex justify-content-left">
+      <div class="element"><i class="far fa-clock"></i><%= l(project.start_date, format: :short) %></div>
+      <%=  %>
 
-  <div class="project-elements d-flex justify-content-between">
-    <div><i class="far fa-clock"></i><%= l(project.start_date, format: :short) %></div>
-    <% if spots_left < 1 %>
-      <div><i class="fas fa-user-friends"></i>0</div>
-    <% else %>
-      <div><i class="fas fa-user-friends"></i><%= spots_left%></div>
-    <% end %>
-    <div><i class="fas fa-map-marker-alt"></i> 0.5km</div>
+      <% if project.capacity < 1 %>
+      <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_zero") %></div>
+      <% elsif project.capacity < 6 %>
+      <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_low", name: project.capacity) %></div>
+      <% else %>
+      <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_high", name: project.capacity) %> </div>
+      <% end %>
+
+      <div class="element"><i class="fas fa-map-marker-alt"></i> <span class="location-to-replace" data-latitude="<%= project.latitude %>" data-longitude="<%= project.longitude %>">calc.</span></div>
+    </div>
   </div>
+  <% end %>
 </div>
-<% end %>
-
