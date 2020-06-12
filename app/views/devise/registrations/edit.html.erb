@@ -8,7 +8,7 @@
     <div class="form-inputs">
 
       <% if current_user.ngo %>
-        <h2 class="orange-title">Edit NGO</h2>
+        <h2 class="orange-title"><%= t(".edit_ngo") %></h2>
         <%= f.simple_fields_for current_user.ngo do |t|%>
           <%= t.input :name,
                     required: true,
@@ -31,6 +31,18 @@
                   required: true,
                   autofocus: true,
                   input_html: { class: "mb-4",autocomplete: "last-name" }%>
+
+    <h3 class="edit_picture_in_profile_page"><%= t(".edit_picture")%> </h3>
+    <div class="d-flex align-items-center">
+    <label class="button-upload-file mr-2">
+    <%= t(".select_picture") %>
+    <span style="display:none;">
+      <%= f.input :photo, as: :file, input_html: {class: "logo-input", label: "Photo"} %>
+    </span>
+    </label>
+    <div class="logo-file-name">
+    </div>
+  </div>            
 
       <%= f.input :phone,
                   required: true,

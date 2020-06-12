@@ -58,7 +58,7 @@ en:
       children: "Children"
       social: "Social"
       cultural: "Cultural"
-      climate: "Climate"
+      climate: "Environment"
       medical: "Medical"
       seniors: "Seniors"
 
@@ -175,7 +175,7 @@ en:
 
   ngos:
     home:
-      title_for_html: "<strong>Attract young people <br>who are eager to do good!</strong>"
+      title_for_html: "<strong>Attract young people <br>eager to do good!</strong>"
       sub_title_for_html: "Create your first project for free <br>with just a few clicks!"
       usp_title: "The Benefits of Vamos"
       usp_sub_title: "Vamos supports NGOs finding long-term supporters through a platform highly targeted to the young generation."
@@ -292,6 +292,7 @@ en:
 
       edit:
         edit_user: "Edit User"
+        edit_ngo: "Edit NGO"
         set_new: "Set new password"
         hint1: "leave it blank if you don't want to change it"
         confirm: "Confirm new password"
@@ -299,6 +300,7 @@ en:
         hint2: "we need your current password to confirm your changes"
         update: "Update"
         cancel: "Cancel my account"
+        select_picture: "Select Picture"
 
     passwords:
       new:

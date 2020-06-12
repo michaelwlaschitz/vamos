@@ -80,16 +80,16 @@
           </ul>
         </div>
         <% end %>
-        <%= f.input :title, placeholder: 'Project name', label:false, class: 'form-control' %>
-        <%= f.input :description, placeholder: 'Description', label:false,class: 'form-control' %>
-        <%= f.input :address, placeholder: 'Address', label:false,class: 'form-control' %>
-        <%= f.input :category, collection: ["Seniors", "Children", "Environment", "Social", "Cultural", "Medical"], label: "Category of Project", class: 'form-control' %>
-        <%= f.input :capacity, collection: 1..30, label: "Number of Volunteers Needed",class: 'form-control' %>
-        <%= f.input :start_date, label: "Start date",class: 'form-control' %>
+        <%= f.input :title, placeholder: t(".project_name"), label:false, class: 'form-control-project' %>
+        <%= f.input :description, placeholder: t(".description"), label:false,class: 'form-control-project' %>
+        <%= f.input :address, placeholder: t(".address"), label:false,class: 'form-control-project' %>
+        <%= f.input :category, collection: t(".categories"), label:t(".category"), class: 'form-control' %>
+        <%= f.input :capacity, collection: 1..30, label: t(".how_many"),class: 'form-control' %>
+        <%= f.input :start_date, label: t(".start"),class: 'form-control' %>
 
         <div class="d-flex align-items-center">
           <label class="button-upload-file mr-2">
-          Select Picture
+          <%= t(".pictures") %>
           <span style="display:none;">
           <%= f.input :photos, as: :file, input_html: { multiple: true, class: "logo-input"} %>
           </span>
@@ -97,7 +97,7 @@
           <div class="logo-file-name">
           </div>
         </div>
-        <%= f.submit "Create new project", class: "button-vamos primary-style w-100 mt-3"%>
+        <%= f.submit t(".create"), class: "button-vamos primary-style w-100 mt-3"%>
         <% end %>
 
     </div>
