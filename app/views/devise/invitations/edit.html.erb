@@ -1,19 +1,36 @@
-<h2><%= t "devise.invitations.edit.header" %></h2>
+<div class="content-container mb-5">
+  <h2><%= t "devise.invitations.edit.header" %></h2>
 
-<%= simple_form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-  <%= f.hidden_field :invitation_token %>
+  <%= simple_form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
+    <%= f.hidden_field :invitation_token %>
 
-  <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :description %>
-    <%= f.input :phone %>
-    <%= f.input :password %>
-    <%= f.input :password_confirmation %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :description %>
+      <%= f.input :phone %>
 
-  <div class="form-actions">
-    <%= f.button :submit, t("devise.invitations.edit.submit_button") %>
-  </div>
-<% end %>
+      <div class="d-flex align-items-center">
+        <label class="button-upload-file mr-2">
+        <%= t(".select_picture") %>
+        <span style="display:none;">
+          <%= f.input :photo, as: :file, input_html: {class: "logo-input"} %>
+        </span>
+        </label>
+        <div class="logo-file-name">
+        </div>
+      </div>
+
+      <%= f.input :password %>
+      <%= f.input :password_confirmation %>
+    </div>
+
+
+
+    <div class="form-actions">
+      <%= f.button :submit, t("devise.invitations.edit.submit_button"), class: "button-vamos primary-style" %>
+    </div>
+  <% end %>
+</div>
+
