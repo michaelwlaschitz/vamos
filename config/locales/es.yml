@@ -28,11 +28,12 @@ es:
       find: "Econtrar voluntarios"
       about: "Sobre Vamos"
       profile: "Perfil"
-      messages: "Mensajes"
+      conversations: "Mensajes"
       login: "Inicia sesión"
       logout: "Salir"
       explore: "Explorar"
-      my_profile: "Mi perfil"
+      dashboard: "Mi perfil"
+      dashboard2: "Mi perfil"
       my_projects: "Mis proyectos"
       applications: "Aplicaciones"
       user_view: "Vista de proyectos"
@@ -100,7 +101,7 @@ es:
     home:
       title_for_html: "<strong>Voluntariados con<br> amigos en Barcelona.</strong>"
       sub_title_for_html: "Busca y aplica a voluntariados con tu equipo para ayudar a tu comunidad."
-      find: "Encuentra voluntarios >>"
+      find: "Busca voluntarios >>"
 
       team_name_for_html: "Nombre del equipo: <span style='color: #fb8500'>Las Alpacas</span>"
 
@@ -113,7 +114,7 @@ es:
       lisa_for_html: "<strong>Lisa, 23</strong>"
       medical_student: "Estudiante de medicina"
       volunteer_cta_title_for_html: "Crea tu equipo <br>y trabajen juntos!"
-      volunteer_cta_sub_title: "Con Vamos, puedes crear fácilmente un equipo, invitar a tus amigos y juntos aplicar a oportunidades de voluntariado en Barcelona."
+      volunteer_cta_sub_title: "Con Vamos, puedes crear fácilmente un equipo, invitar a tus amigos y juntos aplicar a las oportunidades de voluntariado."
       volunteer_cta_button: "Busca oportunidades"
 
       city_title_for_html: "Haz el bien en tu comunidad. <br>Apoya proyectos cerca de ti en Barcelona."
@@ -121,14 +122,14 @@ es:
 
       function_title: "Vamos trae voluntariados a ti"
 
-      function1_title: "Descubre proyectos en Barcelona que encajen contigo"
+      function1_title: "Descubre proyectos locales que encajen contigo"
       function1_text: "Con Vamos, puedes filtrar por categoría, ubicación y horas para encontrar la mejor oportunidad para ti"
       function2_title: "Aplica con tus amigos"
       function2_text: "Con Vamos, puedes inscribirte junto con tus amigos, y en unos pocos clics enviar una solicitud en equipo."
       function3_title: "Chatear con el coordinador del proyecto"
       function3_text: "Conoce todos los detalles sobre la oportunidad e interactúa con el coordinador del voluntariado."
 
-      ngo_cta_title: "Buscando voluntarios en Barcelona?"
+      ngo_cta_title: "Buscando voluntarios?"
       ngo_cta_text_for_html: "Crea tu primer proyecto gratis en menos de <strong> 3 minutos</strong>!"
       ngo_cta_button: "Vamos"
 
@@ -139,7 +140,7 @@ es:
       process_step4: "Chatea con el coordinador del proyecto y confirme su participación."
 
       vision_title: "Nuestra Visión"
-      vision_text: "Somos un equipo joven e internacional de Francia, España y Austria. Nuestro objetivo es empoderar a las personas con la capacidad de hacer buenas acciones en su comunidad. Los usuarios de Vamos pueden sentirse inspirados y motivados para ayudar a causas o personas con necesidades y así tener una experiencia inolvidable junto a sus amigos. Empezando en Barcelona queremos llevar nuestra visión a toda Europa."
+      vision_text: "Somos un equipo joven e internacional de Francia, España y Austria. Nuestro objetivo es empoderar a las personas con la capacidad de hacer buenas acciones en su comunidad. Los usuarios de Vamos pueden sentirse inspirados y motivados para ayudar a causas o personas con necesidades y así tener una experiencia inolvidable junto a sus amigos."
 
     about_vamos:
       vision_title: "Nuestra Visión"
@@ -158,7 +159,7 @@ es:
 
   ngos:
     home:
-      title_for_html: "<strong>Encuentra voluntarios <br>a largo plazo</strong>"
+      title_for_html: "<strong>Encuentra voluntarios a largo <br>plazo para su organización</strong>"
       sub_title_for_html: "Crea tu primer proyecto gratis <br>con unos pocos clics!"
       usp_title: "Los Beneficios de Vamos"
       usp_sub_title: "Vamos ayuda a las ONG a encontrar voluntarios a largo plazo a través de una plataforma focalizada en la generación joven."
@@ -187,21 +188,15 @@ es:
       projects:
         zero: "Desafortunadamente, todavía no tenemos proyectos en tu área."
         one: "¡Encontramos una oportunidad, pero hay más por venir!"
-        other: "Hay %{count} oportunidades cerca de ti"
+        other: "Hay %{count} oportunidades cerca de usted"
 
-      filter: "Filtrar"
-      filter_title: "Filtrar por oportunidades"
+      filter: "Fitrar"
+      filter_title: "Fitrar por oportunidades"
       location: "Ubicación"
-      interest: "Intereses"
-      children: "Niños"
-      social: "Social"
-      cultural: "Cultural"
-      climate: "Medio Ambiente"
-      medical: "Salud"
-      seniors: "Mayores"
+      interest: "Interés"
       spots_zero: "Esta actividad está llena"
-      spots_low: "Solo %{name} plazas libres"
-      spots_high: "%{name} plazas libres"
+      spots_low: "Solo %{name} lugares abiertos"
+      spots_high: "%{name} lugares abiertos"
 
     show:
       project: "Proyecto"
@@ -210,9 +205,9 @@ es:
       reviews_for:
         zero: "Todavía no hay reseñas para esta organización!"
         other: "Reseñas para proyectos de %{name}"
-      spots_zero: "Esta actividad está llena"
-      spots_low: "Solo %{name} plazas"
-      spots_high: "%{name} plazas"
+      spots_zero: "This activity is full"
+      spots_low: "Only %{name} spots left"
+      spots_high: "%{name} spots left"
 
     new:
       create: "Crea"
@@ -228,11 +223,6 @@ es:
       pictures: "Añadir Fotos"
       back: "Atras"
 
-    info_window:
-      spots_zero: "Esta actividad está llena"
-      spots_low: "Solo %{name} lugares abiertos"
-      spots_high: "%{name} lugares abiertos"
-
   reviews:
     new:
       write_a: "Escribe una evaluacion para el proyecto: "
@@ -242,14 +232,6 @@ es:
   conversations:
     index:
       inbox: "Mensajes"
-
-    show:
-      accept: "Aceptar"
-      accepted: "Aceptado"
-      reject: "Rechazar"
-      rejected: "Rechazado"
-      pending: "Pendiente"
-
   teams:
     new:
       title_for_html: "<span style='color: #fb8500'>Crea</span> tu equipo de voluntariados"
@@ -274,7 +256,6 @@ es:
 
       edit:
         edit_user: "Actualizar Usuario"
-        edit_ngo: "Actualizar ONG"
         set_new: "Establecer nueva contraseña"
         hint1: "déjelo en blanco si no desea cambiar su contraseña"
         confirm: "Confirmar nueva contraseña"
@@ -282,8 +263,6 @@ es:
         hint2: "necesitamos su contraseña actual para confirmar sus cambios"
         update: "Actualizar"
         cancel: "Cancelar mi cuenta"
-        select_picture: "Elige una foto"
-        edit_picture: "Cambiar foto"
 
     passwords:
       new:
