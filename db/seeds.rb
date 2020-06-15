@@ -143,59 +143,59 @@ puts "Users created"
 puts "Seeding NGOs"
 
 
-ngo1 = Ngo.new(name: "Care", address: "Carrer de Sant Agustí, 14, 08012 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user1.id)
-file21 = File.open("app/assets/images/logos/ngo1.png")
-ngo1.logo.attach(io: file21, filename: 'ngo1.png', content_type: 'image/png')
+ngo1 = Ngo.new(name: "CareFYou", address: "Carrer de Sant Agustí, 14, 08012 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user1.id)
+file21 = File.open("app/assets/images/logos/ngo1.jpg")
+ngo1.logo.attach(io: file21, filename: 'ngo1.jpg', content_type: 'image/jpg')
 ngo1.save!
 
-ngo2 = Ngo.new(name: "Amics de la Gent", address: "Carrer de Provença, 480, 08025 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user2.id)
+ngo2 = Ngo.new(name: "Amics", address: "Carrer de Provença, 480, 08025 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user2.id)
 file22 = File.open("app/assets/images/logos/ngo2.jpg")
 ngo2.logo.attach(io: file22, filename: 'ngo2.jpg', content_type: 'image/jpg')
 ngo2.save!
 
-ngo3 = Ngo.new(name: "Dignity Foundation", address: "Carrer de Lepant, 150, 08013 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user3.id)
-file23 = File.open("app/assets/images/logos/ngo3.png")
-ngo3.logo.attach(io: file23, filename: 'ngo3.png', content_type: 'image/png')
+ngo3 = Ngo.new(name: "Dignity Organization", address: "Carrer de Lepant, 150, 08013 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user3.id)
+file23 = File.open("app/assets/images/logos/ngo3.jpg")
+ngo3.logo.attach(io: file23, filename: 'ngo3.jpg', content_type: 'image/jpg')
 ngo3.save!
 
-ngo4 = Ngo.new(name: "Greenpeace", address: "Carrer de Rossend Nobas, 31, 08018 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user4.id)
-file24 = File.open("app/assets/images/logos/ngo4.png")
-ngo4.logo.attach(io: file24, filename: 'ngo4.png', content_type: 'image/png')
+ngo4 = Ngo.new(name: "Green Earth", address: "Carrer de Rossend Nobas, 31, 08018 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user4.id)
+file24 = File.open("app/assets/images/logos/ngo4.jpg")
+ngo4.logo.attach(io: file24, filename: 'ngo4.jpg', content_type: 'image/jpg')
 ngo4.save!
 
-ngo5 = Ngo.new(name: "The Ocean Cleanup", address: "Plaça de Catalunya, 08002 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user5.id)
-file25 = File.open("app/assets/images/logos/ngo5.png")
-ngo5.logo.attach(io: file25, filename: 'ngo5.png', content_type: 'image/png')
+ngo5 = Ngo.new(name: "Ocean Cleanup", address: "Plaça de Catalunya, 08002 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user5.id)
+file25 = File.open("app/assets/images/logos/ngo5.jpg")
+ngo5.logo.attach(io: file25, filename: 'ngo5.jpg', content_type: 'image/jpg')
 ngo5.save!
 
-ngo6 = Ngo.new(name: "Spanish Red Cross", address: "Carrer de Ferlandina, 20, 08001 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user6.id)
+ngo6 = Ngo.new(name: "Creu Azul", address: "Carrer de Ferlandina, 20, 08001 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user6.id)
 file26 = File.open("app/assets/images/logos/ngo6.jpg")
-ngo6.logo.attach(io: file26, filename: 'ngo6.png', content_type: 'image/png')
+ngo6.logo.attach(io: file26, filename: 'ngo6.jpg', content_type: 'image/jpg')
 ngo6.save!
 
-ngo7 = Ngo.new(name: "Miracle Foundation", address: "Carrer de la Nació, 42, 08026 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user7.id)
+ngo7 = Ngo.new(name: "Future Foundation", address: "Carrer de la Nació, 42, 08026 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user7.id)
 file27 = File.open("app/assets/images/logos/ngo7.jpg")
 ngo7.logo.attach(io: file27, filename: 'ngo7.jpg', content_type: 'image/jpg')
 ngo7.save!
 
 
-ngo8 = Ngo.new(name: "Cultural Center MiMusica", address: "Carrer d'en Xuclà, 4, 08001 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user8.id)
+ngo8 = Ngo.new(name: "Cultural Center LaMusica", address: "Carrer d'en Xuclà, 4, 08001 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user8.id)
 file28 = URI.open(Faker::Company.logo)
 ngo8.logo.attach(io: file28, filename: 'ngo8.jpg', content_type: 'image/jpg')
 ngo8.save!
 
 
-ngo9 = Ngo.new(name: "Amnesty International", address: "Carrer d'Alfons XII, 19, 08006 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user9.id)
+ngo9 = Ngo.new(name: "Sol International", address: "Carrer d'Alfons XII, 19, 08006 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user9.id)
 file29 = File.open("app/assets/images/logos/ngo9.jpg")
 ngo9.logo.attach(io: file29, filename: 'ngo9.jpg', content_type: 'image/jpg')
 ngo9.save!
 
-ngo10 = Ngo.new(name: "Médecins sans frontières", address: "Carrer de Zamora, 54, 08005 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user10.id)
-file30 = File.open("app/assets/images/logos/ngo10.png")
-ngo10.logo.attach(io: file30, filename: 'ngo10.png', content_type: 'image/png')
+ngo10 = Ngo.new(name: "Doctores Fuertes", address: "Carrer de Zamora, 54, 08005 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user10.id)
+file30 = File.open("app/assets/images/logos/ngo10.jpg")
+ngo10.logo.attach(io: file30, filename: 'ngo10.jpg', content_type: 'image/jpg')
 ngo10.save!
 
-ngo11 = Ngo.new(name: "Caritas", address: "Via Laietana, 5, 08003 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user19.id)
+ngo11 = Ngo.new(name: "Carmenitas", address: "Via Laietana, 5, 08003 Barcelona, Spain", description: "Supporting our root causes with all our energy and effort", user_id: user19.id)
 file31 = File.open("app/assets/images/logos/ngo11.jpg")
 ngo11.logo.attach(io: file31, filename: 'ngo11.jpg', content_type: 'image/jpg')
 ngo11.save!
