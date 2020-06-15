@@ -57,7 +57,7 @@ en:
       children: "Children"
       social: "Social"
       cultural: "Cultural"
-      climate: "Environment"
+      climate: "Environm."
       medical: "Medical"
       seniors: "Seniors"
 
@@ -126,7 +126,7 @@ en:
       lisa_for_html: "<strong>Lisa, 23 </strong>"
       medical_student: "Medical Student"
       volunteer_cta_title_for_html: "Create a team and<br> do good together!"
-      volunteer_cta_sub_title: "With Vamos you can easily invite your friends, apply as a team and chat with organizations."
+      volunteer_cta_sub_title: "With Vamos you can easily invite your friends, apply as a team and chat with organizations in Barcelona."
       volunteer_cta_button: "Get started"
 
       city_title_for_html: "Do good in your community. <br>Support projects around you in Barcelona."
@@ -134,25 +134,25 @@ en:
 
       function_title: "Vamos brings volunteering to you"
 
-      function1_title: "Find local projects that fit you"
+      function1_title: "Find local projects in Barcelona that fit you"
       function1_text: "Vamos allows you to filter by category, location and time to find the best opportunity for you."
       function2_title: "Apply with your friends"
       function2_text: "With Vamos you can find volunteering opportunties with your friends, and with just a few click send an application as a team."
       function3_title: "Chat with the project owner"
       function3_text: "Find out all the details about the opportunity and engage with the volunteering coordinator via chat."
 
-      ngo_cta_title: "Looking for volunteers?"
+      ngo_cta_title: "Looking for volunteers around Barcelona?"
       ngo_cta_text_for_html: "Create your first project for free in less than <strong> 3 minutes! </strong>"
       ngo_cta_button: "Get started"
 
       process_title: "4 Steps to finding your first volunteering andventure"
       process_step1: "Filter by location, cause and time investment."
       process_step2: "Read detailed info about volunteering opportunties."
-      process_step3: "Create your team and apply."
+      process_step3: "Create your team and apply together."
       process_step4: "Chat with the project owner and confirm your spot."
 
       vision_title: "Our Vision"
-      vision_text: "We are a young and international team from France, Spain and Austria. Our goal is to empower people to do good in their local environment. The users of Vamos should feel inspired and motivated to help others in need and gain invaluable experience together with their friends."
+      vision_text: "We are a young and international team from France, Spain and Austria. Our goal is to empower people to do good in their local environment. The users of Vamos should feel inspired and motivated to help others in need and gain invaluable experience together with their friends. Starting in Barcelona we want to bring our concept to whole Europe to support local causes in all major cities."
 
     about_vamos:
       vision_title: "Our Vision"
@@ -186,7 +186,7 @@ en:
       key_benefit1: "Reduce the barrier for young people to get involved with your organization."
       key_benefit2: "Attract more long-term volunteers, supporters donors to your projects."
       function_title: "How it works"
-      function_sub_title: "Vamos provides an intutive platform for NGOs to easily create projects, manage applications and chat with teams of volunteers."
+      function_sub_title: "Vamos provides an intutive platform for NGOs around Barcelona to easily create projects, manage applications and chat with teams of volunteers."
       function1_title: "Create a project in less than 3 minutes"
       function1_text: "Where, when, how many? Create your project with a few clicks. We will find volunteers for you!"
       function2_title: "Easily manage applications"
@@ -210,7 +210,7 @@ en:
       children: "Children"
       social: "Social"
       cultural: "Cultural"
-      climate: "Environment"
+      climate: "Environm."
       medical: "Medical"
       seniors: "Seniors"
       spots_zero: "This activity is full"
