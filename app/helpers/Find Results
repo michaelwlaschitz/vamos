@@ -1,0 +1,66 @@
+Searching 288 files for "meta_image" (case sensitive)
+
+/Users/michaelwlaschitz/code/michaelwlaschitz/vamos/app/helpers/meta_tags_helper.rb:
+    8    end
+    9
+   10:   def meta_image
+   11:     meta_image = (content_for?(:meta_image) ? content_for(:meta_image) : DEFAULT_META["meta_image"])
+   12      # little twist to make it work equally with an asset or a url
+   13:     meta_image.starts_with?("https") ? meta_image : image_url(meta_image)
+   14    end
+   15  end
+
+/Users/michaelwlaschitz/code/michaelwlaschitz/vamos/app/views/layouts/application.html.erb:
+   18      <meta property="og:type" content="website" />
+   19      <meta property="og:url" content="<%= request.original_url %>" />
+   20:     <meta property="og:image" content="<%= meta_image %>"/>
+   21      <meta property="og:description" content="<%= meta_description %>" />
+   22      <meta property="og:site_name" content="<%= meta_title %>" />
+
+/Users/michaelwlaschitz/code/michaelwlaschitz/vamos/config/meta.yml:
+    2  meta_title: "Vamos - Support local causes. Do it with your friends."
+    3  meta_description: "Find opportunities around you, build a team, volunteer together."
+    4: meta_image: "meta-img.jpg" # should exist in `app/assets/images/`
+    5
+
+/Users/michaelwlaschitz/code/michaelwlaschitz/vamos/config/webpack/meta.yml:
+    2  meta_title: "Vamos - Support local causes. Do it with your friends."
+    3  meta_description: "Find opportunities around you, build a team, volunteer together."
+    4: meta_image: "meta-img.jpg" # should exist in `app/assets/images/`
+    5
+
+11 matches across 4 files
+
+
+Searching 288 files for "meta_image" (case sensitive)
+
+/Users/michaelwlaschitz/code/michaelwlaschitz/vamos/app/helpers/meta_tags_helper.rb:
+    8    end
+    9
+   10:   def meta_image
+   11:     meta_image = (content_for?(:meta_image) ? content_for(:meta_image) : DEFAULT_META["meta_image"])
+   12      # little twist to make it work equally with an asset or a url
+   13:     meta_image.starts_with?("http") ? meta_image : image_url(meta_image)
+   14    end
+   15  end
+
+/Users/michaelwlaschitz/code/michaelwlaschitz/vamos/app/views/layouts/application.html.erb:
+   18      <meta property="og:type" content="website" />
+   19      <meta property="og:url" content="<%= request.original_url %>" />
+   20:     <meta property="og:image" content="<%= meta_image %>"/>
+   21      <meta property="og:description" content="<%= meta_description %>" />
+   22      <meta property="og:site_name" content="<%= meta_title %>" />
+
+/Users/michaelwlaschitz/code/michaelwlaschitz/vamos/config/meta.yml:
+    2  meta_title: "Vamos - Support local causes. Do it with your friends."
+    3  meta_description: "Find opportunities around you, build a team, volunteer together."
+    4: meta_image: "meta_img.jpg" # should exist in `app/assets/images/`
+    5
+
+/Users/michaelwlaschitz/code/michaelwlaschitz/vamos/config/webpack/meta.yml:
+    2  meta_title: "Vamos - Support local causes. Do it with your friends."
+    3  meta_description: "Find opportunities around you, build a team, volunteer together."
+    4: meta_image: "meta_img.jpg" # should exist in `app/assets/images/`
+    5
+
+11 matches across 4 files
