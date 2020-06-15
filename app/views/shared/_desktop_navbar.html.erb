@@ -14,29 +14,29 @@
 
         <% if user_signed_in? %>
 
-        <% if current_user.ngo %>
+          <% if current_user.ngo %>
 
-          <li id="user-view" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/projects', action: 'index') %>">
-            <%= link_to t("global.navbar.user_view"), projects_path, class: "nav-link" %>
-            <%# By using links, we ensure that default_url_options are actually used!  %>
-          </li>
+            <li id="user-view" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/projects', action: 'index') %>">
+              <%= link_to t("global.navbar.user_view"), projects_path, class: "nav-link" %>
+              <%# By using links, we ensure that default_url_options are actually used!  %>
+            </li>
 
-          <li id="applications" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/applications', action: 'index') %>">
-            <%= link_to t("global.navbar.applications"), applications_path, class: "nav-link" %>
-          </li>
+            <li id="applications" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/applications', action: 'index') %>">
+              <%= link_to t("global.navbar.applications"), applications_path, class: "nav-link" %>
+            </li>
 
-        <% else %>
+          <% else %>
 
-          <li id="search-projects" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/projects', action: 'index') %>">
-            <%= link_to t("global.navbar.search"), projects_path, class: "nav-link" %>
-            <%# By using links, we ensure that default_url_options are actually used!  %>
-          </li>
+            <li id="search-projects" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/projects', action: 'index') %>">
+              <%= link_to t("global.navbar.search"), projects_path, class: "nav-link" %>
+              <%# By using links, we ensure that default_url_options are actually used!  %>
+            </li>
 
-          <li id="dashboard" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/users', action: 'profile') %>">
-            <%= link_to t("global.navbar.dashboard"), user_profile_path, class: "nav-link" %>
-          </li>
+            <li id="dashboard" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/users', action: 'profile') %>">
+              <%= link_to t("global.navbar.dashboard"), user_profile_path, class: "nav-link" %>
+            </li>
 
-        <% end %>
+          <% end %>
 
           <li id="messages" class="yes-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/conversations', action: 'index') %>">
             <%= link_to t("global.navbar.conversations"), conversations_path, class: "nav-link" %>
@@ -52,9 +52,9 @@
               <% end %>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to t("global.navbar.profile"), user_profile_path, class: "dropdown-item" %>
               <% if current_user.ngo %>
-              <%= link_to t("global.navbar.my_projects"), user_projects_path, class: "dropdown-item" %>
+                <%= link_to t("global.navbar.profile"), user_profile_path, class: "dropdown-item" %>
+                <%= link_to t("global.navbar.my_projects"), user_projects_path, class: "dropdown-item" %>
               <% end %>
               <div class="dropdown-divider"></div>
               <%= link_to t("global.navbar.logout"), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
@@ -66,7 +66,7 @@
             <%= link_to t("global.navbar.search"), projects_path, class: "nav-link" %>
             <%# By using links, we ensure that default_url_options are actually used!  %>
           </li>
-          <li id="find-volunteers" class="no-signed nav-item <%= 'active' if current_page?(controller: '/ngos', action: 'new') %>">
+          <li id="find-volunteers" class="no-signed nav-item <%= 'active' if current_page?(controller: '/ngos', action: 'home') %>">
             <%= link_to t("global.navbar.find"), ngos_home_path, class: "nav-link" %>
           </li>
           <li id="about-vamos" class="no-signed nav-item mr-2 <%= 'active' if current_page?(controller: '/pages', action: 'about_vamos') %>">
