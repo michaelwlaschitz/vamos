@@ -10,7 +10,7 @@
   <% categories.each do |category, logo| %>
   <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="categories_<%= category %>" <%= "checked" if params[:categories]&.include?(category) %> >
   <label class="category-button button <%= "active" if params[:categories]&.include?(category) %>" for="categories_<%= category %>">
-    <div>
+    <div class="width-small-interest text-center">
       <div class="interest-icon">
         <i class="<%= logo %>"></i>
       </div>
