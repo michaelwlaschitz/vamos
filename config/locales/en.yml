@@ -72,7 +72,6 @@ en:
       signup: "Sign up"
       forgot_password: "Forgot your password?"
 
-
   activerecord:
     models:
       project:

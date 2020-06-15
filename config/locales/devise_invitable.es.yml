@@ -1,0 +1,31 @@
+es:
+  devise:
+    failure:
+      invited: "Tienes una invitación pendiente, acéptala para terminar de crear tu cuenta."
+    invitations:
+      send_instructions: "Se ha enviado un correo electrónico de invitación a %{email}."
+      invitation_token_invalid: "El token de invitación no es válido!"
+      updated: "Su contraseña fue establecida con éxito. Iniciado sesión."
+      updated_not_active: "Su contraseña fue establecida con éxito."
+      no_invitations_remaining: "No invitaciones restantes"
+      invitation_removed: "Tu invitación fue quitada."
+      new:
+        header: "Enviar invitación"
+        submit_button: "Enviar invitación"
+      edit:
+        header: "Crea tu contraseña"
+        submit_button: "Crea mi contraseña"
+    mailer:
+      invitation_instructions:
+        subject: "Vamos Barcelona 🙌🏼"
+        hello: "Hola futuro/a voluntariado/a!"
+        someone_invited_you: "Alguien te invitó a %{url} para entra en su equipo de voluntariados en Vamos! Listo para unirse y ayuda a causas locales juntos? Accepta la invitación por el link abajo:"
+        accept: "Acceptar invitación"
+        accept_until: "Está invitation expira el %{due_date}."
+        ignore: "Si no quieres acceptar la invitación, por favor ignora esta mail. Tu cuenta no se activa antes de acceder al link arriba y crear su contraseña."
+  time:
+    formats:
+      devise:
+        mailer:
+          invitation_instructions:
+            accept_until_format: "%B %d, %Y %I:%M %p"
