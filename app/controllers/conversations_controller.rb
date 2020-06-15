@@ -6,8 +6,11 @@ class ConversationsController < ApplicationController
       @conversations = current_user.team_conversations
     end
 
-    @sorted_convos = @conversations.sort { |a,b| a.messages.last.created_at <=> b.messages.last.created_at }.reverse
-
+    if @conversations.all? {|conversation| conversation.messages.any?}
+      @sorted_convos = @conversations.sort { |a,b| a.messages.last.created_at <=> b.messages.last.created_at }.reverse
+    else
+      @sorted_convos = @conversations
+    end
   end
 
   def show

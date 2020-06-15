@@ -58,12 +58,11 @@
                     <% end %>
                   </div>
                   <div>
-                    <% if conversation.messages.last.present? && conversation.messages.last.read == false %>
+                    <% if conversation.messages.last.present? %>
                       <p class="paragraph-no-margin">
-                      <span class="font-weight-bold"><%= conversation.messages.last.user.first_name %></span>
-                      <%=conversation.messages.last.body.truncate(70)%></p>
-                    <% elsif conversation.messages.last.present? %>
-                      <%=conversation.messages.last.body.truncate(70)%>
+                        <span class="font-weight-bold"><%= conversation.messages.last.user.first_name %></span>
+                        <%=conversation.messages.last.body.truncate(70)%>
+                      </p>
                     <% else %>
                       <p class="paragraph-no-margin font-italic"> No messages yet - Feel free to ask any questions!</p>
                     <% end %>

@@ -36,7 +36,7 @@
           <div class="mb-4">
             <h3><%= t(".application_message") %></h3>
             <%= f.simple_fields_for :message do |message_fields| %>
-              <%= message_fields.input :body, as: :text, placeholder: t(".motivation"), label: false, input_html: {rows: 5} %>
+              <%= message_fields.input :body, required: true, as: :text, placeholder: t(".motivation"), label: false, input_html: {rows: 5} %>
             <% end %>
           </div>
 

@@ -32,10 +32,6 @@
 	}
 }
 
-.nav-bar-text {
-	font-weight: bold;
-}
-
 // MOBILE NAVBAR
 
 .has-navbar-so-margin {
@@ -98,6 +94,12 @@
 				&:hover {
 					background-color: #f7f7f7;
 				}
+        &.active {
+          .nav-link {
+            color: $orange-vamos !important;
+            border-bottom: 1px solid $orange-vamos;
+          }
+        }
 			}
 		}
 	}
