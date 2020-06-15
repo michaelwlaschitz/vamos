@@ -1,4 +1,4 @@
 meta_product_name: "Vamos"
-meta_title: "Vamos - Support local causes. Do it with your friends."
-meta_description: "Find opportunities around you, build a team, volunteer together."
-meta_image: "meta-img.jpg" # should exist in `app/assets/images/`
+meta_title: "Vamos - Apoya causas locales en Barcelona con tus amigos"
+meta_description: "Encuentre oportunidades de voluntariado en Barcelona e involucrate con tus amigos."
+meta_image: "meta_img.jpg" # should exist in `app/assets/images/`
