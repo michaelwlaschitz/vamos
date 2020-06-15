@@ -1,14 +1,14 @@
 <div class="desktop-footer">
   <div class="d-flex justify-content-around align-items-center">
     <div class="footer-icons">
-      <a href="#"><i class="fab fa-instagram pl-2"></i></a>
-      <a href="#"><i class="fab fa-facebook pl-2"></i></a>
-      <a href="linkedin.com/company/vamos-volunteeering"><i class="fab fa-linkedin pl-2"></i></a>
+      <a class="footer-link" href="#"><i class="fab fa-instagram pl-2"></i></a>
+      <a class="footer-link" href="#"><i class="fab fa-facebook pl-2"></i></a>
+      <a class="footer-link" href="linkedin.com/company/vamos-volunteeering"><i class="fab fa-linkedin pl-2"></i></a>
     </div>
 
     <div>
-      <p class="paragraph-no-margin white"> <%= link_to t("global.navbar.about"), about_vamos_path %></p>
-      <p class="paragraph-no-margin white"> <%= link_to t("global.navbar.privacy_policy"), privacy_policy_vamos_path %></p>
+      <p class="paragraph-no-margin white"> <%= link_to t("global.navbar.about"), about_vamos_path, class: "footer-link" %></p>
+      <p class="paragraph-no-margin white"> <%= link_to t("global.navbar.privacy_policy"), privacy_policy_vamos_path, class: "footer-link" %></p>
     </div>
 
     <div class="footer-contact white">
