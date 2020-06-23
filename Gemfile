@@ -13,6 +13,8 @@ gem 'jquery-rails'
 gem 'social-share-button'
 gem 'devise_invitable', '~> 2.0.0'
 
+gem 'canonical-rails', github: 'jumph4x/canonical-rails'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'sassc-rails'

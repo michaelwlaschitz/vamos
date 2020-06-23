@@ -26,6 +26,8 @@ Rails.application.routes.draw do
       resources :messages, only: [:create]
     end
 
+    get 'sitemap', to: 'sitemap#index', defaults: { format: "xml" }
+
     resources :teams, only: [:new, :create]
 
     get 'users/projects', to: 'users#projects', as: :user_projects #last modification
