@@ -6,6 +6,13 @@ GIT
     faker (2.10.2)
       i18n (>= 1.6, < 2)
 
+GIT
+  remote: https://github.com/jumph4x/canonical-rails.git
+  revision: a0961b4a8ce4c4d7b58289ca8b7cb63090aab721
+  specs:
+    canonical-rails (0.2.8)
+      rails (>= 4.1, < 6.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -301,6 +308,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
+  canonical-rails!
   capybara
   cloudinary (~> 1.12.0)
   cocoon
