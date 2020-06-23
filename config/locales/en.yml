@@ -112,7 +112,7 @@ en:
   pages:
     home:
       title_for_html: "<strong>Do good with your <br>friends in Barcelona.</strong>"
-      sub_title_for_html: "Filter, search, and apply with your team for local volunteering."
+      sub_title_for_html: "Filter, search, and apply with your team for volunteering in Barcelona."
       find: "Find volunteers >>"
 
       team_name_for_html: "Team name: <span style='color: #fb8500'>The VolunDeers</span>"
@@ -125,14 +125,14 @@ en:
       event_manager: "Event Manager"
       lisa_for_html: "<strong>Lisa, 23 </strong>"
       medical_student: "Medical Student"
-      volunteer_cta_title_for_html: "Create a team and<br> do good together!"
+      volunteer_cta_title_for_html: "Create a team and<br> volunteer together!"
       volunteer_cta_sub_title: "With Vamos you can easily invite your friends, apply as a team and chat with organizations in Barcelona."
       volunteer_cta_button: "Get started"
 
-      city_title_for_html: "Do good in your community. <br>Support projects around you in Barcelona."
+      city_title_for_html: "Do good in your community. <br>Volunteer in Barcelona."
       city_cta: "Check out projects"
 
-      function_title: "Vamos brings volunteering to you"
+      function_title: "Three easy steps to do good in Barcelona"
 
       function1_title: "Find local projects in Barcelona that fit you"
       function1_text: "Vamos allows you to filter by category, location and time to find the best opportunity for you."
