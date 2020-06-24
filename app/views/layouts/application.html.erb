@@ -52,5 +52,21 @@
     <%= render 'shared/desktop_footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+
+<!--     connect with social media pages for SEO -->
+    <script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "Vamos Volunteering",
+    "url": "https://www.vamosbarcelona.com",
+    "address": "Barcelona",
+    "sameAs": [
+      "https://www.facebook.com/VamosVolunteering",
+      "https://www.linkedin.com/company/vamos-volunteering"
+      ]
+    }
+    </script>
+
   </body>
 </html>
