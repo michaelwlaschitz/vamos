@@ -2,18 +2,31 @@
   <div class="filter-container">
     <div class="filter-form">
       <h2 class="mt-5">
-        <%= t(".select_causes_for_html") %>
+        <%= t(".select_timeframe_for_html") %>
       </h2>
 
       <div class="filter-content">
         <div class="form-group">
           <%= form_tag(projects_path, :method => "get", local: true) do %>
             <% hidden_field_tag(:address, params[:address]) %>
-            <%= render "projects/partial_filter_boxes_interest" %>
-            <% if %>
-            <% params[:categories].present? %>
-            <% categories.each do |category| %>
-            <%= hidden_field_tag(:categories[], category) %>
+            <% if params[:categories].present? %>
+              <%= hidden_field_tag(:categories, params[:categories]) %>
+            <% end %>
+
+            <div class="onboarding-buttons buttons filter-buttons">
+              <% [t("global.timeframe.day"), t("global.timeframe.short"), t("global.timeframe.long")].each do |timeframe| %>
+                <input type="checkbox" class="hidden category-input" value="<%= timeframe %>" name="timeframe[]" id="timeframe_<%= timeframe %>" <%= "checked" if params[:timeframe]&.include?(timeframe) %> >
+                <label class="category-button button <%= "active" if params[:timeframe]&.include?(timeframe) %>" for="timeframe_<%= timeframe %>">
+                  <div class="width-small-interest text-center">
+                    <%= timeframe %>
+                  </div>
+                </label>
+              <% end %>
+            </div>
+
+            <% if params[:timeframe].present? %>
+            <% timeframe.each do |timefr| %>
+            <%= hidden_field_tag(:timeframe[], timefr) %>
             <% end %>
             <% end %>
             <%= button_tag :type => "submit", :class => "filter-submit" do %>
@@ -24,7 +37,7 @@
       </div>
 
       <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        <div class="progress-bar" role="progressbar" style="width: 66%;" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">66%</div>
       </div>
     </div>
   </div>

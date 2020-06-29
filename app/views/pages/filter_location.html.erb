@@ -7,11 +7,11 @@
 
       <div class="filter-content">
         <%= form_tag(filter_interests_path, :method => "get", local: true) do %>
-        <%= text_field_tag :address, nil, placeholder: t(".type_address") %>
-        <%= hidden_field_tag(:id, params[:project_id]) %>
-        <%= button_tag :type => "submit", :class => "filter-submit" do %>
-        <i class='fas fa-chevron-right'></i>
-        <% end %>
+          <%= text_field_tag :address, nil, placeholder: t(".type_address") %>
+          <%= hidden_field_tag(:id, params[:project_id]) %>
+          <%= button_tag :type => "submit", :class => "filter-submit" do %>
+            <i class='fas fa-chevron-right'></i>
+          <% end %>
         <% end %>
       </div>
 

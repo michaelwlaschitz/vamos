@@ -47,7 +47,7 @@ es:
       medical: "Salud"
       seniors: "Mayores"
 
-    framework:
+    timeframe:
       day: "1 día"
       short: "- 1 mes"
       long: "+ 1 mes"
@@ -161,6 +161,9 @@ es:
 
     filter_interests:
       select_causes_for_html: "¿Qué <span style='color: #fb8500'>causas</span> te interesan más?"
+
+    filter_timeframe:
+      select_timeframe_for_html: "Durante <span style='color: #fb8500'>cuánto tiempo</span> quieres hacer el voluntariado?"
 
   ngos:
     home:

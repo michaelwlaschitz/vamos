@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     get 'about-vamos', to: 'pages#about_vamos', as: :about_vamos
     get 'location', to: 'pages#filter_location', as: :filter_location
     get 'interests', to: 'pages#filter_interests', as: :filter_interests
+    get 'timeframe', to: 'pages#filter_timeframe', as: :filter_timeframe
     get "dashboard", to: "users#dashboard", as: :user_dashboard
     get 'time', to: 'pages#filter_time', as: :filter_time
     get 'users/profile', to: 'users#profile', as: :user_profile
