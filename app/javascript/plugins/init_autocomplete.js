@@ -8,30 +8,30 @@ const initAutocompleteLocation = () => {
 };
 
 const initAutocompleteFilterMobile = () => {
-  const addressInput = document.getElementById('filter-mobile-location');
-  if (addressInput) {
-    places({ container: addressInput });
+  const addressInputMobile = document.getElementById('filter-mobile-location');
+  if (addressInputMobile) {
+    places({ container: addressInputMobile });
   }
 };
 
 const initAutocompleteFilterDesktop = () => {
-  const addressInput = document.getElementById('filter-desktop-location');
-  if (addressInput) {
-    places({ container: addressInput });
+  const addressInputDesktop = document.getElementById('filter-desktop-location');
+  if (addressInputDesktop) {
+    places({ container: addressInputDesktop });
   }
 };
 
 const initAutocompleteProjectAddress = () => {
-  const addressInput = document.getElementById('project_address');
-  if (addressInput) {
-    places({ container: addressInput });
+  const addressInputProject = document.getElementById('project_address');
+  if (addressInputProject) {
+    places({ container: addressInputProject });
   }
 };
 
 const initAutocompleteNgoAddress = () => {
-  const addressInput = document.getElementById('ngo_address');
-  if (addressInput) {
-    places({ container: addressInput });
+  const addressInputNgo = document.getElementById('ngo_address');
+  if (addressInputNgo) {
+    places({ container: addressInputNgo });
   }
 };
 

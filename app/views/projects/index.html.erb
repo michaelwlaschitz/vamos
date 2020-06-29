@@ -118,16 +118,16 @@
           <%= form_tag(projects_path, :method => "get", local: true) do %>
           <%= text_field_tag :address, nil, placeholder: t("global.modal.type_address"), id: 'filter-mobile-location' %>
           <h2 class="mt-4"><%= t(".interest")%></h2>
-            <div class="buttons filter-buttons">
-              <% categories = {
-                  t("global.interests.children") => "fas fa-child",
-                  t("global.interests.social") => "fas fa-user-friends mr-0",
-                  t("global.interests.cultural") => "fas fa-music",
-                  t("global.interests.climate") => "fas fa-leaf",
-                  t("global.interests.medical") => "fas fa-briefcase-medical",
-                  t("global.interests.seniors") => "fab fa-accessible-icon",
-                } %>
-              <% categories.each do |category, logo| %>
+          <div class="buttons filter-buttons">
+            <% categories = {
+                t("global.interests.children") => "fas fa-child",
+                t("global.interests.social") => "fas fa-user-friends mr-0",
+                t("global.interests.cultural") => "fas fa-music",
+                t("global.interests.climate") => "fas fa-leaf",
+                t("global.interests.medical") => "fas fa-briefcase-medical",
+                t("global.interests.seniors") => "fab fa-accessible-icon",
+              } %>
+            <% categories.each do |category, logo| %>
               <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="mobile_categories_<%= category %>" <%= "checked" if params[:categories]&.include?(category) %> >
               <label id="mobile-button" class="category-button button <%= "active" if params[:categories]&.include?(category) %>" for="mobile_categories_<%= category %>">
                 <div>
@@ -137,7 +137,16 @@
                   <div style="font-size: 16px"><%= category%></div>
                 </div>
               </label>
-              <% end %>
+            <% end %>
+          </div>
+          <h2 class="mt-4"><%= t(".timeframe")%></h2>
+          <div class="buttons filter-buttons">
+            <% [t("global.framework.day"), t("global.framework.short"), t("global.framework.long")].each do |framework| %>
+              <input type="checkbox" class="hidden category-input" value="<%= framework %>" name="framework[]" id="mobile_framework_<%= framework %>" <%= "checked" if params[:framework]&.include?(framework) %> >
+              <label id="mobile-button" class="category-bu<tton button <%= "active" if params[:framework]&.include?(framework) %>" for="mobile_framework_<%= framework %>">
+                <div style="font-size: 16px; padding-top: 35px;"><%= framework %></div>
+              </label>
+            <% end %>
           </div>
         </div>
         <div class = "content-container text-center">
@@ -209,7 +218,7 @@
               <p class="project-ong my-2"><%= project.ngo.name if project.ngo %></p>
               <div class="project-elements d-flex">
                 <div class="element mr-3"><i class="far fa-clock"></i><%= l(project.start_date, format: :short) %></div>
-                
+
                 <% spots_taken_count = 0 %>
                 <% project.applications.each do |application| %>
                       <% application_status = application.status %>
@@ -266,30 +275,37 @@
             <%= form_tag(projects_path, :method => "get", local: true) do %>
             <%= text_field_tag :address, nil, placeholder: t("global.modal.type_address"), id: 'filter-desktop-location' %>
             <h2 class="mt-4"><%= t(".interest")%></h2>
-
-                <div class="buttons filter-buttons">
-                  <% categories = {
-                    t("global.interests.children") => "fas fa-child",
-                    t("global.interests.social") => "fas fa-user-friends mr-0",
-                    t("global.interests.cultural") => "fas fa-music",
-                    t("global.interests.climate") => "fas fa-leaf",
-                    t("global.interests.medical") => "fas fa-briefcase-medical",
-                    t("global.interests.seniors") => "fab fa-accessible-icon",
-                  } %>
-                  <% categories.each do |category, logo| %>
-                  <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="desktop_categories_<%= category %>" <%= "checked" if params[:categories]&.include?(category) %> >
-                  <label id="desktop-button" class="category-button button <%= "active" if params[:categories]&.include?(category) %>" for="desktop_categories_<%= category %>">
-                    <div>
-                      <div class="interest-icon">
-                        <i class="<%= logo %>"></i>
-                      </div>
-                      <%= category%>
+              <div class="buttons filter-buttons">
+                <% categories = {
+                  t("global.interests.children") => "fas fa-child",
+                  t("global.interests.social") => "fas fa-user-friends mr-0",
+                  t("global.interests.cultural") => "fas fa-music",
+                  t("global.interests.climate") => "fas fa-leaf",
+                  t("global.interests.medical") => "fas fa-briefcase-medical",
+                  t("global.interests.seniors") => "fab fa-accessible-icon",
+                } %>
+                <% categories.each do |category, logo| %>
+                <input type="checkbox" class="hidden category-input" value="<%= category %>" name="categories[]" id="desktop_categories_<%= category %>" <%= "checked" if params[:categories]&.include?(category) %> >
+                <label id="desktop-button" class="category-button button <%= "active" if params[:categories]&.include?(category) %>" for="desktop_categories_<%= category %>">
+                  <div>
+                    <div class="interest-icon">
+                      <i class="<%= logo %>"></i>
                     </div>
+                    <%= category%>
+                  </div>
+                </label>
+
+                <% end %>
+              </div>
+              <h2 class="mt-4"><%= t(".timeframe")%></h2>
+              <div class="buttons filter-buttons">
+                <% [t("global.framework.day"), t("global.framework.short"), t("global.framework.long")].each do |framework| %>
+                  <input type="checkbox" class="hidden category-input" value="<%= framework %>" name="framework[]" id="desktop_framework_<%= framework %>" <%= "checked" if params[:framework]&.include?(framework) %> >
+                  <label id="mobile-button" class="category-bu<tton button <%= "active" if params[:framework]&.include?(framework) %>" for="desktop_framework_<%= framework %>">
+                    <div style="font-size: 20px; padding-top: 35px;"><%= framework %></div>
                   </label>
-
-                  <% end %>
-                </div>
-
+                <% end %>
+              </div>
           </div>
           <div class="content-container text-center">
             <div class="modal-footer">

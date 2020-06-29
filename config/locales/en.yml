@@ -61,6 +61,11 @@ en:
       medical: "Medical"
       seniors: "Seniors"
 
+    framework:
+      day: "1 day"
+      short: "- 1 month"
+      long: "+ 1 month"
+
     modal:
       login: "Please log in"
       password: "Password"
@@ -207,12 +212,7 @@ en:
       filter_title: "Filter Volunteering Opportunities"
       location: "Location"
       interest: "Interest"
-      children: "Children"
-      social: "Social"
-      cultural: "Cultural"
-      climate: "Environm."
-      medical: "Medical"
-      seniors: "Seniors"
+      timeframe: "Timeframe"
       spots_zero: "This activity is full"
       spots_low: "Only %{name} spots left"
       spots_high: "%{name} spots left"
