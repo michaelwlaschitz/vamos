@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_27_111417) do
+ActiveRecord::Schema.define(version: 2020_06_29_072620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_111417) do
     t.date "end_date"
     t.integer "start_time"
     t.integer "end_time"
+    t.string "timeframe"
     t.index ["ngo_id"], name: "index_projects_on_ngo_id"
   end
 
