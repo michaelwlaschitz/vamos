@@ -46,27 +46,16 @@ class ProjectsController < ApplicationController
   def filter_projects
     @projects = @projects.near(params[:address], 50) unless params[:address].blank?
 
-    @projects = @projects.where('category IN (?)', params[:categories]) unless params[:categories]&.reject(&:blank?).blank?
+    categories_params = params[:categories].split() if params[:categories].present?
 
-    # param1 = "1 - 4 h/week"
-    # param2 = "5 - 9 h/week"
-    # param3 = "10+ h/week"
+    @projects = @projects.where('category IN (?)', categories_params) unless categories_params&.reject(&:blank?).blank?
 
-    # if params[:time]&.reject(&:blank?).blank?
-    #   @count = @projects.count(:all)
-    # elses
-    #   filtered_projects = []
-    #   # commented this so that it does not break after removing hours_per_week, not sure how to fix it for now
-    #   # filtered_projects += @projects.where(hours_per_week: 1..4) if params[:time].include?(param1)
-    #   # filtered_projects += @projects.where(hours_per_week: 5..9) if params[:time].include?(param2)
-    #   # filtered_projects += @projects.where(hours_per_week: 10..100) if params[:time].include?(param3)
-    #   @projects = filtered_projects
-    #   @count = @projects.count
-    # end
+    @projects = @projects.where('timeframe IN (?)', params[:timeframe]) unless params[:timeframe]&.reject(&:blank?).blank?
+
   end
 
   def project_params
-    params.require(:project).permit(:title, :address, :description, :capacity, :category, :start_time, :end_time, :start_date, :end_date, photos:[])
+    params.require(:project).permit(:title, :address, :description, :capacity, :category, :timeframe, :start_time, :end_time, :start_date, :end_date, photos:[])
   end
 
 end

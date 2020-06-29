@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :filter_location, :filter_interests, :filter_time, :about_vamos]
+  skip_before_action :authenticate_user!, only: [:home, :filter_location, :filter_interests, :filter_frameworks, :about_vamos]
   def home
   end
 
@@ -12,11 +12,11 @@ class PagesController < ApplicationController
   def filter_interests
   end
 
-  def apply
-    @project = Project.find(params[:id])
+  def filter_timeframe
   end
 
-  def filter_time
+  def apply
+    @project = Project.find(params[:id])
   end
 
   def about_vamos

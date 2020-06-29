@@ -61,7 +61,7 @@ en:
       medical: "Medical"
       seniors: "Seniors"
 
-    framework:
+    timeframe:
       day: "1 day"
       short: "- 1 month"
       long: "+ 1 month"
@@ -175,6 +175,8 @@ en:
     filter_interests:
       select_causes_for_html: "What <span style='color: #fb8500'>causes</span> are you most interested in?"
 
+    filter_timeframe:
+      select_timeframe_for_html: "<span style='color: #fb8500'>How long</span> do you want to volunteer for?"
 
   ngos:
     home:

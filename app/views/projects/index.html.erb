@@ -141,10 +141,10 @@
           </div>
           <h2 class="mt-4"><%= t(".timeframe")%></h2>
           <div class="buttons filter-buttons">
-            <% [t("global.framework.day"), t("global.framework.short"), t("global.framework.long")].each do |framework| %>
-              <input type="checkbox" class="hidden category-input" value="<%= framework %>" name="framework[]" id="mobile_framework_<%= framework %>" <%= "checked" if params[:framework]&.include?(framework) %> >
-              <label id="mobile-button" class="category-bu<tton button <%= "active" if params[:framework]&.include?(framework) %>" for="mobile_framework_<%= framework %>">
-                <div style="font-size: 16px; padding-top: 35px;"><%= framework %></div>
+            <% [t("global.timeframe.day"), t("global.timeframe.short"), t("global.timeframe.long")].each do |timeframe| %>
+              <input type="checkbox" class="hidden category-input" value="<%= timeframe %>" name="timeframe[]" id="mobile_timeframe_<%= timeframe %>" <%= "checked" if params[:timeframe]&.include?(timeframe) %> >
+              <label id="mobile-button" class="category-button button <%= "active" if params[:timeframe]&.include?(timeframe) %>" for="mobile_timeframe_<%= timeframe %>">
+                <div style="font-size: 16px; padding-top: 35px;"><%= timeframe %></div>
               </label>
             <% end %>
           </div>
@@ -299,10 +299,10 @@
               </div>
               <h2 class="mt-4"><%= t(".timeframe")%></h2>
               <div class="buttons filter-buttons">
-                <% [t("global.framework.day"), t("global.framework.short"), t("global.framework.long")].each do |framework| %>
-                  <input type="checkbox" class="hidden category-input" value="<%= framework %>" name="framework[]" id="desktop_framework_<%= framework %>" <%= "checked" if params[:framework]&.include?(framework) %> >
-                  <label id="mobile-button" class="category-bu<tton button <%= "active" if params[:framework]&.include?(framework) %>" for="desktop_framework_<%= framework %>">
-                    <div style="font-size: 20px; padding-top: 45px;"><%= framework %></div>
+                <% [t("global.timeframe.day"), t("global.timeframe.short"), t("global.timeframe.long")].each do |timeframe| %>
+                  <input type="checkbox" class="hidden category-input" value="<%= timeframe %>" name="timeframe[]" id="desktop_timeframe_<%= timeframe %>" <%= "checked" if params[:timeframe]&.include?(timeframe) %> >
+                  <label id="mobile-button" class="category-bu<tton button <%= "active" if params[:timeframe]&.include?(timeframe) %>" for="desktop_timeframe_<%= timeframe %>">
+                    <div style="font-size: 20px; padding-top: 45px;"><%= timeframe %></div>
                   </label>
                 <% end %>
               </div>
