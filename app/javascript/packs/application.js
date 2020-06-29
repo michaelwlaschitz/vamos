@@ -27,7 +27,7 @@ initAutocompleteLocation();
 initAutocompleteProjectAddress();
 initAutocompleteNgoAddress();
 initAutocompleteFilterDesktop();
-initAutocompleteFilterMobile
+initAutocompleteFilterMobile();
 
 initMapbox();
 initMapModal();

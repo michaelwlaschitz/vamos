@@ -47,6 +47,11 @@ es:
       medical: "Salud"
       seniors: "Mayores"
 
+    framework:
+      day: "1 día"
+      short: "- 1 mes"
+      long: "+ 1 mes"
+
     modal:
       login: "Por favor inicia sesión"
       password: "Contraseña"
@@ -194,6 +199,7 @@ es:
       filter_title: "Fitrar por oportunidades"
       location: "Ubicación"
       interest: "Interés"
+      timeframe: "Duración"
       spots_zero: "Esta actividad está llena"
       spots_low: "Solo %{name} lugares abiertos"
       spots_high: "%{name} lugares abiertos"
