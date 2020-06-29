@@ -64,8 +64,8 @@
   .button {
     background-color: white;
     border: 1px gray solid;
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     border-radius: 4px;
     color: $black-gray;
     text-align: center;
@@ -122,12 +122,6 @@
   .filter-form {
     margin-top: 50px;
   }
-  .buttons {
-    .button {
-      width: 140px;
-      height: 140px;
-    }
-  }
 }
 
 @media(min-width: 768px) and (max-width: 991px) {
@@ -149,6 +143,12 @@
   .filter-form {
     margin-top: 50px;
   }
+  .onboarding-buttons {
+    .button {
+      width: 100px;
+      height: 100px;
+    }
+  }
 }
 
 @media(max-width: 767px) {
@@ -161,6 +161,12 @@
   }
   .filter-image-container {
     display:none;
+  }
+  .buttons {
+    .button {
+      width: 100px;
+      height: 100px;
+    }
   }
 }
 
