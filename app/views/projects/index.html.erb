@@ -302,7 +302,7 @@
                 <% [t("global.framework.day"), t("global.framework.short"), t("global.framework.long")].each do |framework| %>
                   <input type="checkbox" class="hidden category-input" value="<%= framework %>" name="framework[]" id="desktop_framework_<%= framework %>" <%= "checked" if params[:framework]&.include?(framework) %> >
                   <label id="mobile-button" class="category-bu<tton button <%= "active" if params[:framework]&.include?(framework) %>" for="desktop_framework_<%= framework %>">
-                    <div style="font-size: 20px; padding-top: 35px;"><%= framework %></div>
+                    <div style="font-size: 20px; padding-top: 45px;"><%= framework %></div>
                   </label>
                 <% end %>
               </div>
