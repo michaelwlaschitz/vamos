@@ -51,7 +51,7 @@
                 <p class="project-ong mb-3"><%= project.ngo.name if project.ngo %></p>
                 <div class="project-elements d-flex justify-content-left">
                   <div class="element"><i class="far fa-clock"></i><%= l(project.start_date, format: :short) %></div>
-                  <%=  %>
+
 
                 <% spots_taken_count = 0 %>
                 <% project.applications.each do |application| %>
@@ -65,7 +65,6 @@
                       <% end %>
                 <% end %>
                 <% spots_left = project.capacity - spots_taken_count %>
-                <% spots_left %>
 
                   <% if spots_left < 1 %>
                   <div class="element mr-3"><i class="fas fa-user-friends"></i> <%= t(".spots_zero") %> </div>
