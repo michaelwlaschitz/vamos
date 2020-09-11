@@ -26,3 +26,22 @@
   z-index: 100;
 }
 
+.timeframe-tag {
+  width: 130px;
+  height: 30px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  .day-tag {
+    background-color: #F6F289;
+    border-radius: 10px;
+  }
+  .short-tag {
+    background-color: #CDEFD5;
+    border-radius: 10px;
+  }
+  .long-tag {
+    background-color: #C9E8F3;
+    border-radius: 10px;
+  }
+}

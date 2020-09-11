@@ -14,4 +14,18 @@ class Project < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  def spots_left
+    spots_taken = 0
+
+    self.applications.each do |application|
+      if application.status == "accepted"
+        team = Team.find(application.team_id)
+        total_members = team.team_memberships.count
+        spots_taken += total_members
+      end
+    end
+
+    return self.capacity - spots_taken
+  end
+
 end
